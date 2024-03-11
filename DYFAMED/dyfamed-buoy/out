@@ -1,0 +1,346 @@
+netcdf OS_DYFAMED_2007_R {
+  dimensions:
+    DEPTH = 1 ;
+    LATITUDE = 3853 ;
+    LONGITUDE = 3853 ;
+    POSITION = 3853 ;
+    STRING32 = 32 ;
+    TIME = UNLIMITED ; // (3853 currently)
+
+  variables:
+    float ATMS(TIME,DEPTH) ;
+      ATMS:long_name = "Atmospheric pressure at sea level" ;
+      ATMS:standard_name = "air_pressure_at_sea_level" ;
+      ATMS:units = "hectopascal" ;
+      ATMS:_FillValue = 9.96921e+36f ;
+      ATMS:sdn_parameter_urn = "SDN:P01::CAPAZZ01" ;
+      ATMS:sdn_uom_urn = "SDN:P06::UPBB" ;
+
+    char ATMS_DM(TIME,DEPTH) ;
+      ATMS_DM:long_name = "method of data processing" ;
+      ATMS_DM:conventions = "OceanSITES reference table 5" ;
+      ATMS_DM:flag_values = "R, P, D, M" ;
+      ATMS_DM:flag_meanings = "realtime post-recovery delayed-mode mixed" ;
+      ATMS_DM:_FillValue = " " ;
+
+    byte ATMS_QC(TIME,DEPTH) ;
+      ATMS_QC:long_name = "quality flag" ;
+      ATMS_QC:conventions = "OceanSites reference table 2" ;
+      ATMS_QC:_FillValue = -128b ;
+      ATMS_QC:valid_min = 0b ;
+      ATMS_QC:valid_max = 9b ;
+      ATMS_QC:flag_values = 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b, 9b ;
+      ATMS_QC:flag_meanings = "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value" ;
+
+    float ATPT(TIME,DEPTH) ;
+      ATPT:long_name = "Atmospheric pressure hourly tendency" ;
+      ATPT:standard_name = "tendency_of_air_pressure" ;
+      ATPT:units = "hectopascal/hour" ;
+      ATPT:_FillValue = 9.96921e+36f ;
+      ATPT:sdn_parameter_urn = "SDN:P01::APRESSTN" ;
+      ATPT:sdn_uom_urn = "SDN:P06::HPAH" ;
+
+    char ATPT_DM(TIME,DEPTH) ;
+      ATPT_DM:long_name = "method of data processing" ;
+      ATPT_DM:conventions = "OceanSITES reference table 5" ;
+      ATPT_DM:flag_values = "R, P, D, M" ;
+      ATPT_DM:flag_meanings = "realtime post-recovery delayed-mode mixed" ;
+      ATPT_DM:_FillValue = " " ;
+
+    byte ATPT_QC(TIME,DEPTH) ;
+      ATPT_QC:long_name = "quality flag" ;
+      ATPT_QC:conventions = "OceanSites reference table 2" ;
+      ATPT_QC:_FillValue = -128b ;
+      ATPT_QC:valid_min = 0b ;
+      ATPT_QC:valid_max = 9b ;
+      ATPT_QC:flag_values = 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b, 9b ;
+      ATPT_QC:flag_meanings = "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value" ;
+
+    char DC_REFERENCE(TIME,STRING32) ;
+      DC_REFERENCE:long_name = "Location unique identifier in data centre" ;
+      DC_REFERENCE:conventions = "Data centre convention" ;
+      DC_REFERENCE:_FillValue = " " ;
+
+    float DEPH(TIME,DEPTH) ;
+      DEPH:long_name = "Depth" ;
+      DEPH:standard_name = "depth" ;
+      DEPH:units = "meter" ;
+      DEPH:_FillValue = -99999.f ;
+      DEPH:valid_min = 0.f ;
+      DEPH:valid_max = 12000.f ;
+      DEPH:axis = "Z" ;
+      DEPH:positive = "down" ;
+      DEPH:sdn_parameter_urn = "SDN:P01::ADEPZZ01" ;
+      DEPH:sdn_uom_urn = "SDN:P06::ULAA" ;
+
+    char DEPH_DM(TIME,DEPTH) ;
+      DEPH_DM:long_name = "method of data processing" ;
+      DEPH_DM:conventions = "OceanSITES reference table 5" ;
+      DEPH_DM:flag_values = "R, P, D, M" ;
+      DEPH_DM:flag_meanings = "realtime post-recovery delayed-mode mixed" ;
+      DEPH_DM:_FillValue = " " ;
+
+    byte DEPH_QC(TIME,DEPTH) ;
+      DEPH_QC:long_name = "quality flag" ;
+      DEPH_QC:conventions = "OceanSites reference table 2" ;
+      DEPH_QC:_FillValue = -128b ;
+      DEPH_QC:valid_min = 0b ;
+      DEPH_QC:valid_max = 9b ;
+      DEPH_QC:flag_values = 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b, 9b ;
+      DEPH_QC:flag_meanings = "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value" ;
+
+    float DEWT(TIME,DEPTH) ;
+      DEWT:long_name = "Dew point temperature" ;
+      DEWT:standard_name = "dew_point_temperature" ;
+      DEWT:units = "degree_Celsius" ;
+      DEWT:_FillValue = 9.96921e+36f ;
+      DEWT:sdn_parameter_urn = "SDN:P01::CDEWZZ01" ;
+      DEWT:sdn_uom_urn = "SDN:P06::UPAA" ;
+
+    char DEWT_DM(TIME,DEPTH) ;
+      DEWT_DM:long_name = "method of data processing" ;
+      DEWT_DM:conventions = "OceanSITES reference table 5" ;
+      DEWT_DM:flag_values = "R, P, D, M" ;
+      DEWT_DM:flag_meanings = "realtime post-recovery delayed-mode mixed" ;
+      DEWT_DM:_FillValue = " " ;
+
+    byte DEWT_QC(TIME,DEPTH) ;
+      DEWT_QC:long_name = "quality flag" ;
+      DEWT_QC:conventions = "OceanSites reference table 2" ;
+      DEWT_QC:_FillValue = -128b ;
+      DEWT_QC:valid_min = 0b ;
+      DEWT_QC:valid_max = 9b ;
+      DEWT_QC:flag_values = 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b, 9b ;
+      DEWT_QC:flag_meanings = "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value" ;
+
+    float DRYT(TIME,DEPTH) ;
+      DRYT:long_name = "Air temperature in dry bulb" ;
+      DRYT:standard_name = "air_temperature" ;
+      DRYT:units = "degree_Celsius" ;
+      DRYT:_FillValue = 9.96921e+36f ;
+      DRYT:sdn_parameter_urn = "SDN:P01::CTMPZZ01" ;
+      DRYT:sdn_uom_urn = "SDN:P06::UPAA" ;
+
+    char DRYT_DM(TIME,DEPTH) ;
+      DRYT_DM:long_name = "method of data processing" ;
+      DRYT_DM:conventions = "OceanSITES reference table 5" ;
+      DRYT_DM:flag_values = "R, P, D, M" ;
+      DRYT_DM:flag_meanings = "realtime post-recovery delayed-mode mixed" ;
+      DRYT_DM:_FillValue = " " ;
+
+    byte DRYT_QC(TIME,DEPTH) ;
+      DRYT_QC:long_name = "quality flag" ;
+      DRYT_QC:conventions = "OceanSites reference table 2" ;
+      DRYT_QC:_FillValue = -128b ;
+      DRYT_QC:valid_min = 0b ;
+      DRYT_QC:valid_max = 9b ;
+      DRYT_QC:flag_values = 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b, 9b ;
+      DRYT_QC:flag_meanings = "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value" ;
+
+    float LATITUDE(LATITUDE) ;
+      LATITUDE:long_name = "Latitude of each location" ;
+      LATITUDE:standard_name = "latitude" ;
+      LATITUDE:_FillValue = 99999.f ;
+      LATITUDE:units = "degrees_north" ;
+      LATITUDE:valid_min = -90. ;
+      LATITUDE:valid_max = 90. ;
+      LATITUDE:QC_indicator = 1 ;
+      LATITUDE:QC_procedure = 1 ;
+      LATITUDE:uncertainty = " " ;
+      LATITUDE:comment = " " ;
+      LATITUDE:axis = "Y" ;
+
+    float LONGITUDE(LONGITUDE) ;
+      LONGITUDE:long_name = "Longitude of each location" ;
+      LONGITUDE:standard_name = "longitude" ;
+      LONGITUDE:_FillValue = 99999.f ;
+      LONGITUDE:units = "degrees_east" ;
+      LONGITUDE:valid_min = -180. ;
+      LONGITUDE:valid_max = 180. ;
+      LONGITUDE:QC_indicator = 1 ;
+      LONGITUDE:QC_procedure = 1 ;
+      LONGITUDE:uncertainty = " " ;
+      LONGITUDE:comment = " " ;
+      LONGITUDE:axis = "X" ;
+
+    char POSITIONING_SYSTEM(POSITION) ;
+      POSITIONING_SYSTEM:long_name = "Positioning system" ;
+      POSITIONING_SYSTEM:_FillValue = " " ;
+      POSITIONING_SYSTEM:flag_values = "A, G, L, N, U" ;
+      POSITIONING_SYSTEM:flag_meanings = "Argos, GPS, Loran, Nominal, Unknown" ;
+
+    byte POSITION_QC(POSITION) ;
+      POSITION_QC:long_name = "quality flag" ;
+      POSITION_QC:conventions = "OceanSites reference table 2" ;
+      POSITION_QC:_FillValue = -128b ;
+      POSITION_QC:valid_min = 0b ;
+      POSITION_QC:valid_max = 9b ;
+      POSITION_QC:flag_values = 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b, 9b ;
+      POSITION_QC:flag_meanings = "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value" ;
+
+    float RELH(TIME,DEPTH) ;
+      RELH:long_name = "Relative humidity" ;
+      RELH:standard_name = "relative_humidity" ;
+      RELH:units = "%" ;
+      RELH:_FillValue = 9.96921e+36f ;
+      RELH:sdn_parameter_urn = "SDN:P01::CRELZZ01" ;
+      RELH:sdn_uom_urn = "SDN:P06::UPCT" ;
+
+    char RELH_DM(TIME,DEPTH) ;
+      RELH_DM:long_name = "method of data processing" ;
+      RELH_DM:conventions = "OceanSITES reference table 5" ;
+      RELH_DM:flag_values = "R, P, D, M" ;
+      RELH_DM:flag_meanings = "realtime post-recovery delayed-mode mixed" ;
+      RELH_DM:_FillValue = " " ;
+
+    byte RELH_QC(TIME,DEPTH) ;
+      RELH_QC:long_name = "quality flag" ;
+      RELH_QC:conventions = "OceanSites reference table 2" ;
+      RELH_QC:_FillValue = -128b ;
+      RELH_QC:valid_min = 0b ;
+      RELH_QC:valid_max = 9b ;
+      RELH_QC:flag_values = 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b, 9b ;
+      RELH_QC:flag_meanings = "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value" ;
+
+    float SWHT(TIME,DEPTH) ;
+      SWHT:long_name = "SWELL HEIGHT" ;
+      SWHT:units = "meter" ;
+      SWHT:_FillValue = 9.96921e+36f ;
+      SWHT:standard_name = "sea_surface_wave_significant_height" ;
+      SWHT:sdn_parameter_urn = "SDN:P01::GTDHZZ01" ;
+      SWHT:sdn_uom_urn = "SDN:P06::ULAA" ;
+
+    char SWHT_DM(TIME,DEPTH) ;
+      SWHT_DM:long_name = "method of data processing" ;
+      SWHT_DM:conventions = "OceanSITES reference table 5" ;
+      SWHT_DM:flag_values = "R, P, D, M" ;
+      SWHT_DM:flag_meanings = "realtime post-recovery delayed-mode mixed" ;
+      SWHT_DM:_FillValue = " " ;
+
+    byte SWHT_QC(TIME,DEPTH) ;
+      SWHT_QC:long_name = "quality flag" ;
+      SWHT_QC:conventions = "OceanSites reference table 2" ;
+      SWHT_QC:_FillValue = -128b ;
+      SWHT_QC:valid_min = 0b ;
+      SWHT_QC:valid_max = 9b ;
+      SWHT_QC:flag_values = 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b, 9b ;
+      SWHT_QC:flag_meanings = "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value" ;
+
+    float SWPR(TIME,DEPTH) ;
+      SWPR:long_name = "SWELL PERIOD" ;
+      SWPR:units = "second" ;
+      SWPR:_FillValue = 9.96921e+36f ;
+      SWPR:standard_name = "sea_surface_wave_mean_period" ;
+      SWPR:sdn_parameter_urn = "SDN:P01::GTAMZZ01" ;
+      SWPR:sdn_uom_urn = "SDN:P06::UTBB" ;
+
+    char SWPR_DM(TIME,DEPTH) ;
+      SWPR_DM:long_name = "method of data processing" ;
+      SWPR_DM:conventions = "OceanSITES reference table 5" ;
+      SWPR_DM:flag_values = "R, P, D, M" ;
+      SWPR_DM:flag_meanings = "realtime post-recovery delayed-mode mixed" ;
+      SWPR_DM:_FillValue = " " ;
+
+    byte SWPR_QC(TIME,DEPTH) ;
+      SWPR_QC:long_name = "quality flag" ;
+      SWPR_QC:conventions = "OceanSites reference table 2" ;
+      SWPR_QC:_FillValue = -128b ;
+      SWPR_QC:valid_min = 0b ;
+      SWPR_QC:valid_max = 9b ;
+      SWPR_QC:flag_values = 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b, 9b ;
+      SWPR_QC:flag_meanings = "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value" ;
+
+    float TEMP(TIME,DEPTH) ;
+      TEMP:long_name = "Sea temperature" ;
+      TEMP:standard_name = "sea_water_temperature" ;
+      TEMP:units = "degree_Celsius" ;
+      TEMP:_FillValue = 9.96921e+36f ;
+      TEMP:sdn_parameter_urn = "SDN:P01::TEMPPR01" ;
+      TEMP:sdn_uom_urn = "SDN:P06::UPAA" ;
+
+    char TEMP_DM(TIME,DEPTH) ;
+      TEMP_DM:long_name = "method of data processing" ;
+      TEMP_DM:conventions = "OceanSITES reference table 5" ;
+      TEMP_DM:flag_values = "R, P, D, M" ;
+      TEMP_DM:flag_meanings = "realtime post-recovery delayed-mode mixed" ;
+      TEMP_DM:_FillValue = " " ;
+
+    byte TEMP_QC(TIME,DEPTH) ;
+      TEMP_QC:long_name = "quality flag" ;
+      TEMP_QC:conventions = "OceanSites reference table 2" ;
+      TEMP_QC:_FillValue = -128b ;
+      TEMP_QC:valid_min = 0b ;
+      TEMP_QC:valid_max = 9b ;
+      TEMP_QC:flag_values = 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b, 9b ;
+      TEMP_QC:flag_meanings = "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value" ;
+
+    double TIME(TIME) ;
+      TIME:long_name = "time" ;
+      TIME:standard_name = "time" ;
+      TIME:_FillValue = 999999. ;
+      TIME:units = "days since 1950-01-01T00:00:00Z" ;
+      TIME:valid_min = 0. ;
+      TIME:valid_max = 90000. ;
+      TIME:QC_indicator = 1 ;
+      TIME:QC_procedure = 1 ;
+      TIME:uncertainty = " " ;
+      TIME:comment = " " ;
+      TIME:axis = "T" ;
+
+    byte TIME_QC(TIME) ;
+      TIME_QC:long_name = "quality flag" ;
+      TIME_QC:conventions = "OceanSites reference table 2" ;
+      TIME_QC:_FillValue = -128b ;
+      TIME_QC:valid_min = 0b ;
+      TIME_QC:valid_max = 9b ;
+      TIME_QC:flag_values = 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b, 9b ;
+      TIME_QC:flag_meanings = "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value" ;
+
+    float WDIR(TIME,DEPTH) ;
+      WDIR:long_name = "Wind from direction relative true north" ;
+      WDIR:standard_name = "wind_from_direction" ;
+      WDIR:units = "degree" ;
+      WDIR:_FillValue = 9.96921e+36f ;
+      WDIR:sdn_parameter_urn = "SDN:P01::EWDAZZ01" ;
+      WDIR:sdn_uom_urn = "SDN:P06::UABB" ;
+
+    char WDIR_DM(TIME,DEPTH) ;
+      WDIR_DM:long_name = "method of data processing" ;
+      WDIR_DM:conventions = "OceanSITES reference table 5" ;
+      WDIR_DM:flag_values = "R, P, D, M" ;
+      WDIR_DM:flag_meanings = "realtime post-recovery delayed-mode mixed" ;
+      WDIR_DM:_FillValue = " " ;
+
+    byte WDIR_QC(TIME,DEPTH) ;
+      WDIR_QC:long_name = "quality flag" ;
+      WDIR_QC:conventions = "OceanSites reference table 2" ;
+      WDIR_QC:_FillValue = -128b ;
+      WDIR_QC:valid_min = 0b ;
+      WDIR_QC:valid_max = 9b ;
+      WDIR_QC:flag_values = 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b, 9b ;
+      WDIR_QC:flag_meanings = "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value" ;
+
+    float WSPD(TIME,DEPTH) ;
+      WSPD:long_name = "Horizontal wind speed" ;
+      WSPD:standard_name = "wind_speed" ;
+      WSPD:units = "meter/second" ;
+      WSPD:_FillValue = 9.96921e+36f ;
+      WSPD:sdn_parameter_urn = "SDN:P01::EWSBZZ01" ;
+      WSPD:sdn_uom_urn = "SDN:P06::UVAA" ;
+
+    char WSPD_DM(TIME,DEPTH) ;
+      WSPD_DM:long_name = "method of data processing" ;
+      WSPD_DM:conventions = "OceanSITES reference table 5" ;
+      WSPD_DM:flag_values = "R, P, D, M" ;
+      WSPD_DM:flag_meanings = "realtime post-recovery delayed-mode mixed" ;
+      WSPD_DM:_FillValue = " " ;
+
+    byte WSPD_QC(TIME,DEPTH) ;
+      WSPD_QC:long_name = "quality flag" ;
+      WSPD_QC:conventions = "OceanSites reference table 2" ;
+      WSPD_QC:_FillValue = -128b ;
+      WSPD_QC:valid_min = 0b ;
+      WSPD_QC:valid_max = 9b ;
+      WSPD_QC:flag_values = 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b, 9b ;
+      WSPD_QC:flag_meanings = "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value" ;
+} // group /
