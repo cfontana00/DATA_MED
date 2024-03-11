@@ -1,1 +1,1 @@
-Common data and routines storage for LaMMA modeling team
+Common data and routines storage for LaMMA oceanographic modeling team
