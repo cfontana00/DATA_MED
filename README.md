@@ -1,1 +1,1 @@
-Commno data storage repository for LaMMA modeling team
+Common data storage repository for LaMMA modeling team
