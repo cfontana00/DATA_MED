@@ -7,7 +7,7 @@ TO START:
 
 cp config_TEMPLATE.par config_MYCONFIG.par
 
-cat config_MYCONFIG.par >> .gitignore
+echo config_MYCONFIG.par >> .gitignore
 
 ln -s config_MYCONFIG.par config.par
 
