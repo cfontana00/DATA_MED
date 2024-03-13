@@ -7,11 +7,12 @@ import numpy as np
 from datetime import datetime
 from fun_gen import load_config
 
-global jdini
 
 # Load parameters
 load_config()
 from fun_gen import *
+
+
 
 
 # List to store all data
@@ -20,11 +21,10 @@ full=[]
 # -------------
 # FRENCH RIVERS
 # -------------
-rlist=['rhone','var','argens']
 
 # Loop on rivers
 # --------------
-for name in rlist:
+for name in french_list:
  
   data=[]
 
