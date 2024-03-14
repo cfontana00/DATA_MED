@@ -7,6 +7,8 @@ TO START:
 
 set $DIR/modules to your PYTHONPATH in ~/.bashrc
 
+$bash
+
 cd config
 
 cp config_TEMPLATE.par config_MYCONFIG.par
