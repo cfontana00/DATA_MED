@@ -1,1 +1,1 @@
-# French river dat from https://www.hydro.eaufrance.fr/
+# French river data from https://www.hydro.eaufrance.fr/
