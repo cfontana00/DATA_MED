@@ -5,6 +5,8 @@ Common data and routines storage for LaMMA oceanographic modeling team
 
 TO START:
 
+set $DIR/modules to your PYTHONPATH in ~/.bashrc
+
 cd config
 
 cp config_TEMPLATE.par config_MYCONFIG.par
