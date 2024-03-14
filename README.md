@@ -9,6 +9,6 @@ cd config
 
 cp config_TEMPLATE.par config_MYCONFIG.par
 
-cd ../MY_NEW_DATA
+cd ../datasets/MY_NEW_DATA
 
 $python3 my_new_routine.py MYCONFIG
