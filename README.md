@@ -11,7 +11,7 @@ $bash
 
 cd config
 
-cp config_TEMPLATE.par config_MYCONFIG.par
+cp config_TEMPLATE.json config_MYCONFIG.json
 
 cd ../datasets/MY_NEW_DATA
 
