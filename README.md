@@ -3,9 +3,9 @@
 /modules : shared functions
 
 
-TO START:
+## TO START:
 
-set $DIR/modules to your PYTHONPATH in ~/.bashrc
+**set $DIR/modules to your PYTHONPATH in ~/.bashrc**
 
 $bash
 
