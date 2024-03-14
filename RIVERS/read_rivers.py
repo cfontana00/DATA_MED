@@ -17,9 +17,6 @@ except :
   exit()
 
 
-
-
-
 # List to store all data
 full=[]
 
