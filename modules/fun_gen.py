@@ -19,7 +19,7 @@ def load_config(config):
   global french_list
 
   # Load configuration file
-  with open('../config/config_'+config+'.json') as file:
+  with open('../../config/config_'+config+'.json') as file:
     data = json.load(file)
     file.close()
 
