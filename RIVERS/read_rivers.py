@@ -31,7 +31,7 @@ for name in french_list:
   data=[]
 
   # Load file
-  raw=np.loadtxt(name+'.csv',skiprows=1,dtype=str)
+  raw=np.loadtxt('data/'+name+'.csv',skiprows=1,dtype=str)
 
   for line in raw:
       line=line.replace('"','')
