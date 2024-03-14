@@ -9,8 +9,13 @@ from fun_gen import load_config
 
 
 # Load parameters
-load_config()
-from fun_gen import *
+try :
+  load_config(sys.argv[1])
+  from fun_gen import *
+except :
+  print('Error in argument/config')
+  exit()
+
 
 
 

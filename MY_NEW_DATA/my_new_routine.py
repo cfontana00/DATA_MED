@@ -1,9 +1,18 @@
 from fun_gen import load_config
 import numpy as np
+import sys
+
+# ------------------------------------------
+# Use: python3 my_new_routine.py config_name
+# -----------------------------------------
 
 # Load parameters
-load_config()
-from fun_gen import *
+try :
+  load_config(sys.argv[1])
+  from fun_gen import *
+except :
+  print('Error in argument/config')
+  exit()
 
 print("The initial day is",jdini)
 

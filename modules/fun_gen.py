@@ -1,3 +1,8 @@
+# ----------------- #
+# General functions #
+# ----------------- #
+
+
 import numpy as np
 from datetime import datetime
 import json
@@ -6,7 +11,7 @@ import json
 
 # Function loading configuration
 # ------------------------------
-def load_config():
+def load_config(config):
 
   global jdini
   global jdend
@@ -14,7 +19,7 @@ def load_config():
   global french_list
 
   # Load configuration file
-  with open('../config.par') as file:
+  with open('../config/config_'+config+'.json') as file:
     data = json.load(file)
     file.close()
 

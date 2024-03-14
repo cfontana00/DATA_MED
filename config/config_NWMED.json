@@ -1,0 +1,17 @@
+{
+"_____":"GENERAL PARAMETERS",
+
+"date_ini":"2022-12-11",
+"date_end":"2022-12-11",
+"outdir":"/path/to/outputs",
+
+
+"_____":"RIVER PARAMETERS",
+
+"french_list":["rhone","argens","var"],
+
+"______":"DYFAMED PARAMETERS",
+"some_par":"some_par"
+
+
+}
