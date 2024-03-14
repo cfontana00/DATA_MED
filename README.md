@@ -11,4 +11,4 @@ cp config_TEMPLATE.par config_MYCONFIG.par
 
 cd ../MY_NEW_DATA
 
-$python3 MY_NEW_DATA/my_new_routine.py MYCONFIG
+$python3 my_new_routine.py MYCONFIG
