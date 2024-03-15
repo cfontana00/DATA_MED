@@ -6,14 +6,16 @@
 import numpy as np
 from datetime import datetime
 from fun_gen import load_config
+import sys
 
 
 # Load parameters
 try :
   load_config(sys.argv[1])
   from fun_gen import *
-except :
-  print('Error in argument/config')
+except Exception as e :
+  print('Error in argument or config')
+  print(e)
   exit()
 
 

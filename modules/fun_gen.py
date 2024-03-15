@@ -12,7 +12,6 @@ import json
 # ------------------------------
 def load_config(config):
 
-
   # Load configuration file
   # -----------------------
   with open('../../config/config_'+config+'.json') as file:
@@ -23,8 +22,8 @@ def load_config(config):
     # ------------
     for key in data.keys():
        if key != '_____':
-         exec('global '+key)
-         exec(key+"=data['"+key+"']")
+         exec( key + " = data['"+key+"']")
+         exec("globals()[f'"+key+"']  =  data['"+key+"']")
          #print(key,'=',data[key])
 
     # Date conversion
