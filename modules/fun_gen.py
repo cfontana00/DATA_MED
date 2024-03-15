@@ -2,34 +2,37 @@
 # General functions #
 # ----------------- #
 
-
 import numpy as np
 from datetime import datetime
 import json
 
 
-
+# ------------------------------
 # Function loading configuration
 # ------------------------------
 def load_config(config):
 
-  global jdini
-  global jdend
-  global outdir
-  global french_list
 
   # Load configuration file
+  # -----------------------
   with open('../../config/config_'+config+'.json') as file:
     data = json.load(file)
     file.close()
 
-    # General
+    # Read entries
+    # ------------
+    for key in data.keys():
+       if key != '_____':
+         exec('global '+key)
+         exec(key+"=data['"+key+"']")
+         #print(key,'=',data[key])
+
+    # Date conversion
+    # ---------------
+    global jdini,jdend
     jdini=datetime.strptime(data["date_ini"],'%Y-%m-%d').toordinal()
     jdend=datetime.strptime(data["date_end"],'%Y-%m-%d').toordinal()
-    outdir=data["outdir"]
 
-    # Rivers
-    french_list=data["french_list"]
-
-    
+  print('=> Config file loaded')
+  print('')
 

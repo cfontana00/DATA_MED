@@ -10,8 +10,9 @@ import sys
 try :
   load_config(sys.argv[1])
   from fun_gen import *
-except :
+except Exception as e :
   print('Error in argument/config')
+  print(e)
   exit()
 
 print("The initial day is",jdini)
