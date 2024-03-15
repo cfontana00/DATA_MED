@@ -12,10 +12,12 @@
 "italian_list":["arno","etc","etc"],
 
 "_____":"DYFAMED PARAMETERS",
+
 "some_par":"some_par",
 
 
 "_____":"PLOT PARAMETERS",
+
 "fig_sx":"8",
 "fig_sy":"8",
 "fig_fmt":"jpg",
