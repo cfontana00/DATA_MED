@@ -9,9 +9,20 @@
 "_____":"RIVER PARAMETERS",
 
 "french_list":["rhone","argens","var"],
+"italian_list":["arno","etc","etc"],
 
 "_____":"DYFAMED PARAMETERS",
-"some_par":"some_par"
+"some_par":"some_par",
 
+
+"_____":"PLOT PARAMETERS",
+"fig_sx":"8",
+"fig_sy":"8",
+"fig_fmt":"jpg",
+"fig_res":"100",
+"fig_proj":"PlateCarree()",
+"fig_tck_size":"10",
+"fig_tcklbl_size":"10",
+"fig_lbl_size":"10"
 
 }
