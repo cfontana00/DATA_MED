@@ -5,16 +5,18 @@
 import numpy as np
 from datetime import datetime
 import json
+import os
 
 
-# ------------------------------
-# Function loading configuration
-# ------------------------------
+# ------------------------------ #
+# Function loading configuration #
+# ------------------------------ #
 def load_config(config):
 
   # Load configuration file
   # -----------------------
-  with open('../../config/config_'+config+'.json') as file:
+  DIR=os.getenv('DATA_MED_DIR')
+  with open(DIR+'config/config_'+config+'.json') as file:
     data = json.load(file)
     file.close()
 
@@ -24,7 +26,6 @@ def load_config(config):
        if key != '_____':
          exec( key + " = data['"+key+"']")
          exec("globals()[f'"+key+"']  =  data['"+key+"']")
-         #print(key,'=',data[key])
 
     # Date conversion
     # ---------------
@@ -33,5 +34,53 @@ def load_config(config):
     jdend=datetime.strptime(data["date_end"],'%Y-%m-%d').toordinal()
 
   print('=> Config file loaded')
-  print('')
+  print('---------------------\n')
+
+
+# ---------------------------------- #
+# END Function loading configuration #
+# ---------------------------------- #
+
+
+
+# -------------------------- #
+# Function loading variables #
+# -------------------------- #
+def load_variable(config,var):
+ 
+   # Load file
+   DIR=os.getenv('DATA_MED_DIR')
+   pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+
+   # Loop on variables
+   for par in pars:
+     if par[0] == var:
+       break
+
+   return par[0],\
+          par[1],\
+          par[2],\
+          json.loads(par[3].lower()),\
+          par[4],float(par[5]),\
+          float(par[6]),\
+          par[7],\
+          par[8]
+
+
+
+
+
+# ------------------------------ #
+# END Function loading variables #
+# ------------------------------ #
+
+
+
+
+
+
+
+
+
+
 

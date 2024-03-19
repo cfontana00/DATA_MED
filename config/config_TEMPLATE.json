@@ -4,6 +4,8 @@
 "date_ini":"2022-12-11",
 "date_end":"2022-12-11",
 "outdir":"/path/to/outputs",
+"diagdir":"/path/to/diag",
+
 
 
 "_____":"RIVER PARAMETERS",
@@ -12,6 +14,10 @@
 "italian_list":["arno","etc","etc"],
 
 "_____":"DYFAMED PARAMETERS",
+
+"some_par":"some_par",
+
+"_____":"BOUSSOLE PARAMETERS",
 
 "some_par":"some_par",
 
@@ -25,6 +31,13 @@
 "fig_proj":"PlateCarree()",
 "fig_tck_size":"10",
 "fig_tcklbl_size":"10",
-"fig_lbl_size":"10"
+"fig_lbl_size":"10",
+"tight":"True",
+
+
+"_____":"OPTIONS",
+
+"itp_meth":"nearest",
+"cmap":"viridis"
 
 }
