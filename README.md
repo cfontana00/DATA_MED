@@ -6,6 +6,7 @@
 ## TO START:
 
 **set $DIR/modules to your PYTHONPATH in ~/.bashrc**
+
 **export env variable DATA_MED_DIR as /path/to/DATA_MED**
 
 $bash

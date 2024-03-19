@@ -1,17 +1,19 @@
 {
 "_____":"GENERAL PARAMETERS",
 
-"date_ini":"2021-12-11",
-"date_end":"2021-12-12",
+"date_ini":"2015-03-01",
+"date_end":"2015-03-02",
 "outdir":"/home/fontana/MODEL/OUTPUTS",
 "diagdir":"/home/fontana/MODEL/DIAGS",
+"river_ini":"2015-01-03",
+"river_end":"2015-05-01",
 
 
 
 "_____":"RIVER PARAMETERS",
 
-"french_list":["rhone","argens","var"],
-"italian_list":["arno","etc","etc"],
+"french_list":["Argens","Var"],
+"italian_list":["Arno","Magra","Ombrone","Serchio"],
 
 "_____":"DYFAMED PARAMETERS",
 
