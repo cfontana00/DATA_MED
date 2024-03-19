@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/bin/ksh -x
 
 # Config name as first argument
 config=$1

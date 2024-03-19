@@ -1,10 +1,10 @@
 {
 "_____":"GENERAL PARAMETERS",
 
-"date_ini":"2022-12-11",
-"date_end":"2022-12-11",
-"outdir":"/path/to/outputs",
-"diagdir":"/path/to/diag",
+"date_ini":"2021-12-11",
+"date_end":"2021-12-12",
+"outdir":"/home/fontana/MODEL/OUTPUTS",
+"diagdir":"/home/fontana/MODEL/DIAGS",
 
 
 
@@ -27,12 +27,21 @@
 "fig_sx":"8",
 "fig_sy":"8",
 "fig_fmt":"jpg",
-"fig_res":"100",
-"fig_proj":"PlateCarree()",
+"fig_res":"300",
+"fig_proj":"ccrs.PlateCarree()",
 "fig_tck_size":"10",
 "fig_tcklbl_size":"10",
 "fig_lbl_size":"10",
-"tight":"True",
+"cb_fraction_2D":"0.02",
+"cb_pad_2D":"0.12",
+
+"sec_lon1":"8",
+"sec_lat1":"43",
+"sec_lon2":"9.5",
+"sec_lat2":"44",
+"cb_fraction_sec":"0.02",
+"cb_pad_sec":"0.12",
+
 
 
 "_____":"OPTIONS",

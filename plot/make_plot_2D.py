@@ -121,7 +121,7 @@ for jd in range(jdini,jdend+1):
 
 
       if jd == jdini: # plot cb only once
-        cb = plt.colorbar(extend='both',fraction=float(cb_fraction),pad=float(cb_pad),\
+        cb = plt.colorbar(extend='both',fraction=float(cb_fraction_2D),pad=float(cb_pad_2D),\
                 label=label+' ('+units+')')
 
    # Save file
