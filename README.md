@@ -6,7 +6,7 @@
 ## TO START:
 
 **set $DIR/modules to your PYTHONPATH in ~/.bashrc**
-/bin/bash: line 1: q: command not found
+**export env variable DATA_MED_DIR as /path/to/DATA_MED**
 
 $bash
 
