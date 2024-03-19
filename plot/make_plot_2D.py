@@ -22,9 +22,9 @@ import cmocean
 
 # Get args
 # --------
-config=sys.argv[1]
-var=sys.argv[2]
-lev=sys.argv[3]
+config=sys.argv[1]  # Configuration name
+var=sys.argv[2]     # Variable name
+lev=sys.argv[3]     # Z-level
 
 
 # Load parameters
