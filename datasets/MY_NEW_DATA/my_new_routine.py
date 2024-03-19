@@ -15,7 +15,7 @@ except Exception as e :
   print(e)
   exit()
 
-print("The initial day is",jdini)
+print("The initial julian day is",jdini)
 
 # Load data
 data=np.loadtxt("my_new_data.dat")
