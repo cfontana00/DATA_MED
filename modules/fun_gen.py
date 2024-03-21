@@ -33,6 +33,8 @@ def load_config(config):
     jdini=datetime.strptime(data["date_ini"],'%Y-%m-%d').toordinal()
     jdend=datetime.strptime(data["date_end"],'%Y-%m-%d').toordinal()
 
+  os.system('mkdir -p '+diagdir+'/'+config)
+
   print('=> Config file loaded')
   print('---------------------\n')
 
@@ -66,13 +68,30 @@ def load_variable(config,var):
           par[7],\
           par[8]
 
-
-
-
-
 # ------------------------------ #
 # END Function loading variables #
 # ------------------------------ #
+
+
+
+# -----------------------------
+# Create arborescence for diags
+# -----------------------------
+def create_arbo(config,var,name):
+
+  #Config dir
+  os.system('mkdir -p '+diagdir+'/'+config)
+  os.system('mkdir -p '+diagdir+'/'+config+'/'+name)
+
+  # Variable dir
+  vdir = diagdir+'/'+config+'/'+name+'/'+var
+  os.system('mkdir -p '+vdir)
+
+  return vdir
+
+
+# -----------------------------
+
 
 
 

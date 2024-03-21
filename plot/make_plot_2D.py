@@ -2,6 +2,8 @@
 #  2D plotting function #
 # --------------------- #
 from fun_gen import *
+from fun_io import *
+from fun_plot_2D import *
 import sys,os
 from glob import glob
 
@@ -16,8 +18,6 @@ import matplotlib.colors as colors
 import matplotlib.pyplot as plt
 from cmcrameri import cm
 import cmocean
-
-
 
 
 # Get args
@@ -41,20 +41,18 @@ except Exception as e :
 vname, ftag, cmap, islog, vmod, vmin, vmax, label, units\
         = load_variable(config,var)
 
-# Create arborescence
-os.system('mkdir -p '+diagdir+'/PLOT_2D')
-os.system('mkdir -p '+diagdir+'/PLOT_2D/'+var)
+# Create diagnostic arborescence
+vdir = create_arbo(config,var,'PLOT_2D')
+
+savedir= vdir+'/LEV'+lev.zfill(3)
+os.system('mkdir -p '+savedir)
 
 # Initialize plot
 # ---------------
 
 # Load lon/lat
 # ------------
-fname=glob(outdir+'/*.nc')[0]
-ds=xr.open_dataset(fname)
-lon=ds['longitude']
-lat=ds['latitude']
-ds.close()
+lon,lat,levels = load_coords()
 
 # Load proj
 # ---------
@@ -62,31 +60,9 @@ exec('proj = ' + fig_proj)
 
 # Init figure
 # -----------
+extent = [lon.min(),lon.max(),lat.min(),lat.max()]
 fig, ax = plt.subplots(1,1,figsize=(float(fig_sx), float(fig_sy)), subplot_kw={'projection': proj})
-ax.set_extent([lon.min(),lon.max(),lat.min(),lat.max()])
-
-
-# Tune figure
-# -----------
-resol = '10m'
-land = cfeature.NaturalEarthFeature('physical', 'land', \
-    scale=resol, edgecolor='k', facecolor=cfeature.COLORS['land'])
-
-ax.add_feature(land, facecolor='lightgrey')
-ax.add_feature(cfeature.BORDERS,edgecolor='darkgrey',zorder=2)
-#ax.gridlines(draw_labels=True)
-ax.coastlines(resolution=resol, color='darkgrey', linestyle='-', alpha=1)
-gl = ax.gridlines(crs=proj, draw_labels=True,
-linewidth=0.2, color='gray', alpha=1., linestyle='-')
-gl.top_labels = True
-gl.left_labels = True
-gl.xlines = True
-gl.ylines = True
-gl.xformatter = LONGITUDE_FORMATTER
-gl.yformatter = LATITUDE_FORMATTER
-gl.xlabel_style = {'size': fig_tcklbl_size}
-gl.ylabel_style = {'size': fig_tcklbl_size}
-
+init_fig(ax,extent,proj)
 
 
 # Loop on files
@@ -95,20 +71,16 @@ print('Processing')
 for jd in range(jdini,jdend+1):
 
    # Get filename
-   dobj = dt.datetime.fromordinal(jd)
-   dtag = dobj.strftime('%Y%m%d')
-   fname = glob(outdir+'/'+dtag+'_h-OGS--'+ftag+'-MITgcmBFM-pilot8-b*_fc-v01.nc' )[0]
-   print(dtag)
-  
-   # Open file
-   ds = xr.open_dataset(fname)
-   var2d = ds[var][23,int(lev),:,:].squeeze() 
-   ds.close()
+   fname,dtag = get_filename(jd,ftag)
+
+   # Get 2D variable
+   var2d = get_var_2D(fname,var,lev)
 
    # Plot
    if vmod == 'auto' :
+      # !!! TO CHANGE
       p = plt.pcolor(lon,lat,var2d,cmap=cmap,zorder=1)
-      cb = plt.colorbar(p,fraction=float(cb_fraction),pad=float(cb_pad))
+      #cb = plt.colorbar(p,fraction=float(cb_fraction),pad=float(cb_pad))
    else:
 
       if not islog :      
@@ -117,49 +89,23 @@ for jd in range(jdini,jdend+1):
         p = plt.pcolor(lon,lat,var2d,cmap=cmap,norm=colors.LogNorm(vmin=vmin,vmax=vmax),zorder=1)
 
 
-
-
-
       if jd == jdini: # plot cb only once
         cb = plt.colorbar(extend='both',fraction=float(cb_fraction_2D),pad=float(cb_pad_2D),\
                 label=label+' ('+units+')')
 
    # Save file
    # ---------
-   savedir=diagdir+'/PLOT_2D/'+var+'/LEV'+lev.zfill(2)
    os.system('mkdir -p '+savedir)
 
    plt.draw()
-   plt.savefig(savedir+'/'+dtag+'_'+var+'.'+fig_fmt,dpi=int(fig_res)) 
 
-   # Do any actions on the colorbar object (e.g. remove it)
-   #cb.remove()
+   fout = savedir+'/'+dtag+'_'+var+'.'+fig_fmt
+   savefig(fout)
 
    p.remove()
 
 
-   #plt.close()
+plt.close()
 
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
