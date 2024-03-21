@@ -1,5 +1,6 @@
 from fun_gen import load_config
 from fun_io import *
+from fun_plot_2D import *
 import numpy as np
 import sys
 
@@ -30,7 +31,7 @@ lon,lat,levels = load_coords()
 
 
 # Define model parameters
-print('Load data')
+print('Load data ...\n')
 varname = 'thetao'
 level = 0
 
@@ -46,9 +47,20 @@ for jd in range(jdini,jdend):
   # Get 3D variable
   var3d = get_var_3D(fname,varname)
 
+  # Plot
+  # ----
+  print('Plot ...\n')
+  exec('proj = ' + fig_proj)
+  extent = [lon.min(),lon.max(),lat.min(),lat.max()]
+  fig, ax = plt.subplots(1,1,figsize=(float(fig_sx), float(fig_sy)), subplot_kw={'projection': proj})
+  init_fig(ax,extent,proj)
+
+  plt.show()
+  plt.close()
+
   break
 
-# To be continued ...
+print('To be continued ...')
 
 
 
