@@ -16,6 +16,9 @@ import cartopy.crs as ccrs
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import matplotlib.colors as colors
 import matplotlib.pyplot as plt
+import cmocean
+import cmcrameri
+
 
 
 # Get args
@@ -85,7 +88,6 @@ for jd in range(jdini,jdend+1):
         p = plt.pcolor(lon,lat,var2d,cmap=cmap,vmin=vmin,vmax=vmax,zorder=1)
       else:
         p = plt.pcolor(lon,lat,var2d,cmap=cmap,norm=colors.LogNorm(vmin=vmin,vmax=vmax),zorder=1)
-
 
       if jd == jdini: # plot cb only once
         cb = plt.colorbar(extend='both',fraction=float(cb_fraction_2D),pad=float(cb_pad_2D),\

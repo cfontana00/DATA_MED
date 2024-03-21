@@ -7,7 +7,7 @@ config=$1
 #varlist={'so','thetao'}
 #levlist={'0','1'}
 
-varlist='thetao'
+varlist='chl'
 levlist='0'
 
 

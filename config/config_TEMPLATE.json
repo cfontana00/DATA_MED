@@ -3,8 +3,8 @@
 
 "date_ini":"2021-12-11",
 "date_end":"2021-12-12",
-"outdir":"/home/fontana/MODEL/OUTPUTS",
-"diagdir":"/home/fontana/MODEL/DIAGS",
+"outdir":"/path/to/OUTPUT_SMP",
+"diagdir":"/path/to/diags/dir",
 "river_ini":"2015-01-03",
 "river_end":"2015-05-01",
 

@@ -35,8 +35,9 @@ def load_config(config):
 
   os.system('mkdir -p '+diagdir+'/'+config)
 
-  print('=> Config file loaded')
-  print('---------------------\n')
+  print('----------------------------------')
+  print('=> Config file '+config+' loaded')
+  print('----------------------------------')
 
 
 # ---------------------------------- #
@@ -58,6 +59,16 @@ def load_variable(config,var):
    for par in pars:
      if par[0] == var:
        break
+   
+   print('----------------')
+   print('Variable :',var)
+   print('cmap :',par[2])
+   print('log :',par[3])
+   print('min/max mode :',par[4])
+   print('vmin :',par[5])
+   print('vmax :',par[6])
+   print('----------------\n')
+
 
    return par[0],\
           par[1],\

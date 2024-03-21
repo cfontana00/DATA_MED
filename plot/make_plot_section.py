@@ -171,7 +171,7 @@ for jd in range(jdini+1,jdend+1):
     plt.xlabel("Latitude (°)")
 
   savefig( odir+'/'+dtag+'_'+var+'.'+fig_fmt)
-  plt.show()
+  #plt.show()
   plt.close()
 
 
