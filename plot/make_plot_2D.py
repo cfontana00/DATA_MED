@@ -16,8 +16,6 @@ import cartopy.crs as ccrs
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import matplotlib.colors as colors
 import matplotlib.pyplot as plt
-from cmcrameri import cm
-import cmocean
 
 
 # Get args
