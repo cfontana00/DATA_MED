@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 from scipy.interpolate import griddata
 import keyword
 import inspect
+import time
 
 
 # ------------ #
@@ -101,6 +102,8 @@ def get_var_3D(fname,var,**kargs):
 # ------------------------ #
 def get_model_val_3d(fname,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
 
+  start = time.time()
+
   from fun_gen import itp_meth,dump
 
   # Load file
@@ -119,8 +122,10 @@ def get_model_val_3d(fname,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
 
   # Interpolation
   val = griddata((LON,LAT,LEV),var3d,(lon,lat,depth),method=itp_meth)
-  print('Interpolation done for',lon.shape[0],'data')
 
+  end = np.round(time.time()-start,decimals=2)
+
+  print('Interpolation done for [',lon.shape[0],'] data in',end,'sec')
 
   return val
 
