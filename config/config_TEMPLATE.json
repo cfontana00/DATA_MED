@@ -24,7 +24,7 @@
 "some_par":"some_par",
 
 
-"_____":"PLOT PARAMETERS",
+"_____":"2D PLOT PARAMETERS",
 
 "resol":"10m",                       
 "fig_proj":"ccrs.PlateCarree()",      
@@ -39,6 +39,8 @@
 "cb_fraction_2D":"0.02",
 "cb_pad_2D":"0.12",
 
+"_____":"SECTION PLOT PARAMETERS",
+
 "fig_secx":"8",                         
 "fig_secy":"4",                        
 "sec_lon1":"8.5",
@@ -51,11 +53,17 @@
 "cb_fraction_sec":"0.025",
 "cb_pad_sec":"0.06",
 
+"_____":"PROFILE PLOT PARAMETERS",
+
+"fig_prox":"8",                         
+"fig_proy":"4",                        
+"col1":"r",
+"col2":"b",
 
 
-"_____":"OPTIONS",
+"_____":"INTERPOLATION PARAMETERS",
 
-"itp_meth":"nearest",
-"cmap":"viridis"
+"dump":"0.01",
+"itp_meth":"nearest"
 
 }

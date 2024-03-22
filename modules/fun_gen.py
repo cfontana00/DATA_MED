@@ -12,32 +12,39 @@ import os
 # Function loading configuration #
 # ------------------------------ #
 def load_config(config):
+    
+ try :
+   # Load configuration file
+   # -----------------------
+   DIR=os.getenv('DATA_MED_DIR')
+   with open(DIR+'config/config_'+config+'.json') as file:
+     data = json.load(file)
+     file.close()
 
-  # Load configuration file
-  # -----------------------
-  DIR=os.getenv('DATA_MED_DIR')
-  with open(DIR+'config/config_'+config+'.json') as file:
-    data = json.load(file)
-    file.close()
+     # Read entries
+     # ------------
+     for key in data.keys():
+        if key != '_____':
+          exec( key + " = data['"+key+"']")
+          exec("globals()[f'"+key+"']  =  data['"+key+"']")
 
-    # Read entries
-    # ------------
-    for key in data.keys():
-       if key != '_____':
-         exec( key + " = data['"+key+"']")
-         exec("globals()[f'"+key+"']  =  data['"+key+"']")
+     # Date conversion
+     # ---------------
+     global jdini,jdend
+     jdini=datetime.strptime(data["date_ini"],'%Y-%m-%d').toordinal()
+     jdend=datetime.strptime(data["date_end"],'%Y-%m-%d').toordinal()
 
-    # Date conversion
-    # ---------------
-    global jdini,jdend
-    jdini=datetime.strptime(data["date_ini"],'%Y-%m-%d').toordinal()
-    jdend=datetime.strptime(data["date_end"],'%Y-%m-%d').toordinal()
+   os.system('mkdir -p '+diagdir+'/'+config)
 
-  os.system('mkdir -p '+diagdir+'/'+config)
+   print('----------------------------------')
+   print('=> Config file '+config+' loaded')
+   print('----------------------------------\n')
+ except Exception as e :
+  print('Error in argument or config')
+  print(e)
+  exit()
 
-  print('----------------------------------')
-  print('=> Config file '+config+' loaded')
-  print('----------------------------------')
+
 
 
 # ---------------------------------- #

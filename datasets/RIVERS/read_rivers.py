@@ -11,13 +11,8 @@ import sys,os
 
 # Load parameters
 # ---------------
-try :
-  load_config(sys.argv[1])
-  from fun_gen import *
-except Exception as e :
-  print('Error in argument or config')
-  print(e)
-  exit()
+load_config(sys.argv[1])
+from fun_gen import *
 
 
 # Convert river dates

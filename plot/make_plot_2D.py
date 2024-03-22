@@ -30,13 +30,9 @@ lev=sys.argv[3]     # Z-level
 
 # Load parameters
 # ---------------
-try :
-  load_config(config)
-  from fun_gen import *
-except Exception as e :
-  print('Error in argument or config')
-  print(e)
-  exit()
+load_config(config)
+from fun_gen import *
+
 
 # Get current variable parameters
 vname, ftag, cmap, islog, vmod, vmin, vmax, label, units\

@@ -38,17 +38,10 @@ pos = float(strpos)
 # python3 make_plot_section.py NWMED thetao vertical 9
 
 
-
-
-# Load parameters
-# ---------------
-try :
-  load_config(config)
-  from fun_gen import *
-except Exception as e :
-  print('Error in argument or config')
-  print(e)
-  exit()
+# Load config file
+# ----------------
+load_config(config)
+from fun_gen import *
 
 
 # Get current variable parameters
