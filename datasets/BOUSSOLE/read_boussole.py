@@ -9,16 +9,26 @@ from fun_gen import *
 from fun_io import *
 import sys,os
 
-os.system('mkdir -p output')
+
+
 
 # Get args
 # --------
 config = sys.argv[1]  # Configuration name
 
+
+
 # Load config file
 # ----------------
 load_config(config)
 from fun_gen import *
+
+# Create diagnostic arborescence
+os.system('mkdir -p '+diagdir)
+os.system('mkdir -p '+diagdir+'/'+config)
+savedir = diagdir+'/'+config+'/BOUSSOLE'
+os.system('mkdir -p '+savedir)
+
 
 # Get current variable parameters
 vname, ftag, cmap, islog, vmod, vmin, vmax, label, units\
@@ -102,14 +112,13 @@ for jd in range(jdini,jdend+1):
       profile.append([s[3],val,s[4]])
 
 
-  # Write profile
+  # Store profile
   if profile: 
     profile = np.array(profile)
     d = dt.datetime.fromordinal(int(np.floor(jd)))
 
-    oname='output/boussole_profile_'+d.strftime('%Y-%m-%d')+'.dat'
-
-    np.savetxt(oname,profile)
+    # Write data 
+    np.savetxt(savedir+'/boussole_profile_'+d.strftime('%Y-%m-%d')+'.dat',profile)
 
     # Plot profile
     fig, ax = plt.subplots(1,1,figsize=(float(fig_prox), float(fig_proy)))
@@ -124,7 +133,7 @@ for jd in range(jdini,jdend+1):
     plt.xlabel(label+' ('+units+')')
     plt.ylabel("Depth (m)")
 
-    savefig('output/boussole_profile_'+d.strftime('%Y-%m-%d')+fig_fmt)
+    savefig(savedir+'/boussole_profile_'+d.strftime('%Y-%m-%d')+'.'+fig_fmt)
     #plt.show()
 
 
