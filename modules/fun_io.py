@@ -103,12 +103,11 @@ def get_model_val_3d(fname,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
 
   from fun_gen import itp_meth,dump
 
-  dump = float(dump)
-
   # Load file
-  idx = np.where( (lon_mod > lon-dump) & (lon_mod < lon+dump) )
-  idy = np.where( (lat_mod > lat-dump) & (lat_mod < lat+dump) )
-  idz = np.where( (lev_mod < depth+200))
+  dump = float(dump)
+  idx = np.where( (lon_mod > lon[0]-dump) & (lon_mod < lon[0]+dump) )
+  idy = np.where( (lat_mod > lat[0]-dump) & (lat_mod < lat[0]+dump) )
+  idz = np.where( (lev_mod < depth[-1]+800))
 
   var3d = np.array(get_var_3D(fname,var,domain=[idz,idy,idx]))
   
@@ -120,8 +119,8 @@ def get_model_val_3d(fname,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
 
   # Interpolation
   val = griddata((LON,LAT,LEV),var3d,(lon,lat,depth),method=itp_meth)
+  print('Interpolation done for',lon.shape[0],'data')
 
-  print('Computed model',var,'=',val,'at',lon,'/',lat,'/',depth)
 
   return val
 
