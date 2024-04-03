@@ -66,18 +66,9 @@ with open('data/Boussole-pig-maj20240116.csv') as fd:
 data=np.array(data,dtype=float)
 
 
-# Define model layer thicknesses
-# ------------------------------
+# Load coordinates
+# ----------------
 lon_mod,lat_mod,lev_mod=load_coords()
-
-thick=[]
-thick.append([0,lev_mod[1]])
-
-for i in range(1,35):
-  thick.append([lev_mod[i],lev_mod[i+1]]) 
-
-thick = np.array(thick)
-
 
 # Loop on days to create profiles
 # --------------------------------
@@ -108,11 +99,10 @@ for jd in range(jdini,jdend+1):
                lon_mod,lat_mod,lev_mod,\
                  slc[:,1],slc[:,2],slc[:,3])
 
-
      # Store data
      profile.append([slc[:,3],val[:],slc[:,4]])
+     profile = np.array(profile).squeeze().T
 
-     profile = np.array(profile).squeeze()
 
      # Store profile
      d = dt.datetime.fromordinal(int(np.floor(jd)))
@@ -132,8 +122,8 @@ for jd in range(jdini,jdend+1):
      plt.xlabel(label+' ('+units+')')
      plt.ylabel("Depth (m)")
 
-     savefig(savedir+'/boussole_profile_'+d.strftime('%Y-%m-%d')+'.'+fig_fmt)
-     #plt.show()
+     #savefig(savedir+'/boussole_profile_'+d.strftime('%Y-%m-%d')+'.'+fig_fmt)
+     plt.show()
 
      print('')
 

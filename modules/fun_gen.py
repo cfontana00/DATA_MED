@@ -98,6 +98,7 @@ def load_variable(config,var):
 def create_arbo(config,var,name):
 
   #Config dir
+  os.system('mkdir -p '+diagdir)
   os.system('mkdir -p '+diagdir+'/'+config)
   os.system('mkdir -p '+diagdir+'/'+config+'/'+name)
 
@@ -106,7 +107,6 @@ def create_arbo(config,var,name):
   os.system('mkdir -p '+vdir)
 
   return vdir
-
 
 # -----------------------------
 

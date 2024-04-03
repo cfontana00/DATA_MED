@@ -131,7 +131,6 @@ def get_model_val_3d(fname,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
 
 
 
-
 # ----------- #
 # Save figure #
 # ----------- #
@@ -165,7 +164,61 @@ def file_error(e,fname,func):
    else:
      print('Loading error')
 
-
-
    exit(1)
+
+
+# ----------------- #
+# Load DYFAMED data #
+# ----------------- #
+def load_dyfamed(year,var):
+
+  fname = 'dyfamed-mooring/OS_DYFAMED_'+str(year)+'_D_TSCTD.nc'
+  ds = xr.open_dataset(fname)
+  time = ds['TIME'].values
+  depth  = ds['DEPTH'].values
+  data = ds[var].values
+  ds.close()
+ 
+
+  print('File',fname,'loaded')
+  return time,depth,data
+
+
+
+# --------------- #
+# Load MOOSE data #
+# --------------- #
+def load_moose(year,var):
+
+  fname = glob('data/'+year+'_*.nc')[0]
+  ds = xr.open_dataset(fname)
+  time = ds['TIME'].values
+  depth  = ds['PRES'].values
+  lon  = ds['LONGITUDE'].values
+  lat  = ds['LATITUDE'].values
+  data = ds[var].values
+  ds.close()
+
+
+  # Convert date
+  jdlist = []
+  for i in range(0,time.shape[0]):
+
+    time = np.array(time,dtype=str)
+    dstr = time[i].split(' ')[0]
+    jdlist.append(dt.datetime.strptime(dstr,'%Y-%m-%d').toordinal())
+
+
+  return jdlist,depth,lon,lat,data
+  
+
+
+
+
+
+
+
+
+
+
 

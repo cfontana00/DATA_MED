@@ -9,11 +9,15 @@
 "river_end":"2015-05-01",
 
 
-
 "_____":"RIVER PARAMETERS",
 
 "french_list":["Argens","Var"],
 "italian_list":["Arno","Magra","Ombrone","Serchio"],
+
+
+"_____":"METEO PARAMETERS",
+"meteodir":"/path/to/meteo/files",
+
 
 "_____":"DYFAMED PARAMETERS",
 
