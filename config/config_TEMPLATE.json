@@ -16,7 +16,14 @@
 
 
 "_____":"METEO PARAMETERS",
+"meteo_ini":"2015-03-10",
+"meteo_end":"2015-03-11",
 "meteodir":"/path/to/meteo/files",
+"imin":"500",
+"imax":"600",
+"jmin":"350",
+"jmax":"450",
+
 
 
 "_____":"DYFAMED PARAMETERS",
