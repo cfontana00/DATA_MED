@@ -42,7 +42,13 @@ for name in french_list:
   jd_old = -99
 
   # Load file
-  raw=np.loadtxt('data/'+name+'.csv',skiprows=1,dtype=str)
+  try :
+    raw=np.loadtxt('data_modif/'+name+'_modif.csv',skiprows=1,dtype=str)
+    print('[FILE READ]','data_modif/'+name+'_modif.csv')
+  except :
+    raw=np.loadtxt('data/'+name+'.csv',skiprows=1,dtype=str)
+    print('[FILE READ]','data/'+name+'.csv')
+
 
   # Loop on data
   for line in raw:
@@ -57,7 +63,7 @@ for name in french_list:
     
        # Check for data continuity 
        if jd - jd_old != 1 and jd_old != -99 :
-         print('ERROR ! Data are not continue at day ',line[0])
+         print('ERROR ! Data are not continue at day',line[0])
          print('You must pre-processed data or check dates\n')
          exit()
 
@@ -107,7 +113,7 @@ for name in italian_list:
   
      # Check for data continuity 
      if jd - jd_old != 1 and jd_old != -99 or not line[1].isnumeric()  :
-       print('ERROR ! Data are not continue at day ',line[0])
+       print('ERROR ! Data are not continue at day',line[0])
        print('        Or non numeric value :',line[1])
        print('You must pre-processed data or check dates\n')
        exit()
