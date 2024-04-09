@@ -74,6 +74,8 @@ for name in french_list:
   data=np.array(data,dtype=str)
   np.savetxt('readyfiles/'+name+'.txt',data,fmt="%s %s")
 
+  print('[FILE SAVED]','readyfiles/'+name+'.txt\n')
+
   
 
 #---------------
@@ -120,7 +122,7 @@ for name in italian_list:
  data=np.array(data,dtype=str)
  np.savetxt('readyfiles/'+name+'.txt',data,fmt="%s %s")
 
-
+ print('[FILE SAVED]','readyfiles/'+name+'.txt\n')
 
 
 
