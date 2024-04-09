@@ -90,9 +90,11 @@ for name in italian_list:
 
  # Load file
  try :
-   raw=np.loadtxt('data/'+name+'modif.csv',skiprows=19,delimiter=',',dtype=str)
+   raw=np.loadtxt('data_modif/'+name+'_modif.csv',skiprows=19,delimiter=',',dtype=str)
+   print('[FILE READ]','data_modif/'+name+'_modif.csv')
  except:
    raw=np.loadtxt('data/'+name+'.csv',skiprows=19,delimiter=',',dtype=str)
+   print('[FILE READ]','data/'+name+'.csv')
 
 
  for line in raw:
