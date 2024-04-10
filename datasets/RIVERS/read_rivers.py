@@ -9,9 +9,13 @@ from fun_gen import load_config
 import sys,os
 
 
-# Load parameters
-# ---------------
-load_config(sys.argv[1])
+# Get args
+# --------
+config = sys.argv[1]  # Configuration name
+
+# Load config file
+# ----------------
+load_config(config)
 from fun_gen import *
 
 
@@ -20,8 +24,10 @@ from fun_gen import *
 rdini=datetime.strptime(river_ini,'%Y-%m-%d').toordinal()
 rdend=datetime.strptime(river_end,'%Y-%m-%d').toordinal()
 
-
-os.system('mkdir -p readyfiles')
+# Create arborescence
+os.system('mkdir -p '+diagdir+'/'+config)
+odir = diagdir+'/'+config+'/RIVERS'
+os.system('mkdir -p '+odir)
 
 
 # List to store all data
@@ -63,7 +69,7 @@ for name in french_list:
     
        # Check for data continuity 
        if jd - jd_old != 1 and jd_old != -99 :
-         print('ERROR ! Data are not continue at day',line[0])
+         print('\nERROR ! Data are not continue at day',line[0])
          print('You must pre-processed data or check dates\n')
          exit()
 
@@ -78,9 +84,9 @@ for name in french_list:
   # Write file
   # ----------
   data=np.array(data,dtype=str)
-  np.savetxt('readyfiles/'+name+'.txt',data,fmt="%s %s")
+  np.savetxt(odir+'/'+name+'.txt',data,fmt="%s %s")
 
-  print('[FILE SAVED]','readyfiles/'+name+'.txt\n')
+  print('[FILE SAVED]',odir+'/'+name+'.txt\n')
 
   
 
@@ -113,7 +119,7 @@ for name in italian_list:
   
      # Check for data continuity 
      if jd - jd_old != 1 and jd_old != -99 or not line[1].isnumeric()  :
-       print('ERROR ! Data are not continue at day',line[0])
+       print('\nERROR ! Data are not continue at day',line[0])
        print('        Or non numeric value :',line[1])
        print('You must pre-processed data or check dates\n')
        exit()
@@ -128,10 +134,9 @@ for name in italian_list:
  # Write file
  # ----------
  data=np.array(data,dtype=str)
- np.savetxt('readyfiles/'+name+'.txt',data,fmt="%s %s")
+ np.savetxt(odir+'/'+name+'.txt',data,fmt="%s %s")
 
- print('[FILE SAVED]','readyfiles/'+name+'.txt\n')
-
+ print('[FILE SAVED]',odir+'/'+name+'.txt\n')
 
 
 

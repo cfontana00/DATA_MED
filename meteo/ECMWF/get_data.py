@@ -81,8 +81,7 @@ for year in range(int(yini),int(yend)+1):
     for var in ['10m_wind_direction','10m_wind_speed',\
             '2m_temperature','2m_relative_humidity',\
             'surface_net_solar_radiation','surface_net_thermal_radiation',\
-            'mean_sea_level_pressure', 'total_cloud_cover',\
-            'total_precipitation']:
+            'mean_sea_level_pressure','total_precipitation']:
 
 
      oname = savedir+'/'+name+'_'+str(year)+mon+'_'+var+'.nc'

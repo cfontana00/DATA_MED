@@ -1,6 +1,9 @@
-# --------------------------------#
-# Download ECMWF atmospheric data #
-# --------------------------------#
+# ------------------------------------------- #
+#  Process ECMWF atmospheric data             #
+#   and create NetCDF files for               #
+#  visualisation and binary files for MITgcm  #
+# ------------------------------------------- #
+
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -26,6 +29,8 @@ config = sys.argv[1]  # Configuration name
 load_config(config)
 from fun_gen import *
 
+print('NB : 3-h fields hard coded ...\n')
+
 
 # Get args
 # --------
@@ -40,19 +45,24 @@ bindir = diagdir+'/'+config+'/METEO/ITP_BIN'
 os.system('mkdir -p '+bindir)
 
 
-
 # Load lon/lat
 # ------------
 lon,lat,levels = load_coords()
+
+# Mesh model lon/lat
+LAT,LON = np.meshgrid(lat,lon)
 
 
 # Define parameters
 # -----------------
 mdini = dt.datetime.strptime(meteo_ini,'%Y-%m-%d').toordinal()
 mdend = dt.datetime.strptime(meteo_end,'%Y-%m-%d').toordinal()
-
 name = 'reanalysis-cerra-single-levels'
 
+
+# --------------------------------------------------------------------------------
+#                            VARIABLE DEFINITION
+# --------------------------------------------------------------------------------
 tags = []      # File tag                  Variable name    'Units'      Output tag        
 # --------------------------------------------------------------------------------
 tags.append(['2m_temperature',                 't2m'     ,  'degK'      , 'atemp'  ])
@@ -73,8 +83,6 @@ met_lon = np.array(ds['longitude']).flatten()
 met_lat = np.array(ds['latitude']).flatten()
 ds.close()
 
-# Mesh model lon/lat
-LAT,LON = np.meshgrid(lat,lon)
 
 
 # Load model outputs for mask
@@ -171,18 +179,23 @@ for tag in tags:
   ds.close()
 
 
+  # ---------------
   # Specific tuning
   # ---------------
+
+  # Convention
+  if ftag == 'surface_net_thermal_radiation' or ftag == 'surface_net_solar_radiation':
+    full_data = -full_data
 
   # Joule to Watt
   if ftag == 'surface_net_solar_radiation' or tag[0] == 'surface_net_thermal_radiation':
     full_data = full_data/3600.
 
-  # Store temperature
+  # Store temperature to compute specific humidity
   if ftag == '2m_temperature':
     t2m = full_data
 
-  # Store mean pressure
+  # Store mean pressure to compute specific humidity
   if ftag == 'mean_sea_level_pressure':
     msl = full_data
 
@@ -222,7 +235,19 @@ for tag in tags:
 
   # Write to binary file
   # --------------------
-  full_data.tofile(bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end)
+  full_data.tofile(bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end,format='float32')
+  print('[FILE SAVED] '+bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end+'\n')
+
+
+  """
+  # TEST 
+  arr = full_data.flatten()
+  print('Rec array shape', arr.shape)
+
+  arr2 = np.fromfile(bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end)
+  arr2 = arr2.flatten()
+  print('Read array shape', arr2.shape)
+  """
 
 
 # ------------
@@ -239,7 +264,7 @@ print('Processing wind variables :\n')
 for jd in range(mdini,mdend+1):
   
   date = dt.datetime.fromordinal(jd)
-  print(date.strftime('%Y-%m-%d'))
+  print(date.strftime('%Y-%m-%d'),end='\r')
 
   year,mon,day = date.strftime('%Y'),date.strftime('%m'),date.strftime('%d')
 
@@ -277,7 +302,8 @@ ddir.close()
 ufull_data = np.array(ufull_data)
 vfull_data = np.array(vfull_data)
 
-# Write to file
+# Write to NetCDF file
+# --------------------
 vdata = dataset.createVariable('u10',np.float32,('time','latitude','longitude'),fill_value=-9999)
 vdata.units = 'm s**-1'
 vdata.long_name = '10 meter U wind component'
@@ -289,10 +315,13 @@ vdata.units = 'm s**-1'
 vdata.long_name = '10 meter V wind component'
 vdata[:] = vfull_data
 
+# Write to binary file
+# --------------------
+ufull_data.tofile(bindir+'/BC_uwind_'+meteo_ini+'_'+meteo_end)
+vfull_data.tofile(bindir+'/BC_vwind_'+meteo_ini+'_'+meteo_end)
 
 print('')
-print('[FILE SAVED] '+ncdir+'/'+oname)
+print('[FILE SAVED] '+ncdir+'/'+oname+'\n')
 dataset.close()
-
 
 
