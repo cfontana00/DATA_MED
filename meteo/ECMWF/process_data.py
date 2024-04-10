@@ -36,6 +36,10 @@ indir = diagdir+'/'+config+'/METEO'
 ncdir = diagdir+'/'+config+'/METEO/ITP_NC' 
 os.system('mkdir -p '+ncdir)
 
+bindir = diagdir+'/'+config+'/METEO/ITP_BIN' 
+os.system('mkdir -p '+bindir)
+
+
 
 # Load lon/lat
 # ------------
@@ -49,10 +53,17 @@ mdend = dt.datetime.strptime(meteo_end,'%Y-%m-%d').toordinal()
 
 name = 'reanalysis-cerra-single-levels'
 
-tags = []      # File tag                Variable name    'Units'      Output tag        
-tags.append(['2m_temperature',               't2m'     ,  'degK'      ,'tag'  ])
-#tags.append(['2m_relative_humidity',         'r2'      ,        ,'tag'  ])
-#tags.append(['surface_net_solar_radiation',  'ssr'     ,   'W.m-2'     , 'tag'  ])
+tags = []      # File tag                  Variable name    'Units'      Output tag        
+# --------------------------------------------------------------------------------
+tags.append(['2m_temperature',                 't2m'     ,  'degK'      , 'atemp'  ])
+tags.append(['mean_sea_level_pressure',        'msl'    ,    'Pa'       , 'apress'  ])
+tags.append(['2m_relative_humidity',           'r2'      ,   '%'        , 'aqh'  ])
+tags.append(['surface_net_solar_radiation',    'ssr'     ,   'W m**-2'  , 'swflux'  ])
+tags.append(['surface_net_thermal_radiation',  'str'     ,   'W m**-2'  , 'lwflux'  ])
+tags.append(['total_precipitation',            'tp'    ,    'kg m**-2'  , 'precip'  ])
+#tags.append(['total_cloud_cover',              'tcc'    ,    '%'        ,  'tag'  ])
+# --------------------------------------------------------------------------------
+
 
 # Load meteo lon/lat
 # ------------------
@@ -66,10 +77,14 @@ ds.close()
 LAT,LON = np.meshgrid(lat,lon)
 
 
+# Load model outputs for mask
+# ---------------------------
+fname = glob(outdir+'/*TEMP*.nc')[0]
+ds = xr.open_dataset(fname)
+mask = np.array(ds['thetao'][0,0,:,:]).squeeze()
+ds.close()
 
-print('Processing data :\n')
 
-switch = 0
 
 
 # Initialize NetCDF file for writing
@@ -77,11 +92,11 @@ switch = 0
 meteo_ini = meteo_ini.replace('-','') 
 meteo_end = meteo_end.replace('-','') 
 
-fname = name + '_'+ meteo_ini +'_'\
+oname = name + '_'+ meteo_ini +'_'\
                   + meteo_end +'.nc'
 
 # Open file
-dataset = Dataset(ncdir+'/'+fname,'w',format='NETCDF3_CLASSIC')
+dataset = Dataset(ncdir+'/'+oname,'w',format='NETCDF3_CLASSIC')
 
 # Create dimension
 dlon = dataset.createDimension('longitude',lon.shape[0])
@@ -102,18 +117,23 @@ vlat[:] = lat
 vtime = dataset.createVariable('time',np.float32,('time'))
 vtime.units = "hours since 1900-01-01 00:00:00"
 vtime.calendar = "gregorian"
-vtime[:] = range(0,(mdend-mdini+1)*8)
+
+# Set time values
+dori = dt.datetime(1900,1,1).toordinal()
+hori = (mdini - dori )*24
+vtime[:] = range(hori,hori+(mdend-mdini+1)*24,3)
 
 
-
+# --------------------------
 # Process standard variables
 # --------------------------
+print('Processing standard variables :\n')
 for tag in tags:
 
   ftag = tag[0]
   var = tag[1]
-  otag = tag[2]
-  units = tag[3]
+  units = tag[2]
+  otag = tag[3]
 
   print('=>',ftag)
 
@@ -125,72 +145,154 @@ for tag in tags:
   for jd in range(mdini,mdend+1):
 
     date = dt.datetime.fromordinal(jd) 
-    print(date.strftime('%Y-%m-%d'))
+    print(date.strftime('%Y-%m-%d'),end='\r')
 
     year,mon,day = date.strftime('%Y'),date.strftime('%m'),date.strftime('%d')
 
     # Load variable
     fname = indir+'/'+name+'_'+str(year)+mon+'_'+ftag+'.nc'
     ds = xr.open_dataset(fname)
+    long_name = ds[var].GRIB_name
 
     # Loop on records
     for rec in range(0,8):
 
-      data = np.array(ds[var])[8*int(day)+rec,:,:]
+      data = np.array(ds[var])[8*(int(day)-1)+rec,:,:]
 
       # Interpolate on model grid
       data = data.flatten()
-      idata = griddata((met_lat,met_lon),data,(LAT,LON),method='linear') 
-      full_data.append(idata.T)
+      idata = griddata((met_lat,met_lon),data,(LAT,LON),method='linear').T
+
+      idata[np.where(np.isnan(mask))] = np.nan
+
+      full_data.append(idata)
 
   full_data = np.array(full_data)
   ds.close()
 
 
   # Specific tuning
-  #if tag[0] == 'surface_net_solar_radiation':
-  #  full_data = full_data/3600.
-  #  print('HERE')
+  # ---------------
+
+  # Joule to Watt
+  if ftag == 'surface_net_solar_radiation' or tag[0] == 'surface_net_thermal_radiation':
+    full_data = full_data/3600.
+
+  # Store temperature
+  if ftag == '2m_temperature':
+    t2m = full_data
+
+  # Store mean pressure
+  if ftag == 'mean_sea_level_pressure':
+    msl = full_data
+
+  # Units convertion
+  if ftag == 'total_precipitation':
+    full_data = full_data/1000/3600  # from kg/m^2 (i.e., mm/hr) to m/s    
+
+  # Compute specific humidity
+  if ftag == '2m_relative_humidity':
+
+    raw_data = full_data.copy()
+    full_data = []
+
+    for rec in range(0,raw_data.shape[0]):
+
+      Td=t2m[rec,:,:].squeeze()-273.15 # K to deg C
+      p=msl[rec,:,:].squeeze()/100  # Pa to mb
+
+      e = 6.112*np.exp((17.67*Td)/(Td + 243.5)) # See ./README.md
+      q = (0.622 * e)/(p - (0.378 * e))
+
+      full_data.append(q)
+    
+    full_data = np.array(full_data)
+    units = 'g kg-1'
+    long_name = 'Specific humidity'
+
 
 
   # Write variable to NetCDF
   # ------------------------
   vdata = dataset.createVariable(var,np.float32,('time','latitude','longitude'),fill_value=-9999)
   vdata.units = units 
-  print(var)
-  vlat.long_name = ds[var].GRIB_name
-
+  vdata.long_name = long_name
   vdata[:] = full_data
 
 
+  # Write to binary file
+  # --------------------
+  full_data.tofile(bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end)
 
+
+# ------------
+# Process wind 
+# ------------
+
+# Loop on days
+# ------------
+
+ufull_data = []
+vfull_data = []
+
+print('Processing wind variables :\n')
+for jd in range(mdini,mdend+1):
+  
+  date = dt.datetime.fromordinal(jd)
+  print(date.strftime('%Y-%m-%d'))
+
+  year,mon,day = date.strftime('%Y'),date.strftime('%m'),date.strftime('%d')
+
+  # Load variable
+  fname = indir+'/'+name+'_'+str(year)+mon+'_10m_wind_speed.nc'
+  dsp = xr.open_dataset(fname)
+
+  fname = indir+'/'+name+'_'+str(year)+mon+'_10m_wind_direction.nc'
+  ddir = xr.open_dataset(fname)
+
+  # Loop on records
+  for rec in range(0,8):
+
+     sdata = np.array(dsp['si10'])[8*(int(day)-1)+rec,:,:]
+     ddata = np.array(ddir['wdir10'])[8*(int(day)-1)+rec,:,:]
+
+     # Interpolate on model grid
+     sdata = sdata.flatten()
+     ddata = ddata.flatten()
+
+     isdata = griddata((met_lat,met_lon),sdata,(LAT,LON),method='linear').T
+
+     ddata = ddata*2*np.pi/360
+     icos = griddata((met_lat,met_lon),np.cos(ddata),(LAT,LON),method='linear').T
+     isin = griddata((met_lat,met_lon),np.sin(ddata),(LAT,LON),method='linear').T
+
+     isdata[np.where(np.isnan(mask))] = np.nan
+
+     ufull_data.append(isdata*icos)
+     vfull_data.append(isdata*isin)
+
+dsp.close()
+ddir.close()
+
+ufull_data = np.array(ufull_data)
+vfull_data = np.array(vfull_data)
+
+# Write to file
+vdata = dataset.createVariable('u10',np.float32,('time','latitude','longitude'),fill_value=-9999)
+vdata.units = 'm s**-1'
+vdata.long_name = '10 meter U wind component'
+vdata[:] = ufull_data
+
+
+vdata = dataset.createVariable('v10',np.float32,('time','latitude','longitude'),fill_value=-9999)
+vdata.units = 'm s**-1'
+vdata.long_name = '10 meter V wind component'
+vdata[:] = vfull_data
+
+
+print('')
+print('[FILE SAVED] '+ncdir+'/'+oname)
 dataset.close()
 
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
-'''
-
-    for var in [ '10m_wind_direction', '10m_wind_speed', '2m_relative_humidity','surface_latent_heat_flux', 'surface_net_solar_radiation', 'surface_net_thermal_radiation','surface_pressure', 'surface_sensible_heat_flux', 'surface_solar_radiation_downwards','surface_thermal_radiation_downwards', 'time_integrated_surface_direct_short_wave_radiation_flux', 'total_cloud_cover','2m_temperature', 'evaporation', 'mean_sea_level_pressure','total_precipitation',  '2m_temperature']:
-
-
-'''
 
 
