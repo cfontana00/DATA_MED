@@ -73,11 +73,6 @@ for year in range(int(yini),int(yend)+1):
 
     mon = str(mon).zfill(2)
 
-    '''
-    for var in [ '10m_wind_direction', '10m_wind_speed', '2m_relative_humidity','surface_latent_heat_flux', 'surface_net_solar_radiation', 'surface_net_thermal_radiation','surface_pressure', 'surface_sensible_heat_flux', 'surface_solar_radiation_downwards','surface_thermal_radiation_downwards', 'time_integrated_surface_direct_short_wave_radiation_flux', 'total_cloud_cover','2m_temperature', 'evaporation', 'mean_sea_level_pressure','total_precipitation',  '2m_temperature']:
-    '''
-
-
     for var in ['10m_wind_direction','10m_wind_speed',\
             '2m_temperature','2m_relative_humidity',\
             'surface_net_solar_radiation','surface_net_thermal_radiation',\

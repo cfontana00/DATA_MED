@@ -21,8 +21,8 @@ from fun_gen import *
 
 # Convert river dates
 # -------------------
-rdini=datetime.strptime(river_ini,'%Y-%m-%d').toordinal()
-rdend=datetime.strptime(river_end,'%Y-%m-%d').toordinal()
+rdini = datetime.strptime(river_ini,'%Y-%m-%d').toordinal()
+rdend = datetime.strptime(river_end,'%Y-%m-%d').toordinal()
 
 # Create arborescence
 os.system('mkdir -p '+diagdir+'/'+config)
@@ -39,7 +39,7 @@ full=[]
 
 # Loop on rivers
 # --------------
-print('Processing rivers')
+print('Processing rivers\n')
 for name in french_list:
 
   print('=>',name)

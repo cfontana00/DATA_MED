@@ -14,9 +14,10 @@ import datetime as dt
 import cdsapi
 from fun_gen import *
 from fun_io import *
-from fun_meteo import *
 import xarray as xr
 from scipy.interpolate import griddata
+from netCDF4 import Dataset
+
 
 
 # Get args
@@ -73,6 +74,7 @@ tags.append(['total_precipitation',            'tp'    ,    'kg m**-2'  , 'preci
 #tags.append(['total_cloud_cover',              'tcc'    ,    '%'        ,  'tag'  ])
 # --------------------------------------------------------------------------------
 
+
 # Load meteo lon/lat
 # ------------------
 fname = glob(indir+'/*2m_temperature*')[0]
@@ -98,6 +100,38 @@ ds.close()
 meteo_ini = meteo_ini.replace('-','') 
 meteo_end = meteo_end.replace('-','') 
 
+oname = name + '_'+ meteo_ini +'_'\
+                  + meteo_end +'.nc'
+
+# Open file
+dataset = Dataset(ncdir+'/'+oname,'w',format='NETCDF4_CLASSIC')
+
+# Create dimension
+dlon = dataset.createDimension('longitude',lon.shape[0])
+dlat = dataset.createDimension('latitude',lat.shape[0])
+dtime = dataset.createDimension('time',(mdend-mdini+1)*8)
+
+# Create variables & set attributes
+vlon = dataset.createVariable('longitude',np.float32,('longitude'))
+vlon.units = "degrees east"
+vlon.long_name = "longitude"
+vlon[:] = lon
+
+vlat = dataset.createVariable('latitude',np.float32,('latitude'))
+vlat.units = "degrees north"
+vlat.long_name = "latitude"
+vlat[:] = lat
+
+vtime = dataset.createVariable('time',np.float32,('time'))
+vtime.units = "hours since 1900-01-01 00:00:00"
+vtime.calendar = "gregorian"
+
+# Set time values
+dori = dt.datetime(1900,1,1).toordinal()
+hori = (mdini - dori )*24
+vtime[:] = range(hori,hori+(mdend-mdini+1)*24,3)
+
+
 # --------------------------
 # Process standard variables
 # --------------------------
@@ -110,7 +144,6 @@ for tag in tags:
   otag = tag[3]
 
   print('=>',ftag)
-  print('---------------')
 
   full_data = []
 
@@ -138,7 +171,7 @@ for tag in tags:
       data = data.flatten()
       idata = griddata((met_lat,met_lon),data,(LAT,LON),method='linear').T
 
-      #idata[np.where(np.isnan(mask))] = np.nan
+      idata[np.where(np.isnan(mask))] = np.nan
 
       full_data.append(idata)
 
@@ -194,22 +227,32 @@ for tag in tags:
 
   # Write variable to NetCDF
   # ------------------------
-  oname = name +'_'+ftag+ '_'+ meteo_ini +'_'\
-                  + meteo_end +'.nc'
-  write_nc_meteo(ncdir+'/'+oname,lon,lat,var,full_data,long_name,units)
+  vdata = dataset.createVariable(var,np.float32,('time','latitude','longitude'),fill_value=-9999)
+  vdata.units = units 
+  vdata.long_name = long_name
+  vdata[:] = full_data
 
 
   # Write to binary file
   # --------------------
-  full_data.tofile(bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end,format='%f')
+  full_data.tofile(bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end,format='float32')
   print('[FILE SAVED] '+bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end+'\n')
 
 
+  """
+  # TEST 
+  arr = full_data.flatten()
+  print('Rec array shape', arr.shape)
+
+  arr2 = np.fromfile(bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end)
+  arr2 = arr2.flatten()
+  print('Read array shape', arr2.shape)
+  """
 
 
-# ------------ #
-# Process wind #
-# ------------ #
+# ------------
+# Process wind 
+# ------------
 
 # Loop on days
 # ------------
@@ -218,7 +261,6 @@ ufull_data = []
 vfull_data = []
 
 print('Processing wind variables :\n')
-print('---------------------------\n')
 for jd in range(mdini,mdend+1):
   
   date = dt.datetime.fromordinal(jd)
@@ -249,7 +291,7 @@ for jd in range(mdini,mdend+1):
      icos = griddata((met_lat,met_lon),np.cos(ddata),(LAT,LON),method='linear').T
      isin = griddata((met_lat,met_lon),np.sin(ddata),(LAT,LON),method='linear').T
 
-     #isdata[np.where(np.isnan(mask))] = np.nan
+     isdata[np.where(np.isnan(mask))] = np.nan
 
      ufull_data.append(isdata*icos)
      vfull_data.append(isdata*isin)
@@ -262,29 +304,24 @@ vfull_data = np.array(vfull_data)
 
 # Write to NetCDF file
 # --------------------
+vdata = dataset.createVariable('u10',np.float32,('time','latitude','longitude'),fill_value=-9999)
+vdata.units = 'm s**-1'
+vdata.long_name = '10 meter U wind component'
+vdata[:] = ufull_data
 
-# U10
-units = 'm s**-1'
-long_name = '10 meter U wind component'
-oname = name +'_uwind_'+ meteo_ini +'_'\
-                  + meteo_end +'.nc'
 
-write_nc_meteo(ncdir+'/'+oname,lon,lat,'u10',ufull_data,long_name,units)
-
-# V10
-long_name = '10 meter V wind component'
-oname = name +'_vwind_'+ meteo_ini +'_'\
-                  + meteo_end +'.nc'
-
-write_nc_meteo(ncdir+'/'+oname,lon,lat,'v10',vfull_data,long_name,units)
-
+vdata = dataset.createVariable('v10',np.float32,('time','latitude','longitude'),fill_value=-9999)
+vdata.units = 'm s**-1'
+vdata.long_name = '10 meter V wind component'
+vdata[:] = vfull_data
 
 # Write to binary file
 # --------------------
-ufull_data.tofile(bindir+'/BC_uwind_'+meteo_ini+'_'+meteo_end,format='%f')
-print('[FILE SAVED] '+bindir+'/BC_uwind_'+meteo_ini+'_'+meteo_end)
+ufull_data.tofile(bindir+'/BC_uwind_'+meteo_ini+'_'+meteo_end)
+vfull_data.tofile(bindir+'/BC_vwind_'+meteo_ini+'_'+meteo_end)
 
-vfull_data.tofile(bindir+'/BC_vwind_'+meteo_ini+'_'+meteo_end,format='%f')
-print('[FILE SAVED] '+bindir+'/BC_vwind_'+meteo_ini+'_'+meteo_end)
+print('')
+print('[FILE SAVED] '+ncdir+'/'+oname+'\n')
+dataset.close()
 
 
