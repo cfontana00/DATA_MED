@@ -142,7 +142,7 @@ for tag in tags:
 
       full_data.append(idata)
 
-  full_data = np.array(full_data)
+  full_data = np.array(full_data,dtype='float32')
   ds.close()
 
 
@@ -186,7 +186,7 @@ for tag in tags:
 
       full_data.append(q)
     
-    full_data = np.array(full_data)
+    full_data = np.array(full_data,dtype='float32')
     units = 'g kg-1'
     long_name = 'Specific humidity'
 
@@ -198,13 +198,22 @@ for tag in tags:
                   + meteo_end +'.nc'
   write_nc_meteo(ncdir+'/'+oname,lon,lat,var,full_data,long_name,units)
 
+  # TEST !!!!!!!
+  #if ftag == '2m_temperature':
+  #    full_data = full_data[0:2,:,:]
 
   # Write to binary file
   # --------------------
-  full_data.tofile(bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end,format='%f')
+  full_data.tofile(bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end,format='float32')
   print('[FILE SAVED] '+bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end+'\n')
 
-
+  ''' 
+  data = np.fromfile(bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end,dtype='float32')
+  nrec = int(data.shape[0]/(336*784))
+  data = data.reshape([nrec,336,784])
+  print(nrec,data[3,100,100])
+  exit()
+  '''
 
 
 # ------------ #
@@ -257,8 +266,8 @@ for jd in range(mdini,mdend+1):
 dsp.close()
 ddir.close()
 
-ufull_data = np.array(ufull_data)
-vfull_data = np.array(vfull_data)
+ufull_data = np.array(ufull_data,dtype='float32')
+vfull_data = np.array(vfull_data,dtype='float32')
 
 # Write to NetCDF file
 # --------------------
@@ -281,10 +290,10 @@ write_nc_meteo(ncdir+'/'+oname,lon,lat,'v10',vfull_data,long_name,units)
 
 # Write to binary file
 # --------------------
-ufull_data.tofile(bindir+'/BC_uwind_'+meteo_ini+'_'+meteo_end,format='%f')
+ufull_data.tofile(bindir+'/BC_uwind_'+meteo_ini+'_'+meteo_end,format='float32')
 print('[FILE SAVED] '+bindir+'/BC_uwind_'+meteo_ini+'_'+meteo_end)
 
-vfull_data.tofile(bindir+'/BC_vwind_'+meteo_ini+'_'+meteo_end,format='%f')
+vfull_data.tofile(bindir+'/BC_vwind_'+meteo_ini+'_'+meteo_end,format='float32')
 print('[FILE SAVED] '+bindir+'/BC_vwind_'+meteo_ini+'_'+meteo_end)
 
 
