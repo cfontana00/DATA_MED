@@ -28,6 +28,29 @@ config = sys.argv[1]  # Configuration name
 load_config(config)
 from fun_gen import *
 
+# Try to read date as parameters
+# ------------------------------
+try : 
+  arg_ini = sys.argv[2]
+  arg_end = sys.argv[3]
+
+  # Define parameters
+  # -----------------
+  mdini = dt.datetime.strptime(arg_ini,'%Y-%m-%d').toordinal()
+  mdend = dt.datetime.strptime(arg_end,'%Y-%m-%d').toordinal()
+
+except :
+  print('No date arguments given')
+  print('=> Saving all in one file\n')
+
+  # Define parameters
+  # -----------------
+  mdini = dt.datetime.strptime(meteo_ini,'%Y-%m-%d').toordinal()
+  mdend = dt.datetime.strptime(meteo_end,'%Y-%m-%d').toordinal()
+
+
+
+
 print('NB /!\: 3-h fields hard coded ...\n')
 
 
@@ -52,10 +75,6 @@ lon,lat,levels = load_coords()
 LAT,LON = np.meshgrid(lat,lon)
 
 
-# Define parameters
-# -----------------
-mdini = dt.datetime.strptime(meteo_ini,'%Y-%m-%d').toordinal()
-mdend = dt.datetime.strptime(meteo_end,'%Y-%m-%d').toordinal()
 name = 'reanalysis-cerra-single-levels'
 
 
@@ -114,10 +133,17 @@ for tag in tags:
 
   full_data = []
 
+  # Tag for file name
+  tag_ini = dt.datetime.fromordinal(mdini)
+  tag_ini = tag_ini.strftime('%Y%m%d')
+
+  tag_end = dt.datetime.fromordinal(mdend)
+  tag_end = tag_end.strftime('%Y%m%d')
+
 
   # Loop on days
   # ------------
-  for jd in range(mdini,mdend+1):
+  for jd in range(mdini,mdend+2):
 
     date = dt.datetime.fromordinal(jd) 
     print(date.strftime('%Y-%m-%d'),end='\r')
@@ -194,9 +220,9 @@ for tag in tags:
 
   # Write variable to NetCDF
   # ------------------------
-  oname = name +'_'+ftag+ '_'+ meteo_ini +'_'\
-                  + meteo_end +'.nc'
-  write_nc_meteo(ncdir+'/'+oname,lon,lat,var,full_data,long_name,units)
+  oname = name +'_'+ftag+ '_'+ tag_ini +'_'\
+                  + tag_end +'.nc'
+  write_nc_meteo(ncdir+'/'+oname,mdini,mdend,lon,lat,var,full_data,long_name,units)
 
   # TEST !!!!!!!
   #if ftag == '2m_temperature':
@@ -204,8 +230,8 @@ for tag in tags:
 
   # Write to binary file
   # --------------------
-  full_data.tofile(bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end,format='float32')
-  print('[FILE SAVED] '+bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end+'\n')
+  full_data.tofile(bindir+'/BC_'+otag+'_'+tag_ini+'_'+tag_end,format='float32')
+  print('[FILE SAVED] '+bindir+'/BC_'+otag+'_'+tag_ini+'_'+tag_end+'\n')
 
   ''' 
   data = np.fromfile(bindir+'/BC_'+otag+'_'+meteo_ini+'_'+meteo_end,dtype='float32')
@@ -228,7 +254,7 @@ vfull_data = []
 
 print('Processing wind variables :\n')
 print('---------------------------\n')
-for jd in range(mdini,mdend+1):
+for jd in range(mdini,mdend+2):
   
   date = dt.datetime.fromordinal(jd)
   print(date.strftime('%Y-%m-%d'),end='\r')
@@ -278,22 +304,20 @@ long_name = '10 meter U wind component'
 oname = name +'_uwind_'+ meteo_ini +'_'\
                   + meteo_end +'.nc'
 
-write_nc_meteo(ncdir+'/'+oname,lon,lat,'u10',ufull_data,long_name,units)
+write_nc_meteo(ncdir+'/'+oname,mdini,mdend,lon,lat,'u10',ufull_data,long_name,units)
 
 # V10
 long_name = '10 meter V wind component'
 oname = name +'_vwind_'+ meteo_ini +'_'\
                   + meteo_end +'.nc'
 
-write_nc_meteo(ncdir+'/'+oname,lon,lat,'v10',vfull_data,long_name,units)
+write_nc_meteo(ncdir+'/'+oname,mdini,mdend,lon,lat,'v10',vfull_data,long_name,units)
 
 
 # Write to binary file
 # --------------------
-ufull_data.tofile(bindir+'/BC_uwind_'+meteo_ini+'_'+meteo_end,format='float32')
-print('[FILE SAVED] '+bindir+'/BC_uwind_'+meteo_ini+'_'+meteo_end)
+ufull_data.tofile(bindir+'/BC_uwind_'+tag_ini+'_'+tag_end,format='float32')
+print('[FILE SAVED] '+bindir+'/BC_uwind_'+tag_ini+'_'+tag_end)
 
-vfull_data.tofile(bindir+'/BC_vwind_'+meteo_ini+'_'+meteo_end,format='float32')
-print('[FILE SAVED] '+bindir+'/BC_vwind_'+meteo_ini+'_'+meteo_end)
-
-
+vfull_data.tofile(bindir+'/BC_vwind_'+tag_ini+'_'+meteo_end,format='float32')
+print('[FILE SAVED] '+bindir+'/BC_vwind_'+tag_ini+'_'+tag_end)
