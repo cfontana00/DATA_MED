@@ -301,15 +301,16 @@ vfull_data = np.array(vfull_data,dtype='float32')
 # U10
 units = 'm s**-1'
 long_name = '10 meter U wind component'
-oname = name +'_uwind_'+ meteo_ini +'_'\
-                  + meteo_end +'.nc'
+oname = name +'_uwind_'+ tag_ini +'_'\
+                  + tag_end +'.nc'
 
+print('DATE',mdini,mdend)
 write_nc_meteo(ncdir+'/'+oname,mdini,mdend,lon,lat,'u10',ufull_data,long_name,units)
 
 # V10
 long_name = '10 meter V wind component'
-oname = name +'_vwind_'+ meteo_ini +'_'\
-                  + meteo_end +'.nc'
+oname = name +'_vwind_'+ tag_ini +'_'\
+                  + tag_end +'.nc'
 
 write_nc_meteo(ncdir+'/'+oname,mdini,mdend,lon,lat,'v10',vfull_data,long_name,units)
 
@@ -319,5 +320,5 @@ write_nc_meteo(ncdir+'/'+oname,mdini,mdend,lon,lat,'v10',vfull_data,long_name,un
 ufull_data.tofile(bindir+'/BC_uwind_'+tag_ini+'_'+tag_end,format='float32')
 print('[FILE SAVED] '+bindir+'/BC_uwind_'+tag_ini+'_'+tag_end)
 
-vfull_data.tofile(bindir+'/BC_vwind_'+tag_ini+'_'+meteo_end,format='float32')
+vfull_data.tofile(bindir+'/BC_vwind_'+tag_ini+'_'+tag_end,format='float32')
 print('[FILE SAVED] '+bindir+'/BC_vwind_'+tag_ini+'_'+tag_end)

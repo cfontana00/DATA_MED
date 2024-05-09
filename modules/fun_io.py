@@ -4,6 +4,7 @@
 import xarray as xr
 import numpy as np
 import datetime as dt
+import os
 from glob import glob
 import matplotlib.pyplot as plt
 from scipy.interpolate import griddata

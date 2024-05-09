@@ -10,12 +10,7 @@ import numpy as np
 
 # Write NetCDF file
 # -----------------
-def write_nc_meteo(fname,lon,lat,var,data,long_name,units):
-
-  from fun_gen import meteo_ini,meteo_end
-
-  mdini = dt.datetime.strptime(meteo_ini,'%Y-%m-%d').toordinal()
-  mdend = dt.datetime.strptime(meteo_end,'%Y-%m-%d').toordinal()
+def write_nc_meteo(fname,mdini,mdend,lon,lat,var,data,long_name,units):
 
 
   # Open file
@@ -24,7 +19,7 @@ def write_nc_meteo(fname,lon,lat,var,data,long_name,units):
   # Create dimension
   dlon = dataset.createDimension('longitude',lon.shape[0])
   dlat = dataset.createDimension('latitude',lat.shape[0])
-  dtime = dataset.createDimension('time',(mdend-mdini+1)*8)
+  dtime = dataset.createDimension('time',(mdend-mdini+2)*8)
 
   # Create variables & set attributes
   vlon = dataset.createVariable('longitude',np.float32,('longitude'))
@@ -43,7 +38,7 @@ def write_nc_meteo(fname,lon,lat,var,data,long_name,units):
 
   dori = dt.datetime(1900,1,1).toordinal()
   hori = (mdini - dori )*24
-  time = range(hori,hori+(mdend-mdini+1)*24,3)
+  time = range(hori,hori+(mdend-mdini+2)*24,3)
 
 
   vtime[:] = time
