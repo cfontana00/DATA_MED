@@ -17,10 +17,10 @@
 
 "_____":"METEO PARAMETERS",
 
-"meteo_ini":"2019-05-01",
-"meteo_end":"2019-05-30",
+"meteo_ini":"2019-04-01",
+"meteo_end":"2019-04-30",
 "day_cycle":2,
-"n_cycle":5,
+"n_cycle":30,
 "imin":"500",
 "imax":"600",
 "jmin":"350",

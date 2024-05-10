@@ -64,13 +64,11 @@ for plon in lon_uni:
     elif var == 'TEMP_ADJUSTED':
        mod_var = 'thetao'
 
-
     # Get current variable parameters
     vname, ftag, cmap, islog, vmod, vmin, vmax, label, units\
         = load_variable(config,mod_var)
 
     # Convert date
-    ptime = []
     dstr = str(time[idx][0]).split('T')[0]
     jd = dt.datetime.strptime(dstr,'%Y-%m-%d').toordinal()
 
