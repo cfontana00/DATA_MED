@@ -73,8 +73,9 @@
 
 "fig_prox":"8",                         
 "fig_proy":"4",                        
-"col1":"r",
-"col2":"b",
+"col_bcg":["g","b","r"],
+"col_phy":["b","r"],
+
 
 
 "_____":"INTERPOLATION PARAMETERS",
