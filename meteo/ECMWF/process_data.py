@@ -28,6 +28,7 @@ config = sys.argv[1]  # Configuration name
 load_config(config)
 from fun_gen import *
 
+
 # Try to read date as parameters
 # ------------------------------
 try : 

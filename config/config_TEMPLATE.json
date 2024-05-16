@@ -25,6 +25,10 @@
 "jmin":"350",
 "jmax":"450",
 
+"_____":"ARGO",
+
+"argo_ds":"phy",
+
 
 
 "_____":"DYFAMED PARAMETERS",

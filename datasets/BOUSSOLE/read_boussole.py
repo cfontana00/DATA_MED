@@ -2,7 +2,8 @@
 # Routine reading BOUSSOLE data     #
 # and interpolating model variables #
 #####################################
-
+import warnings
+warnings.simplefilter("ignore")
 import numpy as np
 
 from fun_gen import *
@@ -49,9 +50,6 @@ with open('data/Boussole-pig-maj20240116.csv') as fd:
      year = line[4]
      hour = str(int(float(line[5])))
 
-     if year == '2022':
-       year = '2021' # !!!!!!!!!!!!
-
      try:
        jd = dt.datetime.strptime(year+mon+day,'%Y%m%d').toordinal()
        jd = jd + float(line[5])/24.
@@ -75,9 +73,6 @@ lon_mod,lat_mod,lev_mod=load_coords()
 print('Processing day:\n')
 for jd in range(jdini,jdend+1):
 
-   # Get filename
-   fname,dtag = get_filename(int(np.floor(jd)),ftag)
-   print(dtag)
     
    profile=[]
                                                                
@@ -89,6 +84,12 @@ for jd in range(jdini,jdend+1):
    # Get model values
    # ----------------
    if idx.any() : 
+
+     d = dt.datetime.fromordinal(int(np.floor(jd)))
+     print('Data found on',d.strftime('%Y-%m-%d'))
+
+     # Get filename
+     fname,dtag = get_filename(int(np.floor(jd)),ftag)
 
      # Select data for this layer
      slc = data[idx].squeeze()
@@ -105,7 +106,6 @@ for jd in range(jdini,jdend+1):
 
 
      # Store profile
-     d = dt.datetime.fromordinal(int(np.floor(jd)))
 
      # Write data 
      np.savetxt(savedir+'/boussole_profile_'+d.strftime('%Y-%m-%d')+'.dat',profile)
@@ -122,7 +122,7 @@ for jd in range(jdini,jdend+1):
      plt.xlabel(label+' ('+units+')')
      plt.ylabel("Depth (m)")
 
-     #savefig(savedir+'/boussole_profile_'+d.strftime('%Y-%m-%d')+'.'+fig_fmt)
+     savefig(savedir+'/boussole_profile_'+d.strftime('%Y-%m-%d')+'.'+fig_fmt)
      plt.show()
 
      print('')

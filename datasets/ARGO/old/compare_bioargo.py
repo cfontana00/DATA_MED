@@ -31,10 +31,6 @@ config = sys.argv[1]  # Configuration name
 load_config(config)
 from fun_gen import *
 
-tag = ''
-if argo_ds == 'bgc':
-  tag = 'bio'
-
 # Create arborescence
 # -------------------
 os.system('mkdir -p '+diagdir)
@@ -50,7 +46,7 @@ lon_mod,lat_mod,lev_mod=load_coords()
 # Load data
 # ---------
 savedir = diagdir+'/'+config+'/ARGO'
-ds = xr.open_dataset(savedir+'/'+tag+'argo.nc')
+ds = xr.open_dataset(savedir+'/bioargo.nc')
 
 lat = np.array( ds['LATITUDE'])
 lon = np.array(ds['LONGITUDE'])
@@ -89,18 +85,12 @@ for plon in lon_uni:
 
 
   print('Float',pnum,'cycle',pcyc)
-  print('-----')
 
 
   full_data = []
   full_val = []
 
-  varlist = ['PSAL_ADJUSTED','TEMP_ADJUSTED']
-
-  if argo_ds == 'bgc':
-     varlist = np.concatenate((['CHLA'],varlist))
-
-  for var in varlist:
+  for var in ['CHLA','PSAL_ADJUSTED','TEMP_ADJUSTED']:
 
     if var == 'CHLA':
        mod_var = 'chl'
@@ -117,14 +107,12 @@ for plon in lon_uni:
         = load_variable(config,mod_var)
 
     # Convert date
-    dstr = str(time[idx][0]).replace('.000000000','')
-    date = dt.datetime.strptime(dstr,'%Y-%m-%dT%H:%M:%S')
+    dstr = str(time[idx][0]).replace(':00.000000000','')
+    date = dt.datetime.strptime(dstr,'%Y-%m-%dT%H:%M')
     jd = date.toordinal()
  
     hours,mnt = date.strftime('%H'),date.strftime('%M')
     hours = int(np.round(float(hours)+float(mnt)/60.))
-    if hours == 24:
-      hours = 0
 
 
     # Get filename
@@ -132,14 +120,9 @@ for plon in lon_uni:
 
 
     # Interpolate model on data
-    try:
-      val  = get_model_val_3d(fname,hours,vname,\
+    val  = get_model_val_3d(fname,hours,vname,\
                lon_mod,lat_mod,lev_mod,\
                  data_lon,data_lat,data_pres)
-    except Exception as e:
-      print('Interpolation failed')
-      val = data_pres
-      val[:] = np.nan
 
     full_val.append(val)
     full_data.append(data)
@@ -150,25 +133,15 @@ for plon in lon_uni:
 
   # Plot profile
   # ------------
+  mchl,mpsal,mtemp = full_val[0],full_val[1],full_val[2]
+  dchl,dpsal,dtemp = full_data[0],full_data[1],full_data[2]
 
-  os.system('mkdir -p '+savedir+'/'+tag+str(pnum))
+  os.system('mkdir -p '+savedir+'/bio_'+str(pnum))
+  fout = savedir+'/bio_'+str(pnum)+'/profile_'+pcyc+'.'+fig_fmt
 
-  fout = savedir+'/'+tag+str(pnum)+'/profile_'+pcyc+'.'+fig_fmt
-  ptime = ptime.replace('.000000000','')
-
-  if argo_ds == 'bgc':
-    mchl,mpsal,mtemp = full_val[0],full_val[1],full_val[2]
-    dchl,dpsal,dtemp = full_data[0],full_data[1],full_data[2]
-
-    plot_profiles(fout,ptime,-data_pres,\
+  ptime = ptime.replace(':00.000000000','')
+  plot_profiles(fout,ptime,-data_pres,\
                mchl,dchl,'Chlorophyll (mg.m$^{-3}$)',\
-               mpsal,dpsal,'Salinity',\
-               mtemp,dtemp,'Temperature (°C)')
-  else:
-    mpsal,mtemp = full_val[0],full_val[1]
-    dpsal,dtemp = full_data[0],full_data[1]
-
-    plot_profiles(fout,ptime,-data_pres,\
                mpsal,dpsal,'Salinity',\
                mtemp,dtemp,'Temperature (°C)')
 
@@ -180,17 +153,13 @@ for plon in lon_uni:
 
 print('Plot trajectories ...')
 
-# Load proj
-exec('proj = ' + fig_proj)
-
-pos = []
-prof = []
-
 # Loop on Argo float
 for n in np.unique(num):
 
    print(n)
 
+   # Load proj
+   exec('proj = ' + fig_proj)
 
    # Initialize map
    extent = [lon_mod.min(),lon_mod.max(),lat_mod.min(),lat_mod.max()]
@@ -204,51 +173,16 @@ for n in np.unique(num):
    plat = np.unique( lat[idx])
    txt = np.unique(cyc[idx])
 
-   pos.append([plon,plat,n])
-
-
    plt.plot(plon,plat,marker='+',linestyle='-')
 
    for i in [0,plon.shape[0]-1]:
      plt.text(plon[i],plat[i],str(txt[i]),fontsize=8)
 
    # Save figure
-   fout = savedir+'/'+tag+str(n)+'/map'+'.'+fig_fmt
+   fout = savedir+'/bio_'+str(n)+'/map'+'.'+fig_fmt
    savefig(fout)
 
    plt.close()
-
-
-# Figure for all trajectories
-fig, ax = plt.subplots(1,1,figsize=(float(fig_sx), float(fig_sy)), subplot_kw={'projection': proj})
-init_fig(ax,extent,proj)
-
-
-for p in pos:
-   
-   lon = np.array(p[0])
-   lat = np.array(p[1])
-   
-   plt.plot(lon,lat,marker='+',linestyle='none')
-   plt.text(lon[0],lat[0],str(p[2]))
-
-# Save figure
-fout = savedir+'/map'+tag+'.'+fig_fmt
-savefig(fout)
-
-plt.close()
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

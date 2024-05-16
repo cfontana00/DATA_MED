@@ -11,6 +11,8 @@ from scipy.interpolate import griddata
 import keyword
 import inspect
 import time
+from netCDF4 import Dataset
+
 
 
 # ------------ #
@@ -43,10 +45,11 @@ def load_coords():
   from fun_gen import outdir
 
   try :
-    ds=xr.open_dataset(glob(outdir+'/*TEMP*.nc')[0])
-    lon=np.array(ds['longitude'])
-    lat=np.array(ds['latitude'])
-    levels=np.array(ds['depth'])
+    search = outdir+'/*TEMP*.nc'
+    ds = xr.open_dataset(glob(search)[0])
+    lon = np.array(ds['longitude'])
+    lat = np.array(ds['latitude'])
+    levels = np.array(ds['depth'])
     ds.close()
 
   except Exception as e :
@@ -73,7 +76,7 @@ def get_var_2D(fname,var,lev):
 # ----------------- #
 # Load 3D variables #
 # ----------------- #
-def get_var_3D(fname,var,**kargs):
+def get_var_3D(fname,hours,var,**kargs):
 
   dmn = kargs['domain']
 
@@ -84,11 +87,14 @@ def get_var_3D(fname,var,**kargs):
   try:
 
     ds = xr.open_dataset(fname)
+
+    # Reduce domain
     if dmn:
-      arr = ds[var][23,idz,idy,idx].squeeze()
+      arr = ds[var][hours,idz,idy,idx]
+      arr = arr.squeeze()
 
     else:
-      arr = ds[var][23,:,:,:].squeeze()
+      arr = ds[var][hours,:,:,:].squeeze()
 
     ds.close()
 
@@ -101,7 +107,7 @@ def get_var_3D(fname,var,**kargs):
 # ------------------------ #
 # Get value from 3D fields #
 # ------------------------ #
-def get_model_val_3d(fname,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
+def get_model_val_3d(fname,hours,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
 
   start = time.time()
 
@@ -113,8 +119,8 @@ def get_model_val_3d(fname,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
   idy = np.where( (lat_mod > lat[0]-dump) & (lat_mod < lat[0]+dump) )
   idz = np.where( (lev_mod < depth[-1]+800))
 
-  var3d = np.array(get_var_3D(fname,var,domain=[idz,idy,idx]))
-  
+  var3d = np.array(get_var_3D(fname,hours,var,domain=[idz,idy,idx]))
+
   # Prepare interpolation
   LAT,LEV,LON = np.meshgrid(lat_mod[idy],lev_mod[idz],lon_mod[idx]) 
   LAT,LON,LEV = LAT.flatten(),LON.flatten(),LEV.flatten()

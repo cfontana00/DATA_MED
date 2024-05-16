@@ -39,6 +39,7 @@ def load_config(config):
    print('----------------------------------')
    print('=> Config file '+config+' loaded')
    print('----------------------------------\n')
+
  except Exception as e :
   print('Error in argument or config')
   print(e)
@@ -67,14 +68,14 @@ def load_variable(config,var):
      if par[0] == var:
        break
    
-   print('----------------')
-   print('Variable :',var)
-   print('cmap :',par[2])
-   print('log :',par[3])
-   print('min/max mode :',par[4])
-   print('vmin :',par[5])
-   print('vmax :',par[6])
-   print('----------------\n')
+   #print('----------------')
+   #print('Variable :',var)
+   #print('cmap :',par[2])
+   #print('log :',par[3])
+   #print('min/max mode :',par[4])
+   #print('vmin :',par[5])
+   #print('vmax :',par[6])
+   #print('----------------\n')
 
 
    return par[0],\

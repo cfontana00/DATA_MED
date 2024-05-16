@@ -1,30 +1,30 @@
 {
 "_____":"GENERAL PARAMETERS",
 
-"date_ini":"2015-03-20",
-"date_end":"2015-03-29",
-"outdir":"/home/fontana/MODEL/OUTPUTS",
-"diagdir":"/home/fontana/MODEL/DIAGS",
+"date_ini":"2021-12-11",
+"date_end":"2021-12-12",
+"outdir":"/path/to/OUTPUT_SMP",
+"diagdir":"/path/to/diags/dir",
+"river_ini":"2015-01-03",
+"river_end":"2015-05-01",
 
 
 "_____":"RIVER PARAMETERS",
 
 "french_list":["Argens","Var"],
-"italian_list":["Magra","Arno","Ombrone","Serchio"],
-"river_ini":"2019-05-01",
-"river_end":"2019-05-31",
+"italian_list":["Arno","Magra","Ombrone","Serchio"],
 
 
 "_____":"METEO PARAMETERS",
-
-"meteo_ini":"2019-04-01",
-"meteo_end":"2019-04-30",
+"meteo_ini":"2015-03-10",
+"meteo_end":"2015-03-11",
 "day_cycle":2,
-"n_cycle":30,
+"n_cycle":6,
 "imin":"500",
 "imax":"600",
 "jmin":"350",
 "jmax":"450",
+
 
 
 "_____":"DYFAMED PARAMETERS",
@@ -36,7 +36,7 @@
 "some_par":"some_par",
 
 
-"_____":"PLOT PARAMETERS",
+"_____":"2D PLOT PARAMETERS",
 
 "resol":"10m",                       
 "fig_proj":"ccrs.PlateCarree()",      
@@ -53,14 +53,13 @@
 
 "_____":"SECTION PLOT PARAMETERS",
 
-
 "fig_secx":"8",                         
 "fig_secy":"4",                        
 "sec_lon1":"8.5",
 "sec_lat1":"43.",
 "sec_lon2":"10.",
 "sec_lat2":"43.5",
-"sec_dep":"200",
+"sec_dep":"600",
 "sec_resH":"0.05",  
 "sec_resV":"1",
 "cb_fraction_sec":"0.025",
@@ -68,8 +67,8 @@
 
 "_____":"PROFILE PLOT PARAMETERS",
 
-"fig_prox":"6",
-"fig_proy":"8",
+"fig_prox":"8",                         
+"fig_proy":"4",                        
 "col1":"r",
 "col2":"b",
 
@@ -77,7 +76,6 @@
 "_____":"INTERPOLATION PARAMETERS",
 
 "dump":"0.01",
-"itp_meth":"linear",
-"cmap":"viridis"
+"itp_meth":"nearest"
 
 }

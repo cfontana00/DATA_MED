@@ -1,6 +1,8 @@
 # ------------------------- #
 # Routine to get Argo data  #
 # ------------------------- #
+import warnings
+warnings.simplefilter("ignore")
 
 import numpy as np
 
@@ -52,10 +54,13 @@ lat_min,lat_max = np.amin(lat_mod),np.amax(lat_mod)
 # -------------
 box = [lon_min, lon_max, lat_min, lat_max, 0, 300, date_ini, date_end]
 
-f = DataFetcher(ds='bgc', mode='expert', params='all',
+f = DataFetcher(ds=argo_ds, mode='expert', params='all',
                 parallel=True, progress=True, cache=False,
                 chunks_maxsize={'time': 30},
                )
+
+
+
 
 f = f.region(box).load()
 
@@ -67,6 +72,13 @@ ds_profiles = ds.argo.point2profile()
 
 # Save data
 # ---------
-ds.to_netcdf(path=savedir+'/argo.nc', mode='w', format=None, group=None, engine=None, encoding=None, unlimited_dims=None, compute=True, invalid_netcdf=False)
+tag=''
+if argo_ds == 'bgc':
+  tag = 'bio'
+
+fname = savedir+'/'+tag+'argo.nc'
+ds.to_netcdf(path=fname, mode='w', format=None, group=None, engine=None, encoding=None, unlimited_dims=None, compute=True, invalid_netcdf=False)
+
+print('[SAVED]',fname)
 
 
