@@ -7,8 +7,8 @@ config=$1
 #varlist={'so','thetao'}
 #levlist={'0','1'}
 
-varlist='chl'
-levlist='0'
+varlist={'chl','thetao','no3','po4'}
+levlist='8'
 
 
 for var in $varlist; do

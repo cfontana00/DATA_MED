@@ -117,8 +117,10 @@ for plon in lon_uni:
         = load_variable(config,mod_var)
 
     # Convert date
-    dstr = str(time[idx][0]).replace('.000000000','')
-    date = dt.datetime.strptime(dstr,'%Y-%m-%dT%H:%M:%S')
+    dstr = str(time[idx][0])
+    dstr = dstr.split(':')[0]
+
+    date = dt.datetime.strptime(dstr,'%Y-%m-%dT%H')
     jd = date.toordinal()
  
     hours,mnt = date.strftime('%H'),date.strftime('%M')
@@ -138,6 +140,7 @@ for plon in lon_uni:
                  data_lon,data_lat,data_pres)
     except Exception as e:
       print('Interpolation failed')
+      print(e)
       val = data_pres
       val[:] = np.nan
 

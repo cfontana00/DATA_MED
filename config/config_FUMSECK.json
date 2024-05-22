@@ -1,31 +1,33 @@
 {
 "_____":"GENERAL PARAMETERS",
 
-"date_ini":"2021-12-11",
-"date_end":"2021-12-12",
-"outdir":"/path/to/OUTPUT_SMP",
-"diagdir":"/path/to/diags/dir",
-"river_ini":"2015-01-03",
-"river_end":"2015-05-01",
+"date_ini":"2019-05-01",
+"date_end":"2019-05-15",
+"outdir":"/DISK2TB/MODEL/FUMSECK",
+"diagdir":"/DISK2TB/MODEL/DIAGS",
 
 
 "_____":"RIVER PARAMETERS",
 
 "french_list":["Argens","Var"],
-"italian_list":["Arno","Magra","Ombrone","Serchio"],
+"italian_list":["Arno","Magra","Magra","Serchio","Ombrone"],
+"river_ini":"2019-01-01",
+"river_end":"2019-12-31",
 
 
 "_____":"METEO PARAMETERS",
-"meteo_ini":"2015-03-10",
-"meteo_end":"2015-03-11",
+
+"meteo_ini":"2015-03-31",
+"meteo_end":"2015-05-30",
 "day_cycle":2,
-"n_cycle":6,
+"n_cycle":15,
 "imin":"500",
 "imax":"600",
 "jmin":"350",
 "jmax":"450",
 
-
+"_____":"MODIS PARAMETERS",
+"modis_dir":"/DISK2TB/DATA/NWMED/MODIS",
 
 "_____":"DYFAMED PARAMETERS",
 
@@ -35,8 +37,15 @@
 
 "some_par":"some_par",
 
+"_____":"CMEMS",
 
-"_____":"2D PLOT PARAMETERS",
+
+"_____":"ARGO",
+
+"argo_ds":"phy",
+
+
+"_____":"PLOT PARAMETERS",
 
 "resol":"10m",                       
 "fig_proj":"ccrs.PlateCarree()",      
@@ -44,22 +53,25 @@
 "fig_sy":"8",                        
 "fig_fmt":"jpg",                     
 "fig_res":"300",                  
-"tight":"False",                  
+"tight":"True",                  
 "fig_tck_size":"10",
 "fig_tcklbl_size":"10",
 "fig_lbl_size":"10",
 "cb_fraction_2D":"0.02",
 "cb_pad_2D":"0.12",
+"with_currents":"False",
+"with_whales":"False",
 
 "_____":"SECTION PLOT PARAMETERS",
 
+
 "fig_secx":"8",                         
 "fig_secy":"4",                        
-"sec_lon1":"8.5",
+"sec_lon1":"9",
 "sec_lat1":"43.",
-"sec_lon2":"10.",
-"sec_lat2":"43.5",
-"sec_dep":"600",
+"sec_lon2":"9.7",
+"sec_lat2":"44",
+"sec_dep":"300",
 "sec_resH":"0.05",  
 "sec_resV":"1",
 "cb_fraction_sec":"0.025",
@@ -67,15 +79,16 @@
 
 "_____":"PROFILE PLOT PARAMETERS",
 
-"fig_prox":"8",                         
-"fig_proy":"4",                        
-"col1":"r",
-"col2":"b",
+"fig_prox":"6",
+"fig_proy":"11",
+"col_bcg":["g","b","r"],
+"col_phy":["b","r"],
 
 
 "_____":"INTERPOLATION PARAMETERS",
 
 "dump":"0.01",
-"itp_meth":"nearest"
+"itp_meth":"linear",
+"cmap":"viridis"
 
 }

@@ -19,6 +19,9 @@ import cartopy.crs as ccrs
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import matplotlib.colors as colors
 import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use("Agg")
+
 from cmcrameri import cm
 import cmocean
 
@@ -125,47 +128,55 @@ ilev =  np.arange(levels[zmax],levels[-1],resV)
 # Loop on files
 # -------------
 print('\nProcessing')
-for jd in range(jdini+1,jdend+1):
+for jd in range(jdini,jdend+1):
 
-  # Get var
-  fname,dtag = get_filename(jd,ftag)
-  var3d = get_var_3D(fname,var)
+  for hour in range(0,1):  
+    # Get var
+    fname,dtag = get_filename(jd,ftag)
+    var3d = get_var_3D(fname,hour,var)
 
-  if ori == "horizontal":
-    sec = var3d[:,idfix,idmin:idmax]
-  else:
-    sec = var3d[:,idmin:idmax,idfix]
+    if ori == "horizontal":
+      sec = var3d[:,idfix,idmin:idmax]
+    else:
+      sec = var3d[:,idmin:idmax,idfix]
 
-  fig, ax = plt.subplots(1,1,figsize=(float(fig_secx), float(fig_secy)))
-  sec = np.flip(sec)
-  sec = np.fliplr(sec)
+    fig, ax = plt.subplots(1,1,figsize=(float(fig_secx), float(fig_secy)))
+    sec = np.flip(sec)
+    sec = np.fliplr(sec)
 
-  # Interpolate data
-  X,Y = np.meshgrid(coord[idmin:idmax],levels)  
-  X,Y = X.flatten(),Y.flatten()
-  sec = sec.flatten()
+    # Interpolate data
+    X,Y = np.meshgrid(coord[idmin:idmax],levels)  
+    X,Y = X.flatten(),Y.flatten()
+    sec = sec.flatten()
 
-  sec[sec > 10000]=np.nan
+    sec[sec > 10000]=np.nan
 
-  XI,YI = np.meshgrid(icoord,ilev)
-  isec = gd((X,Y),sec,(XI,YI))
+    XI,YI = np.meshgrid(icoord,ilev)
+    isec = gd((X,Y),sec,(XI,YI))
 
 
-  p = plt.pcolor(XI,YI,isec,cmap=cmap,vmin=vmin,vmax=vmax)
-  cb= plt.colorbar(p,extend='both',fraction=float(cb_fraction_sec),\
+    p = plt.pcolor(XI,YI,isec,cmap=cmap,vmin=vmin,vmax=vmax)
+    cb= plt.colorbar(p,extend='both',fraction=float(cb_fraction_sec),\
           pad=float(cb_pad_sec),label=label+' ('+units+')')
 
 
-  plt.ylabel("Depth (m)")
+    plt.ylabel("Depth (m)")
 
-  if ori == 'horizontal':
-    plt.xlabel("Longitude (°)")
-  else:
-    plt.xlabel("Latitude (°)")
+    if ori == 'horizontal':
+      plt.xlabel("Longitude (°)")
+    else:
+      plt.xlabel("Latitude (°)")
 
-  savefig( odir+'/'+dtag+'_'+var+'.'+fig_fmt)
-  #plt.show()
-  plt.close()
+    # Title
+    date = dt.datetime.fromordinal(jd)
+    y,m,d = date.strftime('%Y'),date.strftime('%m'),date.strftime('%d')
+
+    title = y+'-'+m+'-'+d+' '+str(hour).zfill(2)+'h'
+    plt.title(title)
+
+    savefig( odir+'/'+dtag+str(hour).zfill(2)+'_'+var+'.'+fig_fmt)
+    #plt.show()
+    plt.close()
 
 
 

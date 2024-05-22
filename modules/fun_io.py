@@ -61,11 +61,11 @@ def load_coords():
 # ----------------- #
 # Load 2D variables #
 # ----------------- #
-def get_var_2D(fname,var,lev):
+def get_var_2D(fname,var,hour,lev):
 
   try :
     ds = xr.open_dataset(fname)
-    arr = ds[var][23,int(lev),:,:].squeeze()
+    arr = ds[var][hour,int(lev),:,:].squeeze()
     ds.close()
 
   except Exception as e :
@@ -78,22 +78,26 @@ def get_var_2D(fname,var,lev):
 # ----------------- #
 def get_var_3D(fname,hours,var,**kargs):
 
-  dmn = kargs['domain']
+  try :
 
-  idz = np.array(dmn[0][0]) 
-  idy = np.array(dmn[1][0]) 
-  idx = np.array(dmn[2][0]) 
+    dmn = kargs['domain']
+
+    idz = np.array(dmn[0][0]) 
+    idy = np.array(dmn[1][0]) 
+    idx = np.array(dmn[2][0]) 
+  except:
+    pass
 
   try:
 
     ds = xr.open_dataset(fname)
 
     # Reduce domain
-    if dmn:
+    try:
       arr = ds[var][hours,idz,idy,idx]
       arr = arr.squeeze()
 
-    else:
+    except:
       arr = ds[var][hours,:,:,:].squeeze()
 
     ds.close()
@@ -217,6 +221,49 @@ def load_moose(year,var):
 
 
   return jdlist,depth,lon,lat,data
+
+
+
+def write_nc(fname,time,lon,lat,var,data,long_name,units):
+
+
+  # Open file
+  dataset = Dataset(fname,'w',format='NETCDF4_CLASSIC')
+
+  # Create dimension
+  dlon = dataset.createDimension('longitude',lon.shape[0])
+  dlat = dataset.createDimension('latitude',lat.shape[0])
+  dlat = dataset.createDimension('time',1)
+
+  # Create variables & set attributes
+  vlon = dataset.createVariable('longitude',np.float32,('longitude'))
+  vlon.units = "degrees east"
+  vlon.long_name = "longitude"
+  vlon[:] = lon
+
+  vlat = dataset.createVariable('latitude',np.float32,('latitude'))
+  vlat.units = "degrees north"
+  vlat.long_name = "latitude"
+  vlat[:] = lat
+
+  vtime = dataset.createVariable('time',np.float32,('time'))
+  vtime.units = "hours since 1900-01-01 00:00:00"
+  vtime.calendar = "gregorian"
+
+  vtime[:] = time
+
+
+  # Write variable to NetCDF
+  # ------------------------
+  vdata = dataset.createVariable(var,np.float32,('time','latitude','longitude'),fill_value=-9999)
+  vdata.units = units
+  vdata.long_name = long_name
+  vdata[:] = data
+
+  print('')
+  print('[FILE SAVED] '+fname+'\n')
+  dataset.close()
+
   
 
 
