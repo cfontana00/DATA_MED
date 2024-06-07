@@ -31,9 +31,10 @@ def load_config(config):
      # Date conversion
      # ---------------
      global jdini,jdend
-     jdini=datetime.strptime(data["date_ini"],'%Y-%m-%d').toordinal()
-     jdend=datetime.strptime(data["date_end"],'%Y-%m-%d').toordinal()
+     jdini = datetime.strptime(data["date_ini"],'%Y-%m-%d').toordinal()
+     jdend = datetime.strptime(data["date_end"],'%Y-%m-%d').toordinal()
 
+   os.system('mkdir -p '+diagdir)
    os.system('mkdir -p '+diagdir+'/'+config)
 
    print('----------------------------------')
@@ -84,7 +85,7 @@ def load_variable(config,var):
           json.loads(par[3].lower()),\
           par[4],float(par[5]),\
           float(par[6]),\
-          par[7],\
+          par[7].replace('_',' '),\
           par[8]
 
 # ------------------------------ #

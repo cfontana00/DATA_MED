@@ -1,18 +1,17 @@
 {
 "_____":"GENERAL PARAMETERS",
 
-"date_ini":"2019-05-01",
+"date_ini":"2019-05-06",
 "date_end":"2019-05-15",
 "outdir":"/DISK2TB/MODEL/FUMSECK",
 "diagdir":"/DISK2TB/MODEL/DIAGS",
 
-
 "_____":"RIVER PARAMETERS",
 
 "french_list":["Argens","Var"],
-"italian_list":["Arno","Magra","Magra","Serchio","Ombrone"],
-"river_ini":"2019-01-01",
-"river_end":"2019-12-31",
+"italian_list":["Arno","Magra","Ombrone","Serchio"],
+"river_ini":"2015-03-01",
+"river_end":"2019-04-30",
 
 
 "_____":"METEO PARAMETERS",
@@ -40,6 +39,7 @@
 "_____":"CMEMS",
 
 
+
 "_____":"ARGO",
 
 "argo_ds":"phy",
@@ -49,21 +49,32 @@
 
 "resol":"10m",                       
 "fig_proj":"ccrs.PlateCarree()",      
+
 "fig_sx":"8",                         
 "fig_sy":"8",                        
 "fig_fmt":"jpg",                     
 "fig_res":"300",                  
 "tight":"True",                  
-"fig_tck_size":"10",
-"fig_tcklbl_size":"10",
-"fig_lbl_size":"10",
-"cb_fraction_2D":"0.02",
+
+"fig_tck_size":"6",
+"fig_tcklbl_size":"6",
+"fig_lbl_size":"6",
 "cb_pad_2D":"0.12",
+"cb_fraction_2D":"0.02",
+
+"fig_sx_sat":"7",                         
+"fig_sy_sat":"4",                        
+"fig_tck_size_sat":"4",
+"fig_tcklbl_size_sat":"4",
+"cb_pad_sat":"0.12",
+"cb_fraction_sat":"0.02",
+"cb_pad_sat":"0.04",
+"cb_lbl_size_sat":"6",
+
 "with_currents":"False",
-"with_whales":"False",
+"with_whales":"True",
 
 "_____":"SECTION PLOT PARAMETERS",
-
 
 "fig_secx":"8",                         
 "fig_secy":"4",                        
@@ -77,6 +88,16 @@
 "cb_fraction_sec":"0.025",
 "cb_pad_sec":"0.06",
 
+"_____":"TRANSECT PLOT PARAMETERS",
+
+"trans_ini":"2015-04-01",
+"trans_end":"2015-04-19",
+"trans_depth":200,
+"trans_resV":1,
+"trans_name":"eddy",
+"trans_file":"/DISK2TB/DATA/eddy.dat",
+
+
 "_____":"PROFILE PLOT PARAMETERS",
 
 "fig_prox":"6",
@@ -87,7 +108,7 @@
 
 "_____":"INTERPOLATION PARAMETERS",
 
-"dump":"0.01",
+"dump":"0.02",
 "itp_meth":"linear",
 "cmap":"viridis"
 

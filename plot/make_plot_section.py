@@ -141,7 +141,7 @@ for jd in range(jdini,jdend+1):
       sec = var3d[:,idmin:idmax,idfix]
 
     fig, ax = plt.subplots(1,1,figsize=(float(fig_secx), float(fig_secy)))
-    sec = np.flip(sec)
+    sec = np.flip(sec)  
     sec = np.fliplr(sec)
 
     # Interpolate data

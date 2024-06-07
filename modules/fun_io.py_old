@@ -85,7 +85,7 @@ def get_sat_2D(fname,var):
     ds.close()
 
   except Exception as e :
-    file_error(e,fname,inspect.currentframe().f_code.co_name)
+    file_error(e,search,inspect.currentframe().f_code.co_name)
 
   return arr
 
@@ -97,7 +97,7 @@ def get_integre_2D(fname,var,levels,hour):
 
   # Load model data
   ds = xr.open_dataset(fname)
-  arr = np.array(ds[var][hour,:,:,:].squeeze())
+  arr = ds[var][hour,:,:,:].squeeze()
   ds.close()
 
   # Compute thickness of levels
@@ -111,13 +111,10 @@ def get_integre_2D(fname,var,levels,hour):
   tot = np.sum(thick[0:lmax])
 
   # Integrate values
-  coeff_att = 0.03
+  coeff_att = 0.3
 
-  att = arr[0,:,:].copy().squeeze()
-  att[:] = 0
-
-  iarr = arr[0,:,:].copy().squeeze()
-  iarr[:] = 0
+  iarr = arr[0,:,:].squeeze()*thick[0]
+  att = iarr*coeff_att
 
   for l in range(0,lmax):
 
@@ -126,15 +123,12 @@ def get_integre_2D(fname,var,levels,hour):
      idx = np.where(np.isnan(tmp))
      tmp[idx] = 0.
 
-     corr = np.ones([att.shape[0],att.shape[1]])-coeff_att*att
-     corr[np.where(corr<0)] = 0
+     att = att + coeff_att*tmp*thick[l]
 
-     iarr[:] += tmp*thick[l]*corr
+     iarr[:] += tmp*thick[l]*att
 
-     att = att + tmp*thick[l]
 
-  iarr[iarr==0.] = np.nan
-  iarr = iarr*0.05#/tot
+  iarr = iarr/tot
 
   return iarr
     

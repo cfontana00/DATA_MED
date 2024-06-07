@@ -75,13 +75,13 @@ for tag in ['KD490']:
      var = 'sst'
      long_name = 'Sea Surface Temperature'
      units = 'degC'
-     ftag = 'OC'
+     ftag = 'SST'
 
   elif tag == 'KD490':
      var = 'Kd_490'
      long_name = 'Attenuation coefficient'
      units = 'm**-1'
-     ftag = 'SST'
+     ftag = 'OC'
 
   # Create output directory
   os.system('mkdir -p '+modis_dir+'/'+tag)
@@ -95,7 +95,6 @@ for tag in ['KD490']:
      d = dt.datetime.fromordinal(jd)   
      dstr = d.strftime('%Y%m%d')
 
-  
      # Search for data
      flist = glob(modis_dir+'/'+ftag+'/*'+dstr+'*'+ftag+'*')
 
@@ -108,6 +107,7 @@ for tag in ['KD490']:
           fqual = ds['geophysical_data/qual_sst'][:,:]
 
         tmp = ds['geophysical_data/'+var][:,:]
+        print()
 
         try : 
           tmp[np.where(fqual != 0)] = -9999

@@ -6,13 +6,18 @@ ph CARB jet False set 0. 1. lab un
 talk CARB jet False set 0. 1. lab un
 spco2 CO2F jet False set 0. 1. lab un
 nh4 NUTR jet False set 0. 1. NH4 $mmol.m^{-3}$
-no3 NUTR cmc.hawaii_r False set 0.5 4. NO3 $mmol.m^{-3}$
+no3 NUTR cmc.hawaii_r False set 0.5 4. NO3 mmol.m$^{-3}$
 po4 NUTR cmc.batlow False set 0. 0.3 PO4 $mmol.m^{-3}$
 si NUTR jet False set 0. 1. SI $mmol.m^{-3}$
-chl PFTC cmc.imola True set 0.05 0.5 Chlorophyll $mg.m^{-3}$
+chl PFTC cmo.algae True set 0.05 0.8 Chlorophyll mg.m$^{-3}$
 phyc PFTC jet False set 0. 1. Phytoplankton $mmol.m^{-3}$
-zooc PFTC cmc.broc False set 0. 3. Zooplankton $mg.m^{-3}$
+zooc PFTC cmc.broc False set 0. 3. Zooplankton mg.m$^{-3}$
 so PSAL jet False set 0. 1. Salinity none 
-uo RFVL cmc.vik False set -.3 .3 Eastward_current $m.s^{-1}$
+uo RFVL cmc.vik False set -.3 .3 Eastward_current m.s$^{-1}$
 vo RFVL jet False set 0. 1. Northward_current $m.s^{-1}$
-thetao TEMP cmo.thermal False set 13.5 14.8 Temperature °C
+thetao TEMP cmo.thermal False set 14.5 17 Temperature °C
+so PSAL cmo.magma False set 37 38.5 Salinity -
+
+# Meteo 
+u10 uwind cmc.vik False set -10 10 Westward_wind m.s$^{-1}$
+

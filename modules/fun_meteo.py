@@ -4,6 +4,7 @@
 from netCDF4 import Dataset
 import datetime as dt
 import numpy as np
+import os
 
 
 
@@ -57,4 +58,58 @@ def write_nc_meteo(fname,mdini,mdend,lon,lat,var,data,long_name,units):
 
 
 
+# Load meteo variables through already 
+#       interpolated fields
+# ------------------------------------
+def load_meteo(config,jd,var):
+
+   from fun_gen import meteo_ini,day_cycle,n_cycle,diagdir
+
+   # Get file tag
+
+   tags = []      # File tag                  Variable name            
+   # ------------------------------------------------------
+   tags.append(['2m_temperature',                 't2m'    ])
+   tags.append(['mean_sea_level_pressure',        'msl'    ])
+   tags.append(['2m_relative_humidity',           'r2'     ])
+   tags.append(['surface_net_solar_radiation',    'ssr'    ])
+   tags.append(['surface_net_thermal_radiation',  'str'    ])
+   tags.append(['total_precipitation',            'tp'     ])
+   tags.append(['uwind',                          'u10'     ])
+   tags.append(['vwind',                          'v10'     ])
+
+   tags = np.array(tags)
+   idx = np.where(tags[:,1] == var)
+
+   tag = tags[idx,0][0][0]
+
+   # Get filename
+   idir = os.path.join(diagdir,config,'METEO','ITP_NC')
+
+   # Meteo start
+   mdini = dt.datetime.strptime(meteo_ini,'%Y-%m-%d').toordinal()
+
+   # Concerned cycle start
+   jdlist = np.arange(mdini,mdini+n_cycle*day_cycle,day_cycle)
+
+   idx = np.amax(np.where(jdlist <= jd))
+
+   dstart = dt.datetime.fromordinal(jdlist[idx])
+   dend = dt.datetime.fromordinal(jdlist[idx]+day_cycle-1)
+
+   delta = jd-jdlist[idx]
+
+   tstart = dstart.strftime('%Y%m%d')
+   tend = dend.strftime('%Y%m%d')
+
+   dtag = tstart+'_'+tend
+
+   fname = idir+'/reanalysis-cerra-single-levels_'+tag+'_'+dtag+'.nc'
+
+
+   ds = Dataset(fname,format='NETCDF4-CLASSIC')
+   arr = ds[var][delta*8,:,:].squeeze()
+   ds.close()
+
+   return arr
 
