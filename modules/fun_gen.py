@@ -2,6 +2,7 @@
 # General functions #
 # ----------------- #
 
+from fun_io import load_coords
 import numpy as np
 from datetime import datetime
 import json
@@ -33,6 +34,34 @@ def load_config(config):
      global jdini,jdend
      jdini = datetime.strptime(data["date_ini"],'%Y-%m-%d').toordinal()
      jdend = datetime.strptime(data["date_end"],'%Y-%m-%d').toordinal()
+
+     # Define boundary limits
+     # ----------------------
+     lon,lat,lev = load_coords() 
+     global ibmin,ibmax,jbmin,jbmax
+
+     # Default limites
+     ibmin = 0
+     ibmax = lon.shape[0]
+     jbmin = 0
+     jbmax = lat.shape[0]
+
+     # Define boundaries
+     if rm_boundary == 'yes':
+
+        for tag in boundary:
+           if tag == 'W':
+             ibmin = damping
+             
+           if tag == 'E':
+             ibmax = ibmax-damping
+
+           if tag == 'S':
+             jbmin = damping
+
+           if tag == 'N':
+             jbmax = jbmax-damping
+
 
    os.system('mkdir -p '+diagdir)
    os.system('mkdir -p '+diagdir+'/'+config)

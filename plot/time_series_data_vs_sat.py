@@ -8,7 +8,7 @@ from fun_gen import *
 from fun_io import *
 from fun_plot_2D import *
 from fun_meteo import load_meteo
-import sys,os
+import sys,os, argparse
 from glob import glob
 
 import numpy as np
@@ -39,11 +39,31 @@ def gkern(l, sig):
 
 
 
+def argument():
+    parser = argparse.ArgumentParser(description = '',formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(   '--config', '-c',
+                                type = str,
+                                required = True,
+                                help ='Configuration name'
+                                )
+    parser.add_argument(   '--variable',"-v",
+                                type = str,
+                                required = True,
+                                help = 'variable : thetao or chl')
+    parser.add_argument(   '--satellite',"-s",
+                                type = str,
+                                required = True,
+                                help = 'satellite : ex CMEMS')
+    return parser.parse_args()
+
+
+
 # Get args
 # --------
-config=sys.argv[1]  # Configuration name
-var=sys.argv[2]     # Variable name
-sat=sys.argv[3]     # Dataset dir
+args = argument()
+config = args.config    # Configuration name
+var = args.variable     # Variable name
+sat = args.satellite    # Dataset dir
 
 
 # Load parameters
@@ -96,7 +116,7 @@ for jd in range(jdini,jdend+1):
 
    # Get 2D variable
    if var == 'thetao':
-     var2d = get_var_2D(fname,var,hour,7) # !!!!
+     var2d = get_var_2D(fname,var,hour,5) # !!!!
      var2d = np.array(var2d)
 
    elif var == 'chl':
@@ -116,10 +136,6 @@ for jd in range(jdini,jdend+1):
      mask = cv2.dilate(mask, kernel, iterations=1)
 
      var2d[mask > 0] = np.nan
-
-   # Load data for SST correction
-   if var == 'thetao':
-     t2m = load_meteo(config,jd,'t2m')
 
 
    # Title
@@ -141,7 +157,7 @@ for jd in range(jdini,jdend+1):
    # Apply correction to sst
 
    if var == 'thetao':
-      sat2d = sat2d - 273.16   # Kelvin to C
+      sat2d = sat2d - 273.15   # Kelvin to C
 
       #t2m = np.array(t2m) - 273.16
       #idx = np.where(sat2d<9999)

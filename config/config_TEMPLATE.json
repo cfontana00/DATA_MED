@@ -1,9 +1,9 @@
 {
 "_____":"GENERAL PARAMETERS",
 
-"date_ini":"2015-04-01",
-"date_end":"2015-04-21",
-"outdir":"/DISK2TB/MODEL/OUTPUTS3",
+"date_ini":"2015-03-05",
+"date_end":"2015-03-06",
+"outdir":"/DISK2TB/MODEL/OUTPUTS/NWMED",
 "diagdir":"/DISK2TB/MODEL/DIAGS",
 "rm_boundary":"no",
 "damping":20,
@@ -39,6 +39,9 @@
 "some_par":"some_par",
 
 "_____":"SATELLITE",
+
+"glength":"40",
+"gsigma":"40",
 
 
 

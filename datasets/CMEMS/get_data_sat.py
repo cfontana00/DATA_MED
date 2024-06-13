@@ -3,19 +3,35 @@
 #############################
 import warnings
 warnings.simplefilter("ignore")
+
 from fun_gen import *
 from fun_io import *
 import os
 import sys
 import copernicusmarine
 import datetime as dt
+import argparse
+
+
+def argument():
+    parser = argparse.ArgumentParser(description = '',formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(   '--config', '-c',
+                                type = str,
+                                required = True,
+                                help ='Configuration name'
+                                )
+    parser.add_argument(   '--variable',"-v",
+                                type = str,
+                                required = True,
+                                help = 'variable : thetao or chl')
+    return parser.parse_args()
 
 
 # Get args
 # --------
-config = sys.argv[1]  # Configuration name
-var = sys.argv[2]  # Configuration name
-
+args = argument()
+config = args.config  # Configuration name
+var = args.variable   # Variable name
 
 
 # Load parameters
@@ -56,6 +72,8 @@ else :
 
 print('Downloading CMEMS products :',ds_id)
 print('=> Variable',cvar,'\n')
+
+os.system('rm -f '+datadir+'/'+ds_id+'.nc' )
 
 copernicusmarine.subset(
         dataset_id = ds_id,

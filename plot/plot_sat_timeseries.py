@@ -7,7 +7,7 @@ import warnings
 warnings.simplefilter("ignore")
 from fun_gen import *
 from fun_io import *
-import sys,os
+import sys,os,argparse
 
 import numpy as np
 import matplotlib.colors as colors
@@ -18,11 +18,31 @@ matplotlib.use("Agg")
 import matplotlib.dates as mdates
 
 
+def argument():
+    parser = argparse.ArgumentParser(description = '',formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(   '--config', '-c',
+                                type = str,
+                                required = True,
+                                help ='Configuration name'
+                                )
+    parser.add_argument(   '--variable',"-v",
+                                type = str,
+                                required = True,
+                                help = 'variable : thetao or chl')
+    parser.add_argument(   '--satellite',"-s",
+                                type = str,
+                                required = True,
+                                help = 'satellite : ex CMEMS')
+    return parser.parse_args()
+
+
+
 # Get args
 # --------
-config=sys.argv[1]  # Configuration name
-var=sys.argv[2]     # Variable name
-sat=sys.argv[3]     # Dataset dir
+args = argument()
+config = args.config    # Configuration name
+var = args.variable     # Variable name
+sat = args.satellite    # Dataset d
 
 
 # Get variables parameters
@@ -60,7 +80,7 @@ data = np.loadtxt(fname)
 
 fig,ax = plt.subplots(1,1,figsize=(float(fig_tsx), float(fig_tsy)))
 
-idx = np.where(data[:,3] > 0.2 ) # Keep only data with +10% cover
+idx = np.where(data[:,3] > 0.75 ) # Keep only data with +X% cover
 
 data = data[idx,:].squeeze()
 
@@ -88,6 +108,8 @@ if islog:
 loc = mdates.AutoDateLocator()
 ax.xaxis.set_major_locator(loc)
 ax.xaxis.set_major_formatter(mdates.ConciseDateFormatter(loc))
+
+plt.ylim(13,15)
 
 plt.ylabel(label+' ('+units+')')
 plt.title('Satellite '+sat+' / '+ds_id)

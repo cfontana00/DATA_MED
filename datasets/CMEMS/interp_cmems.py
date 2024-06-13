@@ -9,16 +9,34 @@ from fun_gen import *
 from fun_io import *
 import os
 import sys
+import argparse
 import datetime as dt
 from netCDF4 import Dataset
 from scipy.interpolate import griddata
 import numpy as np
 from numpy import array
 
+
+def argument():
+    parser = argparse.ArgumentParser(description = '',formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(   '--config', '-c',
+                                type = str,
+                                required = True,
+                                help ='Configuration name'
+                                )
+    parser.add_argument(   '--variable',"-v",
+                                type = str,
+                                required = True,
+                                help = 'variable : thetao or chl')
+    return parser.parse_args()
+
+
 # Get args
 # --------
-config = sys.argv[1]  # Configuration name
-var = sys.argv[2]  # Variable name
+args = argument()
+config = args.config  # Configuration name
+var = args.variable   # Variable name
+
 
 
 # Load parameters
@@ -41,6 +59,8 @@ vname, ftag, cmap, islog, vmod, vmin, vmax, label, units\
 lon_mod,lat_mod,lev = load_coords()
 LON_MOD,LAT_MOD = np.meshgrid(array(lon_mod),array(lat_mod))
 
+
+
 # Load CMEMS parameters
 # ---------------------
 pars = np.loadtxt('../../config/cmems_'+config+'.dat',dtype=str)
@@ -60,6 +80,7 @@ ds = Dataset(datadir+'/'+ds_id+'.nc')
 lon = array(ds['longitude'])
 lat = array(ds['latitude'])
 
+
 LON,LAT = np.meshgrid(lon,lat)
 LON,LAT = LON.flatten(),LAT.flatten()
 
@@ -77,8 +98,6 @@ for jd in range(jdini,jdend+1):
   # Interpolate
   idata = griddata((LON,LAT),data.T,(LON_MOD,LAT_MOD),method='linear')  
 
-  # Apply model mask to avoid bugs in time series
-  
 
   # Save file
   # ---------
@@ -93,6 +112,6 @@ for jd in range(jdini,jdend+1):
 
   i = i+1
 
-
+ 
 ds.close()
 

@@ -44,16 +44,33 @@ def load_coords():
 
   from fun_gen import outdir
 
-  try :
+  # Get calling function
+  curframe = inspect.currentframe()
+  calframe = inspect.getouterframes(curframe, 2)
+  fun_call = calframe[1][3]
+
+  # Do not crop if loaded by load_config
+  if fun_call != 'load_config':
+     from fun_gen import ibmin,ibmax,\
+                         jbmin,jbmax\
+
+  #try :
+  if 1==1:
     search = outdir+'/*TEMP*.nc'
     ds = xr.open_dataset(glob(search)[0])
+
     lon = np.array(ds['longitude'])
     lat = np.array(ds['latitude'])
     levels = np.array(ds['depth'])
     ds.close()
 
-  except Exception as e :
-    file_error(e,search,inspect.currentframe().f_code.co_name)
+    if fun_call != 'load_config':
+       lon = lon[ibmin:ibmax]
+       lat = lat[jbmin:jbmax]
+
+
+  #except Exception as e :
+  #  file_error(e,search,inspect.currentframe().f_code.co_name)
 
   return lon,lat,levels
 
@@ -63,9 +80,12 @@ def load_coords():
 # ----------------- #
 def get_var_2D(fname,var,hour,lev):
 
+  from fun_gen import ibmin,ibmax,\
+                      jbmin,jbmax
+
   try :
     ds = xr.open_dataset(fname)
-    arr = ds[var][hour,int(lev),:,:].squeeze()
+    arr = ds[var][hour,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
     ds.close()
 
   except Exception as e :
@@ -95,9 +115,12 @@ def get_sat_2D(fname,var):
 # -------------------- #
 def get_integre_2D(fname,var,levels,hour):
 
+  from fun_gen import ibmin,ibmax,\
+                      jbmin,jbmax
+
   # Load model data
   ds = xr.open_dataset(fname)
-  arr = np.array(ds[var][hour,:,:,:].squeeze())
+  arr = np.array(ds[var][hour,:,jbmin:jbmax,ibmin:ibmax].squeeze())
   ds.close()
 
   # Compute thickness of levels
@@ -145,6 +168,9 @@ def get_integre_2D(fname,var,levels,hour):
 # ----------------- #
 def get_var_3D(fname,hours,var,**kargs):
 
+  from fun_gen import ibmin,ibmax,\
+                      jbmin,jbmax
+
   try :
 
     dmn = kargs['domain']
@@ -166,7 +192,7 @@ def get_var_3D(fname,hours,var,**kargs):
       arr = arr.squeeze()
 
     except:
-      arr = ds[var][hours,:,:,:].squeeze()
+      arr = ds[var][hours,:,jbmin:jbmax,ibmin:ibmax].squeeze()
 
     ds.close()
 
@@ -209,7 +235,6 @@ def get_model_val_3d(fname,hours,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
   print('Interpolation done for [',lon.shape[0],'] data in',end,'sec',end='\r')
 
   return val
-
 
 
 # ----------- #
@@ -334,7 +359,11 @@ def write_nc(fname,time,lon,lat,var,data,long_name,units):
   print('[FILE SAVED] '+fname+'\n')
   dataset.close()
 
-  
+
+
+
+
+
 
 
 
