@@ -116,7 +116,7 @@ for jd in range(jdini,jdend+1):
 
    # Get 2D variable
    if var == 'thetao':
-     var2d = get_var_2D(fname,var,hour,5) # !!!!
+     var2d = get_var_2D(fname,var,hour,1) # !!!!
      var2d = np.array(var2d)
 
    elif var == 'chl':

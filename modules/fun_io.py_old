@@ -44,13 +44,29 @@ def load_coords():
 
   from fun_gen import outdir
 
+  # Get calling function
+  curframe = inspect.currentframe()
+  calframe = inspect.getouterframes(curframe, 2)
+  fun_call = calframe[1][3]
+
+  # Do not crop if called by load_config
+  if fun_call != 'load_config':
+     from fun_gen import ibmin,ibmax,\
+                         jbmin,jbmax\
+
   try :
     search = outdir+'/*TEMP*.nc'
     ds = xr.open_dataset(glob(search)[0])
+
     lon = np.array(ds['longitude'])
     lat = np.array(ds['latitude'])
     levels = np.array(ds['depth'])
     ds.close()
+
+    if fun_call != 'load_config':
+       lon = lon[ibmin:ibmax]
+       lat = lat[jbmin:jbmax]
+
 
   except Exception as e :
     file_error(e,search,inspect.currentframe().f_code.co_name)
@@ -63,13 +79,17 @@ def load_coords():
 # ----------------- #
 def get_var_2D(fname,var,hour,lev):
 
+  from fun_gen import ibmin,ibmax,\
+                      jbmin,jbmax
+
   try :
+
     ds = xr.open_dataset(fname)
-    arr = ds[var][hour,int(lev),:,:].squeeze()
+    arr = ds[var][hour,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
     ds.close()
 
   except Exception as e :
-    file_error(e,search,inspect.currentframe().f_code.co_name)
+    file_error(e,fname,inspect.currentframe().f_code.co_name)
 
   return arr
 
@@ -85,7 +105,7 @@ def get_sat_2D(fname,var):
     ds.close()
 
   except Exception as e :
-    file_error(e,search,inspect.currentframe().f_code.co_name)
+    file_error(e,fname,inspect.currentframe().f_code.co_name)
 
   return arr
 
@@ -95,9 +115,12 @@ def get_sat_2D(fname,var):
 # -------------------- #
 def get_integre_2D(fname,var,levels,hour):
 
+  from fun_gen import ibmin,ibmax,\
+                      jbmin,jbmax
+
   # Load model data
   ds = xr.open_dataset(fname)
-  arr = ds[var][hour,:,:,:].squeeze()
+  arr = np.array(ds[var][hour,:,jbmin:jbmax,ibmin:ibmax].squeeze())
   ds.close()
 
   # Compute thickness of levels
@@ -111,10 +134,13 @@ def get_integre_2D(fname,var,levels,hour):
   tot = np.sum(thick[0:lmax])
 
   # Integrate values
-  coeff_att = 0.3
+  coeff_att = 0.03
 
-  iarr = arr[0,:,:].squeeze()*thick[0]
-  att = iarr*coeff_att
+  att = arr[0,:,:].copy().squeeze()
+  att[:] = 0
+
+  iarr = arr[0,:,:].copy().squeeze()
+  iarr[:] = 0
 
   for l in range(0,lmax):
 
@@ -123,12 +149,15 @@ def get_integre_2D(fname,var,levels,hour):
      idx = np.where(np.isnan(tmp))
      tmp[idx] = 0.
 
-     att = att + coeff_att*tmp*thick[l]
+     corr = np.ones([att.shape[0],att.shape[1]])-coeff_att*att
+     corr[np.where(corr<0)] = 0
 
-     iarr[:] += tmp*thick[l]*att
+     iarr[:] += tmp*thick[l]*corr
 
+     att = att + tmp*thick[l]
 
-  iarr = iarr/tot
+  iarr[iarr==0.] = np.nan
+  iarr = iarr*0.05#/tot
 
   return iarr
     
@@ -138,6 +167,9 @@ def get_integre_2D(fname,var,levels,hour):
 # Load 3D variables #
 # ----------------- #
 def get_var_3D(fname,hours,var,**kargs):
+
+  from fun_gen import ibmin,ibmax,\
+                      jbmin,jbmax
 
   try :
 
@@ -160,7 +192,7 @@ def get_var_3D(fname,hours,var,**kargs):
       arr = arr.squeeze()
 
     except:
-      arr = ds[var][hours,:,:,:].squeeze()
+      arr = ds[var][hours,:,jbmin:jbmax,ibmin:ibmax].squeeze()
 
     ds.close()
 
@@ -178,6 +210,7 @@ def get_model_val_3d(fname,hours,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
   start = time.time()
 
   from fun_gen import itp_meth,dump
+
 
   # Load file
   dump = float(dump)
@@ -203,7 +236,6 @@ def get_model_val_3d(fname,hours,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
   print('Interpolation done for [',lon.shape[0],'] data in',end,'sec',end='\r')
 
   return val
-
 
 
 # ----------- #
@@ -328,7 +360,11 @@ def write_nc(fname,time,lon,lat,var,data,long_name,units):
   print('[FILE SAVED] '+fname+'\n')
   dataset.close()
 
-  
+
+
+
+
+
 
 
 

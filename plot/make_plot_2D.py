@@ -7,7 +7,7 @@ warnings.simplefilter("ignore")
 from fun_gen import *
 from fun_io import *
 from fun_plot_2D import *
-import sys,os
+import sys,os,argparse
 from glob import glob
 
 import numpy as np
@@ -26,13 +26,31 @@ matplotlib.use("Agg")
 import cmocean
 import cmcrameri
 
+def argument():
+    parser = argparse.ArgumentParser(description = '',formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(   '--config', '-c',
+                                type = str,
+                                required = True,
+                                help ='Configuration name'
+                                )
+    parser.add_argument(   '--variable',"-v",
+                                type = str,
+                                required = True,
+                                help = 'variable : thetao or chl')
+    parser.add_argument(   '--level',"-l",
+                                type = str,
+                                required = True,
+                                help = 'model level number')
+    return parser.parse_args()
+
 
 
 # Get args
 # --------
-config=sys.argv[1]  # Configuration name
-var=sys.argv[2]     # Variable name
-lev=sys.argv[3]     # Z-level
+args = argument()
+config = args.config  # Configuration name
+var = args.variable   # Variable name
+lev = args.level   # Level number
 
 
 # Load parameters
@@ -121,6 +139,9 @@ for jd in range(jdini,jdend+1):
    var2d = get_var_2D(fname,var,hour,lev)
    var2d = np.array(var2d)
    var2d[np.where(var2d > 999) ] = np.nan
+
+   if var == 'zooc':
+     var2d = var2d/12. # !!!!! To remove for next simus
 
    # Plot
    if vmod == 'auto' :

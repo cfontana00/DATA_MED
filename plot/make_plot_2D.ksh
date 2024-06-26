@@ -7,7 +7,7 @@ config=$1
 #varlist={'so','thetao'}
 #levlist={'0','1'}
 
-varlist={'chl','thetao','no3','po4'}
+varlist={'chl','thetao','no3','zoo','po4'}
 levlist='8'
 
 

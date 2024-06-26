@@ -8,15 +8,25 @@ import numpy as np
 
 from fun_gen import *
 from fun_io import *
-import sys,os
+import sys,os,argparse
 
+import matplotlib
+matplotlib.use("Agg")
 
+def argument():
+    parser = argparse.ArgumentParser(description = '',formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(   '--config', '-c',
+                                type = str,
+                                required = True,
+                                help ='Configuration name'
+                                )
+    return parser.parse_args()
 
 
 # Get args
 # --------
-config = sys.argv[1]  # Configuration name
-
+args = argument()
+config = args.config  # Configuration name
 
 
 # Load config file
@@ -96,7 +106,7 @@ for jd in range(jdini,jdend+1):
      slc = np.flipud(slc)
 
      # Get interpolated model value
-     val  = get_model_val_3d(fname,vname,\
+     val  = get_model_val_3d(fname,0,vname,\
                lon_mod,lat_mod,lev_mod,\
                  slc[:,1],slc[:,2],slc[:,3])
 
@@ -113,8 +123,9 @@ for jd in range(jdini,jdend+1):
      # Plot profile
      fig, ax = plt.subplots(1,1,figsize=(float(fig_prox), float(fig_proy)))
 
-     plt.plot(profile[:,1],-profile[:,0],c=col1,marker='o',alpha=0.7,label='Model')
-     plt.plot(profile[:,2],-profile[:,0],c=col2,marker='o',alpha=0.7,label='Data')
+     plt.plot(profile[:,1],-profile[:,0],c='g',marker='o',alpha=0.7,label='Model')
+     plt.plot(profile[:,2],-profile[:,0],c='g',marker='s',alpha=0.7,label='Data')
+
      plt.title('BOUSSOLE '+d.strftime('%Y-%m-%d'))
 
      plt.legend(loc='lower right')
@@ -123,7 +134,7 @@ for jd in range(jdini,jdend+1):
      plt.ylabel("Depth (m)")
 
      savefig(savedir+'/boussole_profile_'+d.strftime('%Y-%m-%d')+'.'+fig_fmt)
-     plt.show()
+     #plt.show()
 
      print('')
 

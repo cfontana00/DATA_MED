@@ -8,7 +8,7 @@ from fun_gen import *
 from fun_io import *
 from fun_plot_2D import *
 from fun_meteo import load_meteo
-import sys,os
+import sys,os,argparse
 from glob import glob
 
 import numpy as np
@@ -22,6 +22,7 @@ import cartopy.crs as ccrs
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import matplotlib.colors as colors
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FormatStrFormatter
 import matplotlib
 matplotlib.use("Agg")
 
@@ -38,12 +39,32 @@ def gkern(l, sig):
     return kernel / np.sum(kernel)
 
 
+def argument():
+    parser = argparse.ArgumentParser(description = '',formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(   '--config', '-c',
+                                type = str,
+                                required = True,
+                                help ='Configuration name'
+                                )
+    parser.add_argument(   '--variable',"-v",
+                                type = str,
+                                required = True,
+                                help = 'variable : thetao or chl')
+    parser.add_argument(   '--satellite',"-s",
+                                type = str,
+                                required = True,
+                                help = 'satellite : ex CMEMS')
+    return parser.parse_args()
+
+
 
 # Get args
 # --------
-config=sys.argv[1]  # Configuration name
-var=sys.argv[2]     # Variable name
-sat=sys.argv[3]     # Dataset dir
+args = argument()
+config = args.config    # Configuration name
+var = args.variable     # Variable name
+sat = args.satellite    # Dataset dir
+
 
 
 # Load parameters
@@ -105,7 +126,7 @@ for jd in range(jdini,jdend+1):
    # Get 2D variable
    if var == 'thetao':
 
-     var2d = get_var_2D(fname,var,hour,5) # !!!!
+     var2d = get_var_2D(fname,var,hour,1) # !!!!
      var2d = np.array(var2d)
 
    elif var == 'chl':
@@ -120,7 +141,7 @@ for jd in range(jdini,jdend+1):
      mask[np.where(np.isnan(mask)) ] = 1
   
      #kernel = np.ones((35,35))
-     kernel = gkern(glength,gsigma)
+     kernel = gkern(int(glength),int(gsigma))
 
      mask = cv2.dilate(mask, kernel, iterations=1)
 
@@ -148,10 +169,6 @@ for jd in range(jdini,jdend+1):
    #ax1.title.set_text(title,fontsize=fig_lbl_size)
    ax1.set_title(title,fontsize=fig_title_size)
 
-   # Tune
-   ax1.set_xticklabels(ax1.get_xticks(),fontsize=fig_tcklbl_size_sat)
-   ax1.set_yticklabels(ax1.get_yticks(),fontsize=fig_tcklbl_size_sat)
-
 
    # PLOT DATA
    # ---------
@@ -174,7 +191,7 @@ for jd in range(jdini,jdend+1):
       #bias = np.mean(sat2d[idx]-t2m[idx])
       #print(bias)
 
-      sat2d = sat2d + 1 # SST correction
+      sat2d = sat2d # SST correction
 
 
    if not islog :      
@@ -183,6 +200,7 @@ for jd in range(jdini,jdend+1):
    else:
      p2 = ax2.pcolor(lon,lat,sat2d,cmap=cmap,norm=colors.LogNorm(vmin=vmin,vmax=vmax),zorder=1)
 
+
    if cb_done == 'False': # plot cb only once
       cb = plt.colorbar(p2,extend='both',fraction=float(cb_fraction_sat),pad=float(cb_pad_sat),\
               label=label+' ('+units+')',ax=ax2)
@@ -190,6 +208,12 @@ for jd in range(jdini,jdend+1):
       cb.ax.tick_params(labelsize=cb_lbl_size_sat)
 
       cb_done = 'True'
+
+      if islog : 
+         cb.ax.yaxis.set_minor_formatter(FormatStrFormatter('%.2f'))
+         cb.ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
+
+         cb.ax.tick_params(axis='both', which='both', labelsize=tck_size_ts)
 
 
    # Tune

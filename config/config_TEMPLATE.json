@@ -1,12 +1,19 @@
 {
 "_____":"GENERAL PARAMETERS",
 
-"date_ini":"2015-03-05",
-"date_end":"2015-03-06",
-"outdir":"/DISK2TB/MODEL/OUTPUTS/NWMED",
+"date_ini":"2015-04-01",
+"date_end":"2015-04-15",
+"outdir":"/DISK2TB/MODEL/OUTPUTS/ALBEDO",
 "diagdir":"/DISK2TB/MODEL/DIAGS",
+
+
+
+"_____":"BOUNDARY PARAMETERS",
+
 "rm_boundary":"no",
 "damping":20,
+"boundary":["W","S"],
+
 
 "_____":"RIVER PARAMETERS",
 

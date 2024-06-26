@@ -8,7 +8,7 @@ import numpy as np
 
 from fun_gen import *
 from fun_io import *
-import sys,os
+import sys,os,argparse
 import datetime as dt
 
 import argopy
@@ -23,11 +23,20 @@ argopy.set_options(cachedir='cache_bgc')
 
 
 
+def argument():
+    parser = argparse.ArgumentParser(description = '',formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(   '--config', '-c',
+                                type = str,
+                                required = True,
+                                help ='Configuration name'
+                                )
+    return parser.parse_args()
 
 
 # Get args
 # --------
-config = sys.argv[1]  # Configuration name
+args = argument()
+config = args.config  # Configuration name
 
 
 # Load config file
@@ -58,8 +67,6 @@ f = DataFetcher(ds=argo_ds, mode='expert', params='all',
                 parallel=True, progress=True, cache=False,
                 chunks_maxsize={'time': 30},
                )
-
-
 
 
 f = f.region(box).load()

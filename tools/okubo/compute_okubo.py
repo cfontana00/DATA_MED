@@ -8,7 +8,7 @@
 
 from matplotlib import pyplot as plt
 from numpy import arange, ma, where, array
-from fun_gen import *
+from fun_gen import load_config
 from fun_plot_2D import *
 #from fun_io import *
 from netCDF4 import Dataset
@@ -69,7 +69,7 @@ for jd in range(jdini,jdend+1):
 
       LON,LAT = np.meshgrid(lon,lat)
 
-      sub = 6
+      sub = 4
       '''
       lons = lon[::sub]
       lats = lat[::sub]
@@ -92,23 +92,43 @@ for jd in range(jdini,jdend+1):
 
 
       exec('proj = ' + fig_proj)
-      extent = [np.amin(lon),np.amax(lon),np.amin(lat),np.amax(lat)]
-      fig, ax = plt.subplots(1,1,figsize=(float(fig_sx), float(fig_sy)), subplot_kw={'projection': proj})
-      init_fig(ax,extent,proj)
+      #extent = [np.amin(lon),np.amax(lon),np.amin(lat),np.amax(lat)]
+      extent = [9,10,42.5,43.5]
+      fig, ax = plt.subplots(1,1,figsize=(5,4), subplot_kw={'projection': proj})
+
+      ax.set_extent(extent)
+
+      land = cfeature.NaturalEarthFeature('physical', 'land', \
+      scale=resol, edgecolor='k', facecolor=cfeature.COLORS['land'])
+
+      ax.add_feature(land, facecolor='lightgrey')
+      ax.add_feature(cfeature.BORDERS,edgecolor='darkgrey',zorder=2)
+      ax.coastlines(resolution=resol, color='darkgrey', linestyle='-', alpha=1)
+      gl = ax.gridlines(crs=proj, draw_labels=True,
+      linewidth=0.2, color='gray', alpha=1., linestyle='-')
+      gl.top_labels = True
+      gl.left_labels = True
+      gl.xlines = True
+      gl.ylines = True
+      gl.xformatter = LONGITUDE_FORMATTER
+      gl.yformatter = LATITUDE_FORMATTER
+      gl.xlabel_style = {'size': 8 }
+      gl.ylabel_style = {'size': 8}
+
 
       # Process data
       ow = np.array(ow)
-      idx = np.where( (LON > 9.7) | (LON < 8.5) | \
+      idx = np.where( (LON > 9.7) | (LON < 10.5) | \
               (LAT > 43.7) | (LAT < 43.05))
 
       #ow[idx] = np.nan
       #ow[np.where(ow<2e-9)] = np.nan
       
       #ow[np.where(ow>2.5e-9)] = 1
-      #ow[np.where(ow<2.5e-9)] = np.nan
+      #ow[np.where(np.abs(ow)<2.e-9)] = np.nan
 
 
-      #p = plt.pcolor(lon,lat,ow,cmap='bwr',vmin=-3e-9,vmax=3e-9,zorder=1)
+      #p = plt.pcolor(lon,lat,ow,cmap='bwr',vmin=-4e-9,vmax=4e-9,zorder=1)
       #p = plt.contour(lon,lat,ow,20,colors='k',zorder=2)
       #plt.colorbar()
 
@@ -121,7 +141,11 @@ for jd in range(jdini,jdend+1):
       us[np.where(norm < 0.1)] = np.nan
       vs[np.where(norm < 0.1)] = np.nan
 
-      q = ax.quiver(lons,lats,us,vs,color='k',edgecolor='k',linewidth=.1,scale=40,zorder=4,width=0.001)
+      q = ax.quiver(lons,lats,us,vs,color='k',edgecolor='k',linewidth=0.5,scale=15,zorder=4,width=0.005,headlength=5)
+
+      # Plot scale
+      ax.quiver([9.15],[42.55],[0.6],[0],edgecolor='k',linewidth=0.5,scale=15,width=0.005,headlength=5,zorder=100)
+      plt.text(9.11,42.57,'0.6 m.s$^{-1}$',fontsize=8)
 
       # Plot eddy position
       eddy = np.loadtxt('/DISK2TB/DATA/eddy.dat')
@@ -137,7 +161,11 @@ for jd in range(jdini,jdend+1):
       #cb = plt.colorbar(extend='both',fraction=float(cb_fraction_2D),pad=float(cb_pad_2D),\
       #          label='Okubo Weiss')
 
-      plt.title(dtag+' '+str(hour).zfill(2)+'h')
+      plt.title(dtag+' '+str(hour).zfill(2)+'h',fontsize=10)
+
+      ax.set_xticklabels(ax.get_xticks(), fontsize=2)
+      ax.set_yticklabels(ax.get_yticks(), fontsize=8)
+
 
       # Save
       fout = fname.replace("RFVL","OKWSh"+str(hour).zfill(2))
@@ -152,7 +180,6 @@ for jd in range(jdini,jdend+1):
         plt.savefig(fout,dpi=int(fig_res))
 
       print('[SAVED FIG] '+fout)
-
 
       #plt.show()
       plt.close()

@@ -13,6 +13,7 @@ import numpy as np
 import matplotlib.colors as colors
 import matplotlib.pyplot as plt
 import matplotlib
+from matplotlib.ticker import FormatStrFormatter,StrMethodFormatter,ScalarFormatter
 matplotlib.use("Agg")
 
 import matplotlib.dates as mdates
@@ -80,7 +81,7 @@ data = np.loadtxt(fname)
 
 fig,ax = plt.subplots(1,1,figsize=(float(fig_tsx), float(fig_tsy)))
 
-idx = np.where(data[:,3] > 0.75 ) # Keep only data with +X% cover
+idx = np.where(data[:,3] > 0.5 ) # Keep only data with +X% cover
 
 data = data[idx,:].squeeze()
 
@@ -96,7 +97,7 @@ plt.plot(data[:,0],data[:,2],marker='s',linestyle=':',color=color,label='Data')
 
 for d in data:
    #print(d[0]+0.3,d[1],str(d[3]*100)+'%')
-   plt.text(d[0]+0.3,d[2],str(np.round(d[3]*100,decimals=1))+'%',fontsize=7)
+   plt.text(d[0]+0.3,d[2],str(np.round(d[3]*100,decimals=1))+'%',fontsize=5)
 
 
 plt.legend()
@@ -104,17 +105,28 @@ plt.legend()
 if islog:
   ax.set_yscale('log')
 
+
+plt.ylim(vmin,vmax)
+
+
+ax.set_xticklabels(ax.get_xticks(),fontsize=tck_size_ts)
+ax.set_yticklabels(ax.get_yticks(), fontsize=tck_size_ts)
+
+ax.yaxis.set_minor_formatter(FormatStrFormatter('%.2f'))
+ax.tick_params(axis='both', which='minor', labelsize=tck_size_ts)
+
 # Format axes
 loc = mdates.AutoDateLocator()
 ax.xaxis.set_major_locator(loc)
 ax.xaxis.set_major_formatter(mdates.ConciseDateFormatter(loc))
 
-plt.ylim(13,15)
 
 plt.ylabel(label+' ('+units+')')
-plt.title('Satellite '+sat+' / '+ds_id)
+#plt.title('Satellite '+sat+' / '+ds_id)
+plt.title('Satellite')
 
 fname = fname.replace('dat',fig_fmt)
+
 
 savefig(fname)
 

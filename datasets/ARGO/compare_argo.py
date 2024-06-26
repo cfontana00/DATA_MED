@@ -9,7 +9,7 @@ from fun_gen import *
 from fun_io import *
 from fun_plot_2D import *
 from fun_plot_profile import *
-import sys,os
+import sys,os,argparse
 import xarray as xr
 import datetime as dt
 from datetime import datetime
@@ -20,10 +20,21 @@ import matplotlib
 matplotlib.use("Agg")
 
 
+def argument():
+    parser = argparse.ArgumentParser(description = '',formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(   '--config', '-c',
+                                type = str,
+                                required = True,
+                                help ='Configuration name'
+                                )
+    return parser.parse_args()
+
 
 # Get args
 # --------
-config = sys.argv[1]  # Configuration name
+args = argument()
+config = args.config  # Configuration name
+
 
 
 # Load config file
@@ -35,6 +46,13 @@ tag = ''
 if argo_ds == 'bgc':
   tag = 'bio'
 
+# List to store all data for error computing
+# ------------------------------------------
+full_stack1 = []
+full_stack2 = []
+full_stack3 = []
+
+
 # Create arborescence
 # -------------------
 os.system('mkdir -p '+diagdir)
@@ -44,7 +62,7 @@ os.system('mkdir -p '+savedir)
 
 # Load coordinates
 # ----------------
-lon_mod,lat_mod,lev_mod=load_coords()
+lon_mod,lat_mod,lev_mod = load_coords()
 
 
 # Load data
@@ -69,6 +87,7 @@ time = np.array(time,dtype=str)
 lon_uni = np.unique(lon)
 print(lon_uni.shape[0],'profiles found\n')
 
+n = 0 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 # Loop on profiles
 # ----------------
@@ -133,21 +152,44 @@ for plon in lon_uni:
     fname,dtag = get_filename(int(np.floor(jd)),ftag)
 
 
+
     # Interpolate model on data
     try:
+
+      nan = False
+
       val  = get_model_val_3d(fname,hours,vname,\
                lon_mod,lat_mod,lev_mod,\
                  data_lon,data_lat,data_pres)
+
     except Exception as e:
       print('Interpolation failed')
       print(e)
+
+      idz = np.where(np.isnan(data_pres))
+      len(idz[0])
+      if idz != 0:
+         print('/!\ NaN detected in depth data\n')
+         nan = True
+
+
       val = data_pres
       val[:] = np.nan
 
     full_val.append(val)
     full_data.append(data)
 
+  # Stock data
+  # ----------
+  if not nan :
 
+    full_stack1.append([-data_pres,full_val[0],full_data[0]])
+    full_stack2.append([-data_pres,full_val[1],full_data[1]])
+
+    if argo_ds == 'bgc':
+       full_stack3.append([-data_pres,full_val[2],full_data[2]])
+
+       
   full_val = np.array(full_val)
   full_data = np.array(full_data)
 
@@ -156,31 +198,33 @@ for plon in lon_uni:
 
   os.system('mkdir -p '+savedir+'/'+tag+str(pnum))
 
-  fout = savedir+'/'+tag+str(pnum)+'/profile_'+pcyc+'.'+fig_fmt
+  #fout = savedir+'/'+tag+str(pnum)+'/profile_'+pcyc+'.'+fig_fmt
   ptime = ptime.replace('.000000000','')
 
   if argo_ds == 'bgc':
     mchl,mpsal,mtemp = full_val[0],full_val[1],full_val[2]
     dchl,dpsal,dtemp = full_data[0],full_data[1],full_data[2]
 
-    plot_profiles(fout,ptime,-data_pres,\
+    plot_profiles(savedir,tag,pnum,pcyc,ptime,-data_pres,\
                mchl,dchl,'Chlorophyll (mg.m$^{-3}$)',\
                mpsal,dpsal,'Salinity',\
                mtemp,dtemp,'Temperature (°C)')
+
   else:
     mpsal,mtemp = full_val[0],full_val[1]
     dpsal,dtemp = full_data[0],full_data[1]
 
-    plot_profiles(fout,ptime,-data_pres,\
+    plot_profiles(savedir,tag,pnum,pcyc,ptime,-data_pres,\
                mpsal,dpsal,'Salinity',\
                mtemp,dtemp,'Temperature (°C)')
 
+  #n += 1 
+  #if n > 2 :
+  #   break
 
-
-
+"""
 # Plot trajectories
 # -----------------
-
 print('Plot trajectories ...')
 
 # Load proj
@@ -240,19 +284,83 @@ fout = savedir+'/map'+tag+'.'+fig_fmt
 savefig(fout)
 
 plt.close()
+"""
+
+"""
+full_stack1 = []
+full_stack1.append([[3.1,1.2,2,3,4.2,5,6,7.2,8,9,10],[0.2,5,12,32,318,5,2,4,8,9,10],[1,11,2,22,4,25,6,57,58,94,140]])
+full_stack1.append([[0.3,1,2,3,4,5,6,7,8,9.2,10],[1,11,2,22,4,25,6,57,58,94,140],[0,5,12,32,318,5,2,4,8,9,10]])
+full_stack1.append([[0.2,1,2.2,3.2,4,5.2,6,7,8.2,9,10],[0,5,12,32,318,5,2,4,8,9,10],[0,5,12,32,318,5,2,4,8,9,10]])
+"""
+
+# Compute errors
+n = 2
+
+if argo_ds == 'bgc':
+  n += 1
+
+
+dmin = -200
+dmax = 0.1
+dstep = 10
+
+dstep = np.arange(dmin,dmax,dstep)
 
 
 
 
 
+# Loop on variables
+for i in range(1,n+1):
+  
+   exec("full = full_stack"+str(i))
+   mean = []
+   std = []
+   tot = 0
+
+   bins = []
+   for b in range(0,np.array(dstep).shape[0]-1):
+     bins.append([])
+
+   # Loop on data
+   for data in full:
+
+     depth = np.array(data[0])
+     model = np.array(data[1])
+     data = np.array(data[2])
+
+     # Loop on depths
+     for d in range(0,depth.shape[0]):
+
+        if depth[d] > dmin:
+          error = np.sqrt((model[d]-data[d])**2)
+          b = np.amax( np.where( dstep < depth[d])   )
+
+          if not np.isnan(error):
+            bins[b].append(error)
+
+   for b in range(0,len(bins)):
+      mean.append(np.mean(bins[b]))
+      std.append(np.std(bins[b]))
+      tot += len(bins[b])
+
+   print('N = ',tot)
+
+   if i == 1 :
+      varname = 'Salinity'
+      untis = ''
+      color = 'b'
+   elif i == 2 :
+      varname = 'Temperature'
+      undits = '°C'
+      color = 'r'
+
+
+   plot_error_histo(savedir,dstep,mean,std,varname,units,color) 
+ 
 
 
 
-
-
-
-
-
-
+   print('')
 
 

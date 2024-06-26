@@ -2,16 +2,31 @@
 # Routine to read river data and create 
 # MITgcm input files                 
 #########################################
+import warnings
+warnings.simplefilter("ignore")
+
 
 import numpy as np
 from datetime import datetime
 from fun_gen import load_config
-import sys,os
+import sys,os,argparse
+
+
+def argument():
+    parser = argparse.ArgumentParser(description = '',formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(   '--config', '-c',
+                                type = str,
+                                required = True,
+                                help ='Configuration name')
+    return parser.parse_args()
+
 
 
 # Get args
 # --------
-config = sys.argv[1]  # Configuration name
+args = argument()
+config = args.config    # Configuration name
+
 
 # Load config file
 # ----------------
@@ -84,6 +99,7 @@ for name in french_list:
   # Write file
   # ----------
   data=np.array(data,dtype=str)
+  print(data)
   np.savetxt(odir+'/'+name+'.txt',data,fmt="%s %s")
 
   print('[FILE SAVED]',odir+'/'+name+'.txt\n')

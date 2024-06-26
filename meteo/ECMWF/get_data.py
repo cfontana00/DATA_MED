@@ -4,16 +4,28 @@
 import warnings
 warnings.filterwarnings("ignore")
 
-import sys,os
+import sys,os,argparse
 import numpy as np
 import cdsapi
 from fun_gen import *
 from fun_io import *
 
 
+def argument():
+    parser = argparse.ArgumentParser(description = '',formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(   '--config', '-c',
+                                type = str,
+                                required = True,
+                                help ='Configuration name'
+                                )
+    return parser.parse_args()
+
+
 # Get args
 # --------
-config = sys.argv[1]  # Configuration name
+args = argument()
+config = args.config  # Configuration name
+
 
 # Load config file
 # ----------------
@@ -73,12 +85,12 @@ for year in range(int(yini),int(yend)+1):
 
     mon = str(mon).zfill(2)
 
-    #for var in ['10m_wind_direction','10m_wind_speed',\
-    #        '2m_temperature','2m_relative_humidity',\
-    #        'surface_net_solar_radiation','surface_net_thermal_radiation',\
-    #        'mean_sea_level_pressure','total_precipitation']:
+    for var in ['10m_wind_direction','10m_wind_speed',\
+            '2m_temperature','2m_relative_humidity',\
+            'surface_net_solar_radiation','surface_net_thermal_radiation',\
+            'mean_sea_level_pressure','total_precipitation']:
 
-    for var in ['10m_wind_speed']:
+    #for var in ['10m_wind_speed']:
 
      oname = savedir+'/'+name+'_'+str(year)+mon+'_'+var+'.nc'
 
