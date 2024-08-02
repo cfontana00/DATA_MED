@@ -19,7 +19,7 @@ def init_fig(ax,extent,proj):
   ax.set_extent(extent)
 
   land = cfeature.NaturalEarthFeature('physical', 'land', \
-  scale=resol, edgecolor='k', facecolor=cfeature.COLORS['land'])
+  scale=resol, facecolor=cfeature.COLORS['land'])
 
   ax.add_feature(land, facecolor='lightgrey')
   ax.add_feature(cfeature.BORDERS,edgecolor='darkgrey',zorder=2)

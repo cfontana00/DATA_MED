@@ -87,7 +87,7 @@ time = np.array(time,dtype=str)
 lon_uni = np.unique(lon)
 print(lon_uni.shape[0],'profiles found\n')
 
-n = 0 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+N = 0
 
 # Loop on profiles
 # ----------------
@@ -162,6 +162,8 @@ for plon in lon_uni:
                lon_mod,lat_mod,lev_mod,\
                  data_lon,data_lat,data_pres)
 
+      N += data_pres.shape[0]
+
     except Exception as e:
       print('Interpolation failed')
       print(e)
@@ -221,6 +223,10 @@ for plon in lon_uni:
   #n += 1 
   #if n > 2 :
   #   break
+
+print('-------------')
+print('Total of',str(N),'found')
+print('-------------\n')
 
 """
 # Plot trajectories
@@ -306,8 +312,7 @@ dstep = 10
 
 dstep = np.arange(dmin,dmax,dstep)
 
-
-
+print(dstep)
 
 
 # Loop on variables

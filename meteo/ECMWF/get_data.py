@@ -33,11 +33,6 @@ load_config(config)
 from fun_gen import *
 
 
-# Get args
-# --------
-config=sys.argv[1]  # Configuration name
-
-
 # Load lon/lat
 # ------------
 lon,lat,levels = load_coords()

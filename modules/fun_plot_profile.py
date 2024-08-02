@@ -77,9 +77,9 @@ def plot_profiles(*arg):
     if i > 1:
       ax.spines["top"].set_position(("axes", 1.0+i*0.04))
 
-  plt.legend() 
+  #plt.legend() 
   plt.title(time)  
-  plt.suptitle('Float '+str(pnum)+' - profile '+pcyc,y=1.05)  
+  plt.suptitle('Float '+str(pnum)+' - profile '+pcyc,y=0.98)  
 
   # Save figure
   fout = savedir+'/'+tag+str(pnum)+'/profile_'+pcyc+'.'+fig_fmt

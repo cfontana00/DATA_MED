@@ -21,6 +21,7 @@ import datetime as dt
 from glob import glob
 import sys
 import cv2
+import cmcrameri as cmc
 
 
 # Get args
@@ -44,7 +45,7 @@ os.system('mkdir -p '+savedir)
 
 for jd in range(jdini,jdend+1):
 
-   for hour in range(0,1):
+   for hour in range(0,24):
 
     good = False
       
@@ -69,7 +70,7 @@ for jd in range(jdini,jdend+1):
 
       LON,LAT = np.meshgrid(lon,lat)
 
-      sub = 4
+      sub = 5
       '''
       lons = lon[::sub]
       lats = lat[::sub]
@@ -81,19 +82,19 @@ for jd in range(jdini,jdend+1):
       v[np.where(v>9999)] = np.nan
 
 
-      u_x = g.compute_stencil(u)
-      u_y = g.compute_stencil(u, vertical=True)
+      #u_x = g.compute_stencil(u)
+      #u_y = g.compute_stencil(u, vertical=True)
 
-      v_x = g.compute_stencil(v)
-      v_y = g.compute_stencil(v, vertical=True)
+      #v_x = g.compute_stencil(v)
+      #v_y = g.compute_stencil(v, vertical=True)
 
 
-      ow = g.vars["ow"] = (u_x - v_y) ** 2 + (v_x + u_y) ** 2 - (v_x - u_y) ** 2
+      #ow = g.vars["ow"] = (u_x - v_y) ** 2 + (v_x + u_y) ** 2 - (v_x - u_y) ** 2
 
 
       exec('proj = ' + fig_proj)
       #extent = [np.amin(lon),np.amax(lon),np.amin(lat),np.amax(lat)]
-      extent = [9,10,42.5,43.5]
+      extent = [8,10.05,42.5,43.5]
       fig, ax = plt.subplots(1,1,figsize=(5,4), subplot_kw={'projection': proj})
 
       ax.set_extent(extent)
@@ -117,9 +118,9 @@ for jd in range(jdini,jdend+1):
 
 
       # Process data
-      ow = np.array(ow)
-      idx = np.where( (LON > 9.7) | (LON < 10.5) | \
-              (LAT > 43.7) | (LAT < 43.05))
+      #ow = np.array(ow)
+      #idx = np.where( (LON > 9.7) | (LON < 10.5) | \
+      #        (LAT > 43.7) | (LAT < 43.05))
 
       #ow[idx] = np.nan
       #ow[np.where(ow<2e-9)] = np.nan
@@ -141,11 +142,21 @@ for jd in range(jdini,jdend+1):
       us[np.where(norm < 0.1)] = np.nan
       vs[np.where(norm < 0.1)] = np.nan
 
-      q = ax.quiver(lons,lats,us,vs,color='k',edgecolor='k',linewidth=0.5,scale=15,zorder=4,width=0.005,headlength=5)
+      # Plot vector
+      #q = ax.quiver(lons,lats,us,vs,color='k',edgecolor='k',linewidth=0.5,scale=12,zorder=4,width=0.005,headlength=5)
+      q = ax.quiver(lons,lats,us,vs,color='k',edgecolor='k',linewidth=0.5,scale=12,zorder=4,width=0.002,headlength=5)
+      #q = ax.quiver(lons,lats,us,vs,color='k',edgecolor='k',linewidth=0.5,scale=15,zorder=4,width=0.002,headlength=5)
+
+      # Plot norm
+      contours = np.arange(0.,0.8,0.1)
+      ct = ax.contourf(lons,lats,norm,contours,cmap=cmc.cm.buda_r,extend='max')
+      plt.colorbar(ct,pad=0.14,fraction=0.04,
+              label='Surface velocity (m.s$^{-1}$)',
+              orientation='horizontal')
 
       # Plot scale
-      ax.quiver([9.15],[42.55],[0.6],[0],edgecolor='k',linewidth=0.5,scale=15,width=0.005,headlength=5,zorder=100)
-      plt.text(9.11,42.57,'0.6 m.s$^{-1}$',fontsize=8)
+      #ax.quiver([9.15],[42.55],[0.6],[0],edgecolor='k',linewidth=0.5,scale=15,width=0.005,headlength=5,zorder=100)
+      #plt.text(9.11,42.57,'0.6 m.s$^{-1}$',fontsize=8)
 
       # Plot eddy position
       eddy = np.loadtxt('/DISK2TB/DATA/eddy.dat')

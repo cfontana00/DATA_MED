@@ -176,7 +176,7 @@ trans = np.flipud(trans)
 
 
 p = plt.pcolor(XI,YI,trans,cmap=cmap,vmin=vmin,vmax=vmax)
-cb= plt.colorbar(p,extend='both',fraction=float(cb_fraction_sec),\
+cb= plt.colorbar(p,extend=cb_extend,fraction=float(cb_fraction_sec),\
         pad=float(cb_pad_sec),label=label+' ('+units+')')
 
 # Tune graph

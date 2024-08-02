@@ -216,9 +216,6 @@ for jd in range(jdini,jdend+1):
          cb.ax.tick_params(axis='both', which='both', labelsize=tck_size_ts)
 
 
-   # Tune
-
-
    # Title
    title = 'Satellite '+y+'-'+m+'-'+d+' '+str(hour).zfill(2)+'h'
    plt.title(title,fontsize=fig_title_size)
