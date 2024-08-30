@@ -147,10 +147,8 @@ for plon in lon_uni:
     if hours == 24:
       hours = 0
 
-
     # Get filename
     fname,dtag = get_filename(int(np.floor(jd)),ftag)
-
 
 
     # Interpolate model on data
@@ -228,7 +226,6 @@ print('-------------')
 print('Total of',str(N),'found')
 print('-------------\n')
 
-"""
 # Plot trajectories
 # -----------------
 print('Plot trajectories ...')
@@ -241,8 +238,6 @@ prof = []
 
 # Loop on Argo float
 for n in np.unique(num):
-
-   print(n)
 
 
    # Initialize map
@@ -290,7 +285,6 @@ fout = savedir+'/map'+tag+'.'+fig_fmt
 savefig(fout)
 
 plt.close()
-"""
 
 """
 full_stack1 = []
@@ -311,8 +305,6 @@ dmax = 0.1
 dstep = 10
 
 dstep = np.arange(dmin,dmax,dstep)
-
-print(dstep)
 
 
 # Loop on variables

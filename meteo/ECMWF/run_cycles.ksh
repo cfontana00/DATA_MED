@@ -51,6 +51,10 @@ for cycle in {0..$n_cycle};do
 
    python3 process_data.py $config $date_start $date_end
 
+   if [ $? -ne 0 ];then
+     exit
+   fi     
+
 done
 
 

@@ -19,9 +19,9 @@ import xarray as xr
 from scipy.interpolate import griddata
 
 
-# Get args
-# --------
-config = sys.argv[1]  # Configuration name
+# Read parameter
+config = sys.argv[1]
+
 
 # Load config file
 # ----------------
@@ -218,6 +218,15 @@ for tag in tags:
     long_name = 'Specific humidity'
 
 
+  # Check for NaN
+  # -------------
+  """
+  idx = np.where( np.isnan(full_data) )
+  if len(idx[0]) != 0:
+    print('NaN detected')
+    exit(1)
+  """
+
 
   # Write variable to NetCDF
   # ------------------------
@@ -305,7 +314,6 @@ long_name = '10 meter U wind component'
 oname = name +'_uwind_'+ tag_ini +'_'\
                   + tag_end +'.nc'
 
-print('DATE',mdini,mdend)
 write_nc_meteo(ncdir+'/'+oname,mdini,mdend,lon,lat,'u10',ufull_data,long_name,units)
 
 # V10

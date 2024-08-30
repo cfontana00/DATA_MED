@@ -130,7 +130,8 @@ def get_integre_2D(fname,var,levels,hour):
     thick[l] = (levels[l]-tot)*2 
     tot += thick[l]
 
-  lmax = 10
+  #lmax = 10
+  lmax = 6
   tot = np.sum(thick[0:lmax])
 
   # Integrate values

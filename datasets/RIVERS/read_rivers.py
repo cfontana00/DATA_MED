@@ -99,7 +99,7 @@ for name in french_list:
   # Write file
   # ----------
   data=np.array(data,dtype=str)
-  print(data)
+  #print(data)
   np.savetxt(odir+'/'+name+'.txt',data,fmt="%s %s")
 
   print('[FILE SAVED]',odir+'/'+name+'.txt\n')
@@ -127,8 +127,8 @@ for name in italian_list:
 
  for line in raw:
 
-   date=datetime.strptime(line[0],'%d/%m/%Y')
-   jd=date.toordinal()
+   date = datetime.strptime(line[0],'%d/%m/%Y')
+   jd = date.toordinal()
 
    # Select interval
    if jd >= rdini and jd <= rdend:
@@ -142,14 +142,14 @@ for name in italian_list:
 
 
 
-     d=date.strftime('%Y%m%d')+'T00:00:00.000Z'
+     d = date.strftime('%Y%m%d')+'T00:00:00'
 
      #print(line[1])
-     data.append([d,line[1]])
+     data.append([d,line[1]+'.'+line[2]])
   
  # Write file
  # ----------
- data=np.array(data,dtype=str)
+ data = np.array(data,dtype=str)
  np.savetxt(odir+'/'+name+'.txt',data,fmt="%s %s")
 
  print('[FILE SAVED]',odir+'/'+name+'.txt\n')

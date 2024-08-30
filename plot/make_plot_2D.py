@@ -140,8 +140,8 @@ for jd in range(jdini,jdend+1):
    var2d = np.array(var2d)
    var2d[np.where(var2d > 999) ] = np.nan
 
-   if var == 'zooc':
-     var2d = var2d/12. # !!!!! To remove for next simus
+   #if var == 'zooc':
+   #  var2d = var2d/12. # !!!!! To remove for next simus
 
    # Plot
    if vmod == 'auto' :
