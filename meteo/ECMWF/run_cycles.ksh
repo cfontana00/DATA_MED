@@ -56,9 +56,3 @@ for cycle in {0..$n_cycle};do
    fi     
 
 done
-
-
-
-
-
-

@@ -1,0 +1,2234 @@
+cat: ../../config/config_.json: No such file or directory
+cat: ../../config/config_.json: No such file or directory
+cat: ../../config/config_.json: No such file or directory
+Initial date
+Number of cycle
+Number of days per
+
+./run_cycles.ksh[40]: let: end=0*: more tokens expected
+
+###############################################
+# RUNNING CYCLE FROM 2024-10-05 to 2024-10-03 #
+###############################################
+
+Error in argument or config
+[Errno 2] No such file or directory: '/home/fontana/PROC_MODEL/DATA_MED/config/config_2024-10-05.json'
+./run_cycles.ksh[40]: let: end=-1*: more tokens expected
+
+###############################################
+# RUNNING CYCLE FROM 2024-10-03 to 2024-10-02 #
+###############################################
+
+Error in argument or config
+[Errno 2] No such file or directory: '/home/fontana/PROC_MODEL/DATA_MED/config/config_2024-10-03.json'
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-07-092012-07-102012-07-112012-07-122012-07-132012-07-14
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120709_20120713.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120709_20120713
+
+=> mean_sea_level_pressure
+---------------
+2012-07-092012-07-102012-07-112012-07-122012-07-132012-07-14
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120709_20120713.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120709_20120713
+
+=> 2m_relative_humidity
+---------------
+2012-07-092012-07-102012-07-112012-07-122012-07-132012-07-14
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120709_20120713.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120709_20120713
+
+=> surface_net_solar_radiation
+---------------
+2012-07-092012-07-102012-07-112012-07-122012-07-132012-07-14
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120709_20120713.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120709_20120713
+
+=> surface_net_thermal_radiation
+---------------
+2012-07-092012-07-102012-07-112012-07-122012-07-132012-07-14
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120709_20120713.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120709_20120713
+
+=> total_precipitation
+---------------
+2012-07-092012-07-102012-07-112012-07-122012-07-132012-07-14
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120709_20120713.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120709_20120713
+
+Processing wind variables :
+
+---------------------------
+
+2012-07-092012-07-102012-07-112012-07-122012-07-132012-07-14
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120709_20120713.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120709_20120713.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120709_20120713
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120709_20120713
+
+###############################################
+# RUNNING CYCLE FROM 2012-07-14 to 2012-07-18 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-07-142012-07-152012-07-162012-07-172012-07-182012-07-19
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120714_20120718.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120714_20120718
+
+=> mean_sea_level_pressure
+---------------
+2012-07-142012-07-152012-07-162012-07-172012-07-182012-07-19
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120714_20120718.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120714_20120718
+
+=> 2m_relative_humidity
+---------------
+2012-07-142012-07-152012-07-162012-07-172012-07-182012-07-19
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120714_20120718.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120714_20120718
+
+=> surface_net_solar_radiation
+---------------
+2012-07-142012-07-152012-07-162012-07-172012-07-182012-07-19
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120714_20120718.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120714_20120718
+
+=> surface_net_thermal_radiation
+---------------
+2012-07-142012-07-152012-07-162012-07-172012-07-182012-07-19
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120714_20120718.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120714_20120718
+
+=> total_precipitation
+---------------
+2012-07-142012-07-152012-07-162012-07-172012-07-182012-07-19
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120714_20120718.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120714_20120718
+
+Processing wind variables :
+
+---------------------------
+
+2012-07-142012-07-152012-07-162012-07-172012-07-182012-07-19
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120714_20120718.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120714_20120718.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120714_20120718
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120714_20120718
+
+###############################################
+# RUNNING CYCLE FROM 2012-07-19 to 2012-07-23 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-07-192012-07-202012-07-212012-07-222012-07-232012-07-24
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120719_20120723.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120719_20120723
+
+=> mean_sea_level_pressure
+---------------
+2012-07-192012-07-202012-07-212012-07-222012-07-232012-07-24
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120719_20120723.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120719_20120723
+
+=> 2m_relative_humidity
+---------------
+2012-07-192012-07-202012-07-212012-07-222012-07-232012-07-24
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120719_20120723.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120719_20120723
+
+=> surface_net_solar_radiation
+---------------
+2012-07-192012-07-202012-07-212012-07-222012-07-232012-07-24
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120719_20120723.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120719_20120723
+
+=> surface_net_thermal_radiation
+---------------
+2012-07-192012-07-202012-07-212012-07-222012-07-232012-07-24
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120719_20120723.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120719_20120723
+
+=> total_precipitation
+---------------
+2012-07-192012-07-202012-07-212012-07-222012-07-232012-07-24
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120719_20120723.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120719_20120723
+
+Processing wind variables :
+
+---------------------------
+
+2012-07-192012-07-202012-07-212012-07-222012-07-232012-07-24
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120719_20120723.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120719_20120723.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120719_20120723
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120719_20120723
+
+###############################################
+# RUNNING CYCLE FROM 2012-07-24 to 2012-07-28 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-07-242012-07-252012-07-262012-07-272012-07-282012-07-29
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120724_20120728.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120724_20120728
+
+=> mean_sea_level_pressure
+---------------
+2012-07-242012-07-252012-07-262012-07-272012-07-282012-07-29
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120724_20120728.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120724_20120728
+
+=> 2m_relative_humidity
+---------------
+2012-07-242012-07-252012-07-262012-07-272012-07-282012-07-29
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120724_20120728.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120724_20120728
+
+=> surface_net_solar_radiation
+---------------
+2012-07-242012-07-252012-07-262012-07-272012-07-282012-07-29
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120724_20120728.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120724_20120728
+
+=> surface_net_thermal_radiation
+---------------
+2012-07-242012-07-252012-07-262012-07-272012-07-282012-07-29
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120724_20120728.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120724_20120728
+
+=> total_precipitation
+---------------
+2012-07-242012-07-252012-07-262012-07-272012-07-282012-07-29
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120724_20120728.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120724_20120728
+
+Processing wind variables :
+
+---------------------------
+
+2012-07-242012-07-252012-07-262012-07-272012-07-282012-07-29
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120724_20120728.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120724_20120728.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120724_20120728
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120724_20120728
+
+###############################################
+# RUNNING CYCLE FROM 2012-07-29 to 2012-08-02 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-07-292012-07-302012-07-312012-08-012012-08-022012-08-03
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120729_20120802.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120729_20120802
+
+=> mean_sea_level_pressure
+---------------
+2012-07-292012-07-302012-07-312012-08-012012-08-022012-08-03
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120729_20120802.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120729_20120802
+
+=> 2m_relative_humidity
+---------------
+2012-07-292012-07-302012-07-312012-08-012012-08-022012-08-03
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120729_20120802.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120729_20120802
+
+=> surface_net_solar_radiation
+---------------
+2012-07-292012-07-302012-07-312012-08-012012-08-022012-08-03
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120729_20120802.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120729_20120802
+
+=> surface_net_thermal_radiation
+---------------
+2012-07-292012-07-302012-07-312012-08-012012-08-022012-08-03
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120729_20120802.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120729_20120802
+
+=> total_precipitation
+---------------
+2012-07-292012-07-302012-07-312012-08-012012-08-022012-08-03
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120729_20120802.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120729_20120802
+
+Processing wind variables :
+
+---------------------------
+
+2012-07-292012-07-302012-07-312012-08-012012-08-022012-08-03
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120729_20120802.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120729_20120802.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120729_20120802
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120729_20120802
+
+###############################################
+# RUNNING CYCLE FROM 2012-08-03 to 2012-08-07 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-08-032012-08-042012-08-052012-08-062012-08-072012-08-08
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120803_20120807.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120803_20120807
+
+=> mean_sea_level_pressure
+---------------
+2012-08-032012-08-042012-08-052012-08-062012-08-072012-08-08
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120803_20120807.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120803_20120807
+
+=> 2m_relative_humidity
+---------------
+2012-08-032012-08-042012-08-052012-08-062012-08-072012-08-08
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120803_20120807.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120803_20120807
+
+=> surface_net_solar_radiation
+---------------
+2012-08-032012-08-042012-08-052012-08-062012-08-072012-08-08
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120803_20120807.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120803_20120807
+
+=> surface_net_thermal_radiation
+---------------
+2012-08-032012-08-042012-08-052012-08-062012-08-072012-08-08
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120803_20120807.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120803_20120807
+
+=> total_precipitation
+---------------
+2012-08-032012-08-042012-08-052012-08-062012-08-072012-08-08
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120803_20120807.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120803_20120807
+
+Processing wind variables :
+
+---------------------------
+
+2012-08-032012-08-042012-08-052012-08-062012-08-072012-08-08
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120803_20120807.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120803_20120807.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120803_20120807
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120803_20120807
+
+###############################################
+# RUNNING CYCLE FROM 2012-08-08 to 2012-08-12 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-08-082012-08-092012-08-102012-08-112012-08-122012-08-13
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120808_20120812.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120808_20120812
+
+=> mean_sea_level_pressure
+---------------
+2012-08-082012-08-092012-08-102012-08-112012-08-122012-08-13
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120808_20120812.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120808_20120812
+
+=> 2m_relative_humidity
+---------------
+2012-08-082012-08-092012-08-102012-08-112012-08-122012-08-13
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120808_20120812.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120808_20120812
+
+=> surface_net_solar_radiation
+---------------
+2012-08-082012-08-092012-08-102012-08-112012-08-122012-08-13
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120808_20120812.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120808_20120812
+
+=> surface_net_thermal_radiation
+---------------
+2012-08-082012-08-092012-08-102012-08-112012-08-122012-08-13
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120808_20120812.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120808_20120812
+
+=> total_precipitation
+---------------
+2012-08-082012-08-092012-08-102012-08-112012-08-122012-08-13
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120808_20120812.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120808_20120812
+
+Processing wind variables :
+
+---------------------------
+
+2012-08-082012-08-092012-08-102012-08-112012-08-122012-08-13
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120808_20120812.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120808_20120812.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120808_20120812
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120808_20120812
+
+###############################################
+# RUNNING CYCLE FROM 2012-08-13 to 2012-08-17 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-08-132012-08-142012-08-152012-08-162012-08-172012-08-18
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120813_20120817.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120813_20120817
+
+=> mean_sea_level_pressure
+---------------
+2012-08-132012-08-142012-08-152012-08-162012-08-172012-08-18
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120813_20120817.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120813_20120817
+
+=> 2m_relative_humidity
+---------------
+2012-08-132012-08-142012-08-152012-08-162012-08-172012-08-18
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120813_20120817.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120813_20120817
+
+=> surface_net_solar_radiation
+---------------
+2012-08-132012-08-142012-08-152012-08-162012-08-172012-08-18
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120813_20120817.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120813_20120817
+
+=> surface_net_thermal_radiation
+---------------
+2012-08-132012-08-142012-08-152012-08-162012-08-172012-08-18
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120813_20120817.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120813_20120817
+
+=> total_precipitation
+---------------
+2012-08-132012-08-142012-08-152012-08-162012-08-172012-08-18
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120813_20120817.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120813_20120817
+
+Processing wind variables :
+
+---------------------------
+
+2012-08-132012-08-142012-08-152012-08-162012-08-172012-08-18
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120813_20120817.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120813_20120817.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120813_20120817
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120813_20120817
+
+###############################################
+# RUNNING CYCLE FROM 2012-08-18 to 2012-08-22 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-08-182012-08-192012-08-202012-08-212012-08-222012-08-23
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120818_20120822.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120818_20120822
+
+=> mean_sea_level_pressure
+---------------
+2012-08-182012-08-192012-08-202012-08-212012-08-222012-08-23
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120818_20120822.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120818_20120822
+
+=> 2m_relative_humidity
+---------------
+2012-08-182012-08-192012-08-202012-08-212012-08-222012-08-23
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120818_20120822.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120818_20120822
+
+=> surface_net_solar_radiation
+---------------
+2012-08-182012-08-192012-08-202012-08-212012-08-222012-08-23
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120818_20120822.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120818_20120822
+
+=> surface_net_thermal_radiation
+---------------
+2012-08-182012-08-192012-08-202012-08-212012-08-222012-08-23
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120818_20120822.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120818_20120822
+
+=> total_precipitation
+---------------
+2012-08-182012-08-192012-08-202012-08-212012-08-222012-08-23
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120818_20120822.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120818_20120822
+
+Processing wind variables :
+
+---------------------------
+
+2012-08-182012-08-192012-08-202012-08-212012-08-222012-08-23
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120818_20120822.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120818_20120822.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120818_20120822
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120818_20120822
+
+###############################################
+# RUNNING CYCLE FROM 2012-08-23 to 2012-08-27 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-08-232012-08-242012-08-252012-08-262012-08-272012-08-28
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120823_20120827.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120823_20120827
+
+=> mean_sea_level_pressure
+---------------
+2012-08-232012-08-242012-08-252012-08-262012-08-272012-08-28
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120823_20120827.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120823_20120827
+
+=> 2m_relative_humidity
+---------------
+2012-08-232012-08-242012-08-252012-08-262012-08-272012-08-28
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120823_20120827.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120823_20120827
+
+=> surface_net_solar_radiation
+---------------
+2012-08-232012-08-242012-08-252012-08-262012-08-272012-08-28
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120823_20120827.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120823_20120827
+
+=> surface_net_thermal_radiation
+---------------
+2012-08-232012-08-242012-08-252012-08-262012-08-272012-08-28
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120823_20120827.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120823_20120827
+
+=> total_precipitation
+---------------
+2012-08-232012-08-242012-08-252012-08-262012-08-272012-08-28
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120823_20120827.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120823_20120827
+
+Processing wind variables :
+
+---------------------------
+
+2012-08-232012-08-242012-08-252012-08-262012-08-272012-08-28
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120823_20120827.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120823_20120827.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120823_20120827
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120823_20120827
+
+###############################################
+# RUNNING CYCLE FROM 2012-08-28 to 2012-09-01 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-08-282012-08-292012-08-302012-08-312012-09-012012-09-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120828_20120901.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120828_20120901
+
+=> mean_sea_level_pressure
+---------------
+2012-08-282012-08-292012-08-302012-08-312012-09-012012-09-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120828_20120901.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120828_20120901
+
+=> 2m_relative_humidity
+---------------
+2012-08-282012-08-292012-08-302012-08-312012-09-012012-09-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120828_20120901.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120828_20120901
+
+=> surface_net_solar_radiation
+---------------
+2012-08-282012-08-292012-08-302012-08-312012-09-012012-09-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120828_20120901.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120828_20120901
+
+=> surface_net_thermal_radiation
+---------------
+2012-08-282012-08-292012-08-302012-08-312012-09-012012-09-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120828_20120901.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120828_20120901
+
+=> total_precipitation
+---------------
+2012-08-282012-08-292012-08-302012-08-312012-09-012012-09-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120828_20120901.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120828_20120901
+
+Processing wind variables :
+
+---------------------------
+
+2012-08-282012-08-292012-08-302012-08-312012-09-012012-09-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120828_20120901.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120828_20120901.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120828_20120901
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120828_20120901
+
+###############################################
+# RUNNING CYCLE FROM 2012-09-02 to 2012-09-06 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-09-022012-09-032012-09-042012-09-052012-09-062012-09-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120902_20120906.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120902_20120906
+
+=> mean_sea_level_pressure
+---------------
+2012-09-022012-09-032012-09-042012-09-052012-09-062012-09-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120902_20120906.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120902_20120906
+
+=> 2m_relative_humidity
+---------------
+2012-09-022012-09-032012-09-042012-09-052012-09-062012-09-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120902_20120906.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120902_20120906
+
+=> surface_net_solar_radiation
+---------------
+2012-09-022012-09-032012-09-042012-09-052012-09-062012-09-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120902_20120906.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120902_20120906
+
+=> surface_net_thermal_radiation
+---------------
+2012-09-022012-09-032012-09-042012-09-052012-09-062012-09-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120902_20120906.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120902_20120906
+
+=> total_precipitation
+---------------
+2012-09-022012-09-032012-09-042012-09-052012-09-062012-09-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120902_20120906.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120902_20120906
+
+Processing wind variables :
+
+---------------------------
+
+2012-09-022012-09-032012-09-042012-09-052012-09-062012-09-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120902_20120906.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120902_20120906.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120902_20120906
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120902_20120906
+
+###############################################
+# RUNNING CYCLE FROM 2012-09-07 to 2012-09-11 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-09-072012-09-082012-09-092012-09-102012-09-112012-09-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120907_20120911.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120907_20120911
+
+=> mean_sea_level_pressure
+---------------
+2012-09-072012-09-082012-09-092012-09-102012-09-112012-09-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120907_20120911.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120907_20120911
+
+=> 2m_relative_humidity
+---------------
+2012-09-072012-09-082012-09-092012-09-102012-09-112012-09-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120907_20120911.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120907_20120911
+
+=> surface_net_solar_radiation
+---------------
+2012-09-072012-09-082012-09-092012-09-102012-09-112012-09-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120907_20120911.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120907_20120911
+
+=> surface_net_thermal_radiation
+---------------
+2012-09-072012-09-082012-09-092012-09-102012-09-112012-09-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120907_20120911.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120907_20120911
+
+=> total_precipitation
+---------------
+2012-09-072012-09-082012-09-092012-09-102012-09-112012-09-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120907_20120911.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120907_20120911
+
+Processing wind variables :
+
+---------------------------
+
+2012-09-072012-09-082012-09-092012-09-102012-09-112012-09-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120907_20120911.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120907_20120911.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120907_20120911
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120907_20120911
+
+###############################################
+# RUNNING CYCLE FROM 2012-09-12 to 2012-09-16 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-09-122012-09-132012-09-142012-09-152012-09-162012-09-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120912_20120916.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120912_20120916
+
+=> mean_sea_level_pressure
+---------------
+2012-09-122012-09-132012-09-142012-09-152012-09-162012-09-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120912_20120916.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120912_20120916
+
+=> 2m_relative_humidity
+---------------
+2012-09-122012-09-132012-09-142012-09-152012-09-162012-09-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120912_20120916.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120912_20120916
+
+=> surface_net_solar_radiation
+---------------
+2012-09-122012-09-132012-09-142012-09-152012-09-162012-09-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120912_20120916.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120912_20120916
+
+=> surface_net_thermal_radiation
+---------------
+2012-09-122012-09-132012-09-142012-09-152012-09-162012-09-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120912_20120916.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120912_20120916
+
+=> total_precipitation
+---------------
+2012-09-122012-09-132012-09-142012-09-152012-09-162012-09-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120912_20120916.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120912_20120916
+
+Processing wind variables :
+
+---------------------------
+
+2012-09-122012-09-132012-09-142012-09-152012-09-162012-09-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120912_20120916.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120912_20120916.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120912_20120916
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120912_20120916
+
+###############################################
+# RUNNING CYCLE FROM 2012-09-17 to 2012-09-21 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-09-172012-09-182012-09-192012-09-202012-09-212012-09-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120917_20120921.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120917_20120921
+
+=> mean_sea_level_pressure
+---------------
+2012-09-172012-09-182012-09-192012-09-202012-09-212012-09-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120917_20120921.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120917_20120921
+
+=> 2m_relative_humidity
+---------------
+2012-09-172012-09-182012-09-192012-09-202012-09-212012-09-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120917_20120921.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120917_20120921
+
+=> surface_net_solar_radiation
+---------------
+2012-09-172012-09-182012-09-192012-09-202012-09-212012-09-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120917_20120921.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120917_20120921
+
+=> surface_net_thermal_radiation
+---------------
+2012-09-172012-09-182012-09-192012-09-202012-09-212012-09-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120917_20120921.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120917_20120921
+
+=> total_precipitation
+---------------
+2012-09-172012-09-182012-09-192012-09-202012-09-212012-09-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120917_20120921.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120917_20120921
+
+Processing wind variables :
+
+---------------------------
+
+2012-09-172012-09-182012-09-192012-09-202012-09-212012-09-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120917_20120921.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120917_20120921.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120917_20120921
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120917_20120921
+
+###############################################
+# RUNNING CYCLE FROM 2012-09-22 to 2012-09-26 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-09-222012-09-232012-09-242012-09-252012-09-262012-09-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120922_20120926.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120922_20120926
+
+=> mean_sea_level_pressure
+---------------
+2012-09-222012-09-232012-09-242012-09-252012-09-262012-09-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120922_20120926.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120922_20120926
+
+=> 2m_relative_humidity
+---------------
+2012-09-222012-09-232012-09-242012-09-252012-09-262012-09-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120922_20120926.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120922_20120926
+
+=> surface_net_solar_radiation
+---------------
+2012-09-222012-09-232012-09-242012-09-252012-09-262012-09-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120922_20120926.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120922_20120926
+
+=> surface_net_thermal_radiation
+---------------
+2012-09-222012-09-232012-09-242012-09-252012-09-262012-09-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120922_20120926.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120922_20120926
+
+=> total_precipitation
+---------------
+2012-09-222012-09-232012-09-242012-09-252012-09-262012-09-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120922_20120926.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120922_20120926
+
+Processing wind variables :
+
+---------------------------
+
+2012-09-222012-09-232012-09-242012-09-252012-09-262012-09-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120922_20120926.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120922_20120926.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120922_20120926
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120922_20120926
+
+###############################################
+# RUNNING CYCLE FROM 2012-09-27 to 2012-10-01 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-09-272012-09-282012-09-292012-09-302012-10-012012-10-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20120927_20121001.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20120927_20121001
+
+=> mean_sea_level_pressure
+---------------
+2012-09-272012-09-282012-09-292012-09-302012-10-012012-10-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20120927_20121001.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20120927_20121001
+
+=> 2m_relative_humidity
+---------------
+2012-09-272012-09-282012-09-292012-09-302012-10-012012-10-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20120927_20121001.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20120927_20121001
+
+=> surface_net_solar_radiation
+---------------
+2012-09-272012-09-282012-09-292012-09-302012-10-012012-10-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20120927_20121001.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20120927_20121001
+
+=> surface_net_thermal_radiation
+---------------
+2012-09-272012-09-282012-09-292012-09-302012-10-012012-10-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20120927_20121001.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20120927_20121001
+
+=> total_precipitation
+---------------
+2012-09-272012-09-282012-09-292012-09-302012-10-012012-10-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20120927_20121001.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20120927_20121001
+
+Processing wind variables :
+
+---------------------------
+
+2012-09-272012-09-282012-09-292012-09-302012-10-012012-10-02
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20120927_20121001.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20120927_20121001.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20120927_20121001
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20120927_20121001
+
+###############################################
+# RUNNING CYCLE FROM 2012-10-02 to 2012-10-06 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-10-022012-10-032012-10-042012-10-052012-10-062012-10-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121002_20121006.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121002_20121006
+
+=> mean_sea_level_pressure
+---------------
+2012-10-022012-10-032012-10-042012-10-052012-10-062012-10-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121002_20121006.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121002_20121006
+
+=> 2m_relative_humidity
+---------------
+2012-10-022012-10-032012-10-042012-10-052012-10-062012-10-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121002_20121006.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121002_20121006
+
+=> surface_net_solar_radiation
+---------------
+2012-10-022012-10-032012-10-042012-10-052012-10-062012-10-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121002_20121006.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121002_20121006
+
+=> surface_net_thermal_radiation
+---------------
+2012-10-022012-10-032012-10-042012-10-052012-10-062012-10-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121002_20121006.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121002_20121006
+
+=> total_precipitation
+---------------
+2012-10-022012-10-032012-10-042012-10-052012-10-062012-10-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121002_20121006.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121002_20121006
+
+Processing wind variables :
+
+---------------------------
+
+2012-10-022012-10-032012-10-042012-10-052012-10-062012-10-07
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121002_20121006.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121002_20121006.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121002_20121006
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121002_20121006
+
+###############################################
+# RUNNING CYCLE FROM 2012-10-07 to 2012-10-11 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-10-072012-10-082012-10-092012-10-102012-10-112012-10-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121007_20121011.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121007_20121011
+
+=> mean_sea_level_pressure
+---------------
+2012-10-072012-10-082012-10-092012-10-102012-10-112012-10-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121007_20121011.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121007_20121011
+
+=> 2m_relative_humidity
+---------------
+2012-10-072012-10-082012-10-092012-10-102012-10-112012-10-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121007_20121011.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121007_20121011
+
+=> surface_net_solar_radiation
+---------------
+2012-10-072012-10-082012-10-092012-10-102012-10-112012-10-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121007_20121011.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121007_20121011
+
+=> surface_net_thermal_radiation
+---------------
+2012-10-072012-10-082012-10-092012-10-102012-10-112012-10-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121007_20121011.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121007_20121011
+
+=> total_precipitation
+---------------
+2012-10-072012-10-082012-10-092012-10-102012-10-112012-10-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121007_20121011.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121007_20121011
+
+Processing wind variables :
+
+---------------------------
+
+2012-10-072012-10-082012-10-092012-10-102012-10-112012-10-12
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121007_20121011.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121007_20121011.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121007_20121011
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121007_20121011
+
+###############################################
+# RUNNING CYCLE FROM 2012-10-12 to 2012-10-16 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-10-122012-10-132012-10-142012-10-152012-10-162012-10-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121012_20121016.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121012_20121016
+
+=> mean_sea_level_pressure
+---------------
+2012-10-122012-10-132012-10-142012-10-152012-10-162012-10-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121012_20121016.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121012_20121016
+
+=> 2m_relative_humidity
+---------------
+2012-10-122012-10-132012-10-142012-10-152012-10-162012-10-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121012_20121016.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121012_20121016
+
+=> surface_net_solar_radiation
+---------------
+2012-10-122012-10-132012-10-142012-10-152012-10-162012-10-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121012_20121016.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121012_20121016
+
+=> surface_net_thermal_radiation
+---------------
+2012-10-122012-10-132012-10-142012-10-152012-10-162012-10-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121012_20121016.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121012_20121016
+
+=> total_precipitation
+---------------
+2012-10-122012-10-132012-10-142012-10-152012-10-162012-10-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121012_20121016.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121012_20121016
+
+Processing wind variables :
+
+---------------------------
+
+2012-10-122012-10-132012-10-142012-10-152012-10-162012-10-17
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121012_20121016.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121012_20121016.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121012_20121016
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121012_20121016
+
+###############################################
+# RUNNING CYCLE FROM 2012-10-17 to 2012-10-21 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-10-172012-10-182012-10-192012-10-202012-10-212012-10-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121017_20121021.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121017_20121021
+
+=> mean_sea_level_pressure
+---------------
+2012-10-172012-10-182012-10-192012-10-202012-10-212012-10-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121017_20121021.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121017_20121021
+
+=> 2m_relative_humidity
+---------------
+2012-10-172012-10-182012-10-192012-10-202012-10-212012-10-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121017_20121021.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121017_20121021
+
+=> surface_net_solar_radiation
+---------------
+2012-10-172012-10-182012-10-192012-10-202012-10-212012-10-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121017_20121021.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121017_20121021
+
+=> surface_net_thermal_radiation
+---------------
+2012-10-172012-10-182012-10-192012-10-202012-10-212012-10-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121017_20121021.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121017_20121021
+
+=> total_precipitation
+---------------
+2012-10-172012-10-182012-10-192012-10-202012-10-212012-10-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121017_20121021.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121017_20121021
+
+Processing wind variables :
+
+---------------------------
+
+2012-10-172012-10-182012-10-192012-10-202012-10-212012-10-22
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121017_20121021.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121017_20121021.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121017_20121021
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121017_20121021
+
+###############################################
+# RUNNING CYCLE FROM 2012-10-22 to 2012-10-26 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-10-222012-10-232012-10-242012-10-252012-10-262012-10-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121022_20121026.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121022_20121026
+
+=> mean_sea_level_pressure
+---------------
+2012-10-222012-10-232012-10-242012-10-252012-10-262012-10-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121022_20121026.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121022_20121026
+
+=> 2m_relative_humidity
+---------------
+2012-10-222012-10-232012-10-242012-10-252012-10-262012-10-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121022_20121026.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121022_20121026
+
+=> surface_net_solar_radiation
+---------------
+2012-10-222012-10-232012-10-242012-10-252012-10-262012-10-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121022_20121026.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121022_20121026
+
+=> surface_net_thermal_radiation
+---------------
+2012-10-222012-10-232012-10-242012-10-252012-10-262012-10-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121022_20121026.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121022_20121026
+
+=> total_precipitation
+---------------
+2012-10-222012-10-232012-10-242012-10-252012-10-262012-10-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121022_20121026.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121022_20121026
+
+Processing wind variables :
+
+---------------------------
+
+2012-10-222012-10-232012-10-242012-10-252012-10-262012-10-27
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121022_20121026.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121022_20121026.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121022_20121026
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121022_20121026
+
+###############################################
+# RUNNING CYCLE FROM 2012-10-27 to 2012-10-31 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-10-272012-10-282012-10-292012-10-302012-10-312012-11-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121027_20121031.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121027_20121031
+
+=> mean_sea_level_pressure
+---------------
+2012-10-272012-10-282012-10-292012-10-302012-10-312012-11-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121027_20121031.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121027_20121031
+
+=> 2m_relative_humidity
+---------------
+2012-10-272012-10-282012-10-292012-10-302012-10-312012-11-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121027_20121031.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121027_20121031
+
+=> surface_net_solar_radiation
+---------------
+2012-10-272012-10-282012-10-292012-10-302012-10-312012-11-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121027_20121031.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121027_20121031
+
+=> surface_net_thermal_radiation
+---------------
+2012-10-272012-10-282012-10-292012-10-302012-10-312012-11-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121027_20121031.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121027_20121031
+
+=> total_precipitation
+---------------
+2012-10-272012-10-282012-10-292012-10-302012-10-312012-11-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121027_20121031.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121027_20121031
+
+Processing wind variables :
+
+---------------------------
+
+2012-10-272012-10-282012-10-292012-10-302012-10-312012-11-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121027_20121031.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121027_20121031.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121027_20121031
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121027_20121031
+
+###############################################
+# RUNNING CYCLE FROM 2012-11-01 to 2012-11-05 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-11-012012-11-022012-11-032012-11-042012-11-052012-11-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121101_20121105.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121101_20121105
+
+=> mean_sea_level_pressure
+---------------
+2012-11-012012-11-022012-11-032012-11-042012-11-052012-11-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121101_20121105.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121101_20121105
+
+=> 2m_relative_humidity
+---------------
+2012-11-012012-11-022012-11-032012-11-042012-11-052012-11-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121101_20121105.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121101_20121105
+
+=> surface_net_solar_radiation
+---------------
+2012-11-012012-11-022012-11-032012-11-042012-11-052012-11-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121101_20121105.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121101_20121105
+
+=> surface_net_thermal_radiation
+---------------
+2012-11-012012-11-022012-11-032012-11-042012-11-052012-11-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121101_20121105.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121101_20121105
+
+=> total_precipitation
+---------------
+2012-11-012012-11-022012-11-032012-11-042012-11-052012-11-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121101_20121105.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121101_20121105
+
+Processing wind variables :
+
+---------------------------
+
+2012-11-012012-11-022012-11-032012-11-042012-11-052012-11-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121101_20121105.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121101_20121105.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121101_20121105
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121101_20121105
+
+###############################################
+# RUNNING CYCLE FROM 2012-11-06 to 2012-11-10 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-11-062012-11-072012-11-082012-11-092012-11-102012-11-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121106_20121110.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121106_20121110
+
+=> mean_sea_level_pressure
+---------------
+2012-11-062012-11-072012-11-082012-11-092012-11-102012-11-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121106_20121110.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121106_20121110
+
+=> 2m_relative_humidity
+---------------
+2012-11-062012-11-072012-11-082012-11-092012-11-102012-11-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121106_20121110.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121106_20121110
+
+=> surface_net_solar_radiation
+---------------
+2012-11-062012-11-072012-11-082012-11-092012-11-102012-11-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121106_20121110.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121106_20121110
+
+=> surface_net_thermal_radiation
+---------------
+2012-11-062012-11-072012-11-082012-11-092012-11-102012-11-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121106_20121110.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121106_20121110
+
+=> total_precipitation
+---------------
+2012-11-062012-11-072012-11-082012-11-092012-11-102012-11-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121106_20121110.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121106_20121110
+
+Processing wind variables :
+
+---------------------------
+
+2012-11-062012-11-072012-11-082012-11-092012-11-102012-11-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121106_20121110.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121106_20121110.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121106_20121110
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121106_20121110
+
+###############################################
+# RUNNING CYCLE FROM 2012-11-11 to 2012-11-15 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-11-112012-11-122012-11-132012-11-142012-11-152012-11-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121111_20121115.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121111_20121115
+
+=> mean_sea_level_pressure
+---------------
+2012-11-112012-11-122012-11-132012-11-142012-11-152012-11-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121111_20121115.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121111_20121115
+
+=> 2m_relative_humidity
+---------------
+2012-11-112012-11-122012-11-132012-11-142012-11-152012-11-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121111_20121115.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121111_20121115
+
+=> surface_net_solar_radiation
+---------------
+2012-11-112012-11-122012-11-132012-11-142012-11-152012-11-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121111_20121115.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121111_20121115
+
+=> surface_net_thermal_radiation
+---------------
+2012-11-112012-11-122012-11-132012-11-142012-11-152012-11-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121111_20121115.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121111_20121115
+
+=> total_precipitation
+---------------
+2012-11-112012-11-122012-11-132012-11-142012-11-152012-11-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121111_20121115.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121111_20121115
+
+Processing wind variables :
+
+---------------------------
+
+2012-11-112012-11-122012-11-132012-11-142012-11-152012-11-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121111_20121115.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121111_20121115.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121111_20121115
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121111_20121115
+
+###############################################
+# RUNNING CYCLE FROM 2012-11-16 to 2012-11-20 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-11-162012-11-172012-11-182012-11-192012-11-202012-11-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121116_20121120.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121116_20121120
+
+=> mean_sea_level_pressure
+---------------
+2012-11-162012-11-172012-11-182012-11-192012-11-202012-11-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121116_20121120.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121116_20121120
+
+=> 2m_relative_humidity
+---------------
+2012-11-162012-11-172012-11-182012-11-192012-11-202012-11-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121116_20121120.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121116_20121120
+
+=> surface_net_solar_radiation
+---------------
+2012-11-162012-11-172012-11-182012-11-192012-11-202012-11-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121116_20121120.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121116_20121120
+
+=> surface_net_thermal_radiation
+---------------
+2012-11-162012-11-172012-11-182012-11-192012-11-202012-11-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121116_20121120.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121116_20121120
+
+=> total_precipitation
+---------------
+2012-11-162012-11-172012-11-182012-11-192012-11-202012-11-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121116_20121120.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121116_20121120
+
+Processing wind variables :
+
+---------------------------
+
+2012-11-162012-11-172012-11-182012-11-192012-11-202012-11-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121116_20121120.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121116_20121120.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121116_20121120
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121116_20121120
+
+###############################################
+# RUNNING CYCLE FROM 2012-11-21 to 2012-11-25 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-11-212012-11-222012-11-232012-11-242012-11-252012-11-26
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121121_20121125.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121121_20121125
+
+=> mean_sea_level_pressure
+---------------
+2012-11-212012-11-222012-11-232012-11-242012-11-252012-11-26
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121121_20121125.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121121_20121125
+
+=> 2m_relative_humidity
+---------------
+2012-11-212012-11-222012-11-232012-11-242012-11-252012-11-26
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121121_20121125.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121121_20121125
+
+=> surface_net_solar_radiation
+---------------
+2012-11-212012-11-222012-11-232012-11-242012-11-252012-11-26
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121121_20121125.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121121_20121125
+
+=> surface_net_thermal_radiation
+---------------
+2012-11-212012-11-222012-11-232012-11-242012-11-252012-11-26
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121121_20121125.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121121_20121125
+
+=> total_precipitation
+---------------
+2012-11-212012-11-222012-11-232012-11-242012-11-252012-11-26
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121121_20121125.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121121_20121125
+
+Processing wind variables :
+
+---------------------------
+
+2012-11-212012-11-222012-11-232012-11-242012-11-252012-11-26
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121121_20121125.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121121_20121125.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121121_20121125
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121121_20121125
+
+###############################################
+# RUNNING CYCLE FROM 2012-11-26 to 2012-11-30 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-11-262012-11-272012-11-282012-11-292012-11-302012-12-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121126_20121130.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121126_20121130
+
+=> mean_sea_level_pressure
+---------------
+2012-11-262012-11-272012-11-282012-11-292012-11-302012-12-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121126_20121130.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121126_20121130
+
+=> 2m_relative_humidity
+---------------
+2012-11-262012-11-272012-11-282012-11-292012-11-302012-12-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121126_20121130.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121126_20121130
+
+=> surface_net_solar_radiation
+---------------
+2012-11-262012-11-272012-11-282012-11-292012-11-302012-12-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121126_20121130.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121126_20121130
+
+=> surface_net_thermal_radiation
+---------------
+2012-11-262012-11-272012-11-282012-11-292012-11-302012-12-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121126_20121130.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121126_20121130
+
+=> total_precipitation
+---------------
+2012-11-262012-11-272012-11-282012-11-292012-11-302012-12-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121126_20121130.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121126_20121130
+
+Processing wind variables :
+
+---------------------------
+
+2012-11-262012-11-272012-11-282012-11-292012-11-302012-12-01
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121126_20121130.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121126_20121130.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121126_20121130
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121126_20121130
+
+###############################################
+# RUNNING CYCLE FROM 2012-12-01 to 2012-12-05 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-12-012012-12-022012-12-032012-12-042012-12-052012-12-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121201_20121205.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121201_20121205
+
+=> mean_sea_level_pressure
+---------------
+2012-12-012012-12-022012-12-032012-12-042012-12-052012-12-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121201_20121205.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121201_20121205
+
+=> 2m_relative_humidity
+---------------
+2012-12-012012-12-022012-12-032012-12-042012-12-052012-12-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121201_20121205.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121201_20121205
+
+=> surface_net_solar_radiation
+---------------
+2012-12-012012-12-022012-12-032012-12-042012-12-052012-12-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121201_20121205.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121201_20121205
+
+=> surface_net_thermal_radiation
+---------------
+2012-12-012012-12-022012-12-032012-12-042012-12-052012-12-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121201_20121205.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121201_20121205
+
+=> total_precipitation
+---------------
+2012-12-012012-12-022012-12-032012-12-042012-12-052012-12-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121201_20121205.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121201_20121205
+
+Processing wind variables :
+
+---------------------------
+
+2012-12-012012-12-022012-12-032012-12-042012-12-052012-12-06
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121201_20121205.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121201_20121205.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121201_20121205
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121201_20121205
+
+###############################################
+# RUNNING CYCLE FROM 2012-12-06 to 2012-12-10 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-12-062012-12-072012-12-082012-12-092012-12-102012-12-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121206_20121210.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121206_20121210
+
+=> mean_sea_level_pressure
+---------------
+2012-12-062012-12-072012-12-082012-12-092012-12-102012-12-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121206_20121210.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121206_20121210
+
+=> 2m_relative_humidity
+---------------
+2012-12-062012-12-072012-12-082012-12-092012-12-102012-12-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121206_20121210.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121206_20121210
+
+=> surface_net_solar_radiation
+---------------
+2012-12-062012-12-072012-12-082012-12-092012-12-102012-12-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121206_20121210.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121206_20121210
+
+=> surface_net_thermal_radiation
+---------------
+2012-12-062012-12-072012-12-082012-12-092012-12-102012-12-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121206_20121210.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121206_20121210
+
+=> total_precipitation
+---------------
+2012-12-062012-12-072012-12-082012-12-092012-12-102012-12-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121206_20121210.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121206_20121210
+
+Processing wind variables :
+
+---------------------------
+
+2012-12-062012-12-072012-12-082012-12-092012-12-102012-12-11
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121206_20121210.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121206_20121210.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121206_20121210
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121206_20121210
+
+###############################################
+# RUNNING CYCLE FROM 2012-12-11 to 2012-12-15 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-12-112012-12-122012-12-132012-12-142012-12-152012-12-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121211_20121215.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121211_20121215
+
+=> mean_sea_level_pressure
+---------------
+2012-12-112012-12-122012-12-132012-12-142012-12-152012-12-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121211_20121215.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121211_20121215
+
+=> 2m_relative_humidity
+---------------
+2012-12-112012-12-122012-12-132012-12-142012-12-152012-12-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121211_20121215.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121211_20121215
+
+=> surface_net_solar_radiation
+---------------
+2012-12-112012-12-122012-12-132012-12-142012-12-152012-12-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121211_20121215.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121211_20121215
+
+=> surface_net_thermal_radiation
+---------------
+2012-12-112012-12-122012-12-132012-12-142012-12-152012-12-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121211_20121215.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121211_20121215
+
+=> total_precipitation
+---------------
+2012-12-112012-12-122012-12-132012-12-142012-12-152012-12-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121211_20121215.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121211_20121215
+
+Processing wind variables :
+
+---------------------------
+
+2012-12-112012-12-122012-12-132012-12-142012-12-152012-12-16
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121211_20121215.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121211_20121215.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121211_20121215
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121211_20121215
+
+###############################################
+# RUNNING CYCLE FROM 2012-12-16 to 2012-12-20 #
+###############################################
+
+----------------------------------
+=> Config file LONG loaded
+----------------------------------
+
+NB /!\: 3-h fields hard coded ...
+
+Processing standard variables :
+
+=> 2m_temperature
+---------------
+2012-12-162012-12-172012-12-182012-12-192012-12-202012-12-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20121216_20121220.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_atemp_20121216_20121220
+
+=> mean_sea_level_pressure
+---------------
+2012-12-162012-12-172012-12-182012-12-192012-12-202012-12-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20121216_20121220.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_apress_20121216_20121220
+
+=> 2m_relative_humidity
+---------------
+2012-12-162012-12-172012-12-182012-12-192012-12-202012-12-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20121216_20121220.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_aqh_20121216_20121220
+
+=> surface_net_solar_radiation
+---------------
+2012-12-162012-12-172012-12-182012-12-192012-12-202012-12-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20121216_20121220.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_swflux_20121216_20121220
+
+=> surface_net_thermal_radiation
+---------------
+2012-12-162012-12-172012-12-182012-12-192012-12-202012-12-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20121216_20121220.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_lwflux_20121216_20121220
+
+=> total_precipitation
+---------------
+2012-12-162012-12-172012-12-182012-12-192012-12-202012-12-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20121216_20121220.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_precip_20121216_20121220
+
+Processing wind variables :
+
+---------------------------
+
+2012-12-162012-12-172012-12-182012-12-192012-12-202012-12-21
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20121216_20121220.nc
+
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20121216_20121220.nc
+
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_uwind_20121216_20121220
+[FILE SAVED] /DISK2TB/MODEL/DIAGS/LONG/METEO/ITP_BIN/BC_vwind_20121216_20121220
+
+###############################################
+# RUNNING CYCLE FROM 2012-12-21 to 2012-12-25 #
+###############################################
+

@@ -1,0 +1,135 @@
+{
+"_____":"GENERAL PARAMETERS",
+
+"date_ini":"2012-09-01",
+"date_end":"2012-11-05",
+"outdir":"/DISK2TB/MODEL/OUTPUTS/PELA2012",
+"diagdir":"/DISK2TB/MODEL/DIAGS",
+
+
+"_____":"BOUNDARY PARAMETERS",
+
+"rm_boundary":"no",
+"damping":20,
+"boundary":["W","S"],
+
+
+"_____":"RIVER PARAMETERS",
+
+"french_list":["Argens","Var"],
+"italian_list":["Arno","Ombrone","Serchio"],
+"river_ini":"2012-01-01",
+"river_end":"2012-12-31",
+
+
+"_____":"METEO PARAMETERS",
+
+"meteo_ini":"2012-02-01",
+"meteo_end":"2012-07-30",
+"day_cycle":2,
+"n_cycle":50,
+"imin":"500",
+"imax":"600",
+"jmin":"350",
+"jmax":"450",
+
+"_____":"MODIS PARAMETERS",
+"modis_dir":"/DISK2TB/DATA/NWMED/MODIS",
+
+"_____":"DYFAMED PARAMETERS",
+
+"some_par":"some_par",
+
+"_____":"BOUSSOLE PARAMETERS",
+
+"some_par":"some_par",
+
+"_____":"SATELLITE",
+
+"glength":"40",
+"gsigma":"40",
+
+
+
+"_____":"ARGO",
+
+"argo_ds":"phy",
+
+
+"_____":"PLOT PARAMETERS",
+
+"resol":"10m",                       
+"fig_proj":"ccrs.PlateCarree()",      
+
+"fig_sx":"8",                         
+"fig_sy":"8",                        
+"fig_fmt":"jpg",                     
+"fig_res":"300",                  
+"tight":"True",                  
+
+"fig_tck_size":"6",
+"fig_tcklbl_size":"4",
+"fig_lbl_size":"4",
+"fig_title_size":"6",
+"cb_pad_2D":"0.12",
+"cb_fraction_2D":"0.02",
+
+"fig_sx_sat":"7",                         
+"fig_sy_sat":"4",                        
+"fig_tck_size_sat":"4",
+"fig_tcklbl_size_sat":"4",
+"cb_pad_sat":"0.12",
+"cb_fraction_sat":"0.02",
+"cb_pad_sat":"0.04",
+"cb_tck_size_sat":"4",
+"cb_lbl_size_sat":"6",
+
+"with_currents":"False",
+"with_whales":"True",
+
+"_____":"SECTION PLOT PARAMETERS",
+
+"fig_secx":"8",                         
+"fig_secy":"4",                        
+"sec_lon1":"9",
+"sec_lat1":"43.",
+"sec_lon2":"9.7",
+"sec_lat2":"44",
+"sec_dep":"300",
+"sec_resH":"0.05",  
+"sec_resV":"1",
+"cb_fraction_sec":"0.025",
+"cb_pad_sec":"0.06",
+
+"_____":"TRANSECT PLOT PARAMETERS",
+
+"trans_ini":"2015-04-01",
+"trans_end":"2015-04-19",
+"trans_depth":200,
+"trans_resV":1,
+"trans_name":"eddy",
+"trans_file":"/DISK2TB/DATA/eddy.dat",
+
+
+"_____":"PROFILE PLOT PARAMETERS",
+
+"fig_prox":"6",
+"fig_proy":"11",
+"tck_size_prof":"8",
+"col_bcg":["g","b","r"],
+"col_phy":["b","r"],
+
+"_____":"TIME SERIES PLOT PARAMETERS",
+"fig_tsx":8,
+"fig_tsy":5,
+"tck_size_ts":"8",
+"lbl_size_ts":"10",
+
+
+"_____":"INTERPOLATION PARAMETERS",
+
+"dump":"0.02",
+"itp_meth":"linear",
+"cmap":"viridis"
+
+}

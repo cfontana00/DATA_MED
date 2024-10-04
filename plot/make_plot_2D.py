@@ -62,38 +62,24 @@ from fun_gen import *
 # ----------------
 if with_whales:
 
-  # Get whale position
-  dtrack=np.loadtxt('/home/fontana/SONG/SICILIA/87780.dat')
+  dtrack = np.loadtxt('/home/fontana/SONG/SICILIA/87780.dat',dtype=str)
 
-  mon=dtrack[:,5].squeeze()
-  day=dtrack[:,4].squeeze()
-  year=dtrack[:,6].squeeze()
+  wlon = np.array(dtrack[:,1],dtype=float).squeeze()
+  wlat = np.array(dtrack[:,0],dtype=float).squeeze()
 
-  mon=np.array(mon,dtype=int)
-  day=np.array(day,dtype=int)
-  year=np.array(year,dtype=int)
+
+  hour = dtrack[:,2].squeeze()
+  mon = dtrack[:,5].squeeze()
+  day = dtrack[:,4].squeeze()
+  year = dtrack[:,6].squeeze()
 
   # Compute julian day
-  jd_w = []
+  wtag = []
   for i in range(0,year.shape[0]):
-     d = dt.datetime(year[i],mon[i],day[i])
-     jd_w.append(d.toordinal())
+     wtag.append(year[i]+mon[i]+day[i]+hour[i])
 
-  # Compute mean position
-  tlon = []
-  tlat = []
-  tjd = []
+  wtag = np.array(wtag,dtype=str)
 
-  for jd in np.unique(jd_w):
-     
-     idx = np.where( jd_w == jd)
-     tlon.append(np.mean(dtrack[idx,1]))
-     tlat.append(np.mean(dtrack[idx,0]))
-     tjd.append(jd)
-
-tlon = np.array(tlon)
-tlat = np.array(tlat)
-tjd = np.array(tjd)
 
 
 # Create diagnostic arborescence
@@ -126,19 +112,23 @@ init_fig(ax,extent,proj)
 print('Processing')
 for jd in range(jdini,jdend+1):
 
- #for hour in range(12,13):
- for hour in range(0,24):
+ for hour in range(12,13):
+ #for hour in range(0,24):
+
+
    # Get current variable parameters
    vname, ftag, cmap, islog, vmod, vmin, vmax, label, units\
         = load_variable(config,var)
 
    # Get filename
    fname,dtag = get_filename(jd,ftag)
+   htag = dtag+str(hour).zfill(2)
 
    # Get 2D variable
    var2d = get_var_2D(fname,var,hour,lev)
    var2d = np.array(var2d)
    var2d[np.where(var2d > 999) ] = np.nan
+
 
    #if var == 'zooc':
    #  var2d = var2d/12. # !!!!! To remove for next simus
@@ -189,13 +179,21 @@ for jd in range(jdini,jdend+1):
 
    # Plot whales
    if with_whales == 'True':
-     # Plot today position
-     idx = np.where( tjd == jd )
-     tw1 = plt.scatter(tlon[idx],tlat[idx],marker='o',color='r',s=56,transform=ccrs.PlateCarree(),zorder=9)
 
-     # Plot last days position
-     idx = np.where( tjd-jd >= -3 ) and np.where(tjd-jd <= 0)
-     tw2 = ax.plot(tlon[idx],tlat[idx],'r-')
+     try :
+       idx = np.where( wtag == htag )
+
+       if len(idx[0]) == 0 :
+          idx = idx_old
+
+       tw1 = plt.scatter(wlon[idx[0][0]],wlat[idx[0][0]],marker='o',color='deepskyblue',s=56,transform=ccrs.PlateCarree(),zorder=9)
+
+       # Plot last days position
+       last = idx[-1][0]
+       tw2 = ax.plot(wlon[last-5:last+1],wlat[last-5:last+1],color='deepskyblue',linestyle='-',alpha=0.8,zorder=9)
+     except:
+       pass
+
 
 
 
@@ -220,9 +218,15 @@ for jd in range(jdini,jdend+1):
    if with_currents == 'True':
      q.remove()
    
-   if with_whales == 'True':
-     ax.lines[0].remove()
+   # Remove whale if any points
+   try :
      tw1.remove()
+   except :
+     pass
+
+
+   idx_old = idx
+
 
 
 

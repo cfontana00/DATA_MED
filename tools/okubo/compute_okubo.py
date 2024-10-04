@@ -70,7 +70,7 @@ for jd in range(jdini,jdend+1):
 
       LON,LAT = np.meshgrid(lon,lat)
 
-      sub = 5
+      sub = 8
       '''
       lons = lon[::sub]
       lats = lat[::sub]
@@ -94,7 +94,8 @@ for jd in range(jdini,jdend+1):
 
       exec('proj = ' + fig_proj)
       #extent = [np.amin(lon),np.amax(lon),np.amin(lat),np.amax(lat)]
-      extent = [8,10.05,42.5,43.5]
+      #extent = [8,10.05,42.5,43.5]
+      extent = [7,11,42.1,44]
       fig, ax = plt.subplots(1,1,figsize=(5,4), subplot_kw={'projection': proj})
 
       ax.set_extent(extent)
