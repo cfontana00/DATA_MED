@@ -59,6 +59,7 @@ lonmax,lonmin = str(np.amax(lon)+1),str(np.amin(lon)-1)
 area = "'"+latmax+"/"+lonmin+"/"+latmin+"/"+lonmax+"'"
 
 
+
 c = cdsapi.Client()
 
 
@@ -78,7 +79,6 @@ for year in range(int(yini),int(yend)+1):
 
   for mon in range(np.amin(months),np.amax(months)+1):
 
-    mon = str(mon).zfill(2)
 
     for var in ['10m_wind_direction','10m_wind_speed',\
             '2m_temperature','2m_relative_humidity',\
@@ -86,19 +86,20 @@ for year in range(int(yini),int(yend)+1):
             'mean_sea_level_pressure','total_precipitation']:
 
     #for var in ['10m_wind_speed']:
+       while 1 == 1 :
+         try:
+           oname = savedir+'/'+name+'_'+str(year)+str(mon).zfill(2)+'_'+var+'.nc'
 
-     oname = savedir+'/'+name+'_'+str(year)+mon+'_'+var+'.nc'
-
-     c.retrieve(
-      name,
-      {
-         'variable':  var ,
-        'level_type': 'surface_or_atmosphere',
-        'data_type': 'reanalysis',
-        'product_type': 'forecast',
-        'year': str(year),
-        'month': mon,
-        'day': [
+           c.retrieve(
+          name,
+         {
+            'variable':  var ,
+            'level_type': 'surface_or_atmosphere',
+            'data_type': 'reanalysis',
+            'product_type': 'forecast',
+            'year': str(year),
+            'month': mon,
+            'day': [
             '01', '02', '03',
             '04', '05', '06',
             '07', '08', '09',
@@ -110,22 +111,26 @@ for year in range(int(yini),int(yend)+1):
             '25', '26', '27',
             '28', '29', '30',
             '31',
-        ],
-        'time': [
+            ],
+            'time': [
             '00:00', '03:00', '06:00',
             '09:00', '12:00', '15:00',
             '18:00', '21:00',
-        ],
-        'leadtime_hour': '1',
-        'format': 'netcdf',
-    },
-    oname)
+            ],
+            'leadtime_hour': '1',
+            'format': 'netcdf',
+        },
+        oname)
 
+           # Crop file
+           # ---------
+           os.system('ncks -O -d x,'+imin+','+imax+' -d y,'+jmin+','+jmax+' '+oname+' '+oname)
 
-     # Crop file
-     # ---------
-     os.system('ncks -O -d x,'+imin+','+imax+' -d y,'+jmin+','+jmax+' '+oname+' '+oname)
+           break
+         except:
+           pass
+     
 
-     print('\n[DOWNLOADED]',oname,'\n')
+         print('\n[DOWNLOADED]',oname,'\n')
 
 

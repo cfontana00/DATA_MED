@@ -139,6 +139,9 @@ for jd in range(jdini,jdend+1):
      plt.plot(profile[:,2],-profile[:,0],c='g',marker='s',\
                            linestyle='--',alpha=0.7,label='Data')
 
+
+     plt.xlim(left=0)
+
      plt.ylim([-200,0])
 
      plt.title('BOUSSOLE '+d.strftime('%Y-%m-%d'))
