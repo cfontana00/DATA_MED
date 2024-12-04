@@ -1,0 +1,22 @@
+2024-12-03 11:22:56,716 WARNING [2024-12-03T10:22:56.714749] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.
+2024-12-03 11:22:56,716 INFO Request ID is 734ba7f8-8b6e-4026-ad10-89cda245971e
+2024-12-03 11:22:56,747 INFO status has been updated to accepted
+2024-12-03 11:33:17,877 INFO status has been updated to failed
+2024-12-03 11:33:22,829 WARNING [2024-12-03T10:33:22.828352] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.
+2024-12-03 11:33:22,829 INFO Request ID is aa6f0b03-97b3-492b-ad4f-aaeaf743dc54
+2024-12-03 11:33:23,717 INFO status has been updated to accepted
+2024-12-03 11:33:29,122 INFO status has been updated to running
+2024-12-03 11:33:33,291 INFO status has been updated to failed
+2024-12-03 11:33:41,566 WARNING [2024-12-03T10:33:41.004295] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.
+2024-12-03 11:33:41,567 INFO Request ID is a3575c67-2842-42d6-a980-f0a68a98057d
+2024-12-03 11:33:42,878 INFO status has been updated to accepted
+2024-12-03 11:33:55,975 INFO status has been updated to running
+2024-12-03 11:38:15,848 INFO status has been updated to failed
+2024-12-03 11:38:17,741 WARNING [2024-12-03T10:38:17.429549] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.
+2024-12-03 11:38:17,742 INFO Request ID is 70136402-2ad1-4ffc-9ef3-155304a2c0fc
+2024-12-03 11:38:17,772 INFO status has been updated to accepted
+2024-12-03 11:38:25,970 INFO status has been updated to running
+2024-12-03 11:38:38,694 INFO status has been updated to failed
+2024-12-03 11:38:39,249 WARNING [2024-12-03T10:38:39.246256] You are using a deprecated API endpoint. If you are using cdsapi, please upgrade to the latest version.
+2024-12-03 11:38:39,250 INFO Request ID is d4c0425b-ff6a-4a3f-b555-83bffd2dd7d4
+2024-12-03 11:38:39,275 INFO status has been updated to accepted

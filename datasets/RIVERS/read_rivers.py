@@ -66,7 +66,8 @@ for name in french_list:
   try :
     raw=np.loadtxt('data_modif/'+name+'_modif.csv',skiprows=1,dtype=str)
     print('[FILE READ]','data_modif/'+name+'_modif.csv')
-  except :
+  except Exception as e:
+    print(e)
     raw=np.loadtxt('data/'+name+'.csv',skiprows=1,dtype=str)
     print('[FILE READ]','data/'+name+'.csv')
 

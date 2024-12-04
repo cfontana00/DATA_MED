@@ -102,7 +102,6 @@ met_lat = np.array(ds['latitude']).flatten()
 ds.close()
 
 
-
 # Load model outputs for mask
 # ---------------------------
 fname = glob(outdir+'/*TEMP*.nc')[0]
@@ -163,6 +162,10 @@ for tag in tags:
 
       # Interpolate on model grid
       data = data.flatten()
+
+#      print(met_lat.shape,met_lon.shape,data.shape)
+#      print(LAT.shape,LON.shape)
+
       idata = griddata((met_lat,met_lon),data,(LAT,LON),method='linear').T
 
       #idata[np.where(np.isnan(mask))] = np.nan

@@ -1,2240 +1,0 @@
-Initial date 2018-05-15
-Number of cycle 35
-Number of days per 5
-
-
-###############################################
-# RUNNING CYCLE FROM 2018-05-15 to 2018-05-19 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-05-152018-05-162018-05-172018-05-182018-05-192018-05-20
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180515_20180519.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180515_20180519
-
-=> mean_sea_level_pressure
----------------
-2018-05-152018-05-162018-05-172018-05-182018-05-192018-05-20
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180515_20180519.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180515_20180519
-
-=> 2m_relative_humidity
----------------
-2018-05-152018-05-162018-05-172018-05-182018-05-192018-05-20
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180515_20180519.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180515_20180519
-
-=> surface_net_solar_radiation
----------------
-2018-05-152018-05-162018-05-172018-05-182018-05-192018-05-20
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180515_20180519.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180515_20180519
-
-=> surface_net_thermal_radiation
----------------
-2018-05-152018-05-162018-05-172018-05-182018-05-192018-05-20
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180515_20180519.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180515_20180519
-
-=> total_precipitation
----------------
-2018-05-152018-05-162018-05-172018-05-182018-05-192018-05-20
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180515_20180519.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180515_20180519
-
-Processing wind variables :
-
----------------------------
-
-2018-05-152018-05-162018-05-172018-05-182018-05-192018-05-20
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180515_20180519.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180515_20180519.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180515_20180519
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180515_20180519
-
-###############################################
-# RUNNING CYCLE FROM 2018-05-20 to 2018-05-24 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-05-202018-05-212018-05-222018-05-232018-05-242018-05-25
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180520_20180524.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180520_20180524
-
-=> mean_sea_level_pressure
----------------
-2018-05-202018-05-212018-05-222018-05-232018-05-242018-05-25
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180520_20180524.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180520_20180524
-
-=> 2m_relative_humidity
----------------
-2018-05-202018-05-212018-05-222018-05-232018-05-242018-05-25
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180520_20180524.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180520_20180524
-
-=> surface_net_solar_radiation
----------------
-2018-05-202018-05-212018-05-222018-05-232018-05-242018-05-25
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180520_20180524.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180520_20180524
-
-=> surface_net_thermal_radiation
----------------
-2018-05-202018-05-212018-05-222018-05-232018-05-242018-05-25
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180520_20180524.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180520_20180524
-
-=> total_precipitation
----------------
-2018-05-202018-05-212018-05-222018-05-232018-05-242018-05-25
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180520_20180524.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180520_20180524
-
-Processing wind variables :
-
----------------------------
-
-2018-05-202018-05-212018-05-222018-05-232018-05-242018-05-25
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180520_20180524.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180520_20180524.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180520_20180524
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180520_20180524
-
-###############################################
-# RUNNING CYCLE FROM 2018-05-25 to 2018-05-29 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-05-252018-05-262018-05-272018-05-282018-05-292018-05-30
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180525_20180529.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180525_20180529
-
-=> mean_sea_level_pressure
----------------
-2018-05-252018-05-262018-05-272018-05-282018-05-292018-05-30
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180525_20180529.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180525_20180529
-
-=> 2m_relative_humidity
----------------
-2018-05-252018-05-262018-05-272018-05-282018-05-292018-05-30
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180525_20180529.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180525_20180529
-
-=> surface_net_solar_radiation
----------------
-2018-05-252018-05-262018-05-272018-05-282018-05-292018-05-30
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180525_20180529.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180525_20180529
-
-=> surface_net_thermal_radiation
----------------
-2018-05-252018-05-262018-05-272018-05-282018-05-292018-05-30
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180525_20180529.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180525_20180529
-
-=> total_precipitation
----------------
-2018-05-252018-05-262018-05-272018-05-282018-05-292018-05-30
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180525_20180529.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180525_20180529
-
-Processing wind variables :
-
----------------------------
-
-2018-05-252018-05-262018-05-272018-05-282018-05-292018-05-30
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180525_20180529.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180525_20180529.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180525_20180529
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180525_20180529
-
-###############################################
-# RUNNING CYCLE FROM 2018-05-30 to 2018-06-03 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-05-302018-05-312018-06-012018-06-022018-06-032018-06-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180530_20180603.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180530_20180603
-
-=> mean_sea_level_pressure
----------------
-2018-05-302018-05-312018-06-012018-06-022018-06-032018-06-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180530_20180603.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180530_20180603
-
-=> 2m_relative_humidity
----------------
-2018-05-302018-05-312018-06-012018-06-022018-06-032018-06-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180530_20180603.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180530_20180603
-
-=> surface_net_solar_radiation
----------------
-2018-05-302018-05-312018-06-012018-06-022018-06-032018-06-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180530_20180603.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180530_20180603
-
-=> surface_net_thermal_radiation
----------------
-2018-05-302018-05-312018-06-012018-06-022018-06-032018-06-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180530_20180603.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180530_20180603
-
-=> total_precipitation
----------------
-2018-05-302018-05-312018-06-012018-06-022018-06-032018-06-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180530_20180603.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180530_20180603
-
-Processing wind variables :
-
----------------------------
-
-2018-05-302018-05-312018-06-012018-06-022018-06-032018-06-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180530_20180603.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180530_20180603.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180530_20180603
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180530_20180603
-
-###############################################
-# RUNNING CYCLE FROM 2018-06-04 to 2018-06-08 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-06-042018-06-052018-06-062018-06-072018-06-082018-06-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180604_20180608.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180604_20180608
-
-=> mean_sea_level_pressure
----------------
-2018-06-042018-06-052018-06-062018-06-072018-06-082018-06-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180604_20180608.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180604_20180608
-
-=> 2m_relative_humidity
----------------
-2018-06-042018-06-052018-06-062018-06-072018-06-082018-06-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180604_20180608.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180604_20180608
-
-=> surface_net_solar_radiation
----------------
-2018-06-042018-06-052018-06-062018-06-072018-06-082018-06-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180604_20180608.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180604_20180608
-
-=> surface_net_thermal_radiation
----------------
-2018-06-042018-06-052018-06-062018-06-072018-06-082018-06-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180604_20180608.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180604_20180608
-
-=> total_precipitation
----------------
-2018-06-042018-06-052018-06-062018-06-072018-06-082018-06-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180604_20180608.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180604_20180608
-
-Processing wind variables :
-
----------------------------
-
-2018-06-042018-06-052018-06-062018-06-072018-06-082018-06-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180604_20180608.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180604_20180608.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180604_20180608
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180604_20180608
-
-###############################################
-# RUNNING CYCLE FROM 2018-06-09 to 2018-06-13 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-06-092018-06-102018-06-112018-06-122018-06-132018-06-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180609_20180613.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180609_20180613
-
-=> mean_sea_level_pressure
----------------
-2018-06-092018-06-102018-06-112018-06-122018-06-132018-06-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180609_20180613.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180609_20180613
-
-=> 2m_relative_humidity
----------------
-2018-06-092018-06-102018-06-112018-06-122018-06-132018-06-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180609_20180613.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180609_20180613
-
-=> surface_net_solar_radiation
----------------
-2018-06-092018-06-102018-06-112018-06-122018-06-132018-06-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180609_20180613.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180609_20180613
-
-=> surface_net_thermal_radiation
----------------
-2018-06-092018-06-102018-06-112018-06-122018-06-132018-06-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180609_20180613.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180609_20180613
-
-=> total_precipitation
----------------
-2018-06-092018-06-102018-06-112018-06-122018-06-132018-06-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180609_20180613.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180609_20180613
-
-Processing wind variables :
-
----------------------------
-
-2018-06-092018-06-102018-06-112018-06-122018-06-132018-06-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180609_20180613.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180609_20180613.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180609_20180613
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180609_20180613
-
-###############################################
-# RUNNING CYCLE FROM 2018-06-14 to 2018-06-18 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-06-142018-06-152018-06-162018-06-172018-06-182018-06-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180614_20180618.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180614_20180618
-
-=> mean_sea_level_pressure
----------------
-2018-06-142018-06-152018-06-162018-06-172018-06-182018-06-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180614_20180618.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180614_20180618
-
-=> 2m_relative_humidity
----------------
-2018-06-142018-06-152018-06-162018-06-172018-06-182018-06-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180614_20180618.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180614_20180618
-
-=> surface_net_solar_radiation
----------------
-2018-06-142018-06-152018-06-162018-06-172018-06-182018-06-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180614_20180618.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180614_20180618
-
-=> surface_net_thermal_radiation
----------------
-2018-06-142018-06-152018-06-162018-06-172018-06-182018-06-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180614_20180618.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180614_20180618
-
-=> total_precipitation
----------------
-2018-06-142018-06-152018-06-162018-06-172018-06-182018-06-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180614_20180618.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180614_20180618
-
-Processing wind variables :
-
----------------------------
-
-2018-06-142018-06-152018-06-162018-06-172018-06-182018-06-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180614_20180618.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180614_20180618.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180614_20180618
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180614_20180618
-
-###############################################
-# RUNNING CYCLE FROM 2018-06-19 to 2018-06-23 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-06-192018-06-202018-06-212018-06-222018-06-232018-06-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180619_20180623.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180619_20180623
-
-=> mean_sea_level_pressure
----------------
-2018-06-192018-06-202018-06-212018-06-222018-06-232018-06-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180619_20180623.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180619_20180623
-
-=> 2m_relative_humidity
----------------
-2018-06-192018-06-202018-06-212018-06-222018-06-232018-06-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180619_20180623.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180619_20180623
-
-=> surface_net_solar_radiation
----------------
-2018-06-192018-06-202018-06-212018-06-222018-06-232018-06-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180619_20180623.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180619_20180623
-
-=> surface_net_thermal_radiation
----------------
-2018-06-192018-06-202018-06-212018-06-222018-06-232018-06-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180619_20180623.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180619_20180623
-
-=> total_precipitation
----------------
-2018-06-192018-06-202018-06-212018-06-222018-06-232018-06-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180619_20180623.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180619_20180623
-
-Processing wind variables :
-
----------------------------
-
-2018-06-192018-06-202018-06-212018-06-222018-06-232018-06-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180619_20180623.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180619_20180623.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180619_20180623
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180619_20180623
-
-###############################################
-# RUNNING CYCLE FROM 2018-06-24 to 2018-06-28 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-06-242018-06-252018-06-262018-06-272018-06-282018-06-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180624_20180628.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180624_20180628
-
-=> mean_sea_level_pressure
----------------
-2018-06-242018-06-252018-06-262018-06-272018-06-282018-06-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180624_20180628.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180624_20180628
-
-=> 2m_relative_humidity
----------------
-2018-06-242018-06-252018-06-262018-06-272018-06-282018-06-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180624_20180628.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180624_20180628
-
-=> surface_net_solar_radiation
----------------
-2018-06-242018-06-252018-06-262018-06-272018-06-282018-06-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180624_20180628.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180624_20180628
-
-=> surface_net_thermal_radiation
----------------
-2018-06-242018-06-252018-06-262018-06-272018-06-282018-06-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180624_20180628.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180624_20180628
-
-=> total_precipitation
----------------
-2018-06-242018-06-252018-06-262018-06-272018-06-282018-06-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180624_20180628.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180624_20180628
-
-Processing wind variables :
-
----------------------------
-
-2018-06-242018-06-252018-06-262018-06-272018-06-282018-06-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180624_20180628.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180624_20180628.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180624_20180628
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180624_20180628
-
-###############################################
-# RUNNING CYCLE FROM 2018-06-29 to 2018-07-03 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-06-292018-06-302018-07-012018-07-022018-07-032018-07-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180629_20180703.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180629_20180703
-
-=> mean_sea_level_pressure
----------------
-2018-06-292018-06-302018-07-012018-07-022018-07-032018-07-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180629_20180703.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180629_20180703
-
-=> 2m_relative_humidity
----------------
-2018-06-292018-06-302018-07-012018-07-022018-07-032018-07-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180629_20180703.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180629_20180703
-
-=> surface_net_solar_radiation
----------------
-2018-06-292018-06-302018-07-012018-07-022018-07-032018-07-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180629_20180703.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180629_20180703
-
-=> surface_net_thermal_radiation
----------------
-2018-06-292018-06-302018-07-012018-07-022018-07-032018-07-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180629_20180703.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180629_20180703
-
-=> total_precipitation
----------------
-2018-06-292018-06-302018-07-012018-07-022018-07-032018-07-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180629_20180703.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180629_20180703
-
-Processing wind variables :
-
----------------------------
-
-2018-06-292018-06-302018-07-012018-07-022018-07-032018-07-04
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180629_20180703.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180629_20180703.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180629_20180703
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180629_20180703
-
-###############################################
-# RUNNING CYCLE FROM 2018-07-04 to 2018-07-08 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-07-042018-07-052018-07-062018-07-072018-07-082018-07-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180704_20180708.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180704_20180708
-
-=> mean_sea_level_pressure
----------------
-2018-07-042018-07-052018-07-062018-07-072018-07-082018-07-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180704_20180708.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180704_20180708
-
-=> 2m_relative_humidity
----------------
-2018-07-042018-07-052018-07-062018-07-072018-07-082018-07-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180704_20180708.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180704_20180708
-
-=> surface_net_solar_radiation
----------------
-2018-07-042018-07-052018-07-062018-07-072018-07-082018-07-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180704_20180708.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180704_20180708
-
-=> surface_net_thermal_radiation
----------------
-2018-07-042018-07-052018-07-062018-07-072018-07-082018-07-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180704_20180708.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180704_20180708
-
-=> total_precipitation
----------------
-2018-07-042018-07-052018-07-062018-07-072018-07-082018-07-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180704_20180708.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180704_20180708
-
-Processing wind variables :
-
----------------------------
-
-2018-07-042018-07-052018-07-062018-07-072018-07-082018-07-09
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180704_20180708.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180704_20180708.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180704_20180708
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180704_20180708
-
-###############################################
-# RUNNING CYCLE FROM 2018-07-09 to 2018-07-13 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-07-092018-07-102018-07-112018-07-122018-07-132018-07-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180709_20180713.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180709_20180713
-
-=> mean_sea_level_pressure
----------------
-2018-07-092018-07-102018-07-112018-07-122018-07-132018-07-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180709_20180713.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180709_20180713
-
-=> 2m_relative_humidity
----------------
-2018-07-092018-07-102018-07-112018-07-122018-07-132018-07-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180709_20180713.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180709_20180713
-
-=> surface_net_solar_radiation
----------------
-2018-07-092018-07-102018-07-112018-07-122018-07-132018-07-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180709_20180713.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180709_20180713
-
-=> surface_net_thermal_radiation
----------------
-2018-07-092018-07-102018-07-112018-07-122018-07-132018-07-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180709_20180713.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180709_20180713
-
-=> total_precipitation
----------------
-2018-07-092018-07-102018-07-112018-07-122018-07-132018-07-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180709_20180713.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180709_20180713
-
-Processing wind variables :
-
----------------------------
-
-2018-07-092018-07-102018-07-112018-07-122018-07-132018-07-14
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180709_20180713.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180709_20180713.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180709_20180713
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180709_20180713
-
-###############################################
-# RUNNING CYCLE FROM 2018-07-14 to 2018-07-18 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-07-142018-07-152018-07-162018-07-172018-07-182018-07-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180714_20180718.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180714_20180718
-
-=> mean_sea_level_pressure
----------------
-2018-07-142018-07-152018-07-162018-07-172018-07-182018-07-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180714_20180718.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180714_20180718
-
-=> 2m_relative_humidity
----------------
-2018-07-142018-07-152018-07-162018-07-172018-07-182018-07-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180714_20180718.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180714_20180718
-
-=> surface_net_solar_radiation
----------------
-2018-07-142018-07-152018-07-162018-07-172018-07-182018-07-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180714_20180718.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180714_20180718
-
-=> surface_net_thermal_radiation
----------------
-2018-07-142018-07-152018-07-162018-07-172018-07-182018-07-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180714_20180718.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180714_20180718
-
-=> total_precipitation
----------------
-2018-07-142018-07-152018-07-162018-07-172018-07-182018-07-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180714_20180718.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180714_20180718
-
-Processing wind variables :
-
----------------------------
-
-2018-07-142018-07-152018-07-162018-07-172018-07-182018-07-19
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180714_20180718.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180714_20180718.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180714_20180718
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180714_20180718
-
-###############################################
-# RUNNING CYCLE FROM 2018-07-19 to 2018-07-23 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-07-192018-07-202018-07-212018-07-222018-07-232018-07-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180719_20180723.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180719_20180723
-
-=> mean_sea_level_pressure
----------------
-2018-07-192018-07-202018-07-212018-07-222018-07-232018-07-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180719_20180723.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180719_20180723
-
-=> 2m_relative_humidity
----------------
-2018-07-192018-07-202018-07-212018-07-222018-07-232018-07-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180719_20180723.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180719_20180723
-
-=> surface_net_solar_radiation
----------------
-2018-07-192018-07-202018-07-212018-07-222018-07-232018-07-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180719_20180723.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180719_20180723
-
-=> surface_net_thermal_radiation
----------------
-2018-07-192018-07-202018-07-212018-07-222018-07-232018-07-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180719_20180723.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180719_20180723
-
-=> total_precipitation
----------------
-2018-07-192018-07-202018-07-212018-07-222018-07-232018-07-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180719_20180723.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180719_20180723
-
-Processing wind variables :
-
----------------------------
-
-2018-07-192018-07-202018-07-212018-07-222018-07-232018-07-24
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180719_20180723.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180719_20180723.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180719_20180723
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180719_20180723
-
-###############################################
-# RUNNING CYCLE FROM 2018-07-24 to 2018-07-28 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-07-242018-07-252018-07-262018-07-272018-07-282018-07-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180724_20180728.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180724_20180728
-
-=> mean_sea_level_pressure
----------------
-2018-07-242018-07-252018-07-262018-07-272018-07-282018-07-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180724_20180728.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180724_20180728
-
-=> 2m_relative_humidity
----------------
-2018-07-242018-07-252018-07-262018-07-272018-07-282018-07-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180724_20180728.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180724_20180728
-
-=> surface_net_solar_radiation
----------------
-2018-07-242018-07-252018-07-262018-07-272018-07-282018-07-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180724_20180728.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180724_20180728
-
-=> surface_net_thermal_radiation
----------------
-2018-07-242018-07-252018-07-262018-07-272018-07-282018-07-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180724_20180728.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180724_20180728
-
-=> total_precipitation
----------------
-2018-07-242018-07-252018-07-262018-07-272018-07-282018-07-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180724_20180728.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180724_20180728
-
-Processing wind variables :
-
----------------------------
-
-2018-07-242018-07-252018-07-262018-07-272018-07-282018-07-29
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180724_20180728.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180724_20180728.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180724_20180728
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180724_20180728
-
-###############################################
-# RUNNING CYCLE FROM 2018-07-29 to 2018-08-02 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-07-292018-07-302018-07-312018-08-012018-08-022018-08-03
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180729_20180802.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180729_20180802
-
-=> mean_sea_level_pressure
----------------
-2018-07-292018-07-302018-07-312018-08-012018-08-022018-08-03
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180729_20180802.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180729_20180802
-
-=> 2m_relative_humidity
----------------
-2018-07-292018-07-302018-07-312018-08-012018-08-022018-08-03
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180729_20180802.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180729_20180802
-
-=> surface_net_solar_radiation
----------------
-2018-07-292018-07-302018-07-312018-08-012018-08-022018-08-03
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180729_20180802.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180729_20180802
-
-=> surface_net_thermal_radiation
----------------
-2018-07-292018-07-302018-07-312018-08-012018-08-022018-08-03
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180729_20180802.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180729_20180802
-
-=> total_precipitation
----------------
-2018-07-292018-07-302018-07-312018-08-012018-08-022018-08-03
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180729_20180802.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180729_20180802
-
-Processing wind variables :
-
----------------------------
-
-2018-07-292018-07-302018-07-312018-08-012018-08-022018-08-03
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180729_20180802.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180729_20180802.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180729_20180802
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180729_20180802
-
-###############################################
-# RUNNING CYCLE FROM 2018-08-03 to 2018-08-07 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-08-032018-08-042018-08-052018-08-062018-08-072018-08-08
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180803_20180807.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180803_20180807
-
-=> mean_sea_level_pressure
----------------
-2018-08-032018-08-042018-08-052018-08-062018-08-072018-08-08
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180803_20180807.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180803_20180807
-
-=> 2m_relative_humidity
----------------
-2018-08-032018-08-042018-08-052018-08-062018-08-072018-08-08
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180803_20180807.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180803_20180807
-
-=> surface_net_solar_radiation
----------------
-2018-08-032018-08-042018-08-052018-08-062018-08-072018-08-08
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180803_20180807.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180803_20180807
-
-=> surface_net_thermal_radiation
----------------
-2018-08-032018-08-042018-08-052018-08-062018-08-072018-08-08
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180803_20180807.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180803_20180807
-
-=> total_precipitation
----------------
-2018-08-032018-08-042018-08-052018-08-062018-08-072018-08-08
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180803_20180807.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180803_20180807
-
-Processing wind variables :
-
----------------------------
-
-2018-08-032018-08-042018-08-052018-08-062018-08-072018-08-08
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180803_20180807.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180803_20180807.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180803_20180807
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180803_20180807
-
-###############################################
-# RUNNING CYCLE FROM 2018-08-08 to 2018-08-12 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-08-082018-08-092018-08-102018-08-112018-08-122018-08-13
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180808_20180812.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180808_20180812
-
-=> mean_sea_level_pressure
----------------
-2018-08-082018-08-092018-08-102018-08-112018-08-122018-08-13
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180808_20180812.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180808_20180812
-
-=> 2m_relative_humidity
----------------
-2018-08-082018-08-092018-08-102018-08-112018-08-122018-08-13
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180808_20180812.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180808_20180812
-
-=> surface_net_solar_radiation
----------------
-2018-08-082018-08-092018-08-102018-08-112018-08-122018-08-13
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180808_20180812.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180808_20180812
-
-=> surface_net_thermal_radiation
----------------
-2018-08-082018-08-092018-08-102018-08-112018-08-122018-08-13
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180808_20180812.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180808_20180812
-
-=> total_precipitation
----------------
-2018-08-082018-08-092018-08-102018-08-112018-08-122018-08-13
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180808_20180812.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180808_20180812
-
-Processing wind variables :
-
----------------------------
-
-2018-08-082018-08-092018-08-102018-08-112018-08-122018-08-13
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180808_20180812.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180808_20180812.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180808_20180812
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180808_20180812
-
-###############################################
-# RUNNING CYCLE FROM 2018-08-13 to 2018-08-17 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-08-132018-08-142018-08-152018-08-162018-08-172018-08-18
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180813_20180817.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180813_20180817
-
-=> mean_sea_level_pressure
----------------
-2018-08-132018-08-142018-08-152018-08-162018-08-172018-08-18
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180813_20180817.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180813_20180817
-
-=> 2m_relative_humidity
----------------
-2018-08-132018-08-142018-08-152018-08-162018-08-172018-08-18
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180813_20180817.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180813_20180817
-
-=> surface_net_solar_radiation
----------------
-2018-08-132018-08-142018-08-152018-08-162018-08-172018-08-18
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180813_20180817.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180813_20180817
-
-=> surface_net_thermal_radiation
----------------
-2018-08-132018-08-142018-08-152018-08-162018-08-172018-08-18
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180813_20180817.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180813_20180817
-
-=> total_precipitation
----------------
-2018-08-132018-08-142018-08-152018-08-162018-08-172018-08-18
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180813_20180817.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180813_20180817
-
-Processing wind variables :
-
----------------------------
-
-2018-08-132018-08-142018-08-152018-08-162018-08-172018-08-18
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180813_20180817.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180813_20180817.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180813_20180817
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180813_20180817
-
-###############################################
-# RUNNING CYCLE FROM 2018-08-18 to 2018-08-22 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-08-182018-08-192018-08-202018-08-212018-08-222018-08-23
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180818_20180822.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180818_20180822
-
-=> mean_sea_level_pressure
----------------
-2018-08-182018-08-192018-08-202018-08-212018-08-222018-08-23
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180818_20180822.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180818_20180822
-
-=> 2m_relative_humidity
----------------
-2018-08-182018-08-192018-08-202018-08-212018-08-222018-08-23
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180818_20180822.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180818_20180822
-
-=> surface_net_solar_radiation
----------------
-2018-08-182018-08-192018-08-202018-08-212018-08-222018-08-23
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180818_20180822.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180818_20180822
-
-=> surface_net_thermal_radiation
----------------
-2018-08-182018-08-192018-08-202018-08-212018-08-222018-08-23
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180818_20180822.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180818_20180822
-
-=> total_precipitation
----------------
-2018-08-182018-08-192018-08-202018-08-212018-08-222018-08-23
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180818_20180822.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180818_20180822
-
-Processing wind variables :
-
----------------------------
-
-2018-08-182018-08-192018-08-202018-08-212018-08-222018-08-23
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180818_20180822.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180818_20180822.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180818_20180822
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180818_20180822
-
-###############################################
-# RUNNING CYCLE FROM 2018-08-23 to 2018-08-27 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-08-232018-08-242018-08-252018-08-262018-08-272018-08-28
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180823_20180827.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180823_20180827
-
-=> mean_sea_level_pressure
----------------
-2018-08-232018-08-242018-08-252018-08-262018-08-272018-08-28
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180823_20180827.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180823_20180827
-
-=> 2m_relative_humidity
----------------
-2018-08-232018-08-242018-08-252018-08-262018-08-272018-08-28
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180823_20180827.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180823_20180827
-
-=> surface_net_solar_radiation
----------------
-2018-08-232018-08-242018-08-252018-08-262018-08-272018-08-28
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180823_20180827.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180823_20180827
-
-=> surface_net_thermal_radiation
----------------
-2018-08-232018-08-242018-08-252018-08-262018-08-272018-08-28
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180823_20180827.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180823_20180827
-
-=> total_precipitation
----------------
-2018-08-232018-08-242018-08-252018-08-262018-08-272018-08-28
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180823_20180827.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180823_20180827
-
-Processing wind variables :
-
----------------------------
-
-2018-08-232018-08-242018-08-252018-08-262018-08-272018-08-28
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180823_20180827.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180823_20180827.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180823_20180827
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180823_20180827
-
-###############################################
-# RUNNING CYCLE FROM 2018-08-28 to 2018-09-01 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-08-282018-08-292018-08-302018-08-312018-09-012018-09-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180828_20180901.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180828_20180901
-
-=> mean_sea_level_pressure
----------------
-2018-08-282018-08-292018-08-302018-08-312018-09-012018-09-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180828_20180901.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180828_20180901
-
-=> 2m_relative_humidity
----------------
-2018-08-282018-08-292018-08-302018-08-312018-09-012018-09-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180828_20180901.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180828_20180901
-
-=> surface_net_solar_radiation
----------------
-2018-08-282018-08-292018-08-302018-08-312018-09-012018-09-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180828_20180901.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180828_20180901
-
-=> surface_net_thermal_radiation
----------------
-2018-08-282018-08-292018-08-302018-08-312018-09-012018-09-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180828_20180901.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180828_20180901
-
-=> total_precipitation
----------------
-2018-08-282018-08-292018-08-302018-08-312018-09-012018-09-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180828_20180901.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180828_20180901
-
-Processing wind variables :
-
----------------------------
-
-2018-08-282018-08-292018-08-302018-08-312018-09-012018-09-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180828_20180901.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180828_20180901.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180828_20180901
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180828_20180901
-
-###############################################
-# RUNNING CYCLE FROM 2018-09-02 to 2018-09-06 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-09-022018-09-032018-09-042018-09-052018-09-062018-09-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180902_20180906.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180902_20180906
-
-=> mean_sea_level_pressure
----------------
-2018-09-022018-09-032018-09-042018-09-052018-09-062018-09-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180902_20180906.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180902_20180906
-
-=> 2m_relative_humidity
----------------
-2018-09-022018-09-032018-09-042018-09-052018-09-062018-09-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180902_20180906.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180902_20180906
-
-=> surface_net_solar_radiation
----------------
-2018-09-022018-09-032018-09-042018-09-052018-09-062018-09-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180902_20180906.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180902_20180906
-
-=> surface_net_thermal_radiation
----------------
-2018-09-022018-09-032018-09-042018-09-052018-09-062018-09-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180902_20180906.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180902_20180906
-
-=> total_precipitation
----------------
-2018-09-022018-09-032018-09-042018-09-052018-09-062018-09-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180902_20180906.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180902_20180906
-
-Processing wind variables :
-
----------------------------
-
-2018-09-022018-09-032018-09-042018-09-052018-09-062018-09-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180902_20180906.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180902_20180906.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180902_20180906
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180902_20180906
-
-###############################################
-# RUNNING CYCLE FROM 2018-09-07 to 2018-09-11 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-09-072018-09-082018-09-092018-09-102018-09-112018-09-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180907_20180911.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180907_20180911
-
-=> mean_sea_level_pressure
----------------
-2018-09-072018-09-082018-09-092018-09-102018-09-112018-09-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180907_20180911.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180907_20180911
-
-=> 2m_relative_humidity
----------------
-2018-09-072018-09-082018-09-092018-09-102018-09-112018-09-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180907_20180911.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180907_20180911
-
-=> surface_net_solar_radiation
----------------
-2018-09-072018-09-082018-09-092018-09-102018-09-112018-09-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180907_20180911.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180907_20180911
-
-=> surface_net_thermal_radiation
----------------
-2018-09-072018-09-082018-09-092018-09-102018-09-112018-09-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180907_20180911.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180907_20180911
-
-=> total_precipitation
----------------
-2018-09-072018-09-082018-09-092018-09-102018-09-112018-09-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180907_20180911.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180907_20180911
-
-Processing wind variables :
-
----------------------------
-
-2018-09-072018-09-082018-09-092018-09-102018-09-112018-09-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180907_20180911.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180907_20180911.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180907_20180911
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180907_20180911
-
-###############################################
-# RUNNING CYCLE FROM 2018-09-12 to 2018-09-16 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-09-122018-09-132018-09-142018-09-152018-09-162018-09-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180912_20180916.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180912_20180916
-
-=> mean_sea_level_pressure
----------------
-2018-09-122018-09-132018-09-142018-09-152018-09-162018-09-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180912_20180916.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180912_20180916
-
-=> 2m_relative_humidity
----------------
-2018-09-122018-09-132018-09-142018-09-152018-09-162018-09-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180912_20180916.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180912_20180916
-
-=> surface_net_solar_radiation
----------------
-2018-09-122018-09-132018-09-142018-09-152018-09-162018-09-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180912_20180916.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180912_20180916
-
-=> surface_net_thermal_radiation
----------------
-2018-09-122018-09-132018-09-142018-09-152018-09-162018-09-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180912_20180916.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180912_20180916
-
-=> total_precipitation
----------------
-2018-09-122018-09-132018-09-142018-09-152018-09-162018-09-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180912_20180916.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180912_20180916
-
-Processing wind variables :
-
----------------------------
-
-2018-09-122018-09-132018-09-142018-09-152018-09-162018-09-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180912_20180916.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180912_20180916.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180912_20180916
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180912_20180916
-
-###############################################
-# RUNNING CYCLE FROM 2018-09-17 to 2018-09-21 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-09-172018-09-182018-09-192018-09-202018-09-212018-09-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180917_20180921.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180917_20180921
-
-=> mean_sea_level_pressure
----------------
-2018-09-172018-09-182018-09-192018-09-202018-09-212018-09-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180917_20180921.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180917_20180921
-
-=> 2m_relative_humidity
----------------
-2018-09-172018-09-182018-09-192018-09-202018-09-212018-09-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180917_20180921.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180917_20180921
-
-=> surface_net_solar_radiation
----------------
-2018-09-172018-09-182018-09-192018-09-202018-09-212018-09-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180917_20180921.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180917_20180921
-
-=> surface_net_thermal_radiation
----------------
-2018-09-172018-09-182018-09-192018-09-202018-09-212018-09-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180917_20180921.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180917_20180921
-
-=> total_precipitation
----------------
-2018-09-172018-09-182018-09-192018-09-202018-09-212018-09-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180917_20180921.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180917_20180921
-
-Processing wind variables :
-
----------------------------
-
-2018-09-172018-09-182018-09-192018-09-202018-09-212018-09-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180917_20180921.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180917_20180921.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180917_20180921
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180917_20180921
-
-###############################################
-# RUNNING CYCLE FROM 2018-09-22 to 2018-09-26 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-09-222018-09-232018-09-242018-09-252018-09-262018-09-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180922_20180926.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180922_20180926
-
-=> mean_sea_level_pressure
----------------
-2018-09-222018-09-232018-09-242018-09-252018-09-262018-09-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180922_20180926.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180922_20180926
-
-=> 2m_relative_humidity
----------------
-2018-09-222018-09-232018-09-242018-09-252018-09-262018-09-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180922_20180926.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180922_20180926
-
-=> surface_net_solar_radiation
----------------
-2018-09-222018-09-232018-09-242018-09-252018-09-262018-09-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180922_20180926.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180922_20180926
-
-=> surface_net_thermal_radiation
----------------
-2018-09-222018-09-232018-09-242018-09-252018-09-262018-09-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180922_20180926.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180922_20180926
-
-=> total_precipitation
----------------
-2018-09-222018-09-232018-09-242018-09-252018-09-262018-09-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180922_20180926.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180922_20180926
-
-Processing wind variables :
-
----------------------------
-
-2018-09-222018-09-232018-09-242018-09-252018-09-262018-09-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180922_20180926.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180922_20180926.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180922_20180926
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180922_20180926
-
-###############################################
-# RUNNING CYCLE FROM 2018-09-27 to 2018-10-01 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-09-272018-09-282018-09-292018-09-302018-10-012018-10-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20180927_20181001.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20180927_20181001
-
-=> mean_sea_level_pressure
----------------
-2018-09-272018-09-282018-09-292018-09-302018-10-012018-10-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20180927_20181001.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20180927_20181001
-
-=> 2m_relative_humidity
----------------
-2018-09-272018-09-282018-09-292018-09-302018-10-012018-10-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20180927_20181001.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20180927_20181001
-
-=> surface_net_solar_radiation
----------------
-2018-09-272018-09-282018-09-292018-09-302018-10-012018-10-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20180927_20181001.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20180927_20181001
-
-=> surface_net_thermal_radiation
----------------
-2018-09-272018-09-282018-09-292018-09-302018-10-012018-10-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20180927_20181001.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20180927_20181001
-
-=> total_precipitation
----------------
-2018-09-272018-09-282018-09-292018-09-302018-10-012018-10-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20180927_20181001.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20180927_20181001
-
-Processing wind variables :
-
----------------------------
-
-2018-09-272018-09-282018-09-292018-09-302018-10-012018-10-02
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20180927_20181001.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20180927_20181001.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20180927_20181001
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20180927_20181001
-
-###############################################
-# RUNNING CYCLE FROM 2018-10-02 to 2018-10-06 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-10-022018-10-032018-10-042018-10-052018-10-062018-10-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20181002_20181006.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20181002_20181006
-
-=> mean_sea_level_pressure
----------------
-2018-10-022018-10-032018-10-042018-10-052018-10-062018-10-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20181002_20181006.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20181002_20181006
-
-=> 2m_relative_humidity
----------------
-2018-10-022018-10-032018-10-042018-10-052018-10-062018-10-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20181002_20181006.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20181002_20181006
-
-=> surface_net_solar_radiation
----------------
-2018-10-022018-10-032018-10-042018-10-052018-10-062018-10-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20181002_20181006.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20181002_20181006
-
-=> surface_net_thermal_radiation
----------------
-2018-10-022018-10-032018-10-042018-10-052018-10-062018-10-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20181002_20181006.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20181002_20181006
-
-=> total_precipitation
----------------
-2018-10-022018-10-032018-10-042018-10-052018-10-062018-10-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20181002_20181006.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20181002_20181006
-
-Processing wind variables :
-
----------------------------
-
-2018-10-022018-10-032018-10-042018-10-052018-10-062018-10-07
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20181002_20181006.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20181002_20181006.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20181002_20181006
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20181002_20181006
-
-###############################################
-# RUNNING CYCLE FROM 2018-10-07 to 2018-10-11 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-10-072018-10-082018-10-092018-10-102018-10-112018-10-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20181007_20181011.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20181007_20181011
-
-=> mean_sea_level_pressure
----------------
-2018-10-072018-10-082018-10-092018-10-102018-10-112018-10-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20181007_20181011.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20181007_20181011
-
-=> 2m_relative_humidity
----------------
-2018-10-072018-10-082018-10-092018-10-102018-10-112018-10-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20181007_20181011.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20181007_20181011
-
-=> surface_net_solar_radiation
----------------
-2018-10-072018-10-082018-10-092018-10-102018-10-112018-10-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20181007_20181011.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20181007_20181011
-
-=> surface_net_thermal_radiation
----------------
-2018-10-072018-10-082018-10-092018-10-102018-10-112018-10-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20181007_20181011.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20181007_20181011
-
-=> total_precipitation
----------------
-2018-10-072018-10-082018-10-092018-10-102018-10-112018-10-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20181007_20181011.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20181007_20181011
-
-Processing wind variables :
-
----------------------------
-
-2018-10-072018-10-082018-10-092018-10-102018-10-112018-10-12
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20181007_20181011.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20181007_20181011.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20181007_20181011
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20181007_20181011
-
-###############################################
-# RUNNING CYCLE FROM 2018-10-12 to 2018-10-16 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-10-122018-10-132018-10-142018-10-152018-10-162018-10-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20181012_20181016.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20181012_20181016
-
-=> mean_sea_level_pressure
----------------
-2018-10-122018-10-132018-10-142018-10-152018-10-162018-10-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20181012_20181016.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20181012_20181016
-
-=> 2m_relative_humidity
----------------
-2018-10-122018-10-132018-10-142018-10-152018-10-162018-10-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20181012_20181016.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20181012_20181016
-
-=> surface_net_solar_radiation
----------------
-2018-10-122018-10-132018-10-142018-10-152018-10-162018-10-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20181012_20181016.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20181012_20181016
-
-=> surface_net_thermal_radiation
----------------
-2018-10-122018-10-132018-10-142018-10-152018-10-162018-10-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20181012_20181016.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20181012_20181016
-
-=> total_precipitation
----------------
-2018-10-122018-10-132018-10-142018-10-152018-10-162018-10-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20181012_20181016.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20181012_20181016
-
-Processing wind variables :
-
----------------------------
-
-2018-10-122018-10-132018-10-142018-10-152018-10-162018-10-17
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20181012_20181016.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20181012_20181016.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20181012_20181016
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20181012_20181016
-
-###############################################
-# RUNNING CYCLE FROM 2018-10-17 to 2018-10-21 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-10-172018-10-182018-10-192018-10-202018-10-212018-10-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20181017_20181021.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20181017_20181021
-
-=> mean_sea_level_pressure
----------------
-2018-10-172018-10-182018-10-192018-10-202018-10-212018-10-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20181017_20181021.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20181017_20181021
-
-=> 2m_relative_humidity
----------------
-2018-10-172018-10-182018-10-192018-10-202018-10-212018-10-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20181017_20181021.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20181017_20181021
-
-=> surface_net_solar_radiation
----------------
-2018-10-172018-10-182018-10-192018-10-202018-10-212018-10-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20181017_20181021.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20181017_20181021
-
-=> surface_net_thermal_radiation
----------------
-2018-10-172018-10-182018-10-192018-10-202018-10-212018-10-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20181017_20181021.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20181017_20181021
-
-=> total_precipitation
----------------
-2018-10-172018-10-182018-10-192018-10-202018-10-212018-10-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20181017_20181021.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20181017_20181021
-
-Processing wind variables :
-
----------------------------
-
-2018-10-172018-10-182018-10-192018-10-202018-10-212018-10-22
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20181017_20181021.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20181017_20181021.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20181017_20181021
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20181017_20181021
-
-###############################################
-# RUNNING CYCLE FROM 2018-10-22 to 2018-10-26 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-10-222018-10-232018-10-242018-10-252018-10-262018-10-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_temperature_20181022_20181026.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_atemp_20181022_20181026
-
-=> mean_sea_level_pressure
----------------
-2018-10-222018-10-232018-10-242018-10-252018-10-262018-10-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_mean_sea_level_pressure_20181022_20181026.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_apress_20181022_20181026
-
-=> 2m_relative_humidity
----------------
-2018-10-222018-10-232018-10-242018-10-252018-10-262018-10-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_2m_relative_humidity_20181022_20181026.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_aqh_20181022_20181026
-
-=> surface_net_solar_radiation
----------------
-2018-10-222018-10-232018-10-242018-10-252018-10-262018-10-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_solar_radiation_20181022_20181026.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_swflux_20181022_20181026
-
-=> surface_net_thermal_radiation
----------------
-2018-10-222018-10-232018-10-242018-10-252018-10-262018-10-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_surface_net_thermal_radiation_20181022_20181026.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_lwflux_20181022_20181026
-
-=> total_precipitation
----------------
-2018-10-222018-10-232018-10-242018-10-252018-10-262018-10-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_total_precipitation_20181022_20181026.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_precip_20181022_20181026
-
-Processing wind variables :
-
----------------------------
-
-2018-10-222018-10-232018-10-242018-10-252018-10-262018-10-27
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_uwind_20181022_20181026.nc
-
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_NC/reanalysis-cerra-single-levels_vwind_20181022_20181026.nc
-
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_uwind_20181022_20181026
-[FILE SAVED] /DISK2TB/MODEL/DIAGS/FIN18/METEO/ITP_BIN/BC_vwind_20181022_20181026
-
-###############################################
-# RUNNING CYCLE FROM 2018-10-27 to 2018-10-31 #
-###############################################
-
-----------------------------------
-=> Config file FIN18 loaded
-----------------------------------
-
-NB /!\: 3-h fields hard coded ...
-
-Processing standard variables :
-
-=> 2m_temperature
----------------
-2018-10-272018-10-282018-10-292018-10-302018-10-312018-11-01Traceback (most recent call last):
-  File "/home/fontana/PROC_MODEL/DATA_MED/meteo/ECMWF/process_data.py", line 166, in <module>
-    idata = griddata((met_lat,met_lon),data,(LAT,LON),method='linear').T
-  File "/usr/local/lib/python3.10/dist-packages/scipy-1.14.0-py3.10-linux-x86_64.egg/scipy/interpolate/_ndgriddata.py", line 323, in griddata
-    ip = LinearNDInterpolator(points, values, fill_value=fill_value,
-  File "interpnd.pyx", line 301, in scipy.interpolate.interpnd.LinearNDInterpolator.__init__
-  File "interpnd.pyx", line 95, in scipy.interpolate.interpnd.NDInterpolatorBase.__init__
-  File "interpnd.pyx", line 104, in scipy.interpolate.interpnd.NDInterpolatorBase._set_values
-  File "interpnd.pyx", line 207, in scipy.interpolate.interpnd._check_init_shape
-ValueError: different number of values and points

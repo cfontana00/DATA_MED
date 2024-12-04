@@ -12,10 +12,10 @@ config=$1
 # Get CMEMS data
 cd datasets/CMEMS
 
-for var in 'thetao' 'chl';do
-  python3 get_data_sat.py -c $config -v $var 
-  python3 interp_cmems.py -c $config -v $var
-done
+#for var in 'thetao' 'chl';do
+#  python3 get_data_sat.py -c $config -v $var 
+#  python3 interp_cmems.py -c $config -v $var
+#done
 
 
 # Do plots

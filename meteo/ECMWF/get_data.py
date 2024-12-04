@@ -79,7 +79,6 @@ for year in range(int(yini),int(yend)+1):
 
   for mon in range(np.amin(months),np.amax(months)+1):
 
-
     for var in ['10m_wind_direction','10m_wind_speed',\
             '2m_temperature','2m_relative_humidity',\
             'surface_net_solar_radiation','surface_net_thermal_radiation',\
@@ -89,6 +88,9 @@ for year in range(int(yini),int(yend)+1):
        while 1 == 1 :
          try:
            oname = savedir+'/'+name+'_'+str(year)+str(mon).zfill(2)+'_'+var+'.nc'
+
+
+           print('Downloading',name+'_'+str(year)+str(mon).zfill(2)+'_'+var+'.nc\n')
 
            c.retrieve(
           name,
@@ -125,12 +127,12 @@ for year in range(int(yini),int(yend)+1):
            # Crop file
            # ---------
            os.system('ncks -O -d x,'+imin+','+imax+' -d y,'+jmin+','+jmax+' '+oname+' '+oname)
+           print('\n[DOWNLOADED]',oname,'\n')
 
            break
          except:
            pass
      
 
-         print('\n[DOWNLOADED]',oname,'\n')
 
 
