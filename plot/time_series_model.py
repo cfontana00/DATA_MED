@@ -46,14 +46,19 @@ def argument():
                                 required = True,
                                 help ='Configuration name'
                                 )
+    parser.add_argument(   '--type', '-t',
+                                type = str,
+                                required = True,
+                                help ='Type (point or mean)'
+                                )
     parser.add_argument(   '--variable',"-v",
                                 type = str,
                                 required = True,
                                 help = 'variable : thetao or chl')
-    parser.add_argument(   '--satellite',"-s",
+    parser.add_argument(   '--level',"-l",
                                 type = str,
                                 required = True,
-                                help = 'satellite : ex CMEMS')
+                                help = 'variable : thetao or chl')
     return parser.parse_args()
 
 
@@ -61,9 +66,10 @@ def argument():
 # Get args
 # --------
 args = argument()
-config = args.config    # Configuration name
-var = args.variable     # Variable name
-sat = args.satellite    # Dataset dir
+config = args.config   # Configuration name
+typ = args.type        # Type
+var = args.variable    # Variable name
+l = args.level         # Variable name
 
 
 # Load parameters
@@ -122,27 +128,16 @@ for jd in range(jdini,jdend+1):
 
    # Get 2D variable
    if var == 'thetao':
-     #var2d = get_var_2D(fname,var,hour,1) # !!!!
-     var2d = get_var_2D(fname,var,hour,2) # !!!!
-     var2d = np.array(var2d)
+     var2d = get_var_2D(fname,var,hour,l) # !!!!
 
    elif var == 'chl':
      var2d = get_integre_2D(fname,var,levels,hour)
-     var2d = np.array(var2d)
 
-
-     # Remove coastal zone
-     mask = var2d.copy()
-
-     mask[np.where(~np.isnan(mask))] = 0
-     mask[np.where(np.isnan(mask)) ] = 1
-  
-     #kernel = np.ones((35,35))
-     kernel = gkern(40,20)
-
-     mask = cv2.dilate(mask, kernel, iterations=1)
-
-     var2d[mask > 0] = np.nan
+   else : 
+     var2d = get_var_2D(fname,var,hour,l)
+ 
+   
+   var2d = np.array(var2d)
 
 
    # Title
@@ -152,57 +147,33 @@ for jd in range(jdini,jdend+1):
 
    # PLOT DATA
    # ---------
-   ddir = os.path.join(diagdir,config,sat,var,'ITP_NC')
-   fname = ddir+'/'+var+'_'+dtag+'.nc'
-   sat2d = get_sat_2D(fname,var)
-   sat2d = np.array(sat2d)
-
-   if var == 'chl':
-     sat2d[mask>0] = np.nan
-
-
-   # Apply correction to sst
-
-   if var == 'thetao':
-      sat2d = sat2d - 273.15   # Kelvin to C
-
-      #t2m = np.array(t2m) - 273.16
-      #idx = np.where(sat2d<9999)
-      #bias = np.mean(sat2d[idx]-t2m[idx])
-      #print(bias)
-
-      sat2d = sat2d # SST correction
-
-   # Save file
-   # ---------
-   savedir = ddir+'/PLOT'
-   os.system('mkdir -p '+savedir)
-
 
    # Store time series
    # -----------------
 
-   if reduce == 'yes':
-     idx_good = np.where( (~np.isnan(sat2d)) & (~np.isnan(var2d)) )
-   elif reduce == 'no':
+   if typ == "mean" :
+
      idx_good = np.where((~np.isnan(var2d)))
+     var2d = np.array(var2d)[idx_good]
+     val = np.mean(var2d)
+     fout = 'time_series_'+var+'.dat'
 
-   idx_tot = np.where( ~np.isnan(var2d) )
+   elif typ == "point" :
+     #print(var2d.shape)
+     val = var2d[py,px]
+     fout = 'time_series_'+var+'_'+str(px)+'_'+str(py)+'.dat'
 
-   sat2d = sat2d[idx_good]
-   var2d = np.array(var2d)[idx_good]
+ 
 
-   idx_good = np.array(idx_good)
-   idx_tot = np.array(idx_tot)
-
-   perc = float(idx_good.shape[1])/float(idx_tot.shape[1])
-
-   time_series.append([jd,np.mean(var2d),np.mean(sat2d),perc])
-   print(jd,np.mean(var2d),np.mean(sat2d),perc)
+   time_series.append([jd,val])
+   print(jd,val)
 
 
 # Save time series
-np.savetxt(ddir+'/time_series.dat',np.array(time_series))
+ddir = diagdir+'/'+config+'/TIME_SERIES/'
+os.system('mkdir -p '+ddir)
+
+np.savetxt(ddir+'/'+fout,np.array(time_series))
 
 
 plt.close()

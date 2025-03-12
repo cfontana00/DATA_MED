@@ -106,14 +106,24 @@ extent = [lon.min(),lon.max(),lat.min(),lat.max()]
 fig, ax = plt.subplots(1,1,figsize=(float(fig_sx), float(fig_sy)), subplot_kw={'projection': proj})
 init_fig(ax,extent,proj)
 
+# Time parameters
+# ---------------
+if var == 'chl':
+  hours = range(12,13)
+elif var == 'thetao' :
+  hours = range(0,1)
+
+if freq == 'daily':
+  hours = range(0,1)
+
 
 # Loop on files
 # -------------
 print('Processing')
 for jd in range(jdini,jdend+1):
 
- for hour in range(12,13):
- #for hour in range(0,24):
+
+ for hour in hours:
 
 
    # Get current variable parameters

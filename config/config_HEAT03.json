@@ -1,9 +1,9 @@
 {
 "_____":"GENERAL PARAMETERS",
 
-"date_ini":"2022-05-01",
-"date_end":"2022-09-02",
-"outdir":"/home/fontana/DISK1TB/MODEL/OUTPUTS/HEAT22",
+"date_ini":"2003-05-01",
+"date_end":"2003-09-02",
+"outdir":"/home/fontana/DISK1TB/MODEL/OUTPUTS/HEAT03",
 "diagdir":"/home/fontana//DISK1TB/MODEL/DIAGS",
 "freq":"daily",
 
@@ -49,12 +49,6 @@
 
 "glength":"40",
 "gsigma":"40",
-
-"_____":"RADAR",
-"radardir":"/home/fontana/DISK1TB/RADAR",
-"radarcmems":["TirLig"],
-"radareuro":["EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3"],
-"radarxxx":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3","EUHFR_NRTcurrent_HFR-LaMMA-Total_v3","EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3"],
 
 
 

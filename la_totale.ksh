@@ -17,7 +17,6 @@ for var in 'thetao' 'chl';do
   python3 interp_cmems.py -c $config -v $var
 done
 
-
 # Do plots
 cd ../../plot
 
@@ -34,15 +33,14 @@ done
 
 
 # Do Argo
-cd ../datasets/ARGO
-
-python3 get_argo.py -c $config
-python3 compare_argo.py -c $config
+#cd ../datasets/ARGO
+#python3 get_argo.py -c $config
+#python3 compare_argo.py -c $config
 
 
 # Do Boussole
-cd ../BOUSSOLE
-python3 read_boussole.py -c $config
+#cd ../BOUSSOLE
+#python3 read_boussole.py -c $config
 
 
 # Do Okubo

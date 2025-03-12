@@ -1,11 +1,13 @@
 {
 "_____":"GENERAL PARAMETERS",
 
-"date_ini":"2022-05-01",
-"date_end":"2022-09-02",
-"outdir":"/home/fontana/DISK1TB/MODEL/OUTPUTS/HEAT22",
-"diagdir":"/home/fontana//DISK1TB/MODEL/DIAGS",
-"freq":"daily",
+"date_ini":"2015-04-06",
+"date_end":"2015-04-27",
+"outdir":"/home/fontana/DISK1TB/MODEL/OUTPUTS/ALBEDO",
+"diagdir":"/home/fontana/DISK1TB/MODEL/DIAGS",
+"bathyfile":"/DISK2TB/MODEL/gebco_2023_n44.8901_s40.2979_w5.7019_e13.0188.nc",
+"freq":"hourly",
+
 
 
 "_____":"BOUNDARY PARAMETERS",
@@ -17,18 +19,18 @@
 
 "_____":"RIVER PARAMETERS",
 
-"french_list":["Argens"],
+"french_list":["Argens","Var"],
 "italian_list":["Arno","Magra","Ombrone","Serchio"],
-"river_ini":"2020-12-30",
-"river_end":"2021-10-30",
+"river_ini":"2015-03-01",
+"river_end":"2019-04-30",
 
 
 "_____":"METEO PARAMETERS",
 
-"meteo_ini":"2022-01-01",
-"meteo_end":"2022-01-30",
-"day_cycle":5,
-"n_cycle":70,
+"meteo_ini":"2015-03-01",
+"meteo_end":"2015-05-30",
+"day_cycle":2,
+"n_cycle":40,
 "imin":"500",
 "imax":"600",
 "jmin":"350",
@@ -47,14 +49,8 @@
 
 "_____":"SATELLITE",
 
-"glength":"40",
-"gsigma":"40",
-
-"_____":"RADAR",
-"radardir":"/home/fontana/DISK1TB/RADAR",
-"radarcmems":["TirLig"],
-"radareuro":["EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3"],
-"radarxxx":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3","EUHFR_NRTcurrent_HFR-LaMMA-Total_v3","EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3"],
+"glength":"30",
+"gsigma":"30",
 
 
 
@@ -68,26 +64,27 @@
 "resol":"10m",                       
 "fig_proj":"ccrs.PlateCarree()",      
 
-"fig_sx":"8",                         
-"fig_sy":"8",                        
+"fig_sx":8,                         
+"fig_sy":8,                        
 "fig_fmt":"jpg",                     
 "fig_res":"300",                  
 "tight":"True",                  
+"cb_extend":"max",
 
-"fig_tck_size":"6",
-"fig_tcklbl_size":"4",
+"fig_tck_size":"8",
+"fig_tcklbl_size":"8",
 "fig_lbl_size":"4",
 "fig_title_size":"6",
-"cb_pad_2D":"0.12",
+"cb_pad_2D":"0.1",
 "cb_fraction_2D":"0.02",
 
 "fig_sx_sat":"7",                         
 "fig_sy_sat":"4",                        
-"fig_tck_size_sat":"4",
+"fig_tck_size_sat":"6",
 "fig_tcklbl_size_sat":"4",
 "cb_pad_sat":"0.12",
-"cb_fraction_sat":"0.02",
-"cb_pad_sat":"0.04",
+"cb_fraction_sat":0.025,
+"cb_pad_sat":0.04,
 "cb_tck_size_sat":"4",
 "cb_lbl_size_sat":"6",
 
@@ -111,7 +108,7 @@
 "_____":"TRANSECT PLOT PARAMETERS",
 
 "trans_ini":"2015-04-01",
-"trans_end":"2015-04-19",
+"trans_end":"2015-04-28",
 "trans_depth":200,
 "trans_resV":1,
 "trans_name":"eddy",
@@ -120,14 +117,15 @@
 
 "_____":"PROFILE PLOT PARAMETERS",
 
-"fig_prox":"6",
-"fig_proy":"11",
+"fig_prox":"4",
+"fig_proy":"8",
+"tck_size_prof":"8",
 "col_bcg":["g","b","r"],
 "col_phy":["b","r"],
 
 "_____":"TIME SERIES PLOT PARAMETERS",
-"fig_tsx":8,
-"fig_tsy":5,
+"fig_tsx":4,
+"fig_tsy":3,
 "tck_size_ts":"4",
 "lbl_size_ts":"6",
 

@@ -1,11 +1,11 @@
 {
 "_____":"GENERAL PARAMETERS",
 
-"date_ini":"2022-05-01",
-"date_end":"2022-09-02",
-"outdir":"/home/fontana/DISK1TB/MODEL/OUTPUTS/HEAT22",
-"diagdir":"/home/fontana//DISK1TB/MODEL/DIAGS",
-"freq":"daily",
+"date_ini":"2020-12-01",
+"date_end":"2012-12-11",
+"outdir":"/DISK2TB/MODEL/OUTPUTS/ALBEDO",
+"diagdir":"/DISK2TB/MODEL/DIAGS",
+
 
 
 "_____":"BOUNDARY PARAMETERS",
@@ -25,8 +25,8 @@
 
 "_____":"METEO PARAMETERS",
 
-"meteo_ini":"2022-01-01",
-"meteo_end":"2022-01-30",
+"meteo_ini":"2023-05-01",
+"meteo_end":"2023-07-30",
 "day_cycle":5,
 "n_cycle":70,
 "imin":"500",
@@ -49,12 +49,6 @@
 
 "glength":"40",
 "gsigma":"40",
-
-"_____":"RADAR",
-"radardir":"/home/fontana/DISK1TB/RADAR",
-"radarcmems":["TirLig"],
-"radareuro":["EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3"],
-"radarxxx":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3","EUHFR_NRTcurrent_HFR-LaMMA-Total_v3","EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3"],
 
 
 
@@ -128,9 +122,6 @@
 "_____":"TIME SERIES PLOT PARAMETERS",
 "fig_tsx":8,
 "fig_tsy":5,
-"tck_size_ts":"4",
-"lbl_size_ts":"6",
-
 
 "_____":"INTERPOLATION PARAMETERS",
 

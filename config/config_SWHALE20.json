@@ -1,11 +1,11 @@
 {
 "_____":"GENERAL PARAMETERS",
 
-"date_ini":"2022-05-01",
-"date_end":"2022-09-02",
-"outdir":"/home/fontana/DISK1TB/MODEL/OUTPUTS/HEAT22",
-"diagdir":"/home/fontana//DISK1TB/MODEL/DIAGS",
-"freq":"daily",
+"date_ini":"2018-11-01",
+"date_end":"2018-12-20",
+"outdir":"/DISK2TB/MODEL/OUTPUTS/SWHALE18",
+"diagdir":"/DISK2TB/MODEL/DIAGS",
+
 
 
 "_____":"BOUNDARY PARAMETERS",
@@ -17,18 +17,18 @@
 
 "_____":"RIVER PARAMETERS",
 
-"french_list":["Argens"],
+"french_list":[],
 "italian_list":["Arno","Magra","Ombrone","Serchio"],
-"river_ini":"2020-12-30",
-"river_end":"2021-10-30",
+"river_ini":"2019-11-28",
+"river_end":"2020-01-31",
 
 
 "_____":"METEO PARAMETERS",
 
-"meteo_ini":"2022-01-01",
-"meteo_end":"2022-01-30",
+"meteo_ini":"2019-12-01",
+"meteo_end":"2020-02-10",
 "day_cycle":5,
-"n_cycle":70,
+"n_cycle":35,
 "imin":"500",
 "imax":"600",
 "jmin":"350",
@@ -50,17 +50,11 @@
 "glength":"40",
 "gsigma":"40",
 
-"_____":"RADAR",
-"radardir":"/home/fontana/DISK1TB/RADAR",
-"radarcmems":["TirLig"],
-"radareuro":["EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3"],
-"radarxxx":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3","EUHFR_NRTcurrent_HFR-LaMMA-Total_v3","EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3"],
-
 
 
 "_____":"ARGO",
 
-"argo_ds":"phy",
+"argo_ds":"bgc",
 
 
 "_____":"PLOT PARAMETERS",

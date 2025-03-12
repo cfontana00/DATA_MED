@@ -1,0 +1,3 @@
+# Model_variable CMEMS_products CMEMS_variable
+chl cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D CHL
+thetao SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a sea_surface_temperature

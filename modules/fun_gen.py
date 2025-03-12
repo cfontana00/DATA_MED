@@ -35,6 +35,12 @@ def load_config(config):
      jdini = datetime.strptime(data["date_ini"],'%Y-%m-%d').toordinal()
      jdend = datetime.strptime(data["date_end"],'%Y-%m-%d').toordinal()
 
+     # Outputs frequency
+     if freq == 'hourly':
+        hlim = 24
+     elif freq == 'daily':
+        hlim = 1
+
      # Define boundary limits
      # ----------------------
      lon,lat,lev = load_coords() 

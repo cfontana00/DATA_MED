@@ -144,8 +144,10 @@ for plon in lon_uni:
  
     hours,mnt = date.strftime('%H'),date.strftime('%M')
     hours = int(np.round(float(hours)+float(mnt)/60.))
-    if hours == 24:
+
+    if hours == 24 or freq == 'daily':
       hours = 0
+
 
     # Get filename
     fname,dtag = get_filename(int(np.floor(jd)),ftag)
@@ -218,8 +220,8 @@ for plon in lon_uni:
                mpsal,dpsal,'Salinity',\
                mtemp,dtemp,'Temperature (°C)')
 
-  #n += 1 
-  #if n > 2 :
+  #N += 1 
+  #if N > 10 :
   #   break
 
 print('-------------')
@@ -250,19 +252,21 @@ for n in np.unique(num):
 
    plon = np.unique( lon[idx])
    plat = np.unique( lat[idx])
-   txt = np.unique(cyc[idx])
+   txt = np.unique( cyc[idx])
 
    pos.append([plon,plat,n])
 
+   try :
+     plt.plot(plon,plat,marker='+',linestyle='-')
 
-   plt.plot(plon,plat,marker='+',linestyle='-')
+     for i in [0,plon.shape[0]-1]:
+       plt.text(plon[i],plat[i],str(txt[i]),fontsize=8)
 
-   for i in [0,plon.shape[0]-1]:
-     plt.text(plon[i],plat[i],str(txt[i]),fontsize=8)
-
-   # Save figure
-   fout = savedir+'/'+tag+str(n)+'/map'+'.'+fig_fmt
-   savefig(fout)
+     # Save figure
+     fout = savedir+'/'+tag+str(n)+'/map'+'.'+fig_fmt
+     savefig(fout)
+   except :
+     print('Error in plotting for float '+str(n))
 
    plt.close()
 
@@ -276,9 +280,12 @@ for p in pos:
    
    lon = np.array(p[0])
    lat = np.array(p[1])
-   
-   plt.plot(lon,lat,marker='+',linestyle='none')
-   plt.text(lon[0],lat[0],str(p[2]))
+  
+   try :
+     plt.plot(lon,lat,marker='+',linestyle='none')
+     plt.text(lon[0],lat[0],str(p[2]))
+   except :
+     print('error in map')
 
 # Save figure
 fout = savedir+'/map'+tag+'.'+fig_fmt
@@ -300,11 +307,12 @@ if argo_ds == 'bgc':
   n += 1
 
 
-dmin = -200
+dmin = -500
 dmax = 0.1
 dstep = 10
 
-dstep = np.arange(dmin,dmax,dstep)
+#dstep = np.arange(dmin,dmax,dstep)
+dstep = np.array([dmin,-100,-10,0])
 
 
 # Loop on variables
@@ -327,11 +335,12 @@ for i in range(1,n+1):
      data = np.array(data[2])
 
      # Loop on depths
-     for d in range(0,depth.shape[0]):
+     for d in range(0,depth.shape[0]-1):
 
         if depth[d] > dmin:
+
           error = np.sqrt((model[d]-data[d])**2)
-          b = np.amax( np.where( dstep < depth[d])   )
+          b = np.amax( np.where( dstep < depth[d]) )
 
           if not np.isnan(error):
             bins[b].append(error)
@@ -345,15 +354,17 @@ for i in range(1,n+1):
 
    if i == 1 :
       varname = 'Salinity'
-      untis = ''
+      units = ''
       color = 'b'
    elif i == 2 :
       varname = 'Temperature'
-      undits = '°C'
+      units = '°C'
       color = 'r'
 
 
    plot_error_histo(savedir,dstep,mean,std,varname,units,color) 
+   print('Data for '+varname)
+   print(mean)
  
 
 

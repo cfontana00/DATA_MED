@@ -61,7 +61,9 @@ lat_min,lat_max = np.amin(lat_mod),np.amax(lat_mod)
 
 # Get Argo data
 # -------------
-box = [lon_min, lon_max, lat_min, lat_max, 0, 300, date_ini, date_end]
+box = [lon_min, lon_max, lat_min, lat_max, 0, 500, date_ini, date_end]
+
+print(box)
 
 f = DataFetcher(ds=argo_ds, mode='expert', params='all',
                 parallel=True, progress=True, cache=False,
