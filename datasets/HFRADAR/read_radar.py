@@ -17,6 +17,8 @@ from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import matplotlib.pyplot as plt
 import matplotlib
 import xarray as xr
+import cmcrameri as cmc
+
 #matplotlib.use("Agg")
 
 
@@ -24,7 +26,7 @@ import xarray as xr
 def get_radar_data(jd,hour):
 
   full_data = []
-
+  
   # Load CMEMS file
   # ---------------
   for tag in radarcmems:
@@ -34,7 +36,6 @@ def get_radar_data(jd,hour):
 
     dori = dt.datetime(1950,1,1).toordinal()
     time = time + dori
-
     jtime = np.floor(time)
     htime = np.floor((time-jtime)*24)
 
@@ -46,8 +47,8 @@ def get_radar_data(jd,hour):
       lon = np.array(ds['LONGITUDE']).flatten()
       lat = np.array(ds['LATITUDE']).flatten()
 
-      u = np.array(ds['EWCT'][idx,:,:]).squeeze().T.flatten()
-      v = np.array(ds['NSCT'][idx,:,:]).squeeze().T.flatten()
+      u = np.array(ds['EWCT'][idx,:,:]).squeeze().flatten()
+      v = np.array(ds['NSCT'][idx,:,:]).squeeze().flatten()
       gdop_qc = np.array(ds['GDOP_QC'][idx,:,:]).squeeze().T.flatten()
       qc = np.array(ds['QCflag'][idx,:,:]).squeeze().T.flatten()
       ds.close()
@@ -59,6 +60,7 @@ def get_radar_data(jd,hour):
       for n in range(0,LON.shape[0]):
 
         if u[n] > -999 and v[n] > -999 and gdop_qc[n] < 2 and qc[n] == 1 :
+        #if u[n] > -999 and v[n] > -999 :
           full_data.append([LON[n],LAT[n],u[n],v[n]])
 
       print('\nData found for radar '+tag)
@@ -68,10 +70,38 @@ def get_radar_data(jd,hour):
       print('\nNo data found for radar '+tag)
       pass
 
-
+  """
   # Read EuroGOOS radar
   # -------------------
-  # TO DO
+  for tag in radareuro:
+
+     ds = Dataset(diagdir+'/'+config+'/RADAR/DATA/'+tag+'.nc')
+
+     time = np.array(ds['TIME']).flatten()
+    
+     dori = dt.datetime(1950,1,1).toordinal()
+     time = time + dori
+     jtime = np.floor(time)
+     htime = np.floor((time-jtime)*24)
+
+     idx = np.where( (jtime == jd) & (htime == hour) )
+
+     idx = idx[0][0]
+
+     lon = np.array(ds['LONGITUDE']).flatten()
+     lat = np.array(ds['LATITUDE']).flatten()
+     LON,LAT = np.meshgrid(lon,lat)
+     LON,LAT = LON.flatten(),LAT.flatten()
+
+     u = np.array(ds['EWCT'][idx,:,:]).squeeze().T.flatten()
+     v = np.array(ds['NSCT'][idx,:,:]).squeeze().T.flatten()
+     ds.close()
+
+     # Store data
+     for n in range(0,LON.shape[0]):
+       if u[n] > -999 and v[n] > -999 :
+         full_data.append([LON[n],LAT[n],u[n],v[n]])
+  """
 
   return np.array(full_data)
 
@@ -106,6 +136,7 @@ os.system('mkdir -p '+odir)
 # Load coords
 lon_mod,lat_mod,lev = load_coords()
 LON_MOD,LAT_MOD = np.meshgrid(np.array(lon_mod),np.array(lat_mod))
+#LAT_MOD,LON_MOD = np.meshgrid(np.array(lat_mod),np.array(lon_mod))
 
 
 # Load proj
@@ -117,6 +148,9 @@ extent = [lon_mod.min(),lon_mod.max(),lat_mod.min(),lat_mod.max()]
 
 
 fig, (ax1, ax2) = plt.subplots(2, 1,figsize=(float(fig_sx), float(fig_sy)), subplot_kw={'projection': proj})
+
+# Switch for colorbar
+switch = 0
 
 for ax in [ax1,ax2]:
   ax.set_extent(extent)
@@ -139,7 +173,24 @@ for ax in [ax1,ax2]:
   gl.ylabel_style = {'size': fig_tcklbl_size}
 
 
+# Find index to place scale
+sub = 10 
+tmp = lon_mod[::sub]-scale_lon 
+idx_lon = np.where(abs(tmp) == np.amin(abs(tmp)))[0][0]
+tmp = lat_mod[::sub]-scale_lat 
+idx_lat = np.where(abs(tmp) == np.amin(abs(tmp)))[0][0]
 
+tmp = LON_MOD[::sub,::sub].copy()
+tmp[:] = np.nan
+scale_x = tmp.copy()
+scale_y = tmp.copy()
+scale_x[idx_lat,idx_lon] = 0.8
+
+
+ax1.quiver(lon_mod[::sub],lat_mod[::sub],scale_x,scale_y,zorder=3)
+
+
+# Get outputs frequency
 if freq == 'daily':
   hlim = 1
 elif freq == 'hourly':
@@ -161,13 +212,15 @@ for jd in range(jdini,jdend+1):
      # Get radar data
      data = get_radar_data(jd,hour)
 
-
-     try:
+     if 1 ==1:
+     #try:
        # Interpolate on model grid
        lon,lat,u,v = data[:,0],data[:,1],data[:,2],data[:,3]
 
-       iu = griddata((lon,lat),u,(LON_MOD,LAT_MOD),method='linear')
-       iv = griddata((lon,lat),v,(LON_MOD,LAT_MOD),method='linear')
+
+       iu = griddata((lat,lon),u,(LAT_MOD,LON_MOD),method='linear')
+       iv = griddata((lat,lon),v,(LAT_MOD,LON_MOD),method='linear')
+
 
        # Get model values filename
        fname,dtag = get_filename(jd,'RFVL')
@@ -176,23 +229,49 @@ for jd in range(jdini,jdend+1):
        mv = get_var_2D(fname,'vo',hour,0)
 
        # Plot velocities
-       sub = 10
 
        # Model
-       q1 = ax1.quiver(lon_mod[::sub],lat_mod[::sub],mu[::sub,::sub],mv[::sub,::sub])
+       # -----
+       ax1.title.set_text('Model surface velocities (m.s$^{-1}$)')
+       q1 = ax1.quiver(lon_mod[::sub],lat_mod[::sub],mu[::sub,::sub],mv[::sub,::sub],zorder=1,scale=15)
+
+
+       # Plot norm
+       norm = np.sqrt(np.square(mu)+np.square(mv))
+       contours = np.arange(0.,0.8,0.1)
+       c1 = ax1.contourf(lon_mod,lat_mod,norm,contours,cmap=cmc.cm.buda_r,extend='max',zorder=0)
+       if switch == 0:
+         plt.colorbar(c1,pad=float(cb_pad_sat),fraction=float(cb_fraction_sat))
+
+       ax2.title.set_text('HF radar - '+dstr+' '+str(hour).zfill(2)+'h')
 
        # Radars
-       q2 = ax2.quiver(lon_mod[::sub],lat_mod[::sub],iu[::sub,::sub],iv[::sub,::sub])
+       # ------
+       q2 = ax2.quiver(lon_mod[::sub],lat_mod[::sub],iu[::sub,::sub],iv[::sub,::sub],zorder=1,scale=15)
+
+       # Plot norm
+       norm = np.sqrt(np.square(iu)+np.square(iv))
+
+       #contours = np.arange(-1,1.1,0.1)
+       #c2 = ax2.contourf(lon_mod,lat_mod,iu,contours,cmap=cmc.cm.vik,extend='max',zorder=0)
+
+       c2 = ax2.contourf(lon_mod,lat_mod,norm,contours,cmap=cmc.cm.buda_r,extend='max',zorder=0)
+
+       if switch == 0:
+         plt.colorbar(c2,pad=float(cb_pad_sat),fraction=float(cb_fraction_sat))
+         switch = 1
 
        # Save figure 
        # -----------
        savefig(odir+'/'+dstr+'_'+str(hour).zfill(2)+'.'+fig_fmt)
 
        q1.remove()
+       c1.remove()
        q2.remove()
-     except Exception as e:
-       print(e)
-       pass
+       c2.remove()
+     #except Exception as e:
+     #  print(e)
+     #  pass
 
 
      

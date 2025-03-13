@@ -8,6 +8,11 @@ import copernicusmarine
 import os
 import argparse
 import xarray as xr
+import requests
+from requests.auth import HTTPBasicAuth
+from io import BytesIO
+from netCDF4 import Dataset
+
 
 
 def argument():
@@ -38,7 +43,7 @@ usr = os.getenv('COPERNICUSMARINE_SERVICE_USERNAM')
 
 # Create directory
 
-
+"""
 # Get CMEMS files
 # ---------------
 query_metadata = copernicusmarine.get(dataset_id='cmems_obs-ins_glo_phy-cur_nrt_radar-total_irr', dry_run=True,username='cfontana3')
@@ -64,17 +69,23 @@ os.system('rm -f files.txt')
 
 print('\nFiles downloaded in '+radardir )
 os.system('ls '+radardir)
+"""
 
 # Get EuroGoos file
 # -----------------
+print("Processing EuroGoos")
 for tag in radareuro :
+
+  print(tag)
 
   ds = xr.open_dataset('https://thredds.hfrnode.eu:8443/thredds/dodsC/'+tag,decode_times=True)
 
   subset = ds[['EWCT','NSCT']].sel(TIME=slice(date_ini, date_end))
-  subset.to_netcdf(diagdir+'/'+config+'/RADAR/DATA/'+tag+'.nc')
+  #subset = ds[['EWCT','NSCT']].sel(TIME=slice("2017-01-01","2017-02-01"))
+  fname = diagdir+'/'+config+'/RADAR/DATA/'+tag+'.nc'
+  subset.to_netcdf(fname)
 
-  print('\n[FILE SAVED] '+radardir+'/'+tag+'.nc')
-
+  print('\n[FILE SAVED] '+fname) 
+    
 
 

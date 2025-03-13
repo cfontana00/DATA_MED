@@ -53,8 +53,10 @@
 "_____":"RADAR",
 "radardir":"/home/fontana/DISK1TB/RADAR",
 "radarcmems":["TirLig"],
-"radareuro":["EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3"],
+"radareuro":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3"],
 "radarxxx":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3","EUHFR_NRTcurrent_HFR-LaMMA-Total_v3","EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3"],
+"scale_lon":11,
+"scale_lat":44,
 
 
 
@@ -85,7 +87,6 @@
 "fig_sy_sat":"4",                        
 "fig_tck_size_sat":"4",
 "fig_tcklbl_size_sat":"4",
-"cb_pad_sat":"0.12",
 "cb_fraction_sat":"0.02",
 "cb_pad_sat":"0.04",
 "cb_tck_size_sat":"4",
