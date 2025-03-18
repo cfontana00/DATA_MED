@@ -172,7 +172,6 @@ for ax in [ax1,ax2]:
   gl.xlabel_style = {'size': fig_tcklbl_size}
   gl.ylabel_style = {'size': fig_tcklbl_size}
 
-
 # Find index to place scale
 sub = 10 
 tmp = lon_mod[::sub]-scale_lon 
@@ -182,12 +181,14 @@ idx_lat = np.where(abs(tmp) == np.amin(abs(tmp)))[0][0]
 
 tmp = LON_MOD[::sub,::sub].copy()
 tmp[:] = np.nan
-scale_x = tmp.copy()
-scale_y = tmp.copy()
-scale_x[idx_lat,idx_lon] = 0.8
+scale_x = np.zeros(LON_MOD[::sub,::sub].shape)
+scale_y = np.zeros(LON_MOD[::sub,::sub].shape)
+scale_x[idx_lat,idx_lon] = 0.5
+scale_x[scale_x < 0.5] = np.nan 
 
-
-ax1.quiver(lon_mod[::sub],lat_mod[::sub],scale_x,scale_y,zorder=3)
+# Plot scale
+ax1.quiver(lon_mod[::sub],lat_mod[::sub],scale_x,scale_y,scale=15,zorder=10)
+ax1.text(lon_mod[::sub][idx_lon],lat_mod[::sub][idx_lat]+0.04,'0.5 m.s$^{-1}$')
 
 
 # Get outputs frequency
@@ -211,9 +212,10 @@ for jd in range(jdini,jdend+1):
 
      # Get radar data
      data = get_radar_data(jd,hour)
-
+     
      if 1 ==1:
      #try:
+
        # Interpolate on model grid
        lon,lat,u,v = data[:,0],data[:,1],data[:,2],data[:,3]
 
@@ -233,6 +235,8 @@ for jd in range(jdini,jdend+1):
        # Model
        # -----
        ax1.title.set_text('Model surface velocities (m.s$^{-1}$)')
+       
+
        q1 = ax1.quiver(lon_mod[::sub],lat_mod[::sub],mu[::sub,::sub],mv[::sub,::sub],zorder=1,scale=15)
 
 
@@ -261,6 +265,7 @@ for jd in range(jdini,jdend+1):
          plt.colorbar(c2,pad=float(cb_pad_sat),fraction=float(cb_fraction_sat))
          switch = 1
 
+
        # Save figure 
        # -----------
        savefig(odir+'/'+dstr+'_'+str(hour).zfill(2)+'.'+fig_fmt)
@@ -269,6 +274,7 @@ for jd in range(jdini,jdend+1):
        c1.remove()
        q2.remove()
        c2.remove()
+
      #except Exception as e:
      #  print(e)
      #  pass
