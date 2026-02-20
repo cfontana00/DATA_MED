@@ -79,6 +79,10 @@ from fun_gen import *
 # Initialize plot
 # ---------------
 
+# Percentile for vmin/vmax
+lower = (100 - 95) / 2
+upper = 100 - lower
+
 # Load lon/lat
 # ------------
 lon,lat,levels = load_coords()
@@ -105,16 +109,24 @@ if var == 'chl':
 elif var == 'thetao':
   hours = range(0,1)
 
+# Load mask
+mask = xr.open_dataset(maskfile)['tmask']
+mask = np.array(mask[0,:,:].squeeze(),dtype=float)
+mask[np.where(mask==0)] = np.nan
+mask[np.where(mask==1)] = 0
+
 # Loop on files
 # -------------
 print('Processing')
+
 for jd in range(jdini,jdend+1):
 
- for hour in hours:
-   # Get current variable parameters
-   vname, ftag, cmap, islog, vmod, vmin, vmax, label, units\
-        = load_variable(config,var)
 
+ # Get current variable parameters
+ vname, ftag, cmap, islog, vmod, vmin, vmax, label, units\
+       = load_variable(config,var)
+ 
+ for hour in hours:
 
    # PLOT MODEL
    # ----------
@@ -122,43 +134,65 @@ for jd in range(jdini,jdend+1):
    # Get filename
    fname,dtag = get_filename(jd,ftag)
 
-
    # Get 2D variable
    if var == 'thetao':
 
-     var2d = get_var_2D(fname,var,hour,1) # !!!!
+     var2d = get_var_2D(jd,jdini,fname,var,hour,1) # !!!!
      var2d = np.array(var2d)
 
    elif var == 'chl':
-     var2d = get_integre_2D(fname,var,levels,hour)
+
+     var2d = get_integre_2D(jd,jdini,fname,var,levels,hour)
      var2d = np.array(var2d)
 
-
      # Remove coastal zone
-     mask = var2d.copy()
-
-     mask[np.where(~np.isnan(mask))] = 0
-     mask[np.where(np.isnan(mask)) ] = 1
-  
-     #kernel = np.ones((35,35))
+     #mask = var2d.copy()
+   
      kernel = gkern(int(glength),int(gsigma))
 
-     mask = cv2.dilate(mask, kernel, iterations=1)
+     # TO CHANGE !!!!!
+     #mask = cv2.dilate(mask, kernel, iterations=1)
 
-     var2d[mask > 0] = np.nan
+
+   var2d = var2d+mask # faster than where
+   var2d[np.where(var2d == 0 )] = np.nan
+
+   #var2d[np.where(var2d == 0 )] = np.nan # quick fix
 
 
+
+   ddir = os.path.join(diagdir,config,sat,var,'ITP_NC')
+   fname = ddir+'/'+var+'_'+dtag+'.nc'
+   sat2d = get_sat_2D(fname,var)
+   sat2d = np.array(sat2d)
+
+   #sat2d[np.where(mask == 0 )] = np.nan
+   sat2d[np.where( np.isnan(var2d))] = np.nan 
+
+   # PLOT DATA
+   # ---------
    # Plot
    if vmod == 'auto' :
-      # !!! TO CHANGE
-      p1 = ax1.pcolor(lon,lat,var2d,cmap=cmap,zorder=1)
-      #cb = plt.colorbar(p,fraction=float(cb_fraction),pad=float(cb_pad))
-   else:
 
-      if not islog :      
-        p1 = ax1.pcolor(lon,lat,var2d,cmap=cmap,vmin=vmin,vmax=vmax,zorder=1)
-      else:
-        p1 = ax1.pcolor(lon,lat,var2d,cmap=cmap,norm=colors.LogNorm(vmin=vmin,vmax=vmax),zorder=1)
+      # Search min/max in data
+      var2d[np.where(var2d) == 0] = np.nan
+      idx = np.where( ~np.isnan(var2d) )
+      arr = var2d[idx].flatten()
+  
+
+      try :
+        idx = np.where( ~np.isnan(sat2d) )
+        arr = np.concatenate(arr,sat2d[idx].flatten())
+      except:
+        pass
+
+      vmin = np.percentile(arr, lower)
+      vmax = np.percentile(arr, upper)
+
+   if not islog :      
+      p1 = ax1.pcolor(lon,lat,var2d,cmap=cmap,vmin=vmin,vmax=vmax,zorder=1)
+   else:
+      p1 = ax1.pcolor(lon,lat,var2d,cmap=cmap,norm=colors.LogNorm(vmin=vmin,vmax=vmax),zorder=1)
 
 
    # Title
@@ -170,15 +204,8 @@ for jd in range(jdini,jdend+1):
    ax1.set_title(title,fontsize=fig_title_size)
 
 
-   # PLOT DATA
-   # ---------
-   ddir = os.path.join(diagdir,config,sat,var,'ITP_NC')
-   fname = ddir+'/'+var+'_'+dtag+'.nc'
-   sat2d = get_sat_2D(fname,var)
-   sat2d = np.array(sat2d)
-
-   if var == 'chl':
-     sat2d[mask>0] = np.nan
+   #if var == 'chl':
+   #  sat2d[mask == 0] = np.nan
 
 
    # Apply correction to sst
@@ -248,7 +275,7 @@ for jd in range(jdini,jdend+1):
    perc = float(idx_good.shape[1])/float(idx_tot.shape[1])
 
    time_series.append([jd,np.mean(var2d),np.mean(sat2d),perc])
-   #print(jd,np.mean(var2d),np.mean(sat2d),perc)
+   print(jd,np.mean(var2d),np.mean(sat2d),perc)
 
 
 

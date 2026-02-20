@@ -20,19 +20,28 @@ from netCDF4 import Dataset
 # ------------ #
 def get_filename(jd,ftag):
 
-  from fun_gen import outdir
+  from fun_gen import domain,outdir,ftype,freq,date_ini
 
-  # Get filename
   dobj = dt.datetime.fromordinal(jd)
   dtag = dobj.strftime('%Y%m%d')
- 
-  search = outdir+'/'+dtag+'_h-OGS--'+ftag+'-MITgcmBFM-pilot8-b*_fc-v01.nc' 
 
-  try : 
-    fname = glob(search )[0]
+  # Get filename
+  if ftype == 'netcdf':
+   
+    search = http+ '/' +outdir+'/'+dtag+'_h-OGS--'+ftag+'-MITgcmBFM-pilot8-b*_fc-v01.nc' 
 
-  except Exception as e :
-    file_error(e,search,inspect.currentframe().f_code.co_name)
+    try : 
+      fname = glob(search )[0]
+
+    except Exception as e :
+      file_error(e,search,inspect.currentframe().f_code.co_name)
+
+  elif ftype == 'zarr':
+
+      d = date_ini.replace('-','')
+      fname = outdir+"/"+d+"-MER-MITgcmBFM-"+domain+"-fc-"+freq+"-v01.zarr"
+
+
 
   return fname,dtag
 
@@ -42,7 +51,7 @@ def get_filename(jd,ftag):
 # ------------ #
 def load_coords():
 
-  from fun_gen import outdir
+  from fun_gen import outdir,maskfile
 
   # Get calling function
   curframe = inspect.currentframe()
@@ -54,20 +63,23 @@ def load_coords():
      from fun_gen import ibmin,ibmax,\
                          jbmin,jbmax\
 
-  #try :
-  if 1==1:
+  # Try to load for outputs
+  try :
     search = outdir+'/*TEMP*.nc'
     ds = xr.open_dataset(glob(search)[0])
 
-    lon = np.array(ds['longitude'])
-    lat = np.array(ds['latitude'])
-    levels = np.array(ds['depth'])
-    ds.close()
+  # Or load by mask 
+  except:
+    ds = xr.open_dataset(maskfile,engine="netcdf4")
 
-    if fun_call != 'load_config':
-       lon = lon[ibmin:ibmax]
-       lat = lat[jbmin:jbmax]
+  lon = np.array(ds['longitude'])
+  lat = np.array(ds['latitude'])
+  levels = np.array(ds['depth'])
+  ds.close()
 
+  if fun_call != 'load_config':
+     lon = lon[ibmin:ibmax]
+     lat = lat[jbmin:jbmax]
 
   #except Exception as e :
   #  file_error(e,search,inspect.currentframe().f_code.co_name)
@@ -78,18 +90,38 @@ def load_coords():
 # ----------------- #
 # Load 2D variables #
 # ----------------- #
-def get_var_2D(fname,var,hour,lev):
+def get_var_2D(jd,jdini,fname,var,hour,lev):
 
   from fun_gen import ibmin,ibmax,\
-                      jbmin,jbmax
+                      jbmin,jbmax,\
+                      ftype,freq
 
-  try :
-    ds = xr.open_dataset(fname)
-    arr = ds[var][hour,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
+  if 1 ==1:
+  #try :
+      
+    ds = xr.open_dataset(fname,engine=ftype)
+    
+   
+    if ftype == 'netcdf':  
+      arr = ds[var][hour,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
+
+    elif ftype == 'zarr':
+      if freq == 'hourly':
+        rec = (jd-jdini)*24+hour
+        arr = ds[var].squeeze()
+        arr = arr[rec,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
+
+      elif freq == 'daily':
+        rec = jd-jdini
+        arr = ds[var].squeeze()
+        arr = arr[rec,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
+
+
+      
     ds.close()
-
-  except Exception as e :
-    file_error(e,search,inspect.currentframe().f_code.co_name)
+        
+  #except Exception as e :
+  #  file_error(e,search,inspect.currentframe().f_code.co_name)
 
   return arr
 
@@ -98,6 +130,8 @@ def get_var_2D(fname,var,hour,lev):
 # Load 2D satellites #
 # ------------------ #
 def get_sat_2D(fname,var):
+
+  from fun_gen import ftype
 
   try :
     ds = xr.open_dataset(fname)
@@ -113,15 +147,21 @@ def get_sat_2D(fname,var):
 # -------------------- #
 # Vertical integration #
 # -------------------- #
-def get_integre_2D(fname,var,levels,hour):
+def get_integre_2D(jd,jdini,fname,var,levels,hour):
 
   from fun_gen import ibmin,ibmax,\
-                      jbmin,jbmax
+                      jbmin,jbmax,ftype 
 
   # Load model data
-  ds = xr.open_dataset(fname)
-  arr = np.array(ds[var][hour,:,jbmin:jbmax,ibmin:ibmax].squeeze())
+  ds = xr.open_dataset(fname,engine=ftype)
+  arr = ds[var].squeeze()
+  
+  # WORK ONLY FOR DAILY NOW (TO CHANGE)
+  rec = jd-jdini
+  arr = arr[rec,:,jbmin:jbmax,ibmin:ibmax].squeeze()
   ds.close()
+
+  arr = np.array(arr)
 
   # Compute thickness of levels
   thick = np.zeros(levels.shape[0])
@@ -160,6 +200,7 @@ def get_integre_2D(fname,var,levels,hour):
   iarr[iarr==0.] = np.nan
   iarr = iarr*0.05#/tot
 
+
   return iarr
     
 
@@ -167,10 +208,10 @@ def get_integre_2D(fname,var,levels,hour):
 # ----------------- #
 # Load 3D variables #
 # ----------------- #
-def get_var_3D(fname,hours,var,**kargs):
+def get_var_3D(jd,jdini,fname,hours,var,called_by,**kargs):
 
   from fun_gen import ibmin,ibmax,\
-                      jbmin,jbmax
+                      jbmin,jbmax,ftype
 
   try :
 
@@ -183,17 +224,26 @@ def get_var_3D(fname,hours,var,**kargs):
     pass
 
   try:
-
-    #ds = xr.open_dataset(fname)
-    ds = Dataset(fname,format='NETCDF4-CLASSIC')
+    ds = xr.open_dataset(fname)
 
     # Reduce domain
     try:
-      arr = ds[var][hours,idz,idy,idx]
+
+      rec = (jd-jdini)*24
+
+      # Special case operational
+      if called_by == 'compare_argo.py'\
+        and ftype == 'zarr' \
+        and var == 'chl' :
+        rec = jd-jdini
+  
+      arr = ds[var][0,rec,idz,idy,idx]
       arr = arr.squeeze()
 
+
+
     except:
-      arr = ds[var][hours,:,jbmin:jbmax,ibmin:ibmax].squeeze()
+      arr = ds[var][0,rec,:,jbmin:jbmax,ibmin:ibmax].squeeze()
 
     ds.close()
 
@@ -206,7 +256,7 @@ def get_var_3D(fname,hours,var,**kargs):
 # ------------------------ #
 # Get value from 3D fields #
 # ------------------------ #
-def get_model_val_3d(fname,hours,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
+def get_model_val_3d(jd,jdini,fname,hours,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
 
   start = time.time()
 
@@ -214,28 +264,42 @@ def get_model_val_3d(fname,hours,var,lon_mod,lat_mod,lev_mod,lon,lat,depth):
 
   # Load file
   dump = float(dump)
+
   idx = np.where( (lon_mod > lon[0]-dump) & (lon_mod < lon[0]+dump) )
   idy = np.where( (lat_mod > lat[0]-dump) & (lat_mod < lat[0]+dump) )
   idz = np.where( (lev_mod < depth[-1]+800))
 
-  var3d = np.array(get_var_3D(fname,hours,var,domain=[idz,idy,idx]))
 
-  # Prepare interpolation
-  LAT,LEV,LON = np.meshgrid(lat_mod[idy],lev_mod[idz],lon_mod[idx]) 
-  LAT,LON,LEV = LAT.flatten(),LON.flatten(),LEV.flatten()
+  if idz[0].size == 0:
+    val = np.nan
+      
+  else:
 
-  var3d = var3d.flatten()
+    # Special case operational 
+    frame = inspect.currentframe()
+    caller_frame = frame.f_back
+    caller_file = caller_frame.f_code.co_filename
+    called_by = os.path.basename(caller_file)
 
-  var3d[np.where(var3d > 9999) ] = np.nan
+    var3d = np.array(get_var_3D(jd,jdini,fname,hours,var,called_by,domain=[idz,idy,idx]))
+    #var3d = np.array(get_var_3D(jd,jdini,fname,hours,var))
 
-  # Interpolation
-  val = griddata((LON,LAT,LEV),var3d,(lon,lat,depth),method=itp_meth)
+    # Prepare interpolation
+    LAT,LEV,LON = np.meshgrid(lat_mod[idy],lev_mod[idz],lon_mod[idx]) 
+    LAT,LON,LEV = LAT.flatten(),LON.flatten(),LEV.flatten()
 
-  end = np.round(time.time()-start,decimals=2)
+    var3d = var3d.flatten()
 
-  print('Interpolation done for [',lon.shape[0],'] data in',end,'sec',end='\r')
+    var3d[np.where(var3d > 9999) ] = np.nan
 
-  return val
+    # Interpolation
+    val = griddata((LON,LAT,LEV),var3d,(lon,lat,depth),method=itp_meth)
+
+    end = np.round(time.time()-start,decimals=2)
+
+    print('Interpolation done for [',lon.shape[0],'] data in',end,'sec',end='\r')
+
+    return val
 
 
 # ----------- #

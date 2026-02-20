@@ -7,6 +7,8 @@ from fun_io import *
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+from matplotlib.ticker import FormatStrFormatter,StrMethodFormatter,ScalarFormatter
+
 
 
 # -------------
@@ -16,14 +18,14 @@ def plot_profiles(*arg):
 
   from fun_gen import fig_prox,\
                       fig_proy,\
-                      col_phy,col_bcg,\
+                      col_2_prof,col_3_prof,\
                       argo_ds,\
-                      fig_fmt
+                      fig_fmt,tck_size_prof
   
   if argo_ds == 'bgc':
-    colors = col_bcg
+    colors = col_3_prof
   else: 
-    colors = col_phy
+    colors = col_2_prof
 
 
   # Get number of profiles
@@ -76,6 +78,13 @@ def plot_profiles(*arg):
 
     if i > 1:
       ax.spines["top"].set_position(("axes", 1.0+i*0.04))
+  
+  ax.set_xticklabels(ax.get_xticks(), fontsize=tck_size_prof)
+  ax.set_yticklabels(ax.get_yticks(), fontsize=tck_size_prof)
+
+  ax.xaxis.set_major_formatter(FormatStrFormatter('%.2f'))
+  ax.xaxis.set_minor_formatter(FormatStrFormatter('%.2f'))
+
 
   #plt.legend() 
   plt.title(time)  

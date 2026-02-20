@@ -123,11 +123,11 @@ for jd in range(jdini,jdend+1):
    # Get 2D variable
    if var == 'thetao':
      #var2d = get_var_2D(fname,var,hour,1) # !!!!
-     var2d = get_var_2D(fname,var,hour,2) # !!!!
+     var2d = get_var_2D(jd,jdini,fname,var,hour,2) # !!!!
      var2d = np.array(var2d)
 
    elif var == 'chl':
-     var2d = get_integre_2D(fname,var,levels,hour)
+     var2d = get_integre_2D(jd,jdini,fname,var,levels,hour)
      var2d = np.array(var2d)
 
 
@@ -142,7 +142,7 @@ for jd in range(jdini,jdend+1):
 
      mask = cv2.dilate(mask, kernel, iterations=1)
 
-     var2d[mask > 0] = np.nan
+     #var2d[mask > 0] = np.nan
 
 
    # Title
@@ -171,7 +171,7 @@ for jd in range(jdini,jdend+1):
       #bias = np.mean(sat2d[idx]-t2m[idx])
       #print(bias)
 
-      sat2d = sat2d # SST correction
+      #sat2d = sat2d # SST correction
 
    # Save file
    # ---------
@@ -195,7 +195,9 @@ for jd in range(jdini,jdend+1):
    idx_good = np.array(idx_good)
    idx_tot = np.array(idx_tot)
 
+
    perc = float(idx_good.shape[1])/float(idx_tot.shape[1])
+
 
    time_series.append([jd,np.mean(var2d),np.mean(sat2d),perc])
    print(jd,np.mean(var2d),np.mean(sat2d),perc)

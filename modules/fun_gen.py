@@ -29,6 +29,7 @@ def load_config(config):
           exec( key + " = data['"+key+"']")
           exec("globals()[f'"+key+"']  =  data['"+key+"']")
 
+
      # Date conversion
      # ---------------
      global jdini,jdend

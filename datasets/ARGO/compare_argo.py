@@ -103,7 +103,7 @@ for plon in lon_uni:
   data_pres = pres[idx]
 
   pnum = str(num[idx][0])
-  pcyc = str(cyc[idx][0])
+  pcyc = str(int(cyc[idx][0]))
   ptime = str(time[idx][0])
 
 
@@ -152,20 +152,28 @@ for plon in lon_uni:
     # Get filename
     fname,dtag = get_filename(int(np.floor(jd)),ftag)
 
+    # Special case operational
+    if vname == 'chl':
+       fname = fname.replace('hourly','daily')
+
 
     # Interpolate model on data
     try:
 
       nan = False
 
-      val  = get_model_val_3d(fname,hours,vname,\
+      val  = get_model_val_3d(jd,jdini,fname,hours,vname,\
                lon_mod,lat_mod,lev_mod,\
                  data_lon,data_lat,data_pres)
 
       N += data_pres.shape[0]
 
+      #if vname == 'chl':
+      #  print(data_pres)
+
+
     except Exception as e:
-      print('Interpolation failed')
+      #print('Interpolation failed')
       print(e)
 
       idz = np.where(np.isnan(data_pres))
@@ -183,7 +191,8 @@ for plon in lon_uni:
 
   # Stock data
   # ----------
-  if not nan :
+  if  val is not None :
+    print("=> plot profile")
 
     full_stack1.append([-data_pres,full_val[0],full_data[0]])
     full_stack2.append([-data_pres,full_val[1],full_data[1]])
@@ -192,33 +201,34 @@ for plon in lon_uni:
        full_stack3.append([-data_pres,full_val[2],full_data[2]])
 
        
-  full_val = np.array(full_val)
-  full_data = np.array(full_data)
+    full_val = np.array(full_val)
+    full_data = np.array(full_data)
 
-  # Plot profile
-  # ------------
+    # Plot profile
+    # ------------
 
-  os.system('mkdir -p '+savedir+'/'+tag+str(pnum))
+    os.system('mkdir -p '+savedir+'/'+tag+str(pnum))
 
-  #fout = savedir+'/'+tag+str(pnum)+'/profile_'+pcyc+'.'+fig_fmt
-  ptime = ptime.replace('.000000000','')
+    #fout = savedir+'/'+tag+str(pnum)+'/profile_'+pcyc+'.'+fig_fmt
+    ptime = ptime.replace('.000000000','')
 
-  if argo_ds == 'bgc':
-    mchl,mpsal,mtemp = full_val[0],full_val[1],full_val[2]
-    dchl,dpsal,dtemp = full_data[0],full_data[1],full_data[2]
+    if argo_ds == 'bgc':
+      mchl,mpsal,mtemp = full_val[0],full_val[1],full_val[2]
+      dchl,dpsal,dtemp = full_data[0],full_data[1],full_data[2]
 
-    plot_profiles(savedir,tag,pnum,pcyc,ptime,-data_pres,\
+      plot_profiles(savedir,tag,pnum,pcyc,ptime,-data_pres,\
                mchl,dchl,'Chlorophyll (mg.m$^{-3}$)',\
                mpsal,dpsal,'Salinity',\
                mtemp,dtemp,'Temperature (°C)')
 
-  else:
-    mpsal,mtemp = full_val[0],full_val[1]
-    dpsal,dtemp = full_data[0],full_data[1]
+    else:
+      mpsal,mtemp = full_val[0],full_val[1]
+      dpsal,dtemp = full_data[0],full_data[1]
 
-    plot_profiles(savedir,tag,pnum,pcyc,ptime,-data_pres,\
+      plot_profiles(savedir,tag,pnum,pcyc,ptime,-data_pres,\
                mpsal,dpsal,'Salinity',\
                mtemp,dtemp,'Temperature (°C)')
+
 
   #N += 1 
   #if N > 10 :
@@ -265,8 +275,9 @@ for n in np.unique(num):
      # Save figure
      fout = savedir+'/'+tag+str(n)+'/map'+'.'+fig_fmt
      savefig(fout)
-   except :
+   except Exception as e:
      print('Error in plotting for float '+str(n))
+     print(e)
 
    plt.close()
 
@@ -274,6 +285,7 @@ for n in np.unique(num):
 # Figure for all trajectories
 fig, ax = plt.subplots(1,1,figsize=(float(fig_sx), float(fig_sy)), subplot_kw={'projection': proj})
 init_fig(ax,extent,proj)
+
 
 
 for p in pos:

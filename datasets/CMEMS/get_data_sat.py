@@ -75,6 +75,7 @@ print('=> Variable',cvar,'\n')
 
 os.system('rm -f '+datadir+'/'+ds_id+'.nc' )
 
+
 copernicusmarine.subset(
         dataset_id = ds_id,
         minimum_longitude = lon.min()-1,
@@ -87,8 +88,7 @@ copernicusmarine.subset(
         output_directory = datadir,
         output_filename = ds_id+'.nc',
         username = usr,
-        password = pswd,
-        force_download = 'true'
+        password = pswd
     )
 
 print('')

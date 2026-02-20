@@ -26,7 +26,8 @@ import cmcrameri as cmc
 def get_radar_data(jd,hour):
 
   full_data = []
-  
+ 
+  """
   # Load CMEMS file
   # ---------------
   for tag in radarcmems:
@@ -69,39 +70,55 @@ def get_radar_data(jd,hour):
       print(e)
       print('\nNo data found for radar '+tag)
       pass
-
   """
   # Read EuroGOOS radar
   # -------------------
   for tag in radareuro:
 
-     ds = Dataset(diagdir+'/'+config+'/RADAR/DATA/'+tag+'.nc')
+     #if 1 == 1: 
+     try : 
+       ds = Dataset(diagdir+'/'+config+'/RADAR/DATA/'+tag+'.nc')
 
-     time = np.array(ds['TIME']).flatten()
+       time = np.array(ds['TIME']).flatten()
     
-     dori = dt.datetime(1950,1,1).toordinal()
-     time = time + dori
-     jtime = np.floor(time)
-     htime = np.floor((time-jtime)*24)
+       dori = dt.datetime(1950,1,1).toordinal()
+       time = time + dori
+       jtime = np.floor(time)
+       htime = np.floor((time-jtime)*24)
 
-     idx = np.where( (jtime == jd) & (htime == hour) )
+       #idx = np.where( (jtime == jd) & (htime == hour) )
+       idx = np.where( (jtime == jd))
 
-     idx = idx[0][0]
+       #print(jtime,htime)
+       #print(jd,hour)
 
-     lon = np.array(ds['LONGITUDE']).flatten()
-     lat = np.array(ds['LATITUDE']).flatten()
-     LON,LAT = np.meshgrid(lon,lat)
-     LON,LAT = LON.flatten(),LAT.flatten()
+       #idx = idx[0][0]
 
-     u = np.array(ds['EWCT'][idx,:,:]).squeeze().T.flatten()
-     v = np.array(ds['NSCT'][idx,:,:]).squeeze().T.flatten()
-     ds.close()
+       lon = np.array(ds['LONGITUDE']).flatten()
+       lat = np.array(ds['LATITUDE']).flatten()
+       LON,LAT = np.meshgrid(lon,lat)
+       LON,LAT = LON.flatten(),LAT.flatten()
 
-     # Store data
-     for n in range(0,LON.shape[0]):
-       if u[n] > -999 and v[n] > -999 :
-         full_data.append([LON[n],LAT[n],u[n],v[n]])
-  """
+       idx = np.array(idx).squeeze()
+
+       u = np.array(ds['EWCT'][idx,:,:]).squeeze()
+       v = np.array(ds['NSCT'][idx,:,:]).squeeze()
+
+       # Mean daily value
+       u = np.mean(u,axis=0)
+       v = np.mean(v,axis=0)
+
+       u = u.squeeze().T.flatten()
+       v = v.squeeze().T.flatten()
+
+       # Store data
+       for n in range(0,LON.shape[0]):
+         if u[n] > -999 and v[n] > -999 :
+           full_data.append([LON[n],LAT[n],u[n],v[n]])
+    
+     except Exception as e:
+       print(e)
+
 
   return np.array(full_data)
 
@@ -142,6 +159,7 @@ LON_MOD,LAT_MOD = np.meshgrid(np.array(lon_mod),np.array(lat_mod))
 # Load proj
 exec('proj = ' + fig_proj)
 cb_done = 'False'
+
 
 # Init figure
 extent = [lon_mod.min(),lon_mod.max(),lat_mod.min(),lat_mod.max()]
@@ -196,6 +214,9 @@ if freq == 'daily':
   hlim = 1
 elif freq == 'hourly':
   hlim = 24
+
+# Force hlim = 1
+hlim = 1
   
 # Loop on days
 # ------------
@@ -210,11 +231,12 @@ for jd in range(jdini,jdend+1):
      print('\n----------')
      print(dstr,hour)
 
-     # Get radar data
-     data = get_radar_data(jd,hour)
-     
-     if 1 ==1:
+
+     if 1 == 1: 
      #try:
+     
+       # Get radar data
+       data = get_radar_data(jd,hour)
 
        # Interpolate on model grid
        lon,lat,u,v = data[:,0],data[:,1],data[:,2],data[:,3]
@@ -227,8 +249,8 @@ for jd in range(jdini,jdend+1):
        # Get model values filename
        fname,dtag = get_filename(jd,'RFVL')
 
-       mu = get_var_2D(fname,'uo',hour,0)
-       mv = get_var_2D(fname,'vo',hour,0)
+       mu = get_var_2D(jd,jdini,fname,'uo',hour,0)
+       mv = get_var_2D(jd,jdini,fname,'vo',hour,0)
 
        # Plot velocities
 

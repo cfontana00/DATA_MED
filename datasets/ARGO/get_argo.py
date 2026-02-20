@@ -66,16 +66,15 @@ box = [lon_min, lon_max, lat_min, lat_max, 0, 500, date_ini, date_end]
 print(box)
 
 f = DataFetcher(ds=argo_ds, mode='expert', params='all',
-                parallel=True, progress=True, cache=False,
+                parallel=False, progress=False, cache=False,
                 chunks_maxsize={'time': 30},
                )
-
 
 f = f.region(box).load()
 
 ds = f.data
-df = f.index
 
+df = f.index
 
 ds_profiles = ds.argo.point2profile()
 

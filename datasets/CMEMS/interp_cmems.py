@@ -84,13 +84,17 @@ lat = array(ds['latitude'])
 LON,LAT = np.meshgrid(lon,lat)
 LON,LAT = LON.flatten(),LAT.flatten()
 
+
+
 # Loop on days 
 #------------
 i = 0
 for jd in range(jdini,jdend+1):
 
   # Get CMEMS data
-  data = array(ds[cvar][i,:,:]).squeeze().flatten()
+ 
+  data = np.array(ds[cvar][i,:,:]).squeeze().flatten()
+
   # => /!\ Ensure that same dates were used for downloads !!!
   data[np.where(data < -99) ] = np.nan
 
