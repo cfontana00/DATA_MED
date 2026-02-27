@@ -75,7 +75,10 @@ lon = np.array(ds['LONGITUDE'])
 time = np.array(ds['TIME'])
 num = np.array(ds['PLATFORM_NUMBER'])
 cyc = np.array(ds['CYCLE_NUMBER'])
-pres = np.array(ds['PRES_ADJUSTED'])
+#pres = np.array(ds['PRES_ADJUSTED'])
+pres = np.array(ds['PRES'])
+
+
 
 
 time = np.array(time,dtype=str)
@@ -114,7 +117,8 @@ for plon in lon_uni:
   full_data = []
   full_val = []
 
-  varlist = ['PSAL_ADJUSTED','TEMP_ADJUSTED']
+  #varlist = ['PSAL_ADJUSTED','TEMP_ADJUSTED']
+  varlist = ['PSAL','TEMP']
 
   if argo_ds == 'bgc':
      varlist = np.concatenate((['CHLA'],varlist))
@@ -123,9 +127,9 @@ for plon in lon_uni:
 
     if var == 'CHLA':
        mod_var = 'chl'
-    elif var == 'PSAL_ADJUSTED':
+    elif var == 'PSAL':
        mod_var = 'so'
-    elif var == 'TEMP_ADJUSTED':
+    elif var == 'TEMP':
        mod_var = 'thetao'
 
     # Get data
@@ -192,7 +196,7 @@ for plon in lon_uni:
   # Stock data
   # ----------
   if  val is not None :
-    print("=> plot profile")
+    #print("=> plot profile")
 
     full_stack1.append([-data_pres,full_val[0],full_data[0]])
     full_stack2.append([-data_pres,full_val[1],full_data[1]])

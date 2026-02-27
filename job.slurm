@@ -17,14 +17,14 @@ export LINES=40
 #domain=$2
 #get_radar=$3
 
-dini='2026-02-14'
+dini='2026-02-08'
 dout=`echo $dini | sed s/-//g`
 dend=`date -d "$dini +5 days" +"%Y-%m-%d"`
 
-run_cmems_thetao=1
-run_cmems_chl=1
+run_cmems_thetao=0
+run_cmems_chl=0
 run_argo=1
-run_radar=1
+run_radar=0
 run_static=1
 
 # Get radar data for all domains
@@ -33,7 +33,8 @@ switch_radar=0
 
 # Loop on domain
 # --------------
-for domain in LIG ION GOT NAD SAD SAR TYR ;do
+#for domain in LIG ION GOT NAD SAD SAR TYR ;do
+for domain in LIG ;do
 
    echo "PROCESSING "$domain
    echo "_______________ "
@@ -187,12 +188,14 @@ for domain in LIG ION GOT NAD SAD SAR TYR ;do
 
      # ARGO 
      dir=$diagdir/ARGO/
-   
+  
+      
      for file in `ls -d $dir/bio*/`;do
        file=`basename $file`
        num=`echo $file | sed s/bio//`
-       mv $dir/bio$num $dir/$num
+       mv $dir/bio$num/* $dir/$num
      done
+
 
      i=1
      for adir in `ls -d $dir/*/`;do
@@ -204,7 +207,7 @@ for domain in LIG ION GOT NAD SAD SAR TYR ;do
          echo "argo_$i.jpg"
          let i=$i+1
        done
-     done > $static/list.txt
+     done > $static/list.txt$
 
      cp $dir/map.jpg $static
      python plot/resize.py $static/map.jpg 0.35

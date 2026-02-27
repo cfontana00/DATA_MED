@@ -1,8 +1,8 @@
 {
 "_____":"GENERAL PARAMETERS",
 "domain":"LIG",
-"date_ini":"2026-02-08",
-"date_end":"2026-02-13",
+"date_ini":"2026-02-14",
+"date_end":"2026-02-19",
 "outdir":"https://mer.exact-lab.it/output/LIG",
 "diagdir":"/leonardo_scratch/large/userexternal/cfontan1/DIAGS",
 "freq":"hourly",

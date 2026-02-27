@@ -88,7 +88,12 @@ def plot_profiles(*arg):
 
   #plt.legend() 
   plt.title(time)  
-  plt.suptitle('Float '+str(pnum)+' - profile '+pcyc,y=0.98)  
+
+  y = 0.98 
+  if argo_ds == 'bgc':
+    y = 1.02
+
+  plt.suptitle('Float '+str(pnum)+' - profile '+pcyc,y=y)  
 
   # Save figure
   fout = savedir+'/'+tag+str(pnum)+'/profile_'+pcyc+'.'+fig_fmt

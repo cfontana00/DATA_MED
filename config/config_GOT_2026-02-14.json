@@ -1,12 +1,12 @@
 {
 "_____":"GENERAL PARAMETERS",
-"domain":"LIG",
-"date_ini":"2026-02-08",
-"date_end":"2026-02-13",
-"outdir":"https://mer.exact-lab.it/output/LIG",
+"domain":"GOT",
+"date_ini":"2026-02-14",
+"date_end":"2026-02-19",
+"outdir":"https://mer.exact-lab.it/output/GOT",
 "diagdir":"/leonardo_scratch/large/userexternal/cfontan1/DIAGS",
 "freq":"hourly",
-"maskfile":"/leonardo_work/PNRR_MER/meshmasks/lig.nc",
+"maskfile":"/leonardo_work/PNRR_MER/meshmasks/got.nc",
 "ftype":"zarr",
 
 
