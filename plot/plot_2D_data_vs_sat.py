@@ -27,7 +27,6 @@ import matplotlib
 matplotlib.use("Agg")
 
 import cmocean
-import cmcrameri
 
 def gkern(l, sig):
     """\
