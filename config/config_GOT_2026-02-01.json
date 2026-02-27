@@ -5,7 +5,7 @@
 "date_end":"2026-02-06",
 "outdir":"https://mer.exact-lab.it/output/GOT",
 "diagdir":"/leonardo_scratch/large/userexternal/cfontan1/DIAGS",
-"freq":"daily",
+"freq":"hourly",
 "maskfile":"/leonardo_work/PNRR_MER/meshmasks/got.nc",
 "ftype":"zarr",
 
@@ -53,10 +53,10 @@
 "gsigma":"40",
 
 "_____":"RADAR",
-"radardir":"/home/fontana/DISK1TB/RADAR",
+"radardir":"/leonardo_scratch/large/userexternal/cfontan1/RADAR/",
 "radarcmems":["TirLig"],
-"radareuro":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3"],
-"radarxxx":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3","EUHFR_NRTcurrent_HFR-LaMMA-Total_v3","EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3"],
+"radareuro":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3","EUHFR_NRTcurrent_HFR-ARPAS-Total_v3","EUHFR_NRTcurrent_HFR-LaMMA-Total_v3","EUHFR_NRTcurrent_HFR-GoS-Total_v3","EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3","EUHFR_NRTcurrent_HFR-Granitola-Total_v3","EUHFR_NRTcurrent_HFR-NAdr-Total_v3",
+"EUHFR_NRTcurrent_HFR-GoM-Total_v3"],
 "scale_lon":11,
 "scale_lat":44,
 
@@ -64,7 +64,7 @@
 
 "_____":"ARGO",
 
-"argo_ds":"phy",
+"argo_ds":"bgc",
 
 
 "_____":"PLOT PARAMETERS",
@@ -83,7 +83,7 @@
 "fig_lbl_size":"4",
 "fig_title_size":"6",
 "cb_pad_2D":"0.12",
-"cb_fraction_2D":"0.02",
+"cb_fraction_2D":"0.03",
 
 "fig_sx_sat":"7",                         
 "fig_sy_sat":"4",                        
@@ -125,13 +125,14 @@
 
 "fig_prox":"6",
 "fig_proy":"11",
-"col_bcg":["g","b","r"],
-"col_phy":["b","r"],
+"col_3_prof":["g","b","r"],
+"col_2_prof":["b","r"],
+"tck_size_prof":"10",
 
 "_____":"TIME SERIES PLOT PARAMETERS",
-"fig_tsx":8,
-"fig_tsy":5,
-"tck_size_ts":"4",
+"fig_tsx":6,
+"fig_tsy":3,
+"tck_size_ts":"8",
 "lbl_size_ts":"6",
 
 

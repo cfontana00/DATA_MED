@@ -79,9 +79,6 @@ from fun_gen import *
 # Initialize plot
 # ---------------
 
-# Percentile for vmin/vmax
-lower = (100 - 95) / 2
-upper = 100 - lower
 
 # Load lon/lat
 # ------------
@@ -139,11 +136,13 @@ for jd in range(jdini,jdend+1):
 
      var2d = get_var_2D(jd,jdini,fname,var,hour,1) # !!!!
      var2d = np.array(var2d)
+     percentile = 95
 
    elif var == 'chl':
 
      var2d = get_integre_2D(jd,jdini,fname,var,levels,hour)
      var2d = np.array(var2d)
+     percentile = 98
 
      # Remove coastal zone
      #mask = var2d.copy()
@@ -185,6 +184,10 @@ for jd in range(jdini,jdend+1):
         arr = np.concatenate(arr,sat2d[idx].flatten())
       except:
         pass
+
+      # Percentile for vmin/vmax
+      lower = (100 - percentile) / 2
+      upper = 100 - lower
 
       vmin = np.percentile(arr, lower)
       vmax = np.percentile(arr, upper)

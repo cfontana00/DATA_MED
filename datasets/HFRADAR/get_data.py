@@ -83,7 +83,8 @@ for tag in radareuro :
 
     subset = ds[['EWCT','NSCT']].sel(TIME=slice(date_ini, date_end))
   #subset = ds[['EWCT','NSCT']].sel(TIME=slice("2017-01-01","2017-02-01"))
-    fname = diagdir+'/'+config+'/RADAR/DATA/'+tag+'.nc'
+    #fname = diagdir+'/'+config+'/RADAR/DATA/'+tag+'.nc'
+    fname = radardir+'/'+tag+'.nc'
     subset.to_netcdf(fname)
 
     print(fname)

@@ -1,2 +1,1532 @@
+PROCESSING LIG
+_______________ 
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+Processing EuroGoos
+EUHFR_NRTcurrent_HFR-TirLig-Total_v3
+/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-TirLig-Total_v3.nc
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-TirLig-Total_v3.nc
+EUHFR_NRTcurrent_HFR-ARPAS-Total_v3
+/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-ARPAS-Total_v3.nc
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-ARPAS-Total_v3.nc
+EUHFR_NRTcurrent_HFR-LaMMA-Total_v3
+[FAILED]  /leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-ARPAS-Total_v3.nc
+EUHFR_NRTcurrent_HFR-GoS-Total_v3
+/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-GoS-Total_v3.nc
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-GoS-Total_v3.nc
+EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3
+[FAILED]  /leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-GoS-Total_v3.nc
+EUHFR_NRTcurrent_HFR-Granitola-Total_v3
+/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-Granitola-Total_v3.nc
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-Granitola-Total_v3.nc
+EUHFR_NRTcurrent_HFR-NAdr-Total_v3
+/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-NAdr-Total_v3.nc
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-NAdr-Total_v3.nc
+EUHFR_NRTcurrent_HFR-GoM-Total_v3
+/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-GoM-Total_v3.nc
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-GoM-Total_v3.nc
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a
+=> Variable [np.str_('sea_surface_temperature')] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a.nc
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260217.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260218.nc
+
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+Processing
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021300_thetao.jpg
+739660 14.268537202959186 14.310108 0.9044026984280689
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021400_thetao.jpg
+739661 14.312391952933552 14.209486 0.008288951292727801
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021500_thetao.jpg
+739662 14.209816133359478 14.317993 0.7586972660662987
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021600_thetao.jpg
+739663 14.65305876381572 14.904083 0.23352700041961202
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021700_thetao.jpg
+739664 14.270583854059765 14.46821 0.9312255898776669
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021800_thetao.jpg
+739665 14.200352118816149 14.375878 0.9356799328620767
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/thetao/ITP_NC/time_series.jpg
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+
+----------
+20260213 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/RADAR/20260213_00.jpg
+
+----------
+20260214 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/RADAR/20260214_00.jpg
+
+----------
+20260215 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/RADAR/20260215_00.jpg
+
+----------
+20260216 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/RADAR/20260216_00.jpg
+
+----------
+20260217 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/RADAR/20260217_00.jpg
+
+----------
+20260218 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D
+=> Variable ['CHL', 'KD490'] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/data/cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D.nc
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/chl/ITP_NC/chl_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/chl/ITP_NC/chl_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/chl/ITP_NC/chl_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/chl/ITP_NC/chl_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/chl/ITP_NC/chl_20260217.nc
+
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+Processing
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021312_chl.jpg
+739660 0.0823796668349226 0.42153332 0.40497078854781965
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021412_chl.jpg
+739661 0.08799667536094063 0.26065546 0.06556276427487816
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021512_chl.jpg
+739662 0.1242937735028079 0.33917463 0.9390465123785546
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021612_chl.jpg
+739663 0.12986303009377284 0.29543206 0.3197314483070269
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021712_chl.jpg
+739664 0.1432557874425244 0.3429036 0.9445143797811562
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/chl/ITP_NC/chl_20260218.nc' 
+
+=> in get_sat_2D :
+Error processing file /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/CMEMS/chl/ITP_NC/chl_20260218.nc
+File not found
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+[np.float64(7.315104667488157), np.float64(12.518229806011535), np.float64(41.585938417607466), np.float64(44.49739698579464), 0, 500, '2026-02-13', '2026-02-18']
+[SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/argo.nc
+ARGO FOUND
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+7 profiles found
+
+Processing
+
+Float 7902280 cycle 8
+-----
+Float 5907147 cycle 188
+-----
+Float 5907147 cycle 189
+-----
+Float 5907147 cycle 190
+-----
+Float 5907147 cycle 192
+-----
+Float 5907147 cycle 191
+-----
+Float 6903819 cycle 271
+-----
+Interpolation done for [ 88 ] data in 3.61 secInterpolation done for [ 88 ] data in 1.99 sec=> plot profile
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/6903819/profile_271.jpg
+
+-------------
+Total of 3684 found
+-------------
+
+Plot trajectories ...
+Error in plotting for float 5907147
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/5907147/map.jpg'
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/6903819/map.jpg
+Error in plotting for float 7902280
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/7902280/map.jpg'
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/map.jpg
+N =  87
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/error_Salinity.jpg
+Data for Salinity
+[np.float64(0.05666672759888186), np.float64(0.06713870351431647), np.float64(0.08128683998453567)]
+
+N =  87
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(0.22806500909074623), np.float64(0.6804257580519121), np.float64(0.642075759091299)]
+
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+[np.float64(7.315104667488157), np.float64(12.518229806011535), np.float64(41.585938417607466), np.float64(44.49739698579464), 0, 500, '2026-02-13', '2026-02-18']
+[SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/bioargo.nc
+BIOARGO FOUND
+----------------------------------
+=> Config file LIG_2026-02-13 loaded
+----------------------------------
+
+6 profiles found
+
+Processing
+
+Float 7902280 cycle 8
+-----
+Float 5907147 cycle 188
+-----
+Float 5907147 cycle 189
+-----
+Float 5907147 cycle 190
+-----
+Float 5907147 cycle 192
+-----
+Float 5907147 cycle 191
+-----
+-------------
+Total of 15360 found
+-------------
+
+Plot trajectories ...
+Error in plotting for float 5907147
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/bio5907147/map.jpg'
+Error in plotting for float 7902280
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/bio7902280/map.jpg'
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/mapbio.jpg
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/error_Salinity.jpg
+Data for Salinity
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/LIG_2026-02-13/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+PROCESSING ION
+_______________ 
+----------------------------------
+=> Config file ION_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a
+=> Variable [np.str_('sea_surface_temperature')] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a.nc
+----------------------------------
+=> Config file ION_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260217.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260218.nc
+
+----------------------------------
+=> Config file ION_2026-02-13 loaded
+----------------------------------
+
+Processing
+----------------------------------
+=> Config file ION_2026-02-13 loaded
+----------------------------------
+
+----------------------------------
+=> Config file ION_2026-02-13 loaded
+----------------------------------
+
+
+----------
+20260213 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+----------------------------------
+=> Config file ION_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D
+=> Variable ['CHL', 'KD490'] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/CMEMS/data/cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D.nc
+----------------------------------
+=> Config file ION_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/CMEMS/chl/ITP_NC/chl_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/CMEMS/chl/ITP_NC/chl_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/CMEMS/chl/ITP_NC/chl_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/CMEMS/chl/ITP_NC/chl_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/CMEMS/chl/ITP_NC/chl_20260217.nc
+
+----------------------------------
+=> Config file ION_2026-02-13 loaded
+----------------------------------
+
+Processing
+----------------------------------
+=> Config file ION_2026-02-13 loaded
+----------------------------------
+
+----------------------------------
+=> Config file ION_2026-02-13 loaded
+----------------------------------
+
+[np.float64(15.440104883584667), np.float64(19.018229978888733), np.float64(35.04427122419717), np.float64(40.539063333731036), 0, 500, '2026-02-13', '2026-02-18']
+[SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/argo.nc
+ARGO FOUND
+----------------------------------
+=> Config file ION_2026-02-13 loaded
+----------------------------------
+
+10 profiles found
+
+Processing
+
+Float 4903848 cycle 50
+-----
+Float 6903296 cycle 329
+-----
+Float 2903797 cycle 158
+-----
+Float 7902260 cycle 67
+-----
+Float 5907088 cycle 165
+-----
+Float 5907088 cycle 166
+-----
+Float 6990629 cycle 227
+-----
+Float 6990629 cycle 226
+-----
+Float 6903799 cycle 370
+-----
+Float 1902851 cycle 5
+-----
+-------------
+Total of 4346 found
+-------------
+
+Plot trajectories ...
+Error in plotting for float 1902851
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/1902851/map.jpg'
+Error in plotting for float 2903797
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/2903797/map.jpg'
+Error in plotting for float 4903848
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/4903848/map.jpg'
+Error in plotting for float 5907088
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/5907088/map.jpg'
+Error in plotting for float 6903296
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/6903296/map.jpg'
+Error in plotting for float 6903799
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/6903799/map.jpg'
+Error in plotting for float 6990629
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/6990629/map.jpg'
+Error in plotting for float 7902260
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/7902260/map.jpg'
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/map.jpg
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/error_Salinity.jpg
+Data for Salinity
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+----------------------------------
+=> Config file ION_2026-02-13 loaded
+----------------------------------
+
+[np.float64(15.440104883584667), np.float64(19.018229978888733), np.float64(35.04427122419717), np.float64(40.539063333731036), 0, 500, '2026-02-13', '2026-02-18']
+[SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/bioargo.nc
+BIOARGO FOUND
+----------------------------------
+=> Config file ION_2026-02-13 loaded
+----------------------------------
+
+7 profiles found
+
+Processing
+
+Float 4903848 cycle 50
+-----
+Float 2903797 cycle 158
+-----
+Float 7902260 cycle 67
+-----
+Float 5907088 cycle 165
+-----
+Float 5907088 cycle 166
+-----
+Float 6903799 cycle 370
+-----
+Float 1902851 cycle 5
+-----
+-------------
+Total of 10293 found
+-------------
+
+Plot trajectories ...
+Error in plotting for float 1902851
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/bio1902851/map.jpg'
+Error in plotting for float 2903797
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/bio2903797/map.jpg'
+Error in plotting for float 4903848
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/bio4903848/map.jpg'
+Error in plotting for float 5907088
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/bio5907088/map.jpg'
+Error in plotting for float 6903799
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/bio6903799/map.jpg'
+Error in plotting for float 7902260
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/bio7902260/map.jpg'
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/mapbio.jpg
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/error_Salinity.jpg
+Data for Salinity
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/ION_2026-02-13/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+PROCESSING GOT
+_______________ 
+----------------------------------
+=> Config file GOT_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a
+=> Variable [np.str_('sea_surface_temperature')] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a.nc
+----------------------------------
+=> Config file GOT_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260217.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260218.nc
+
+----------------------------------
+=> Config file GOT_2026-02-13 loaded
+----------------------------------
+
+Processing
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021300_thetao.jpg
+739660 9.531571706136068 9.57263 0.05099705786204642
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021400_thetao.jpg
+739661 nan nan 0.0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021500_thetao.jpg
+739662 nan nan 0.0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021600_thetao.jpg
+739663 9.438621118333604 9.507168 0.16181758744687808
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021700_thetao.jpg
+739664 nan nan 0.0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021800_thetao.jpg
+739665 9.57826820459411 10.200743 0.6897678980058842
+----------------------------------
+=> Config file GOT_2026-02-13 loaded
+----------------------------------
+
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/thetao/ITP_NC/time_series.jpg
+----------------------------------
+=> Config file GOT_2026-02-13 loaded
+----------------------------------
+
+
+----------
+20260213 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/RADAR/20260213_00.jpg
+
+----------
+20260214 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/RADAR/20260214_00.jpg
+
+----------
+20260215 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/RADAR/20260215_00.jpg
+
+----------
+20260216 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/RADAR/20260216_00.jpg
+
+----------
+20260217 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/RADAR/20260217_00.jpg
+
+----------
+20260218 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+----------------------------------
+=> Config file GOT_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D
+=> Variable ['CHL', 'KD490'] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/data/cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D.nc
+----------------------------------
+=> Config file GOT_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/chl/ITP_NC/chl_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/chl/ITP_NC/chl_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/chl/ITP_NC/chl_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/chl/ITP_NC/chl_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/chl/ITP_NC/chl_20260217.nc
+
+----------------------------------
+=> Config file GOT_2026-02-13 loaded
+----------------------------------
+
+Processing
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021312_chl.jpg
+739660 nan nan 0.0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021412_chl.jpg
+739661 nan nan 0.0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021512_chl.jpg
+739662 0.2521160696921269 0.6011594 0.31709709055246815
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021612_chl.jpg
+739663 nan nan 0.0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021712_chl.jpg
+739664 0.2701793477974736 0.34425917 0.7224583197123243
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/chl/ITP_NC/chl_20260218.nc' 
+
+=> in get_sat_2D :
+Error processing file /leonardo_scratch/large/userexternal/cfontan1/DIAGS/GOT_2026-02-13/CMEMS/chl/ITP_NC/chl_20260218.nc
+File not found
+----------------------------------
+=> Config file GOT_2026-02-13 loaded
+----------------------------------
+
+----------------------------------
+=> Config file GOT_2026-02-13 loaded
+----------------------------------
+
+[np.float64(13.398438162616767), np.float64(13.809896507032034), np.float64(45.41927205960577), np.float64(45.83073042648974), 0, 500, '2026-02-13', '2026-02-18']
+----------------------------------
+=> Config file GOT_2026-02-13 loaded
+----------------------------------
+
+[np.float64(13.398438162616767), np.float64(13.809896507032034), np.float64(45.41927205960577), np.float64(45.83073042648974), 0, 500, '2026-02-13', '2026-02-18']
+PROCESSING NAD
+_______________ 
+----------------------------------
+=> Config file NAD_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a
+=> Variable [np.str_('sea_surface_temperature')] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a.nc
+----------------------------------
+=> Config file NAD_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260217.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260218.nc
+
+----------------------------------
+=> Config file NAD_2026-02-13 loaded
+----------------------------------
+
+Processing
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021300_thetao.jpg
+739660 10.45446510094542 10.875402 0.1856066900333497
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021400_thetao.jpg
+739661 14.318766023063706 14.333045 0.048579256723073894
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021500_thetao.jpg
+739662 11.022212295208947 11.637066 0.0013679943425318716
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021600_thetao.jpg
+739663 12.753293557132618 13.343693 0.7603923129538244
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021700_thetao.jpg
+739664 10.823289772819956 11.415698 0.22865986791512252
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021800_thetao.jpg
+739665 12.494456158770532 12.925104 0.8207386396571512
+----------------------------------
+=> Config file NAD_2026-02-13 loaded
+----------------------------------
+
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/thetao/ITP_NC/time_series.jpg
+----------------------------------
+=> Config file NAD_2026-02-13 loaded
+----------------------------------
+
+
+----------
+20260213 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/RADAR/20260213_00.jpg
+
+----------
+20260214 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/RADAR/20260214_00.jpg
+
+----------
+20260215 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/RADAR/20260215_00.jpg
+
+----------
+20260216 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/RADAR/20260216_00.jpg
+
+----------
+20260217 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/RADAR/20260217_00.jpg
+
+----------
+20260218 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+----------------------------------
+=> Config file NAD_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D
+=> Variable ['CHL', 'KD490'] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/data/cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D.nc
+----------------------------------
+=> Config file NAD_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/chl/ITP_NC/chl_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/chl/ITP_NC/chl_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/chl/ITP_NC/chl_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/chl/ITP_NC/chl_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/chl/ITP_NC/chl_20260217.nc
+
+----------------------------------
+=> Config file NAD_2026-02-13 loaded
+----------------------------------
+
+Processing
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021312_chl.jpg
+739660 0.09826741306420966 0.6443676 0.68853396606292
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021412_chl.jpg
+739661 0.059497972966217894 0.18181804 0.01235059299076797
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021512_chl.jpg
+739662 0.08144727138605708 0.32395107 0.1187604580075974
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021612_chl.jpg
+739663 0.141512528310394 0.48548105 0.052459105084378975
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021712_chl.jpg
+739664 0.1404562621499352 0.6841899 0.8374134859510073
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/chl/ITP_NC/chl_20260218.nc' 
+
+=> in get_sat_2D :
+Error processing file /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/CMEMS/chl/ITP_NC/chl_20260218.nc
+File not found
+----------------------------------
+=> Config file NAD_2026-02-13 loaded
+----------------------------------
+
+----------------------------------
+=> Config file NAD_2026-02-13 loaded
+----------------------------------
+
+[np.float64(12.106771461596368), np.float64(17.934896616742588), np.float64(42.75260517821568), np.float64(45.872397096511456), 0, 500, '2026-02-13', '2026-02-18']
+[SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/ARGO/argo.nc
+ARGO FOUND
+----------------------------------
+=> Config file NAD_2026-02-13 loaded
+----------------------------------
+
+1 profiles found
+
+Processing
+
+Float 2904028 cycle 39
+-----
+-------------
+Total of 234 found
+-------------
+
+Plot trajectories ...
+Error in plotting for float 2904028
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/ARGO/2904028/map.jpg'
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/ARGO/map.jpg
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/ARGO/error_Salinity.jpg
+Data for Salinity
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/NAD_2026-02-13/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+----------------------------------
+=> Config file NAD_2026-02-13 loaded
+----------------------------------
+
+[np.float64(12.106771461596368), np.float64(17.934896616742588), np.float64(42.75260517821568), np.float64(45.872397096511456), 0, 500, '2026-02-13', '2026-02-18']
+PROCESSING SAD
+_______________ 
+----------------------------------
+=> Config file SAD_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a
+=> Variable [np.str_('sea_surface_temperature')] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a.nc
+----------------------------------
+=> Config file SAD_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260217.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260218.nc
+
+----------------------------------
+=> Config file SAD_2026-02-13 loaded
+----------------------------------
+
+Processing
+----------------------------------
+=> Config file SAD_2026-02-13 loaded
+----------------------------------
+
+----------------------------------
+=> Config file SAD_2026-02-13 loaded
+----------------------------------
+
+
+----------
+20260213 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+----------------------------------
+=> Config file SAD_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D
+=> Variable ['CHL', 'KD490'] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/CMEMS/data/cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D.nc
+----------------------------------
+=> Config file SAD_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/CMEMS/chl/ITP_NC/chl_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/CMEMS/chl/ITP_NC/chl_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/CMEMS/chl/ITP_NC/chl_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/CMEMS/chl/ITP_NC/chl_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/CMEMS/chl/ITP_NC/chl_20260217.nc
+
+----------------------------------
+=> Config file SAD_2026-02-13 loaded
+----------------------------------
+
+Processing
+----------------------------------
+=> Config file SAD_2026-02-13 loaded
+----------------------------------
+
+----------------------------------
+=> Config file SAD_2026-02-13 loaded
+----------------------------------
+
+[np.float64(13.856771508140167), np.float64(20.309896679909233), np.float64(39.50260491652136), np.float64(43.03906353503434), 0, 500, '2026-02-13', '2026-02-18']
+[SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/ARGO/argo.nc
+ARGO FOUND
+----------------------------------
+=> Config file SAD_2026-02-13 loaded
+----------------------------------
+
+8 profiles found
+
+Processing
+
+Float 2904028 cycle 39
+-----
+Float 7902260 cycle 67
+-----
+Float 7902334 cycle 39
+-----
+Float 6903822 cycle 268
+-----
+No group found in store 'https://mer.exact-lab.it/output/SAD/20260213-MER-MITgcmBFM-SAD-fc-hourly-v01.zarr' at path '' 
+
+=> in get_var_3D :
+Error processing file https://mer.exact-lab.it/output/SAD/20260213-MER-MITgcmBFM-SAD-fc-hourly-v01.zarr
+File not found
+----------------------------------
+=> Config file SAD_2026-02-13 loaded
+----------------------------------
+
+[np.float64(13.856771508140167), np.float64(20.309896679909233), np.float64(39.50260491652136), np.float64(43.03906353503434), 0, 500, '2026-02-13', '2026-02-18']
+[SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAD_2026-02-13/ARGO/bioargo.nc
+BIOARGO FOUND
+----------------------------------
+=> Config file SAD_2026-02-13 loaded
+----------------------------------
+
+7 profiles found
+
+Processing
+
+Float 7902260 cycle 67
+-----
+Float 7902334 cycle 39
+-----
+Float 6903822 cycle 268
+-----
+No group found in store 'https://mer.exact-lab.it/output/SAD/20260213-MER-MITgcmBFM-SAD-fc-daily-v01.zarr' at path '' 
+
+=> in get_var_3D :
+Error processing file https://mer.exact-lab.it/output/SAD/20260213-MER-MITgcmBFM-SAD-fc-daily-v01.zarr
+File not found
+PROCESSING SAR
+_______________ 
+----------------------------------
+=> Config file SAR_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a
+=> Variable [np.str_('sea_surface_temperature')] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a.nc
+----------------------------------
+=> Config file SAR_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260217.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260218.nc
+
+----------------------------------
+=> Config file SAR_2026-02-13 loaded
+----------------------------------
+
+Processing
+----------------------------------
+=> Config file SAR_2026-02-13 loaded
+----------------------------------
+
+----------------------------------
+=> Config file SAR_2026-02-13 loaded
+----------------------------------
+
+
+----------
+20260213 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+----------------------------------
+=> Config file SAR_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D
+=> Variable ['CHL', 'KD490'] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/CMEMS/data/cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D.nc
+----------------------------------
+=> Config file SAR_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/CMEMS/chl/ITP_NC/chl_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/CMEMS/chl/ITP_NC/chl_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/CMEMS/chl/ITP_NC/chl_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/CMEMS/chl/ITP_NC/chl_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/CMEMS/chl/ITP_NC/chl_20260217.nc
+
+----------------------------------
+=> Config file SAR_2026-02-13 loaded
+----------------------------------
+
+Processing
+----------------------------------
+=> Config file SAR_2026-02-13 loaded
+----------------------------------
+
+----------------------------------
+=> Config file SAR_2026-02-13 loaded
+----------------------------------
+
+[np.float64(5.898437963143127), np.float64(11.518229779415034), np.float64(37.627604765543865), np.float64(41.78906343438273), 0, 500, '2026-02-13', '2026-02-18']
+[SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/ARGO/argo.nc
+ARGO FOUND
+----------------------------------
+=> Config file SAR_2026-02-13 loaded
+----------------------------------
+
+14 profiles found
+
+Processing
+
+Float 6901283 cycle 296
+-----
+No group found in store 'https://mer.exact-lab.it/output/SAR/20260213-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr' at path '' 
+
+=> in get_var_3D :
+Error processing file https://mer.exact-lab.it/output/SAR/20260213-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+----------------------------------
+=> Config file SAR_2026-02-13 loaded
+----------------------------------
+
+[np.float64(5.898437963143127), np.float64(11.518229779415034), np.float64(37.627604765543865), np.float64(41.78906343438273), 0, 500, '2026-02-13', '2026-02-18']
+[SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/ARGO/bioargo.nc
+BIOARGO FOUND
+----------------------------------
+=> Config file SAR_2026-02-13 loaded
+----------------------------------
+
+11 profiles found
+
+Processing
+
+Float 6990685 cycle 45
+-----
+Float 3902691 cycle 46
+-----
+Float 5907147 cycle 188
+-----
+Float 5907147 cycle 189
+-----
+Float 5907147 cycle 190
+-----
+Float 5907147 cycle 192
+-----
+Float 5907147 cycle 191
+-----
+Float 2903928 cycle 101
+-----
+Float 4903782 cycle 195
+-----
+Float 4903847 cycle 109
+-----
+Float 2904024 cycle 52
+-----
+-------------
+Total of 25989 found
+-------------
+
+Plot trajectories ...
+Error in plotting for float 2903928
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/ARGO/bio2903928/map.jpg'
+Error in plotting for float 2904024
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/ARGO/bio2904024/map.jpg'
+Error in plotting for float 3902691
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/ARGO/bio3902691/map.jpg'
+Error in plotting for float 4903782
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/ARGO/bio4903782/map.jpg'
+Error in plotting for float 4903847
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/ARGO/bio4903847/map.jpg'
+Error in plotting for float 5907147
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/ARGO/bio5907147/map.jpg'
+Error in plotting for float 6990685
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/ARGO/bio6990685/map.jpg'
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/ARGO/mapbio.jpg
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/ARGO/error_Salinity.jpg
+Data for Salinity
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/SAR_2026-02-13/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
 PROCESSING TYR
 _______________ 
+----------------------------------
+=> Config file TYR_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a
+=> Variable [np.str_('sea_surface_temperature')] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a.nc
+----------------------------------
+=> Config file TYR_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260217.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/thetao/ITP_NC/thetao_20260218.nc
+
+----------------------------------
+=> Config file TYR_2026-02-13 loaded
+----------------------------------
+
+Processing
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021300_thetao.jpg
+739660 15.048144155265176 14.970226 0.8927015890165009
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021400_thetao.jpg
+739661 14.878116474321299 14.949726 0.2751459447328109
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021500_thetao.jpg
+739662 15.00183589123556 15.056162 0.6312745796504633
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021600_thetao.jpg
+739663 15.051528008829575 15.29326 0.9493127484061556
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021700_thetao.jpg
+739664 14.939933049555957 15.172484 0.444694970941536
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/thetao/ITP_NC/PLOT/2026021800_thetao.jpg
+739665 14.960446226634927 15.06133 0.9595295321156702
+----------------------------------
+=> Config file TYR_2026-02-13 loaded
+----------------------------------
+
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/thetao/ITP_NC/time_series.jpg
+----------------------------------
+=> Config file TYR_2026-02-13 loaded
+----------------------------------
+
+
+----------
+20260213 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/RADAR/20260213_00.jpg
+
+----------
+20260214 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/RADAR/20260214_00.jpg
+
+----------
+20260215 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/RADAR/20260215_00.jpg
+
+----------
+20260216 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/RADAR/20260216_00.jpg
+
+----------
+20260217 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/RADAR/20260217_00.jpg
+
+----------
+20260218 0
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/RADAR//EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+index 1 is out of bounds for axis 0 with size 1
+index 1 is out of bounds for axis 0 with size 1
+----------------------------------
+=> Config file TYR_2026-02-13 loaded
+----------------------------------
+
+Downloading CMEMS products : cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D
+=> Variable ['CHL', 'KD490'] 
+
+
+[FILE SAVED ] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/data/cmems_obs-oc_med_bgc-plankton_my_l3-multi-1km_P1D.nc
+----------------------------------
+=> Config file TYR_2026-02-13 loaded
+----------------------------------
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/chl/ITP_NC/chl_20260213.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/chl/ITP_NC/chl_20260214.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/chl/ITP_NC/chl_20260215.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/chl/ITP_NC/chl_20260216.nc
+
+
+[FILE SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/chl/ITP_NC/chl_20260217.nc
+
+----------------------------------
+=> Config file TYR_2026-02-13 loaded
+----------------------------------
+
+Processing
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021312_chl.jpg
+739660 0.066876058854335 0.25767407 0.8815140151307566
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021412_chl.jpg
+739661 0.07852866424525665 0.16117151 0.16354421923156218
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021512_chl.jpg
+739662 0.08584790022484935 0.2193658 0.7454181052367866
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021612_chl.jpg
+739663 0.08551716160129473 0.11046896 0.3370285991654336
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/chl/ITP_NC/PLOT/2026021712_chl.jpg
+739664 0.10012100082317059 0.25784227 0.7703585399524522
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/chl/ITP_NC/chl_20260218.nc' 
+
+=> in get_sat_2D :
+Error processing file /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/CMEMS/chl/ITP_NC/chl_20260218.nc
+File not found
+----------------------------------
+=> Config file TYR_2026-02-13 loaded
+----------------------------------
+
+----------------------------------
+=> Config file TYR_2026-02-13 loaded
+----------------------------------
+
+[np.float64(11.231771438324365), np.float64(16.226563237973533), np.float64(38.919271536217266), np.float64(42.45573015473023), 0, 500, '2026-02-13', '2026-02-18']
+[SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/argo.nc
+ARGO FOUND
+----------------------------------
+=> Config file TYR_2026-02-13 loaded
+----------------------------------
+
+5 profiles found
+
+Processing
+
+Float 4903847 cycle 109
+-----
+Float 2904024 cycle 52
+-----
+Float 6990684 cycle 48
+-----
+Float 4903679 cycle 161
+-----
+Float 2904040 cycle 12
+-----
+Interpolation done for [ 80 ] data in 5.4 secInterpolation done for [ 80 ] data in 4.55 sec=> plot profile
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/2904040/profile_12.jpg
+
+-------------
+Total of 1948 found
+-------------
+
+Plot trajectories ...
+Error in plotting for float 2904024
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/2904024/map.jpg'
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/2904040/map.jpg
+Error in plotting for float 4903679
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/4903679/map.jpg'
+Error in plotting for float 4903847
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/4903847/map.jpg'
+Error in plotting for float 6990684
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/6990684/map.jpg'
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/map.jpg
+N =  79
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/error_Salinity.jpg
+Data for Salinity
+[np.float64(0.0148542412364705), np.float64(0.14858504745443232), np.float64(0.1496261214443848)]
+
+N =  79
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(0.0240789281016799), np.float64(0.1931261714815747), np.float64(0.3019375045732602)]
+
+----------------------------------
+=> Config file TYR_2026-02-13 loaded
+----------------------------------
+
+[np.float64(11.231771438324365), np.float64(16.226563237973533), np.float64(38.919271536217266), np.float64(42.45573015473023), 0, 500, '2026-02-13', '2026-02-18']
+[SAVED] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/bioargo.nc
+BIOARGO FOUND
+----------------------------------
+=> Config file TYR_2026-02-13 loaded
+----------------------------------
+
+5 profiles found
+
+Processing
+
+Float 4903847 cycle 109
+-----
+Float 2904024 cycle 52
+-----
+Float 6990684 cycle 48
+-----
+Float 4903679 cycle 161
+-----
+Float 2904040 cycle 12
+-----
+Interpolation done for [ 168 ] data in 1.72 secInterpolation done for [ 168 ] data in 4.25 secInterpolation done for [ 168 ] data in 4.79 sec=> plot profile
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/bio2904040/profile_12.jpg
+
+-------------
+Total of 8358 found
+-------------
+
+Plot trajectories ...
+Error in plotting for float 2904024
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/bio2904024/map.jpg'
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/bio2904040/map.jpg
+Error in plotting for float 4903679
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/bio4903679/map.jpg'
+Error in plotting for float 4903847
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/bio4903847/map.jpg'
+Error in plotting for float 6990684
+[Errno 2] No such file or directory: '/leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/bio6990684/map.jpg'
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/mapbio.jpg
+N =  0
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/error_Salinity.jpg
+Data for Salinity
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+N =  167
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(0.014892180138865015), np.float64(0.14838187224028615), np.float64(0.14870381859906984)]
+
+N =  167
+[SAVED FIG] /leonardo_scratch/large/userexternal/cfontan1/DIAGS/TYR_2026-02-13/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(0.023930752251022144), np.float64(0.19359664392585377), np.float64(0.30838208268658696)]
+

@@ -77,7 +77,8 @@ def get_radar_data(jd,hour):
 
      #if 1 == 1: 
      try : 
-       ds = Dataset(diagdir+'/'+config+'/RADAR/DATA/'+tag+'.nc')
+       #ds = Dataset(diagdir+'/'+config+'/RADAR/DATA/'+tag+'.nc')
+       ds = Dataset(radardir+'/'+tag+'.nc')
 
        time = np.array(ds['TIME']).flatten()
     

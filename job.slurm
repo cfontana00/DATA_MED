@@ -2,11 +2,11 @@
 
 #SBATCH --nodes=1                    # 1 node
 #SBATCH --ntasks-per-node=1         # 32 tasks per node
-#SBATCH --time=2:00:00               # time limit: 1 hour
+#SBATCH --time=3:00:00               # time limit: 1 hour
 #SBATCH --error=myJob.err            # standard error file
 #SBATCH --output=myJob.out           # standard output file
 #SBATCH --account=PNRR_MER  # project account
-#SBATCH --mem=16G      # ou plus selon la taille des données
+#SBATCH --mem=8G      # ou plus selon la taille des données
 
 
 export COLUMNS=120
@@ -14,7 +14,10 @@ export LINES=40
 
 
 #dini=$1
-dini='2026-02-06'
+#domain=$2
+#get_radar=$3
+
+dini='2026-02-14'
 dout=`echo $dini | sed s/-//g`
 dend=`date -d "$dini +5 days" +"%Y-%m-%d"`
 
@@ -30,8 +33,7 @@ switch_radar=0
 
 # Loop on domain
 # --------------
-#for domain in LIG ION GOT NAD SAD SAR SIC TYR;do
-for domain in TYR ;do
+for domain in LIG ION GOT NAD SAD SAR TYR ;do
 
    echo "PROCESSING "$domain
    echo "_______________ "
@@ -80,7 +82,7 @@ for domain in TYR ;do
      cd datasets/HFRADAR
      python read_radar.py -c $config
 
-     cd ..
+     cd ../..
    fi
 
    # Run daily diags

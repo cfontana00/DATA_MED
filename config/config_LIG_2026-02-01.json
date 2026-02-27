@@ -53,10 +53,10 @@
 "gsigma":"40",
 
 "_____":"RADAR",
-"radardir":"/home/fontana/DISK1TB/RADAR",
+"radardir":"/leonardo_scratch/large/userexternal/cfontan1/RADAR/",
 "radarcmems":["TirLig"],
-"radareuro":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3"],
-"radarxxx":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3","EUHFR_NRTcurrent_HFR-LaMMA-Total_v3","EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3"],
+"radareuro":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3","EUHFR_NRTcurrent_HFR-ARPAS-Total_v3","EUHFR_NRTcurrent_HFR-LaMMA-Total_v3","EUHFR_NRTcurrent_HFR-GoS-Total_v3","EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3","EUHFR_NRTcurrent_HFR-Granitola-Total_v3","EUHFR_NRTcurrent_HFR-NAdr-Total_v3",
+"EUHFR_NRTcurrent_HFR-GoM-Total_v3"],
 "scale_lon":11,
 "scale_lat":44,
 
@@ -83,7 +83,7 @@
 "fig_lbl_size":"4",
 "fig_title_size":"6",
 "cb_pad_2D":"0.12",
-"cb_fraction_2D":"0.02",
+"cb_fraction_2D":"0.03",
 
 "fig_sx_sat":"7",                         
 "fig_sy_sat":"4",                        
