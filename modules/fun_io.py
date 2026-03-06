@@ -224,7 +224,7 @@ def get_var_3D(jd,jdini,fname,hours,var,called_by,**kargs):
     pass
 
   try:
-    ds = xr.open_dataset(fname)
+    ds = xr.open_dataset(fname,engine=ftype)
 
     # Reduce domain
     try:
@@ -310,9 +310,11 @@ def savefig(fout):
   from fun_gen import tight,fig_res
 
   if tight == "True" :
+
     plt.savefig(fout,bbox_inches='tight',dpi=int(fig_res))     
 
   else:
+
     plt.savefig(fout,dpi=int(fig_res))     
 
   print('[SAVED FIG] '+fout)
@@ -335,7 +337,7 @@ def file_error(e,fname,func):
    else:
      print('Loading error')
 
-   exit(1)
+   #exit(1)
 
 
 # ----------------- #

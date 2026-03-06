@@ -12,18 +12,23 @@
 export COLUMNS=120
 export LINES=40
 
+. /home/cfontana/.cron_envz
+
+export PYTHONPATH=$PYTHONPATH:/home/cfontana/DATA_MED/modules/
+export DATA_MED_DIR=/home/cfontana/DATA_MED/
+
 
 #dini=$1
 #domain=$2
 #get_radar=$3
 
-dini='2026-02-08'
+dini='2026-02-15'
 dout=`echo $dini | sed s/-//g`
 dend=`date -d "$dini +5 days" +"%Y-%m-%d"`
 
 run_cmems_thetao=0
-run_cmems_chl=0
-run_argo=1
+run_cmems_chl=1
+run_argo=0
 run_radar=0
 run_static=1
 
@@ -33,8 +38,7 @@ switch_radar=0
 
 # Loop on domain
 # --------------
-#for domain in LIG ION GOT NAD SAD SAR TYR ;do
-for domain in LIG ;do
+for domain in LIG ION GOT NAD SAD SAR TYR ;do
 
    echo "PROCESSING "$domain
    echo "_______________ "
@@ -59,6 +63,9 @@ for domain in LIG ;do
 
    cp config/cmems_DOMAIN.dat config/cmems_$config.dat
    cp config/variables_mit_DOMAIN.dat config/variables_mit_$config.dat
+
+   diagdir=$(jq -r '.diagdir' config/config_$config.json)'/'$config
+
 
    if [ $run_radar -eq 1 -a $switch_radar -eq 0 ];then
      python datasets/HFRADAR/get_data.py -c $config
@@ -122,7 +129,7 @@ for domain in LIG ;do
 
      cd datasets/ARGO
 
-     srun --unbuffered --pty python get_argo.py -c $config
+     python get_argo.py -c $config
 
      if [ $? -eq 0 ];then
        echo "ARGO FOUND"
@@ -154,7 +161,6 @@ for domain in LIG ;do
 
    if [ $run_static -eq 1 ];then
      source ~/venv/c3/bin/activate > /dev/null
-     diagdir='/leonardo_scratch/large/userexternal/cfontan1/DIAGS/'$config
      static=$diagdir/static_$config
      mkdir $static
  

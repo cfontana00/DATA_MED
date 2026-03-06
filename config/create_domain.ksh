@@ -1,7 +1,7 @@
 #!/bin/ksh
 
 
-for domain in NAD GOT GSN ION LIG NAD SAD SAR SIC TYR ISO;do
+for domain in CAG CON FOL GAE GOR GOT HGT ION ISO LAM LIG NAD NAP PAN PES SAD SAR SIC TYR;do
 
 lower=`echo "$domain" | awk '{print tolower($0)}'`
 echo $lower

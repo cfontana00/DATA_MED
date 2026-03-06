@@ -15,7 +15,7 @@ import numpy as np
 from numpy import array as npa
 import xarray as xr
 import datetime as dt
-import cv2
+#import cv2
 
 import cartopy.feature as cfeature
 import cartopy.crs as ccrs
@@ -110,6 +110,7 @@ mask = xr.open_dataset(maskfile)['tmask']
 mask = np.array(mask[0,:,:].squeeze(),dtype=float)
 mask[np.where(mask==0)] = np.nan
 mask[np.where(mask==1)] = 0
+sy,sx = mask.shape
 
 # Loop on files
 # -------------
@@ -157,12 +158,17 @@ for jd in range(jdini,jdend+1):
 
    #var2d[np.where(var2d == 0 )] = np.nan # quick fix
 
-
-
    ddir = os.path.join(diagdir,config,sat,var,'ITP_NC')
    fname = ddir+'/'+var+'_'+dtag+'.nc'
-   sat2d = get_sat_2D(fname,var)
-   sat2d = np.array(sat2d)
+
+   data_sat = 0
+   try:
+     sat2d = get_sat_2D(fname,var)
+     sat2d = np.array(sat2d)
+     data_sat = 1
+   except:
+     sat2d = var2d.copy()
+     sat2d[:] = np.nan
 
    #sat2d[np.where(mask == 0 )] = np.nan
    sat2d[np.where( np.isnan(var2d))] = np.nan 
@@ -172,11 +178,11 @@ for jd in range(jdini,jdend+1):
    # Plot
    if vmod == 'auto' :
 
+
       # Search min/max in data
       var2d[np.where(var2d) == 0] = np.nan
       idx = np.where( ~np.isnan(var2d) )
       arr = var2d[idx].flatten()
-  
 
       try :
         idx = np.where( ~np.isnan(sat2d) )
@@ -184,12 +190,14 @@ for jd in range(jdini,jdend+1):
       except:
         pass
 
+
       # Percentile for vmin/vmax
       lower = (100 - percentile) / 2
       upper = 100 - lower
 
       vmin = np.percentile(arr, lower)
       vmax = np.percentile(arr, upper)
+
 
    if not islog :      
       p1 = ax1.pcolor(lon,lat,var2d,cmap=cmap,vmin=vmin,vmax=vmax,zorder=1)
@@ -243,6 +251,10 @@ for jd in range(jdini,jdend+1):
          cb.ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
 
          cb.ax.tick_params(axis='both', which='both', labelsize=tck_size_ts)
+
+   # Add mention if data are not available
+   if data_sat == 0 :
+      ax2.text(0.1,0.5,'No data available yet',transform=ax2.transAxes,va='center',ha='left',fontsize=12)
 
 
    # Title

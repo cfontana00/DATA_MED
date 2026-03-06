@@ -2,21 +2,52 @@
 
 #SBATCH --nodes=1                    # 1 node
 #SBATCH --ntasks-per-node=1         # 32 tasks per node
-#SBATCH --time=2:00:00               # time limit: 1 hour
+#SBATCH --time=3:00:00               # time limit: 1 hour
 #SBATCH --error=myJob.err            # standard error file
 #SBATCH --output=myJob.out           # standard output file
 #SBATCH --account=PNRR_MER  # project account
+#SBATCH --mem=8G      # ou plus selon la taille des données
 
+
+export COLUMNS=120
+export LINES=40
+
+. /home/cfontana/.cron_env
+
+export PYTHONPATH=$PYTHONPATH:/home/cfontana/DATA_MED/modules/
+export DATA_MED_DIR=/home/cfontana/DATA_MED/
+
+source /home/cfontana/venv/c/bin/activate
+
+
+#dini=$1
+#domain=$2
+#get_radar=$3
 
 dini=$1
 dout=`echo $dini | sed s/-//g`
 dend=`date -d "$dini +5 days" +"%Y-%m-%d"`
 
+run_cmems_thetao=1
+run_cmems_chl=1
+run_argo=1
+dl_radar=1
+run_radar=1
+run_static=1
+run_op=0
+
+# Get radar data for all domains
+
+switch_radar=0
 
 # Loop on domain
 # --------------
-#for domain in ION GOT LIG NAD SAD SAR SIC TYR;do
-for domain in TYR ;do
+for domain in LIG ION GOT NAD SAD SAR TYR ;do
+#for domain in SAD ;do
+
+   echo "PROCESSING "$domain
+   echo "_______________ "
+
    
    config=${domain}_$dini
 
@@ -38,21 +69,38 @@ for domain in TYR ;do
    cp config/cmems_DOMAIN.dat config/cmems_$config.dat
    cp config/variables_mit_DOMAIN.dat config/variables_mit_$config.dat
 
+   diagdir=$(jq -r '.diagdir' config/config_$config.json)'/'$config
+   radardir=$(jq -r '.radardir' config/config_$config.json)
 
-if [ 1 -eq 1 ];then
+   if [ $run_radar -eq 1 -a $switch_radar -eq 0 -a $dl_radar -eq 1 ];then
+     rm $radardir/*.nc
+     python datasets/HFRADAR/get_data.py -c $config
+     switch_radar=1
+   fi 
 
-   # Run diags
-   cd datasets/CMEMS
-   python get_data_sat.py -c $config -v thetao
-   python interp_cmems.py -c $config -v thetao
-   cd ../../plot
-   python plot_2D_data_vs_sat.py -c $config -v thetao -s CMEMS
-   python plot_sat_timeseries.py -c $config -v thetao -s CMEMS
+   if [ $run_cmems_thetao -eq 1 ];then
 
+     # Run diags
+     cd datasets/CMEMS
+     python get_data_sat.py -c $config -v thetao
+     python interp_cmems.py -c $config -v thetao
+     cd ../../plot
+     python plot_2D_data_vs_sat.py -c $config -v thetao -s CMEMS
+     python plot_sat_timeseries.py -c $config -v thetao -s CMEMS
+
+     cd ..
+   fi
+
+   if [ $run_radar -eq 1 ];then  
+     # Run radars diags
+     cd datasets/HFRADAR
+     python read_radar.py -c $config
+
+     cd ../..
+   fi
 
    # Run daily diags
    # ---------------
-   cd ..
 
    cat config/config_$domain.json | sed -e s/DINI/$dini/g |\
 	                                  sed -e s/DOUT/$dout/  |\
@@ -60,125 +108,139 @@ if [ 1 -eq 1 ];then
 				          sed -e s/FREQ/daily/  \
 	> config/config_$config.json
 
-   # Run Chl CMEMS
-   cd datasets/CMEMS
+   if [ $run_cmems_chl -eq 1 ];then
 
-   python get_data_sat.py -c $config -v chl
-   python interp_cmems.py -c $config -v chl
-   cd ../../plot
-   python plot_2D_data_vs_sat.py -c $config -v chl -s CMEMS
-   python plot_sat_timeseries.py -c $config -v chl -s CMEMS
+     # Run Chl CMEMS
+     cd datasets/CMEMS
 
-   cd ..
+     python get_data_sat.py -c $config -v chl
+     python interp_cmems.py -c $config -v chl
+     cd ../../plot
 
+     python plot_2D_data_vs_sat.py -c $config -v chl -s CMEMS
+     python plot_sat_timeseries.py -c $config -v chl -s CMEMS
 
-
-
-   # Run Argo diags
-   source ~/venv/a/bin/activate > /dev/null
-
-   # Physical
-   sed -i 's/daily/hourly/' config/config_$config.json
-
-   cd datasets/ARGO
-
-   python get_argo.py -c $config
-
-   if [ $? -eq 0 ];then
-     echo "ARGO FOUND"
-     python compare_argo.py -c $config
-   fi
-
-   cd ../../
-
-   # Biogeochemical
-   sed -i 's/phy/bgc/' config/config_$config.json
-
-   cd datasets/ARGO
-
-   python get_argo.py -c $config
-
-   if [ $? -eq 0 ];then
-     echo "BIOARGO FOUND"
-     python compare_argo.py -c $config
+     cd ..
    fi
 
 
-   cd ../../
 
-   # Radar
-   # -----
-   # TO DO
 
-fi
+   if [ $run_argo -eq 1 ];then
+     # Run Argo diags
+     source ~/venv/a/bin/activate > /dev/null
+
+     # Physical
+     sed -i 's/daily/hourly/' config/config_$config.json
+
+     cd datasets/ARGO
+
+     python get_argo.py -c $config
+
+     if [ $? -eq 0 ];then
+       echo "ARGO FOUND"
+       python compare_argo.py -c $config
+     fi
+
+
+     cd ../../
+
+     # Biogeochemical
+     sed -i 's/phy/bgc/' config/config_$config.json
+
+     cd datasets/ARGO
+
+     python get_argo.py -c $config
+
+     if [ $? -eq 0 ];then
+       echo "BIOARGO FOUND"
+       python compare_argo.py -c $config
+     fi
+
+
+     cd ../../
+   fi
+
 
    # PREPARE STATIC FILES
    # --------------------
 
-   source ~/venv/c3/bin/activate > /dev/null
-   diagdir='/leonardo_scratch/large/userexternal/cfontan1/DIAGS/'$config
-   static=$diagdir/static_$config
-   mkdir $static
+   if [ $run_static -eq 1 ];then
+     source ~/venv/c/bin/activate > /dev/null
+     static=$diagdir/static_$config
+     mkdir $static
  
-   # Copy files
+     # Copy files
 
-   # CMEMS
+     # CMEMS
+     for var in thetao chl;do 
 
+       dir=$diagdir'/CMEMS/'$var'/ITP_NC'
+       i=1
+       for file in `ls $dir'/PLOT/'`;do
+         cp $dir'/PLOT/'$file $static/${var}_$i.jpg
+         let i=$i+1	
+       done
 
-   for var in thetao chl;do 
+      cp $dir/'time_series.jpg' $static/"time_series_$var.jpg"
+      python plot/resize.py $static/"time_series_$var.jpg" 0.3
 
-     dir=$diagdir'/CMEMS/'$var'/ITP_NC'
-     i=1
-     for file in `ls $dir'/PLOT/'`;do
-	cp $dir'/PLOT/'$file $static/${var}_$i.jpg
-        let i=$i+1	
      done
 
-    cp $dir/'time_series.jpg' $static/"time_series_$var.jpg"
-    python plot/resize.py $static/"time_series_$var.jpg" 0.7
 
-   done
+     # RADAR
 
-   # ARGO 
-   dir=$diagdir/ARGO/
-   
-   for file in `ls -d $dir/bio*/`;do
-      file=`basename $file`
-      num=`echo $file | sed s/bio//`
-      mv $dir/bio$num $dir/$num
-   done
+     dir=$diagdir'/RADAR/'
+     i=1
+     for file in `ls $dir/*.jpg`;do
+       cp $file $static/radar_$i.jpg
+       let i=$i+1
+     done
 
-   i=1
-   for adir in `ls -d $dir/*/`;do
-      for file in `ls $adir/profile*`;do	   
+
+     # ARGO 
+     dir=$diagdir/ARGO/
+  
+      
+     for file in `ls -d $dir/bio*/`;do
+       file=`basename $file`
+       num=`echo $file | sed s/bio//`
+       mv $dir/bio$num/* $dir/$num
+     done
+
+
+     i=1
+     for adir in `ls -d $dir/*/`;do
+       for file in `ls $adir/profile*`;do	   
 
          cp $file $static/argo_$i.jpg
-         python plot/resize.py $static/argo_$i.jpg 0.5
+         python plot/resize.py $static/argo_$i.jpg 0.2
 
          echo "argo_$i.jpg"
          let i=$i+1
-      done
-   done > $static/list.txt
+       done
+     done > $static/list.txt
 
-   cp $dir/map.jpg $static
+     cp $dir/map.jpg $static
+     python plot/resize.py $static/map.jpg 0.35
 	   
+     # Cleaning
+     #rm config/config_$config.json
+     #rm config/cmems_$config.dat
+     #rm config/variables_mit_$config.dat
 
+     # Send data to server
+     scp -r $static yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/DIAGS
 
-
-   # Cleaning
-   #rm config/config_$config.json
-   #rm config/cmems_$config.dat
-   #rm config/variables_mit_$config.dat
-
-   # Send data to server
-   scp -r $static yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/DIAGS
-
-
+   fi
 
 done
 
+echo `date` > $diagdir/active
 
-
+if [ $run_op -eq 1 ];then
+  scp -r $diagdir/active yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
+fi
 
 
 

@@ -17,7 +17,7 @@ from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import matplotlib.pyplot as plt
 import matplotlib
 import xarray as xr
-import cmcrameri as cmc
+import cmocean 
 
 #matplotlib.use("Agg")
 
@@ -75,6 +75,7 @@ def get_radar_data(jd,hour):
   # -------------------
   for tag in radareuro:
 
+
      #if 1 == 1: 
      try : 
        #ds = Dataset(diagdir+'/'+config+'/RADAR/DATA/'+tag+'.nc')
@@ -105,9 +106,12 @@ def get_radar_data(jd,hour):
        u = np.array(ds['EWCT'][idx,:,:]).squeeze()
        v = np.array(ds['NSCT'][idx,:,:]).squeeze()
 
+       u[u <= -999] = np.nan
+       v[v <= -999] = np.nan
+
        # Mean daily value
-       u = np.mean(u,axis=0)
-       v = np.mean(v,axis=0)
+       u = np.nanmean(u, axis=0)
+       v = np.nanmean(v, axis=0)
 
        u = u.squeeze().T.flatten()
        v = v.squeeze().T.flatten()
@@ -266,7 +270,7 @@ for jd in range(jdini,jdend+1):
        # Plot norm
        norm = np.sqrt(np.square(mu)+np.square(mv))
        contours = np.arange(0.,0.8,0.1)
-       c1 = ax1.contourf(lon_mod,lat_mod,norm,contours,cmap=cmc.cm.buda_r,extend='max',zorder=0)
+       c1 = ax1.contourf(lon_mod,lat_mod,norm,contours,cmap=cmocean.cm.speed,extend='max',zorder=0)
        if switch == 0:
          plt.colorbar(c1,pad=float(cb_pad_sat),fraction=float(cb_fraction_sat))
 
@@ -282,7 +286,7 @@ for jd in range(jdini,jdend+1):
        #contours = np.arange(-1,1.1,0.1)
        #c2 = ax2.contourf(lon_mod,lat_mod,iu,contours,cmap=cmc.cm.vik,extend='max',zorder=0)
 
-       c2 = ax2.contourf(lon_mod,lat_mod,norm,contours,cmap=cmc.cm.buda_r,extend='max',zorder=0)
+       c2 = ax2.contourf(lon_mod,lat_mod,norm,contours,cmap=cmocean.cm.speed,extend='max',zorder=0)
 
        if switch == 0:
          plt.colorbar(c2,pad=float(cb_pad_sat),fraction=float(cb_fraction_sat))

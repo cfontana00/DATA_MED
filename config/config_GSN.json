@@ -4,9 +4,9 @@
 "date_ini":"DINI",
 "date_end":"DEND",
 "outdir":"https://mer.exact-lab.it/output/GSN",
-"diagdir":"/leonardo_scratch/large/userexternal/cfontan1/DIAGS",
+"diagdir":"/home/cfontana/DIAGS",
 "freq":"FREQ",
-"maskfile":"/leonardo_work/PNRR_MER/meshmasks/gsn.nc",
+"maskfile":"/home/cfontana/meshmasks/gsn.nc",
 "ftype":"zarr",
 
 
@@ -53,7 +53,7 @@
 "gsigma":"40",
 
 "_____":"RADAR",
-"radardir":"/leonardo_scratch/large/userexternal/cfontan1/RADAR/",
+"radardir":"/home/cfontana/RADAR/",
 "radarcmems":["TirLig"],
 "radareuro":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3","EUHFR_NRTcurrent_HFR-ARPAS-Total_v3","EUHFR_NRTcurrent_HFR-LaMMA-Total_v3","EUHFR_NRTcurrent_HFR-GoS-Total_v3","EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3","EUHFR_NRTcurrent_HFR-Granitola-Total_v3","EUHFR_NRTcurrent_HFR-NAdr-Total_v3",
 "EUHFR_NRTcurrent_HFR-GoM-Total_v3"],

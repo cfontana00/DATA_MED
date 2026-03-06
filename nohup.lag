@@ -1,0 +1,145 @@
+PROCESSING LIG
+_______________ 
++ cat config/config_LIG.json
++ sed -e s/FREQ/hourly/
++ 1> config/config_LIG_2026-02-26.json
++ sed -e s/DEND/2026-03-03/
++ sed -e s/DINI/2026-02-26/g
++ sed -e s/DOUT/20260226/
++ cp config/cmems_DOMAIN.dat config/cmems_LIG_2026-02-26.dat
++ cp config/variables_mit_DOMAIN.dat config/variables_mit_LIG_2026-02-26.dat
++ jq -r .diagdir config/config_LIG_2026-02-26.json
++ diagdir=/home/cfontana/DIAGS/LIG_2026-02-26
++ jq -r .radardir config/config_LIG_2026-02-26.json
++ radardir=/home/cfontana/RADAR/
++ [ 1 -eq 1 -a 0 -eq 0 -a 1 -eq 1 ]
++ rm '/home/cfontana/RADAR//*.nc'
+rm: cannot remove '/home/cfontana/RADAR//*.nc': No such file or directory
++ python datasets/HFRADAR/get_data.py -c LIG_2026-02-26
+curl error details: 
+----------------------------------
+=> Config file LIG_2026-02-26 loaded
+----------------------------------
+
+Processing EuroGoos
+EUHFR_NRTcurrent_HFR-TirLig-Total_v3
+Traceback (most recent call last):
+  File "/home/cfontana/venv/c/lib/python3.12/site-packages/xarray/backends/file_manager.py", line 219, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/cfontana/venv/c/lib/python3.12/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.hfrnode.eu:8443/thredds/dodsC/EUHFR_NRTcurrent_HFR-TirLig-Total_v3',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'a605fe12-ad99-457c-8841-1049323980c6']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cfontana/DATA_MED/datasets/HFRADAR/get_data.py", line 82, in <module>
+    ds = xr.open_dataset('https://thredds.hfrnode.eu:8443/thredds/dodsC/'+tag,decode_times=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/c/lib/python3.12/site-packages/xarray/backends/api.py", line 606, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/c/lib/python3.12/site-packages/xarray/backends/netCDF4_.py", line 771, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/c/lib/python3.12/site-packages/xarray/backends/netCDF4_.py", line 529, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/c/lib/python3.12/site-packages/xarray/backends/netCDF4_.py", line 429, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/home/cfontana/venv/c/lib/python3.12/site-packages/xarray/backends/netCDF4_.py", line 538, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/c/lib/python3.12/site-packages/xarray/backends/netCDF4_.py", line 532, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/c/lib/python3.12/site-packages/xarray/backends/file_manager.py", line 207, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/c/lib/python3.12/site-packages/xarray/backends/file_manager.py", line 225, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2521, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2158, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -68] NetCDF: I/O failure: 'https://thredds.hfrnode.eu:8443/thredds/dodsC/EUHFR_NRTcurrent_HFR-TirLig-Total_v3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cfontana/DATA_MED/datasets/HFRADAR/get_data.py", line 93, in <module>
+    print("[FAILED] ",fname )  
+                      ^^^^^
+NameError: name 'fname' is not defined
++ switch_radar=1
++ [ 1 -eq 1 ]
++ cd datasets/CMEMS
++ python get_data_sat.py -c LIG_2026-02-26 -v thetao
+INFO - 2026-03-06T12:21:18Z - Selected dataset version: "202311"
+INFO - 2026-03-06T12:21:18Z - Selected dataset part: "default"
+----------------------------------
+=> Config file LIG_2026-02-26 loaded
+----------------------------------
+
+Downloading CMEMS products : SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a
+=> Variable [np.str_('sea_surface_temperature')] 
+
+  0%|                                                                                          | 0/102 [00:00<?, ?it/s]  1%|▊                                                                                 | 1/102 [00:00<00:51,  1.96it/s]  9%|███████▏                                                                          | 9/102 [00:00<00:05, 16.76it/s] 19%|███████████████                                                                  | 19/102 [00:00<00:02, 29.71it/s] 25%|███████████████████▊                                                             | 25/102 [00:00<00:02, 35.82it/s] 30%|████████████████████████▌                                                        | 31/102 [00:01<00:01, 39.72it/s] 36%|█████████████████████████████▍                                                   | 37/102 [00:01<00:01, 42.65it/s] 42%|██████████████████████████████████▏                                              | 43/102 [00:01<00:01, 45.34it/s] 48%|██████████████████████████████████████▉                                          | 49/102 [00:01<00:01, 36.39it/s] 54%|███████████████████████████████████████████▋                                     | 55/102 [00:01<00:01, 36.86it/s] 60%|████████████████████████████████████████████████▍                                | 61/102 [00:01<00:01, 39.91it/s] 66%|█████████████████████████████████████████████████████▏                           | 67/102 [00:01<00:00, 42.29it/s] 74%|███████████████████████████████████████████████████████████▌                     | 75/102 [00:02<00:00, 43.49it/s] 81%|█████████████████████████████████████████████████████████████████▉               | 83/102 [00:02<00:00, 51.28it/s] 87%|██████████████████████████████████████████████████████████████████████▋          | 89/102 [00:02<00:00, 43.71it/s] 95%|█████████████████████████████████████████████████████████████████████████████    | 97/102 [00:02<00:00, 39.55it/s]100%|████████████████████████████████████████████████████████████████████████████████| 102/102 [00:02<00:00, 37.22it/s]
+
+[FILE SAVED ] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a.nc
++ python interp_cmems.py -c LIG_2026-02-26 -v thetao
+----------------------------------
+=> Config file LIG_2026-02-26 loaded
+----------------------------------
+
+
+[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/thetao/ITP_NC/thetao_20260226.nc
+
+
+[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/thetao/ITP_NC/thetao_20260227.nc
+
+
+[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/thetao/ITP_NC/thetao_20260228.nc
+
+
+[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/thetao/ITP_NC/thetao_20260301.nc
+
+
+[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/thetao/ITP_NC/thetao_20260302.nc
+
+
+[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/thetao/ITP_NC/thetao_20260303.nc
+
++ cd ../../plot
++ python plot_2D_data_vs_sat.py -c LIG_2026-02-26 -v thetao -s CMEMS
+----------------------------------
+=> Config file LIG_2026-02-26 loaded
+----------------------------------
+
+Processing
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/thetao/ITP_NC/PLOT/2026022600_thetao.jpg
+739673 14.589406024493028 14.451284 0.9102514444336851
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/thetao/ITP_NC/PLOT/2026022700_thetao.jpg
+739674 14.69786103332358 14.463072 0.4163422742971499
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/thetao/ITP_NC/PLOT/2026022800_thetao.jpg
+739675 14.724533611964986 14.414698 0.6475517252509603
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/thetao/ITP_NC/PLOT/2026030100_thetao.jpg
+739676 14.809620765300073 14.399149 0.4686420709467093
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/thetao/ITP_NC/PLOT/2026030200_thetao.jpg
+739677 13.775880109795317 13.924535 0.17642526964560862
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/thetao/ITP_NC/PLOT/2026030300_thetao.jpg
+739678 13.913746838216428 14.414319 0.16640986132511557
++ python plot_sat_timeseries.py -c LIG_2026-02-26 -v thetao -s CMEMS
+----------------------------------
+=> Config file LIG_2026-02-26 loaded
+----------------------------------
+
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-02-26/CMEMS/thetao/ITP_NC/time_series.jpg
++ cd ..
++ [ 1 -eq 1 ]
++ cd datasets/HFRADAR
++ python read_radar.py -c LIG_2026-02-26
