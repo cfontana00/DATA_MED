@@ -1,0 +1,147 @@
+{
+"_____":"GENERAL PARAMETERS",
+"domain":"CON",
+"date_ini":"2026-03-27",
+"date_end":"2026-04-01",
+"outdir":"https://mer-staging.exact-lab.it/output/CON",
+"diagdir":"/home/cfontana/DIAGS",
+"freq":"hourly",
+"maskfile":"/home/cfontana/meshmasks/con.nc",
+"ftype":"zarr",
+
+
+"_____":"BOUNDARY PARAMETERS",
+
+"rm_boundary":"no",
+"damping":20,
+"boundary":["W","S"],
+
+
+"_____":"RIVER PARAMETERS",
+
+"french_list":["Argens"],
+"italian_list":["Arno","Magra","Ombrone","Serchio"],
+"river_ini":"2020-12-30",
+"river_end":"2021-10-30",
+
+
+"_____":"METEO PARAMETERS",
+
+"meteo_ini":"2022-01-01",
+"meteo_end":"2022-01-30",
+"day_cycle":5,
+"n_cycle":70,
+"imin":"500",
+"imax":"600",
+"jmin":"350",
+"jmax":"450",
+
+"_____":"MODIS PARAMETERS",
+"modis_dir":"/DISK2TB/DATA/NWMED/MODIS",
+
+"_____":"DYFAMED PARAMETERS",
+
+"some_par":"some_par",
+
+"_____":"BOUSSOLE PARAMETERS",
+
+"some_par":"some_par",
+
+"_____":"SATELLITE",
+
+"glength":"40",
+"gsigma":"40",
+
+"_____":"RADAR",
+"radardir":"/home/cfontana/RADAR/",
+"radarcmems":["TirLig"],
+"radareuro":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3","EUHFR_NRTcurrent_HFR-ARPAS-Total_v3","EUHFR_NRTcurrent_HFR-LaMMA-Total_v3","EUHFR_NRTcurrent_HFR-GoS-Total_v3","EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3","EUHFR_NRTcurrent_HFR-Granitola-Total_v3","EUHFR_NRTcurrent_HFR-NAdr-Total_v3",
+"EUHFR_NRTcurrent_HFR-GoM-Total_v3"],
+"scale_lon":11,
+"scale_lat":44,
+"scale_lat":44,
+"cb_pad_rad":0.15,
+"rad_tcklbl_size":6,
+
+
+
+"_____":"ARGO",
+
+"argo_ds":"bgc",
+
+
+"_____":"PLOT PARAMETERS",
+
+"resol":"10m",                       
+"fig_proj":"ccrs.PlateCarree()",      
+
+"fig_sx":"12",                         
+"fig_sy":"12",                        
+"fig_fmt":"jpg",                     
+"fig_res":"100",                  
+"tight":"True",                  
+
+"fig_tck_size":"8",
+"fig_tcklbl_size":"8",
+"fig_lbl_size":"12",
+"fig_title_size":"10",
+"cb_pad_2D":"0.12",
+"cb_fraction_2D":"0.03",
+
+"fig_sx_sat":"12",                         
+"fig_sy_sat":"6",                        
+"fig_tck_size_sat":"30",
+"fig_tcklbl_size_sat":"30",
+"cb_fraction_sat":"0.045",
+"cb_pad_sat":"0.08",
+"cb_tck_size_sat":"15",
+"cb_lbl_size_sat":"12",
+
+"with_currents":"False",
+"with_whales":"True",
+
+"_____":"SECTION PLOT PARAMETERS",
+
+"fig_secx":"8",                         
+"fig_secy":"4",                        
+"sec_lon1":"9",
+"sec_lat1":"43.",
+"sec_lon2":"9.7",
+"sec_lat2":"44",
+"sec_dep":"300",
+"sec_resH":"0.05",  
+"sec_resV":"1",
+"cb_fraction_sec":"0.025",
+"cb_pad_sec":"0.06",
+
+"_____":"TRANSECT PLOT PARAMETERS",
+
+"trans_ini":"2015-04-01",
+"trans_end":"2015-04-19",
+"trans_depth":200,
+"trans_resV":1,
+"trans_name":"eddy",
+"trans_file":"/DISK2TB/DATA/eddy.dat",
+
+
+"_____":"PROFILE PLOT PARAMETERS",
+
+"fig_prox":"6",
+"fig_proy":"11",
+"col_3_prof":["g","b","r"],
+"col_2_prof":["b","r"],
+"tck_size_prof":"10",
+
+"_____":"TIME SERIES PLOT PARAMETERS",
+"fig_tsx":8,
+"fig_tsy":4,
+"tck_size_ts":"8",
+"lbl_size_ts":"6",
+
+
+"_____":"INTERPOLATION PARAMETERS",
+
+"dump":"0.02",
+"itp_meth":"linear"
+
+}

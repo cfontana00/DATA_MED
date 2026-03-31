@@ -1,0 +1,144 @@
+{
+  "domains": {
+    "NAD": {
+      "parent": "CMEMS",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "TYR": {
+      "parent": "CMEMS",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "SAR": {
+      "parent": "CMEMS",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "ION": {
+      "parent": "CMEMS",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "LIG": {
+      "parent": "CMEMS",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "SAD": {
+      "parent": "CMEMS",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "SIC": {
+      "parent": "CMEMS",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "GSN": {
+      "parent": "NAD",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "HGT": {
+      "parent": "NAD",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "GOT": {
+      "parent": "NAD",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "GOR": {
+      "parent": "NAD",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "CON": {
+      "parent": "NAD",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "ISO": {
+      "parent": "NAD",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "GAE": {
+      "parent": "TYR",
+      "display": {
+        "layout": "vertical",
+        "cb_fraction": 0.12
+      }
+    },
+    "NAP": {
+      "parent": "TYR",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "FOL": {
+      "parent": "TYR",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "LAM": {
+      "parent": "TYR",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "CAG": {
+      "parent": "SAR",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "PES": {
+      "parent": "SAD",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    },
+    "PAN": {
+      "parent": "SIC",
+      "display": {
+        "layout": "horizontal",
+        "cb_fraction": 0.045
+      }
+    }
+  }
+}

@@ -19,11 +19,6 @@ export DATA_MED_DIR=/home/cfontana/DATA_MED/
 
 source /home/cfontana/venv/c/bin/activate
 
-
-#dini=$1
-#domain=$2
-#get_radar=$3
-
 dini=$1
 dout=`echo $dini | sed s/-//g`
 dend=`date -d "$dini +5 days" +"%Y-%m-%d"`
@@ -31,19 +26,19 @@ dend=`date -d "$dini +5 days" +"%Y-%m-%d"`
 run_cmems_thetao=1
 run_cmems_chl=1
 run_argo=1
-dl_radar=1
+dl_radar=0
 run_radar=1
 run_static=1
-run_op=0
+run_op=1
 
-# Get radar data for all domains
 
 switch_radar=0
+error=1
 
 # Loop on domain
 # --------------
-for domain in LIG ION GOT NAD SAD SAR TYR ;do
-#for domain in SAD ;do
+for domain in CAG CON FOL GAE GOR GOT GSN HGT ION ISO LAM LIG NAD NAP PAN PES SAD SAR SIC TYR;do
+
 
    echo "PROCESSING "$domain
    echo "_______________ "
@@ -69,14 +64,15 @@ for domain in LIG ION GOT NAD SAD SAR TYR ;do
    cp config/cmems_DOMAIN.dat config/cmems_$config.dat
    cp config/variables_mit_DOMAIN.dat config/variables_mit_$config.dat
 
+
    diagdir=$(jq -r '.diagdir' config/config_$config.json)'/'$config
    radardir=$(jq -r '.radardir' config/config_$config.json)
 
-   if [ $run_radar -eq 1 -a $switch_radar -eq 0 -a $dl_radar -eq 1 ];then
-     rm $radardir/*.nc
+   if [ $switch_radar -eq 0 -a $dl_radar -eq 1 ];then
      python datasets/HFRADAR/get_data.py -c $config
      switch_radar=1
    fi 
+
 
    if [ $run_cmems_thetao -eq 1 ];then
 
@@ -84,6 +80,9 @@ for domain in LIG ION GOT NAD SAD SAR TYR ;do
      cd datasets/CMEMS
      python get_data_sat.py -c $config -v thetao
      python interp_cmems.py -c $config -v thetao
+     if [ $? -ne 0 ];then
+	error=1
+     fi
      cd ../../plot
      python plot_2D_data_vs_sat.py -c $config -v thetao -s CMEMS
      python plot_sat_timeseries.py -c $config -v thetao -s CMEMS
@@ -115,6 +114,9 @@ for domain in LIG ION GOT NAD SAD SAR TYR ;do
 
      python get_data_sat.py -c $config -v chl
      python interp_cmems.py -c $config -v chl
+     if [ $? -ne 0 ];then
+	error=1
+     fi
      cd ../../plot
 
      python plot_2D_data_vs_sat.py -c $config -v chl -s CMEMS
@@ -123,8 +125,10 @@ for domain in LIG ION GOT NAD SAD SAR TYR ;do
      cd ..
    fi
 
-
-
+   # Indicate no CMEMS error for this run
+   if [ $error -eq 0 ];then
+     touch `dirname $diagdir`/no_error/$dini
+   fi
 
    if [ $run_argo -eq 1 ];then
      # Run Argo diags
@@ -183,7 +187,7 @@ for domain in LIG ION GOT NAD SAD SAR TYR ;do
        done
 
       cp $dir/'time_series.jpg' $static/"time_series_$var.jpg"
-      python plot/resize.py $static/"time_series_$var.jpg" 0.3
+      #python plot/resize.py $static/"time_series_$var.jpg" 0.3
 
      done
 
@@ -214,7 +218,7 @@ for domain in LIG ION GOT NAD SAD SAR TYR ;do
        for file in `ls $adir/profile*`;do	   
 
          cp $file $static/argo_$i.jpg
-         python plot/resize.py $static/argo_$i.jpg 0.2
+         #python plot/resize.py $static/argo_$i.jpg 0.2
 
          echo "argo_$i.jpg"
          let i=$i+1
@@ -222,7 +226,7 @@ for domain in LIG ION GOT NAD SAD SAR TYR ;do
      done > $static/list.txt
 
      cp $dir/map.jpg $static
-     python plot/resize.py $static/map.jpg 0.35
+     #python plot/resize.py $static/map.jpg 0.35
 	   
      # Cleaning
      #rm config/config_$config.json
@@ -238,9 +242,18 @@ done
 
 echo `date` > $diagdir/active
 
+# Indicate active status
 if [ $run_op -eq 1 ];then
-  scp -r $diagdir/active yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
-fi
 
+  scp -r $diagdir/active yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
+
+  # Indicate last no_error
+  last=$(ls `dirname $diagdir`/no_error | sort | tail -1)
+  echo "Last no error is "$last
+  echo $last > ~/no_error
+  scp ~/no_error yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
+
+
+fi
 
 

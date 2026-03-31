@@ -79,7 +79,7 @@ def get_radar_data(jd,hour):
      #if 1 == 1: 
      try : 
        #ds = Dataset(diagdir+'/'+config+'/RADAR/DATA/'+tag+'.nc')
-       ds = Dataset(radardir+'/'+tag+'.nc')
+       ds = Dataset(radardir+'/'+date_ini+'/'+tag+'.nc')
 
        time = np.array(ds['TIME']).flatten()
     
@@ -171,6 +171,7 @@ extent = [lon_mod.min(),lon_mod.max(),lat_mod.min(),lat_mod.max()]
 
 
 fig, (ax1, ax2) = plt.subplots(2, 1,figsize=(float(fig_sx), float(fig_sy)), subplot_kw={'projection': proj})
+fig.subplots_adjust(hspace=0.3)
 
 # Switch for colorbar
 switch = 0
@@ -192,11 +193,11 @@ for ax in [ax1,ax2]:
   gl.ylines = True
   gl.xformatter = LONGITUDE_FORMATTER
   gl.yformatter = LATITUDE_FORMATTER
-  gl.xlabel_style = {'size': fig_tcklbl_size}
-  gl.ylabel_style = {'size': fig_tcklbl_size}
+  gl.xlabel_style = {'size': rad_tcklbl_size}
+  gl.ylabel_style = {'size': rad_tcklbl_size}
 
 # Find index to place scale
-sub = 10 
+sub = 12
 tmp = lon_mod[::sub]-scale_lon 
 idx_lon = np.where(abs(tmp) == np.amin(abs(tmp)))[0][0]
 tmp = lat_mod[::sub]-scale_lat 
@@ -210,8 +211,8 @@ scale_x[idx_lat,idx_lon] = 0.5
 scale_x[scale_x < 0.5] = np.nan 
 
 # Plot scale
-ax1.quiver(lon_mod[::sub],lat_mod[::sub],scale_x,scale_y,scale=15,zorder=10)
-ax1.text(lon_mod[::sub][idx_lon],lat_mod[::sub][idx_lat]+0.04,'0.5 m.s$^{-1}$')
+#ax1.quiver(lon_mod[::sub],lat_mod[::sub],scale_x,scale_y,scale=15,zorder=10)
+#ax1.text(lon_mod[::sub][idx_lon],lat_mod[::sub][idx_lat]+0.04,'0.5 m.s$^{-1}$')
 
 
 # Get outputs frequency
@@ -243,36 +244,50 @@ for jd in range(jdini,jdend+1):
        # Get radar data
        data = get_radar_data(jd,hour)
 
-       # Interpolate on model grid
-       lon,lat,u,v = data[:,0],data[:,1],data[:,2],data[:,3]
-
-
-       iu = griddata((lat,lon),u,(LAT_MOD,LON_MOD),method='linear')
-       iv = griddata((lat,lon),v,(LAT_MOD,LON_MOD),method='linear')
-
-
        # Get model values filename
        fname,dtag = get_filename(jd,'RFVL')
 
        mu = get_var_2D(jd,jdini,fname,'uo',hour,0)
        mv = get_var_2D(jd,jdini,fname,'vo',hour,0)
 
+       # Interpolate on model grid
+       try : 
+         print(BUG)  # !!!!!!!!!!!!!!!!!  
+         lon,lat,u,v = data[:,0],data[:,1],data[:,2],data[:,3]
+         iu = griddata((lat,lon),u,(LAT_MOD,LON_MOD),method='linear')
+         iv = griddata((lat,lon),v,(LAT_MOD,LON_MOD),method='linear')
+       except :
+         iu = mu.copy()
+         iv = mv.copy()
+
+         iu[:] = np.nan
+         iv[:] = np.nan
+
+
        # Plot velocities
 
        # Model
        # -----
        ax1.title.set_text('Model surface velocities (m.s$^{-1}$)')
-       
 
-       q1 = ax1.quiver(lon_mod[::sub],lat_mod[::sub],mu[::sub,::sub],mv[::sub,::sub],zorder=1,scale=15)
-
+        
 
        # Plot norm
        norm = np.sqrt(np.square(mu)+np.square(mv))
-       contours = np.arange(0.,0.8,0.1)
+       arr = np.array(norm.copy())
+       arr[np.where(np.isnan(arr))] = 0
+
+       # Set scale and contours just once
+       if switch == 0:
+         scale = np.amax(arr)*15/0.7
+         contours = np.arange(0.,np.amax(arr),np.amax(arr)/8.)
+
+       q1 = ax1.quiver(lon_mod[::sub],lat_mod[::sub],mu[::sub,::sub],mv[::sub,::sub],zorder=1,scale=scale)
+
+
        c1 = ax1.contourf(lon_mod,lat_mod,norm,contours,cmap=cmocean.cm.speed,extend='max',zorder=0)
        if switch == 0:
-         plt.colorbar(c1,pad=float(cb_pad_sat),fraction=float(cb_fraction_sat))
+         plt.colorbar(c1,pad=float(cb_pad_rad),fraction=float(cb_fraction_sat))
 
        ax2.title.set_text('HF radar - '+dstr+' '+str(hour).zfill(2)+'h')
 
@@ -289,7 +304,7 @@ for jd in range(jdini,jdend+1):
        c2 = ax2.contourf(lon_mod,lat_mod,norm,contours,cmap=cmocean.cm.speed,extend='max',zorder=0)
 
        if switch == 0:
-         plt.colorbar(c2,pad=float(cb_pad_sat),fraction=float(cb_fraction_sat))
+         plt.colorbar(c2,pad=float(cb_pad_rad),fraction=float(cb_fraction_sat))
          switch = 1
 
 

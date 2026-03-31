@@ -26,7 +26,8 @@ def init_fig(ax,extent,proj):
   ax.coastlines(resolution=resol, color='darkgrey', linestyle='-', alpha=1)
   gl = ax.gridlines(crs=proj, draw_labels=True,
   linewidth=0.2, color='gray', alpha=1., linestyle='-')
-  gl.top_labels = True
+  gl.top_labels = False
+  gl.right_labels = False
   gl.left_labels = True
   gl.xlines = True
   gl.ylines = True

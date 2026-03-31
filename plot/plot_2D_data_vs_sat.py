@@ -10,6 +10,8 @@ from fun_plot_2D import *
 from fun_meteo import load_meteo
 import sys,os,argparse
 from glob import glob
+import subprocess
+
 
 import numpy as np
 from numpy import array as npa
@@ -22,7 +24,7 @@ import cartopy.crs as ccrs
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import matplotlib.colors as colors
 import matplotlib.pyplot as plt
-from matplotlib.ticker import FormatStrFormatter
+from matplotlib.ticker import FormatStrFormatter,FixedLocator,NullFormatter,LogLocator,FuncFormatter,MaxNLocator,StrMethodFormatter,MultipleLocator,ScalarFormatter
 import matplotlib
 matplotlib.use("Agg")
 
@@ -63,7 +65,6 @@ args = argument()
 config = args.config    # Configuration name
 var = args.variable     # Variable name
 sat = args.satellite    # Dataset dir
-
 
 
 # Load parameters
@@ -163,9 +164,15 @@ for jd in range(jdini,jdend+1):
 
    data_sat = 0
    try:
+
      sat2d = get_sat_2D(fname,var)
      sat2d = np.array(sat2d)
+  
+     if var == 'thetao':
+        sat2d = sat2d - 273.15
+
      data_sat = 1
+
    except:
      sat2d = var2d.copy()
      sat2d[:] = np.nan
@@ -184,12 +191,13 @@ for jd in range(jdini,jdend+1):
       idx = np.where( ~np.isnan(var2d) )
       arr = var2d[idx].flatten()
 
-      try :
-        idx = np.where( ~np.isnan(sat2d) )
-        arr = np.concatenate(arr,sat2d[idx].flatten())
-      except:
-        pass
 
+      #try :
+      if 1 == 1:
+        idx = np.where( ~np.isnan(sat2d) )
+        arr = np.concatenate([arr,sat2d[idx].flatten()])
+      #except:
+      #  pass
 
       # Percentile for vmin/vmax
       lower = (100 - percentile) / 2
@@ -197,6 +205,8 @@ for jd in range(jdini,jdend+1):
 
       vmin = np.percentile(arr, lower)
       vmax = np.percentile(arr, upper)
+
+      #print("MIN",vmin)
 
 
    if not islog :      
@@ -213,44 +223,36 @@ for jd in range(jdini,jdend+1):
    #ax1.title.set_text(title,fontsize=fig_lbl_size)
    ax1.set_title(title,fontsize=fig_title_size)
 
-
-   #if var == 'chl':
-   #  sat2d[mask == 0] = np.nan
-
-
-   # Apply correction to sst
-
-   if var == 'thetao':
-      sat2d = sat2d - 273.16   # Kelvin to C
-
-      #t2m = np.array(t2m) - 273.16
-      #idx = np.where(sat2d<9999)
-      #bias = np.mean(sat2d[idx]-t2m[idx])
-      #print(bias)
-
-      sat2d = sat2d # SST correction
-
-
    if not islog :      
      p2 = ax2.pcolor(lon,lat,sat2d,cmap=cmap,vmin=vmin,vmax=vmax,zorder=1)
-     #p2 = ax2.pcolor(lon,lat,sat2d-t2m,cmap=cmap,zorder=1)
+
    else:
      p2 = ax2.pcolor(lon,lat,sat2d,cmap=cmap,norm=colors.LogNorm(vmin=vmin,vmax=vmax),zorder=1)
 
 
    if cb_done == 'False': # plot cb only once
-      cb = plt.colorbar(p2,extend='both',fraction=float(cb_fraction_sat),pad=float(cb_pad_sat),\
+
+     cb = plt.colorbar(p2,extend='both',fraction=float(cb_fraction_sat),pad=float(cb_pad_sat),\
               label=label+' ('+units+')',ax=ax2)
-      cb.set_label(label=label+' ('+units+')',fontsize=cb_lbl_size_sat)
-      cb.ax.tick_params(labelsize=cb_lbl_size_sat)
+     cb.set_label(label=label+' ('+units+')',fontsize=cb_lbl_size_sat)
+     cb.ax.tick_params(labelsize=cb_lbl_size_sat)
 
-      cb_done = 'True'
+     cb.ax.yaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{x:.2f}'))
 
-      if islog : 
-         cb.ax.yaxis.set_minor_formatter(FormatStrFormatter('%.2f'))
-         cb.ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
+     if var == 'chl':
+       tick_values = np.logspace(np.log10(vmin), np.log10(vmax), num=5)
+       cb.ax.yaxis.set_minor_formatter(NullFormatter())
+       cb.ax.yaxis.set_major_formatter(NullFormatter())
 
-         cb.ax.tick_params(axis='both', which='both', labelsize=tck_size_ts)
+       cb.set_ticks(tick_values)
+       cb.set_ticklabels([f'{v:.2f}' for v in tick_values]) 
+
+
+     cb_done = 'True'
+
+   else: # just adjust vmin/vmax
+     cb.mappable.set_clim(vmin, vmax)  
+
 
    # Add mention if data are not available
    if data_sat == 0 :
@@ -280,18 +282,22 @@ for jd in range(jdini,jdend+1):
    idx_good = np.where( (~np.isnan(sat2d)) & (~np.isnan(var2d)) )
    idx_tot = np.where( ~np.isnan(var2d) )
 
+   
    sat2d = sat2d[idx_good]
-   var2d = np.array(var2d)[idx_good]
+  
+   # Keep only corresponding data
+   if data_sat == 1:
+     var2d = np.array(var2d)[idx_good]
 
    idx_good = np.array(idx_good)
    idx_tot = np.array(idx_tot)
 
-   perc = float(idx_good.shape[1])/float(idx_tot.shape[1])
+   perc = 1
+   if data_sat == 1: 
+     perc = float(idx_good.shape[1])/float(idx_tot.shape[1])
 
-   time_series.append([jd,np.mean(var2d),np.mean(sat2d),perc])
-   print(jd,np.mean(var2d),np.mean(sat2d),perc)
-
-
+   time_series.append([jd,np.nanmean(var2d),np.mean(sat2d),perc])
+   print(jd,np.nanmean(var2d),np.mean(sat2d),perc)
 
 # Save time series 
 np.savetxt(ddir+'/time_series.dat',np.array(time_series))

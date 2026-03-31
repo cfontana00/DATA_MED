@@ -12,6 +12,7 @@ import keyword
 import inspect
 import time
 from netCDF4 import Dataset
+import copernicusmarine
 
 
 
@@ -115,8 +116,6 @@ def get_var_2D(jd,jdini,fname,var,hour,lev):
         rec = jd-jdini
         arr = ds[var].squeeze()
         arr = arr[rec,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
-
-
       
     ds.close()
         
@@ -124,6 +123,21 @@ def get_var_2D(jd,jdini,fname,var,hour,lev):
   #  file_error(e,search,inspect.currentframe().f_code.co_name)
 
   return arr
+
+# ----------------- #
+# Load 2D regional  #
+# ----------------- #
+def get_regional_2D(jd,jdini,fname,var,hour,lev):
+
+   ds = xr.open_dataset(fname)
+   rec = (jd-jdini)*24+hour
+   arr = ds[var].squeeze()
+   arr = arr[rec,int(lev),:,:].squeeze()
+   ds.close()
+
+   return arr
+
+
 
 
 # ------------------ #
@@ -160,6 +174,12 @@ def get_integre_2D(jd,jdini,fname,var,levels,hour):
   rec = jd-jdini
   arr = arr[rec,:,jbmin:jbmax,ibmin:ibmax].squeeze()
   ds.close()
+
+  iarr = arr.copy()[5,:,:]
+
+
+
+  """
 
   arr = np.array(arr)
 
@@ -199,7 +219,7 @@ def get_integre_2D(jd,jdini,fname,var,levels,hour):
 
   iarr[iarr==0.] = np.nan
   iarr = iarr*0.05#/tot
-
+  """
 
   return iarr
     
@@ -425,6 +445,56 @@ def write_nc(fname,time,lon,lat,var,data,long_name,units):
   print('')
   print('[FILE SAVED] '+fname+'\n')
   dataset.close()
+
+
+# Download CMEMS model data
+# -------------------------
+def get_cmems_model(config,extent,var):
+
+  from fun_gen import date_ini, date_end, diagdir
+
+  usr = os.getenv('COPERNICUSMARINE_SERVICE_USERNAM')
+  pswd = os.getenv('COPERNICUSMARINE_SERVICE_PASSWORD')
+
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+
+  # Loop on variables
+  for par in pars:
+    if par[0] == var:
+      break
+
+  ds_id = par[3]
+  cvar = par[4]
+
+  outdir = os.path.join(diagdir,config,'CMEMS',cvar)
+
+  copernicusmarine.subset(
+        dataset_id = ds_id,
+        minimum_longitude = extent[0],
+        maximum_longitude = extent[1],
+        minimum_latitude = extent[2],
+        maximum_latitude = extent[3],
+        start_datetime = date_ini,
+        end_datetime = date_end,
+        variables = [cvar],
+        output_directory = outdir,
+        output_filename = 'model_cmems.nc',
+        username = usr,
+        password = pswd
+    )
+
+  print('[FILE SAVED]',outdir+'/model_cmems.nc')
+ 
+  """
+  ds = xr.open_dataset('/tmp/'+config+'.nc')
+  lon = ds['longitude']
+  lat = ds['latitude']
+  var = ds[cvar]
+  ds.close()
+  """
+
+
+
 
 
 

@@ -38,7 +38,6 @@ config = args.config  # Configuration name
 var = args.variable   # Variable name
 
 
-
 # Load parameters
 # ---------------
 load_config(config)

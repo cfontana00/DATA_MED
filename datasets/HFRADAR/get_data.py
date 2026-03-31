@@ -79,12 +79,18 @@ for tag in radareuro :
   try:
     print(tag)
 
+    os.makedirs(radardir+'/'+date_ini,exist_ok=True)
+    fname = radardir+'/'+date_ini+'/'+tag+'.nc'
+
     ds = xr.open_dataset('https://thredds.hfrnode.eu:8443/thredds/dodsC/'+tag,decode_times=True)
 
     subset = ds[['EWCT','NSCT']].sel(TIME=slice(date_ini, date_end))
   #subset = ds[['EWCT','NSCT']].sel(TIME=slice("2017-01-01","2017-02-01"))
     #fname = diagdir+'/'+config+'/RADAR/DATA/'+tag+'.nc'
-    fname = radardir+'/'+tag+'.nc'
+
+    print(fname)
+
+
     subset.to_netcdf(fname)
 
     print(fname)
