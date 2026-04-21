@@ -28,12 +28,12 @@ dini=$1
 dout=`echo $dini | sed s/-//g`
 dend=`date -d "$dini +5 days" +"%Y-%m-%d"`
 
-run_cmems_thetao=1
+run_cmems_thetao=0
 run_cmems_chl=0
-run_argo=0
+run_argo=1
 dl_radar=0
 run_radar=0
-run_static=0
+run_static=1
 run_op=0
 
 
@@ -44,7 +44,8 @@ error=1
 # --------------
 #for domain in LIG ION GOT NAD SAD SAR TYR SIC;do
 #for domain in CAG CON FOL GAE GOR GOT GSN HGT ION ISO LAM LIG NAD NAP PAN PES SAD SAR SIC TYR;do
-for domain in SIC;do
+#for domain in CAG CON FOL GAE GOR GOT GSN HGT ISO LAM NAP PAN PES;do
+for domain in SAR ;do
 
 
    echo "PROCESSING "$domain
@@ -85,16 +86,14 @@ for domain in SIC;do
 
      # Run diags
      cd datasets/CMEMS
-     #python get_data_sat.py -c $config -v thetao
-     #python interp_cmems.py -c $config -v thetao
-     if [ $? -ne 0 ];then
+     python get_data_sat.py -c $config -v thetao
+     python interp_cmems.py -c $config -v thetao
+     if [ $? -eq 2 ];then
 	error=1
      fi
      cd ../../plot
-     python plot_CMEMS_data_vs_sat.py -c $config -v thetao -s CMEMS
-     exit
-     #python plot_2D_data_vs_sat.py -c $config -v thetao -s CMEMS
-     python plot_sat_timeseries.py -c $config -v thetao -s CMEMS
+     python plot_CMEMS_pickle_data_vs_sat.py -c $config -v thetao -s CMEMS
+     python plot_sat_CMEMS_timeseries.py -c $config -v thetao -s CMEMS
 
      cd ..
    fi
@@ -123,13 +122,13 @@ for domain in SIC;do
 
      #python get_data_sat.py -c $config -v chl
      #python interp_cmems.py -c $config -v chl
-     if [ $? -ne 0 ];then
+     if [ $? -eq 2 ];then
 	error=1
      fi
      cd ../../plot
 
-     python plot_2D_data_vs_sat.py -c $config -v chl -s CMEMS
-     python plot_sat_timeseries.py -c $config -v chl -s CMEMS
+     python plot_CMEMS_pickle_data_vs_sat.py -c $config -v chl -s CMEMS
+     python plot_sat_CMEMS_timeseries.py -c $config -v chl -s CMEMS
 
      cd ..
    fi

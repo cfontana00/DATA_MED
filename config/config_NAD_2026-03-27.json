@@ -5,7 +5,7 @@
 "date_end":"2026-04-01",
 "outdir":"https://mer-staging.exact-lab.it/output/NAD",
 "diagdir":"/home/cfontana/DIAGS",
-"freq":"hourly",
+"freq":"daily",
 "maskfile":"/home/cfontana/meshmasks/nad.nc",
 "ftype":"zarr",
 
@@ -67,7 +67,7 @@
 
 "_____":"ARGO",
 
-"argo_ds":"bgc",
+"argo_ds":"phy",
 
 
 "_____":"PLOT PARAMETERS",

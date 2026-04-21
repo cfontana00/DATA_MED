@@ -179,13 +179,12 @@ elif var == 'thetao':
 # -------------
 print('Processing')
 
-#for jd in range(jdini,jdend+1):
-for jd in range(jdini,jdini+1):
-
-
- # Get current variable parameters
- vname, ftag, cmap, islog, vmod, vmin, vmax, label, units\
+# Get current variable parameters
+vname, ftag, cmap, islog, vmod, vmin, vmax, label, units\
        = load_variable(config,var)
+
+for jd in range(jdini,jdend+1):
+#for jd in range(jdini,jdini+1):
  
  for hour in hours:
 
@@ -209,7 +208,7 @@ for jd in range(jdini,jdini+1):
 
      var2d = get_var_2D(jd,jdini,fname,var,hour,1) # !!!!
      var2d = np.array(var2d)
-     percentile = 95
+     percentile = 99
 
      # Get upper grid if HR
      if up != 'CMEMS':
@@ -222,23 +221,24 @@ for jd in range(jdini,jdini+1):
 
      var2d = get_integre_2D(jd,jdini,fname,var,levels,hour)
      var2d = np.array(var2d)
-     percentile = 98
+     percentile = 99
 
      # Get upper grid if HR
      if up != 'CMEMS':
        fup = fname.replace(config[0:3],up)
-       up2d = get_integre_2D(jd,jdini,fup,var,levels,hour)
+       up2d = get_regional_2D(jd,jdini,fup,var,hour,3) # !!!!
        up2d = np.array(up2d)
+   
+        
 
 
    # Get upper grid
    if up == 'CMEMS':
-     up2d = upvar[(jd-jdini)*24].squeeze()
+     up2d = upvar[jd-jdini,:,:].squeeze()
 
      # Remove coastal zone
      #mask = var2d.copy()
-   
-     kernel = gkern(int(glength),int(gsigma))
+     #kernel = gkern(int(glength),int(gsigma))
 
      # TO CHANGE !!!!!
      #mask = cv2.dilate(mask, kernel, iterations=1)
@@ -286,39 +286,39 @@ for jd in range(jdini,jdini+1):
       #except:
       #  pass
 
-      # Percentile for vmin/vmax
-      lower = (100 - percentile) / 2
-      upper = 100 - lower
+      if cb_done == 'False':
+        # Percentile for vmin/vmax
+        lower = (100 - percentile) / 2
+        upper = 100 - lower
 
-      vmin = np.percentile(arr, lower)
-      vmax = np.percentile(arr, upper)
-
-      #print("MIN",vmin)
+        vmin = np.percentile(arr, lower)
+        vmax = np.percentile(arr, upper)
 
     
    if not islog :      
      p1 = ax1.pcolor(lon,lat,var2d,cmap=cmap,vmin=vmin,vmax=vmax,zorder=1)
-     p2 = ax2.pcolor(lon,lat,sat2d,cmap=cmap,vmin=vmin,vmax=vmax,zorder=1)
-     p3 = ax3.pcolor(uplon,uplat,up2d,cmap=cmap,vmin=vmin,vmax=vmax,zorder=1)
+     p2 = ax2.pcolor(uplon,uplat,up2d,cmap=cmap,vmin=vmin,vmax=vmax,zorder=1)
+     p3 = ax3.pcolor(lon,lat,sat2d,cmap=cmap,vmin=vmin,vmax=vmax,zorder=1)
    else:
      p1 = ax1.pcolor(lon,lat,var2d,cmap=cmap,norm=colors.LogNorm(vmin=vmin,vmax=vmax),zorder=1)
-     p2 = ax2.pcolor(lon,lat,sat2d,cmap=cmap,norm=colors.LogNorm(vmin=vmin,vmax=vmax),zorder=1)
-     p3 = ax3.pcolor(uplon,uplat,up2d,cmap=cmap,norm=colors.LogNorm(vmin=vmin,vmax=vmax),zorder=1)
+     p2 = ax2.pcolor(uplon,uplat,up2d,cmap=cmap,norm=colors.LogNorm(vmin=vmin,vmax=vmax),zorder=1)
+     p3 = ax3.pcolor(lon,lat,sat2d,cmap=cmap,norm=colors.LogNorm(vmin=vmin,vmax=vmax),zorder=1)
 
 
    # Title
    date = dt.datetime.fromordinal(jd)
    y,m,d = date.strftime('%Y'),date.strftime('%m'),date.strftime('%d')
 
-   title = 'Model '+y+'-'+m+'-'+d+' '+str(hour).zfill(2)+'h'
+   title = 'High Resolution MER '+y+'-'+m+'-'+d+' '+str(hour).zfill(2)+'h'
    #ax1.title.set_text(title,fontsize=fig_lbl_size)
    ax1.set_title(title,fontsize=fig_title_size)
 
-   title = 'Satellite '+y+'-'+m+'-'+d+' '+str(hour).zfill(2)+'h'
+   title = label3+' '+y+'-'+m+'-'+d+' '+str(hour).zfill(2)+'h'
    ax2.set_title(title,fontsize=fig_title_size)
 
-   title = label3+' '+y+'-'+m+'-'+d+' '+str(hour).zfill(2)+'h'
+   title = 'Satellite '+y+'-'+m+'-'+d+' '+str(hour).zfill(2)+'h'
    ax3.set_title(title,fontsize=fig_title_size)
+
 
 
    if cb_done == 'False': # plot cb only once
@@ -337,6 +337,8 @@ for jd in range(jdini,jdini+1):
        tick_values = np.logspace(np.log10(vmin), np.log10(vmax), num=5)
        cb.ax.yaxis.set_minor_formatter(NullFormatter())
        cb.ax.yaxis.set_major_formatter(NullFormatter())
+       cb.ax.xaxis.set_minor_formatter(NullFormatter())
+       cb.ax.xaxis.set_major_formatter(NullFormatter())
 
        cb.set_ticks(tick_values)
        cb.set_ticklabels([f'{v:.2f}' for v in tick_values]) 
@@ -345,11 +347,12 @@ for jd in range(jdini,jdini+1):
      cb_done = 'True'
 
    else: # just adjust vmin/vmax
-     cb.mappable.set_clim(vmin, vmax)  
+     pass
+     #cb.mappable.set_clim(vmin, vmax)  
 
    # Add mention if data are not available
    if data_sat == 0 :
-      ax2.text(0.1,0.5,'No data available yet',transform=ax2.transAxes,va='center',ha='left',fontsize=12)
+      ax3.text(0.1,0.5,'No data available yet',transform=ax3.transAxes,va='center',ha='left',fontsize=12)
 
 
 
@@ -358,8 +361,8 @@ for jd in range(jdini,jdini+1):
    #plt.draw()
 
    fout = savedir+'/'+dtag+str(hour).zfill(2)+'_'+var+'.'+fig_fmt
-   #savefig(fout)
-   plt.savefig('test.jpg', bbox_inches='tight', dpi=150, pil_kwargs={'quality': 95})
+   savefig(fout)
+   #plt.savefig('test.jpg', bbox_inches='tight', dpi=150, pil_kwargs={'quality': 95})
 
    p1.remove()
    p2.remove()
@@ -378,13 +381,12 @@ for jd in range(jdini,jdini+1):
    # Keep only corresponding data
    if data_sat == 1:
      var2d = np.array(var2d)[idx_good]
+     up2d = np.array(up2d)[idx_good]
 
    #if up == 'CMEMS':
-   #  upmean = np.nanmean(up2d)
+   upmean = np.nanmean(up2d)
    #else:
    #  upmean = np.nan
-
-
 
    idx_good = np.array(idx_good)
    idx_tot = np.array(idx_tot)
@@ -402,5 +404,7 @@ np.savetxt(ddir+'/time_series.dat',np.array(time_series))
 
 plt.close()
 
-   
+# Indicate that sat data were mising
+if data_sat != 1:
+  exit(2)
 

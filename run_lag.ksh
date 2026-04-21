@@ -7,6 +7,7 @@ echo `date`
 for i in {0..5}; do
    dini=`date -d "today -$i days" +%Y-%m-%d`
    ./op.slurm $dini > /home/cfontana/log/log_${dnow}_$dini 2>&1 
+  
 done
 
 echo `date`

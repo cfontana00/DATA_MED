@@ -37,7 +37,8 @@ error=1
 
 # Loop on domain
 # --------------
-for domain in CAG CON FOL GAE GOR GOT GSN HGT ION ISO LAM LIG NAD NAP PAN PES SAD SAR SIC TYR;do
+for domain in CAG SAR CON FOL GAE GOR GOT GSN HGT ION ISO LAM LIG NAD NAP PAN PES SAD SAR SIC TYR;do
+#for domain in ION LIG NAD SAD SAR SIC TYR;do
 
 
    echo "PROCESSING "$domain
@@ -80,12 +81,16 @@ for domain in CAG CON FOL GAE GOR GOT GSN HGT ION ISO LAM LIG NAD NAP PAN PES SA
      cd datasets/CMEMS
      python get_data_sat.py -c $config -v thetao
      python interp_cmems.py -c $config -v thetao
-     if [ $? -ne 0 ];then
+     if [ $? -eq 2 ];then
 	error=1
      fi
      cd ../../plot
-     python plot_2D_data_vs_sat.py -c $config -v thetao -s CMEMS
-     python plot_sat_timeseries.py -c $config -v thetao -s CMEMS
+     python plot_CMEMS_pickle_data_vs_sat.py -c $config -v thetao -s CMEMS
+     python plot_sat_CMEMS_timeseries.py -c $config -v thetao -s CMEMS
+
+     # Get sure to remove pickle files in case of error
+     rm -f $diagdir/CMEMS/thetao/ITP_NC/PLOT/*.pkl
+
 
      cd ..
    fi
@@ -114,13 +119,17 @@ for domain in CAG CON FOL GAE GOR GOT GSN HGT ION ISO LAM LIG NAD NAP PAN PES SA
 
      python get_data_sat.py -c $config -v chl
      python interp_cmems.py -c $config -v chl
-     if [ $? -ne 0 ];then
+     if [ $? -eq 2 ];then
 	error=1
      fi
      cd ../../plot
+     python plot_CMEMS_pickle_data_vs_sat.py -c $config -v chl -s CMEMS
+     python plot_sat_CMEMS_timeseries.py -c $config -v chl -s CMEMS
+     
+     
+     # Get sure to remove pickle files in case of error
+     rm -f $diagdir/CMEMS/chl/ITP_NC/PLOT/*.pkl
 
-     python plot_2D_data_vs_sat.py -c $config -v chl -s CMEMS
-     python plot_sat_timeseries.py -c $config -v chl -s CMEMS
 
      cd ..
    fi

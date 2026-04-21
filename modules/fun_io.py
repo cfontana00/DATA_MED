@@ -130,7 +130,11 @@ def get_var_2D(jd,jdini,fname,var,hour,lev):
 def get_regional_2D(jd,jdini,fname,var,hour,lev):
 
    ds = xr.open_dataset(fname)
-   rec = (jd-jdini)*24+hour
+   if var == 'thetao':
+     rec = (jd-jdini)*24+hour
+   else:
+     rec = jd-jdini
+
    arr = ds[var].squeeze()
    arr = arr[rec,int(lev),:,:].squeeze()
    ds.close()
@@ -175,7 +179,7 @@ def get_integre_2D(jd,jdini,fname,var,levels,hour):
   arr = arr[rec,:,jbmin:jbmax,ibmin:ibmax].squeeze()
   ds.close()
 
-  iarr = arr.copy()[5,:,:]
+  iarr = arr.copy()[3,:,:]
 
 
 
@@ -446,6 +450,46 @@ def write_nc(fname,time,lon,lat,var,data,long_name,units):
   print('[FILE SAVED] '+fname+'\n')
   dataset.close()
 
+def write_nc_cmems(fname,time,lon,lat,var,data,long_name,units):
+
+  # Open file
+  dataset = Dataset(fname,'w',format='NETCDF4_CLASSIC')
+
+  # Create dimension
+  dlon = dataset.createDimension('longitude',lon.shape[0])
+  dlat = dataset.createDimension('latitude',lat.shape[0])
+  dlat = dataset.createDimension('time',6)
+
+  # Create variables & set attributes
+  vlon = dataset.createVariable('longitude',np.float32,('longitude'))
+  vlon.units = "degrees east"
+  vlon.long_name = "longitude"
+  vlon[:] = lon
+
+  vlat = dataset.createVariable('latitude',np.float32,('latitude'))
+  vlat.units = "degrees north"
+  vlat.long_name = "latitude"
+  vlat[:] = lat
+
+  vtime = dataset.createVariable('time',np.float32,('time'))
+  vtime.units = "hours since 1900-01-01 00:00:00"
+  vtime.calendar = "gregorian"
+
+  vtime[:] = time
+
+
+  # Write variable to NetCDF
+  # ------------------------
+  vdata = dataset.createVariable(var,np.float32,('time','latitude','longitude'),fill_value=-9999)
+  vdata.units = units
+  vdata.long_name = long_name
+  vdata[:] = data
+
+  print('')
+  print('[FILE SAVED] '+fname+'\n')
+  dataset.close()
+
+
 
 # Download CMEMS model data
 # -------------------------
@@ -479,6 +523,7 @@ def get_cmems_model(config,extent,var):
         variables = [cvar],
         output_directory = outdir,
         output_filename = 'model_cmems.nc',
+        overwrite=True,
         username = usr,
         password = pswd
     )
