@@ -4,6 +4,9 @@
 import warnings
 warnings.simplefilter("ignore")
 
+import shutil
+
+import gc, types
 from fun_gen import *
 from fun_io import *
 from fun_plot_2D import *
@@ -12,7 +15,7 @@ import sys,os,argparse
 from glob import glob
 import subprocess
 import matplotlib.colors as mcolors
-import dill
+import pickle
 
 
 import numpy as np
@@ -34,6 +37,25 @@ from matplotlib.gridspec import GridSpec,GridSpecFromSubplotSpec,GridSpecFromSub
 import cmocean
 import json
 import glob
+
+import io 
+import cProfile
+
+
+def _noop(*args, **kwargs):
+    return None
+
+def _identity(x):
+    return x
+
+class NoLambdaPickler(pickle.Pickler):
+    def reducer_override(self, obj):
+        # __name__ == '<lambda>' distingue les vraies lambdas des fonctions nommées
+        if callable(obj) and getattr(obj, '__name__', None) == '<lambda>':
+            return (_identity, (_noop,))  # reconstruit comme _identity(_noop) = _noop
+        return NotImplemented
+
+
 
 
 def gkern(l, sig):
@@ -176,6 +198,13 @@ init_fig(ax1,extent,proj)
 init_fig(ax2,extent,proj)
 init_fig(ax3,extent,proj)
 
+
+"""
+for i, ax in enumerate(fig.axes):
+    print(f"ax[{i}] type : {type(ax)}")
+    print(f"ax[{i}] projection : {getattr(ax, 'projection', 'N/A')}")
+"""
+
 time_series = []
 
 if var == 'chl':
@@ -195,7 +224,7 @@ vname, ftag, cmap, islog, vmod, vmin, vmax, label, units\
        = load_variable(config,var)
 
 for jd in range(jdini,jdend+1):
-#for jd in range(jdini,jdini+2):
+#for jd in range(jdini,jdini+1):
  
  for hour in hours:
 
@@ -375,8 +404,47 @@ for jd in range(jdini,jdend+1):
    fig._pcm = [p1, p2, p3]
    fig._cbar = cb
    fout = savedir+'/'+dtag+str(hour).zfill(2)+'_'+var+'.pkl'
+
+
+   
+   """
+   for obj in gc.get_referrers(fig):
+    pass  # pas utile
+
+   # Chercher toutes les lambdas dans les attributs de chaque axe
+   for i, ax in enumerate(fig.axes):
+    for attr_name in dir(ax):
+        try:
+            attr = getattr(ax, attr_name)
+            if isinstance(attr, types.LambdaType):
+                print(f"ax[{i}].{attr_name} -> lambda")
+            if isinstance(attr, list):
+                for j, item in enumerate(attr):
+                    if isinstance(item, types.LambdaType):
+                        print(f"ax[{i}].{attr_name}[{j}] -> lambda")
+                    if hasattr(item, '__dict__'):
+                        for k, v in item.__dict__.items():
+                            if isinstance(v, types.LambdaType):
+                                print(f"ax[{i}].{attr_name}[{j}].{k} -> lambda")
+        except Exception:
+            pass
+
+   """
+
+
+   fig._pcm = [p1, p2, p3]
+   fig._cbar = cb
+   fout = savedir+'/'+dtag+str(hour).zfill(2)+'_'+var+'.pkl'
+
+   total, used, free = shutil.disk_usage("/")
+   if free / 1e6 < 700:
+     print(f"No space left on the device ({free:.0f} Mo free) — exiting")
+     break
+   
+
    with open(fout, "wb") as f:
-     dill.dump(fig, f)
+         NoLambdaPickler(f, protocol=5).dump(fig)
+
 
    #fout = savedir+'/'+dtag+str(hour).zfill(2)+'_'+var+'.'+fig_fmt
    #savefig(fout)
@@ -425,32 +493,40 @@ upper = 100 - lower
 arr = arr[~np.isnan(arr)]
 global_vmin = np.percentile(arr, lower)
 global_vmax = np.percentile(arr, upper)
+del arr
 
 # Reload all figures
 pkl_files = sorted(glob.glob(savedir+"/*.pkl"))
 
-
 # Load all figures and collect clims
-all_figs, all_vmins, all_vmaxs = [], [], []
 for path in pkl_files:
     with open(path, "rb") as f:
-        fig = dill.load(f)
-    all_figs.append(fig)
+        fig = pickle.load(f)
 
-# Apply global clim and export
-for fig, path in zip(all_figs, pkl_files):
-    for pcm in fig._pcm:
-        pcm.set_clim(global_vmin, global_vmax)
+        for pcm in fig._pcm:
+            pcm.set_clim(global_vmin, global_vmax)
 
-    fig._cbar.update_normal(fig._pcm[0])
+        fig._cbar.update_normal(fig._pcm[0])
 
-    out = path.replace(".pkl", ".jpg")
-    fig.savefig(out, dpi=int(fig_res), bbox_inches="tight")
-    print('[SAVED FIG]',out)
-    plt.close(fig)
+        for i in range(0,3):
+          ax = fig.axes[i]
+          gl = ax.gridlines(draw_labels=True, linewidth=0.2, color='gray', linestyle='-')
+          gl.top_labels = False
+          gl.right_labels = False
+          gl.xformatter = LONGITUDE_FORMATTER
+          gl.yformatter = LATITUDE_FORMATTER
 
-    # Erase pickle file
-    os.remove(path)
+        fig.canvas.draw()
+
+        out = path.replace(".pkl", ".jpg")
+        fig.savefig(out, dpi=int(fig_res), bbox_inches="tight")
+        print('[SAVED FIG]',out)
+        plt.close(fig)
+        del fig
+
+        # Erase pickle file
+        os.remove(path)
+
 
 
 # Save time series 

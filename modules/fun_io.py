@@ -124,6 +124,58 @@ def get_var_2D(jd,jdini,fname,var,hour,lev):
 
   return arr
 
+
+# -------------------- #
+# Load 2D UV variables #
+# -------------------- #
+def get_uv_2D(jd,jdini,fname,hour,lev):
+
+  from fun_gen import ibmin,ibmax,\
+                      jbmin,jbmax,\
+                      ftype,freq
+
+  if 1 ==1:
+  #try :
+      
+    ds = xr.open_dataset(fname,engine=ftype)
+
+    if ftype == 'netcdf': # NEED FIX
+      arr = ds[var][hour,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
+
+    elif ftype == 'zarr':
+      if freq == 'hourly':
+        rec = (jd-jdini)*24+hour
+        u = ds['uo'].squeeze()
+        u = u[rec,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
+        v = ds['vo'].squeeze()
+        v = v[rec,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
+
+      elif freq == 'daily':
+        rec = jd-jdini
+        u = ds['uo'].squeeze()
+        u = u[rec,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
+        v = ds['vo'].squeeze()
+        v = v[rec,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
+      
+    ds.close()
+        
+  #except Exception as e :
+  #  file_error(e,search,inspect.currentframe().f_code.co_name)
+
+  u = np.asarray(u)
+  v = np.asarray(v)
+
+  return u,v
+
+
+
+
+
+
+
+
+
+
 # ----------------- #
 # Load 2D regional  #
 # ----------------- #

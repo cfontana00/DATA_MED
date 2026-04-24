@@ -33,18 +33,17 @@ run_op=1
 
 
 switch_radar=0
-error=1
+error=0
 
 # Loop on domain
 # --------------
-for domain in CAG SAR CON FOL GAE GOR GOT GSN HGT ION ISO LAM LIG NAD NAP PAN PES SAD SAR SIC TYR;do
-#for domain in ION LIG NAD SAD SAR SIC TYR;do
+for domain in CAG SAR CON FOL SIC GAE GOR TYR GOT GSN HGT NAD ION ISO SAR LAM LIG NAP PAN PES SAD ;do
 
 
    echo "PROCESSING "$domain
    echo "_______________ "
+   date
 
-   
    config=${domain}_$dini
 
    lower=`echo "$domain" | awk '{print tolower($0)}'`
@@ -81,17 +80,20 @@ for domain in CAG SAR CON FOL GAE GOR GOT GSN HGT ION ISO LAM LIG NAD NAP PAN PE
      cd datasets/CMEMS
      python get_data_sat.py -c $config -v thetao
      python interp_cmems.py -c $config -v thetao
+     cd ../../plot
+     python plot_CMEMS_pickle_data_vs_sat.py -c $config -v thetao -s CMEMS
      if [ $? -eq 2 ];then
 	error=1
      fi
-     cd ../../plot
-     python plot_CMEMS_pickle_data_vs_sat.py -c $config -v thetao -s CMEMS
      python plot_sat_CMEMS_timeseries.py -c $config -v thetao -s CMEMS
 
      # Get sure to remove pickle files in case of error
      rm -f $diagdir/CMEMS/thetao/ITP_NC/PLOT/*.pkl
 
+     # Clean interpolated files
+     rm -f $diagdir/CMEMS/thetao/ITP_NC/*.nc
 
+     date
      cd ..
    fi
 
@@ -100,6 +102,7 @@ for domain in CAG SAR CON FOL GAE GOR GOT GSN HGT ION ISO LAM LIG NAD NAP PAN PE
      cd datasets/HFRADAR
      python read_radar.py -c $config
 
+     date
      cd ../..
    fi
 
@@ -119,17 +122,22 @@ for domain in CAG SAR CON FOL GAE GOR GOT GSN HGT ION ISO LAM LIG NAD NAP PAN PE
 
      python get_data_sat.py -c $config -v chl
      python interp_cmems.py -c $config -v chl
+     cd ../../plot
+     python plot_CMEMS_pickle_data_vs_sat.py -c $config -v chl -s CMEMS
      if [ $? -eq 2 ];then
 	error=1
      fi
-     cd ../../plot
-     python plot_CMEMS_pickle_data_vs_sat.py -c $config -v chl -s CMEMS
+
      python plot_sat_CMEMS_timeseries.py -c $config -v chl -s CMEMS
      
      
      # Get sure to remove pickle files in case of error
      rm -f $diagdir/CMEMS/chl/ITP_NC/PLOT/*.pkl
 
+     # Clean interpolated files
+     rm -f $diagdir/CMEMS/chl/ITP_NC/*.nc
+
+     date
 
      cd ..
    fi
@@ -138,6 +146,9 @@ for domain in CAG SAR CON FOL GAE GOR GOT GSN HGT ION ISO LAM LIG NAD NAP PAN PE
    if [ $error -eq 0 ];then
      touch `dirname $diagdir`/no_error/$dini
    fi
+ 
+   # Clean CMEMS data files
+   rm -f $diagdir/CMEMS/data/*.nc
 
    if [ $run_argo -eq 1 ];then
      # Run Argo diags

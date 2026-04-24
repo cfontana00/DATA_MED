@@ -91,7 +91,6 @@ i = 0
 for jd in range(jdini,jdend+1):
 
   # Get CMEMS data
- 
   data = np.array(ds[cvar][i,:,:]).squeeze().flatten()
 
   # => /!\ Ensure that same dates were used for downloads !!!

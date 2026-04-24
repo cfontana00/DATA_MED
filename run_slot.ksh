@@ -3,8 +3,11 @@
 dnow=`date -d "today" +%Y-%m-%d`
 #dnow=`date -d "today -1 days" +%Y-%m-%d`
 
+switch=0
+
 # Loop on days
-for i in {1..6}; do
+#for i in {3..6}; do
+for i in 4 5; do
 
    dini=`date -d "today -$i days" +%Y-%m-%d`
 
@@ -17,7 +20,16 @@ for i in {1..6}; do
      if [ $count -lt 2 ];then
       ./op.slurm $dini > /home/cfontana/log/log_${dnow}_$dini 2>&1 &
       echo "Run "$dini" launched"
+   
+      # Introduce a lag to shift runs
+      if [ $switch -eq 0 ];then
+        sleep 1200
+        switch=1
+      fi
+
       break
+
+
      else
       sleep 5
      fi

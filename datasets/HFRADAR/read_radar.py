@@ -16,10 +16,10 @@ import cartopy.crs as ccrs
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import matplotlib.pyplot as plt
 import matplotlib
+matplotlib.use("Agg")
 import xarray as xr
 import cmocean 
 
-#matplotlib.use("Agg")
 
 
 

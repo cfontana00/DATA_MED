@@ -5,6 +5,7 @@ import xarray as xr
 from scipy.interpolate import griddata
 import datetime as dt
 import os
+import shutil
 
 
 config = sys.argv[1]
@@ -30,10 +31,21 @@ lon,lat,levels = load_coords()
 LON_MOD,LAT_MOD = np.meshgrid(np.array(lon),np.array(lat))
 extent = [lon.min(),lon.max(),lat.min(),lat.max()]
 
+
+# --------------------------- #
+# Get model for comparison 2D #
+# --------------------------- #
+
 get_cmems_model(config,extent,var)
 
-# Interpolate on MER grid
 cdir = os.path.join(diagdir,config,'CMEMS',var)
+
+
+# Back up Chl for later Argo interpolation
+if var == 'chl':
+  shutil.copy2(cdir+'/model_cmems.nc',cdir+'/model_cmems_3d.nc')
+
+# Interpolate on MER grid
 
 ds = xr.open_dataset(cdir+'/model_cmems.nc')
 clon = ds['longitude']
@@ -71,6 +83,5 @@ full_data = np.array(full_data)
 fname = cdir+'/model_cmems.nc'
 os.remove(fname)
 write_nc_cmems(fname,time,lon,lat,var,full_data,label,units)
-
 
 
