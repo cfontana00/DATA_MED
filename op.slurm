@@ -30,6 +30,7 @@ dl_radar=0
 run_radar=1
 run_static=1
 run_op=1
+clean=1
 
 
 switch_radar=0
@@ -90,8 +91,10 @@ for domain in CAG SAR CON FOL SIC GAE GOR TYR GOT GSN HGT NAD ION ISO SAR LAM LI
      # Get sure to remove pickle files in case of error
      rm -f $diagdir/CMEMS/thetao/ITP_NC/PLOT/*.pkl
 
-     # Clean interpolated files
-     rm -f $diagdir/CMEMS/thetao/ITP_NC/*.nc
+     if [ $clean -eq 1 ];then  
+       # Clean interpolated files
+       rm -f $diagdir/CMEMS/thetao/ITP_NC/*.nc
+     fi
 
      date
      cd ..
@@ -135,7 +138,9 @@ for domain in CAG SAR CON FOL SIC GAE GOR TYR GOT GSN HGT NAD ION ISO SAR LAM LI
      rm -f $diagdir/CMEMS/chl/ITP_NC/PLOT/*.pkl
 
      # Clean interpolated files
-     rm -f $diagdir/CMEMS/chl/ITP_NC/*.nc
+     if [ $clean -eq 1 ];then  
+       rm -f $diagdir/CMEMS/chl/ITP_NC/*.nc
+     fi
 
      date
 
@@ -148,7 +153,9 @@ for domain in CAG SAR CON FOL SIC GAE GOR TYR GOT GSN HGT NAD ION ISO SAR LAM LI
    fi
  
    # Clean CMEMS data files
-   rm -f $diagdir/CMEMS/data/*.nc
+   if [ $clean -eq 1 ];then  
+     rm -f $diagdir/CMEMS/data/*.nc
+   fi
 
    if [ $run_argo -eq 1 ];then
      # Run Argo diags

@@ -1,107 +1,114 @@
-PROCESSING LAM
+PROCESSING LIG
 _______________ 
-+ cat config/config_LAM.json
-+ sed -e s/DINI/2026-04-19/g
-+ sed -e s/DEND/2026-04-24/
-+ sed -e s/DOUT/20260419/
+Tue Apr 28 09:47:08 UTC 2026
++ cat config/config_LIG.json
++ sed -e s/DINI/2026-04-18/g
++ sed -e s/DOUT/20260418/
 + sed -e s/FREQ/hourly/
-+ 1> config/config_LAM_2026-04-19.json
-+ cp config/cmems_DOMAIN.dat config/cmems_LAM_2026-04-19.dat
-+ cp config/variables_mit_DOMAIN.dat config/variables_mit_LAM_2026-04-19.dat
-+ jq -r .diagdir config/config_LAM_2026-04-19.json
-+ diagdir=/home/cfontana/DIAGS/LAM_2026-04-19
-+ jq -r .radardir config/config_LAM_2026-04-19.json
++ 1> config/config_LIG_2026-04-18.json
++ sed -e s/DEND/2026-04-23/
++ cp config/cmems_DOMAIN.dat config/cmems_LIG_2026-04-18.dat
++ cp config/variables_mit_DOMAIN.dat config/variables_mit_LIG_2026-04-18.dat
++ jq -r .diagdir config/config_LIG_2026-04-18.json
++ diagdir=/home/cfontana/DIAGS/LIG_2026-04-18
++ jq -r .radardir config/config_LIG_2026-04-18.json
 + radardir=/home/cfontana/RADAR/
 + [ 0 -eq 0 -a 0 -eq 1 ]
 + [ 1 -eq 1 ]
 + cd datasets/CMEMS
-+ python get_data_sat.py -c LAM_2026-04-19 -v thetao
-INFO - 2026-04-21T07:24:29Z - Selected dataset version: "202311"
-INFO - 2026-04-21T07:24:29Z - Selected dataset part: "default"
-WARNING - 2026-04-21T07:24:29Z - Some of your subset selection [2026-04-19 00:00:00+00:00, 2026-04-24 00:00:00+00:00] for the time dimension exceed the dataset coordinates [2008-01-01 00:00:00+00:00, 2026-04-20 00:00:00+00:00]
++ python get_data_sat.py -c LIG_2026-04-18 -v thetao
+INFO - 2026-04-28T09:47:11Z - Selected dataset version: "202311"
+INFO - 2026-04-28T09:47:11Z - Selected dataset part: "default"
 ----------------------------------
-=> Config file LAM_2026-04-19 loaded
-----------------------------------
-
-Downloading CMEMS products : SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a
-=> Variable [np.str_('sea_surface_temperature')] 
-
-
-[FILE SAVED ] /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_a.nc
-+ python interp_cmems.py -c LAM_2026-04-19 -v thetao
-----------------------------------
-=> Config file LAM_2026-04-19 loaded
+=> Config file LIG_2026-04-18 loaded
 ----------------------------------
 
+Downloading CMEMS products : SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b
+=> Variable [np.str_('adjusted_sea_surface_temperature')] 
 
-[FILE SAVED] /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/thetao_20260419.nc
+  0%|                                                                                          | 0/102 [00:00<?, ?it/s]  1%|▊                                                                                 | 1/102 [00:01<01:52,  1.11s/it]  7%|█████▋                                                                            | 7/102 [00:02<00:36,  2.63it/s]  9%|███████▏                                                                          | 9/102 [00:03<00:27,  3.34it/s] 11%|████████▋                                                                        | 11/102 [00:03<00:21,  4.31it/s] 13%|██████████▎                                                                      | 13/102 [00:03<00:19,  4.46it/s] 15%|███████████▉                                                                     | 15/102 [00:03<00:16,  5.35it/s] 19%|███████████████                                                                  | 19/102 [00:04<00:11,  7.36it/s] 21%|████████████████▋                                                                | 21/102 [00:04<00:12,  6.41it/s] 26%|█████████████████████▍                                                           | 27/102 [00:05<00:09,  8.14it/s] 30%|████████████████████████▌                                                        | 31/102 [00:05<00:07,  9.60it/s] 32%|██████████████████████████▏                                                      | 33/102 [00:05<00:08,  8.03it/s] 36%|█████████████████████████████▍                                                   | 37/102 [00:06<00:06, 10.01it/s] 38%|██████████████████████████████▉                                                  | 39/102 [00:06<00:07,  8.04it/s] 44%|███████████████████████████████████▋                                             | 45/102 [00:07<00:06,  9.01it/s] 48%|██████████████████████████████████████▉                                          | 49/102 [00:07<00:05, 10.08it/s] 50%|████████████████████████████████████████▌                                        | 51/102 [00:07<00:06,  7.86it/s] 54%|███████████████████████████████████████████▋                                     | 55/102 [00:08<00:05,  9.36it/s] 56%|█████████████████████████████████████████████▎                                   | 57/102 [00:08<00:05,  7.53it/s] 62%|██████████████████████████████████████████████████                               | 63/102 [00:09<00:04,  8.28it/s] 68%|██████████████████████████████████████████████████████▊                          | 69/102 [00:09<00:03,  8.81it/s] 74%|███████████████████████████████████████████████████████████▌                     | 75/102 [00:10<00:03,  8.56it/s] 77%|██████████████████████████████████████████████████████████████▋                  | 79/102 [00:10<00:02,  9.64it/s] 79%|████████████████████████████████████████████████████████████████▎                | 81/102 [00:11<00:02,  7.74it/s] 85%|█████████████████████████████████████████████████████████████████████            | 87/102 [00:12<00:02,  7.39it/s] 91%|█████████████████████████████████████████████████████████████████████████▊       | 93/102 [00:12<00:01,  7.91it/s] 97%|██████████████████████████████████████████████████████████████████████████████▌  | 99/102 [00:13<00:00,  8.89it/s]100%|████████████████████████████████████████████████████████████████████████████████| 102/102 [00:13<00:00,  7.55it/s]
+
+[FILE SAVED ] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b.nc
++ python interp_cmems.py -c LIG_2026-04-18 -v thetao
+----------------------------------
+=> Config file LIG_2026-04-18 loaded
+----------------------------------
 
 
-[FILE SAVED] /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/thetao_20260420.nc
+[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260418.nc
 
-Traceback (most recent call last):
-  File "/home/cfontana/DATA_MED/datasets/CMEMS/interp_cmems.py", line 95, in <module>
-    data = np.array(ds[cvar][i,:,:]).squeeze().flatten()
-                    ~~~~~~~~^^^^^^^
-  File "src/netCDF4/_netCDF4.pyx", line 5107, in netCDF4._netCDF4.Variable.__getitem__
-  File "src/netCDF4/_netCDF4.pyx", line 6079, in netCDF4._netCDF4.Variable._get
-IndexError: index exceeds dimension bounds
-+ [ 1 -eq 2 ]
+
+[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260419.nc
+
+
+[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260420.nc
+
+
+[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260421.nc
+
+
+[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260422.nc
+
+
+[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260423.nc
+
 + cd ../../plot
-+ python plot_CMEMS_pickle_data_vs_sat.py -c LAM_2026-04-19 -v thetao -s CMEMS
++ python plot_CMEMS_pickle_data_vs_sat.py -c LIG_2026-04-18 -v thetao -s CMEMS
 ----------------------------------
-=> Config file LAM_2026-04-19 loaded
+=> Config file LIG_2026-04-18 loaded
 ----------------------------------
 
 Processing
-739725 17.485326340744614 16.871805 16.654972511518825 0.23769475920679886
-739726 18.145474078920152 17.362034 17.21929307990604 0.31869688385269124
-[Errno 2] No such file or directory: '/home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/thetao_20260421.nc' 
-
-=> in get_sat_2D :
-Error processing file /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/thetao_20260421.nc
-File not found
-739727 18.38748267360517 nan 18.01001918533899 1
-[Errno 2] No such file or directory: '/home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/thetao_20260422.nc' 
-
-=> in get_sat_2D :
-Error processing file /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/thetao_20260422.nc
-File not found
-739728 18.849536499288195 nan 18.281761869836334 1
-[Errno 2] No such file or directory: '/home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/thetao_20260423.nc' 
-
-=> in get_sat_2D :
-Error processing file /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/thetao_20260423.nc
-File not found
-739729 19.191038306137656 nan 18.465186573770737 1
-[Errno 2] No such file or directory: '/home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/thetao_20260424.nc' 
-
-=> in get_sat_2D :
-Error processing file /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/thetao_20260424.nc
-File not found
-739730 18.92964075180694 nan 18.053462636966163 1
-[SAVED FIG] /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/PLOT/2026041900_thetao.jpg
-[SAVED FIG] /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/PLOT/2026042000_thetao.jpg
-[SAVED FIG] /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/PLOT/2026042100_thetao.jpg
-[SAVED FIG] /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/PLOT/2026042200_thetao.jpg
-[SAVED FIG] /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/PLOT/2026042300_thetao.jpg
-[SAVED FIG] /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/PLOT/2026042400_thetao.jpg
-+ python plot_sat_CMEMS_timeseries.py -c LAM_2026-04-19 -v thetao -s CMEMS
+739724 17.144793669507465 16.966627 16.688524 0.8596249995965308
+739725 17.602581106612288 17.176207 17.010235 0.9782158915216599
+739726 17.59024225535315 17.326385 16.990953 0.6047196211908474
+739727 17.55761233254966 17.530006 17.0719 0.7719140255573523
+739728 17.84709470748698 17.154488 17.313478 0.6659113723439624
+739729 17.548770558481706 16.936037 16.763956 0.7530219842291963
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/2026041800_thetao.jpg
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/2026041900_thetao.jpg
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/2026042000_thetao.jpg
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/2026042100_thetao.jpg
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/2026042200_thetao.jpg
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/2026042300_thetao.jpg
++ [ 0 -eq 2 ]
++ python plot_sat_CMEMS_timeseries.py -c LIG_2026-04-18 -v thetao -s CMEMS
 ----------------------------------
-=> Config file LAM_2026-04-19 loaded
+=> Config file LIG_2026-04-18 loaded
 ----------------------------------
 
-[SAVED FIG] /home/cfontana/DIAGS/LAM_2026-04-19/CMEMS/thetao/ITP_NC/time_series.jpg
+[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/time_series.jpg
++ rm -f '/home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/*.pkl'
++ rm -f /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260418.nc /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260419.nc /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260420.nc /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260421.nc /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260422.nc /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260423.nc
++ date
+Tue Apr 28 09:56:55 UTC 2026
 + cd ..
 + [ 0 -eq 1 ]
-+ cat config/config_LAM.json
++ cat config/config_LIG.json
 + sed -e s/FREQ/daily/
-+ sed -e s/DINI/2026-04-19/g
-+ sed -e s/DOUT/20260419/
-+ sed -e s/DEND/2026-04-24/
-+ 1> config/config_LAM_2026-04-19.json
++ 1> config/config_LIG_2026-04-18.json
++ sed -e s/DINI/2026-04-18/g
++ sed -e s/DOUT/20260418/
++ sed -e s/DEND/2026-04-23/
++ [ 0 -eq 1 ]
++ [ 0 -eq 0 ]
++ dirname /home/cfontana/DIAGS/LIG_2026-04-18
++ touch /home/cfontana/DIAGS/no_error/2026-04-18
++ rm -f /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b.nc
++ [ 0 -eq 1 ]
++ [ 0 -eq 1 ]
++ date
++ echo Tue Apr 28 09:56:55 UTC 2026
++ 1> /home/cfontana/DIAGS/LIG_2026-04-18/active
 + [ 1 -eq 1 ]
-+ cd datasets/CMEMS
-+ [ 0 -eq 2 ]
-+ cd ../../plot
-+ python plot_CMEMS_pickle_data_vs_sat.py -c LAM_2026-04-19 -v chl -s CMEMS
++ scp -r /home/cfontana/DIAGS/LIG_2026-04-18/active yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
++ tail -1
++ dirname /home/cfontana/DIAGS/LIG_2026-04-18
++ sort
++ ls /home/cfontana/DIAGS/no_error
++ last=2026-04-18
++ echo 'Last no error is 2026-04-18'
+Last no error is 2026-04-18
++ echo 2026-04-18
++ 1> /home/cfontana/no_error
++ scp /home/cfontana/no_error yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/

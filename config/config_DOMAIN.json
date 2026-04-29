@@ -78,7 +78,7 @@
 "fig_sx":"12",                         
 "fig_sy":"12",                        
 "fig_fmt":"jpg",                     
-"fig_res":"100",                  
+"fig_res":"150",                  
 "tight":"True",                  
 
 "fig_tck_size":"8",

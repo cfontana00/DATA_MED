@@ -249,9 +249,8 @@ for jd in range(jdini,jdini+1):
        fname,dtag = get_filename(jd,'RFVL')
 
        t0 = time.time()
-       mu,mv = get_uv_2D(jd,jdini,fname,hour,0)
-       #mu = get_var_2D(jd,jdini,fname,'uo',hour,0)
-       #mv = get_var_2D(jd,jdini,fname,'vo',hour,0)
+       mu = get_var_2D(jd,jdini,fname,'uo',hour,0)
+       mv = get_var_2D(jd,jdini,fname,'vo',hour,0)
 
        print(f"getvar       : {time.time()-t0:.2f}s")
 

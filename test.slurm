@@ -27,9 +27,9 @@ run_cmems_thetao=0
 run_cmems_chl=0
 run_argo=0
 dl_radar=0
-run_radar=1
-run_static=0
-run_op=0
+run_radar=0
+run_static=1
+run_op=1
 
 
 switch_radar=0
@@ -38,7 +38,7 @@ error=0
 # Loop on domain
 # --------------
 #for domain in CAG SAR CON FOL SIC GAE GOR TYR GOT GSN HGT NAD ION ISO SAR LAM LIG NAP PAN PES SAD ;do
-for domain in SAR;do
+for domain in LIG;do
 
 
    echo "PROCESSING "$domain

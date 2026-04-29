@@ -89,6 +89,7 @@ LON,LAT = LON.flatten(),LAT.flatten()
 #------------
 i = 0
 for jd in range(jdini,jdend+1):
+#for jd in range(jdini,jdini+1):
 
   # Get CMEMS data
   data = np.array(ds[cvar][i,:,:]).squeeze().flatten()
