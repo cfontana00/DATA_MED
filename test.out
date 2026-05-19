@@ -1,114 +1,201 @@
-PROCESSING LIG
+PROCESSING CAG
 _______________ 
-Tue Apr 28 09:47:08 UTC 2026
-+ cat config/config_LIG.json
-+ sed -e s/DINI/2026-04-18/g
-+ sed -e s/DOUT/20260418/
+Tue May  5 09:49:08 CEST 2026
++ cat config/config_CAG.json
++ sed -e s/DINI/2026-04-29/g
 + sed -e s/FREQ/hourly/
-+ 1> config/config_LIG_2026-04-18.json
-+ sed -e s/DEND/2026-04-23/
-+ cp config/cmems_DOMAIN.dat config/cmems_LIG_2026-04-18.dat
-+ cp config/variables_mit_DOMAIN.dat config/variables_mit_LIG_2026-04-18.dat
-+ jq -r .diagdir config/config_LIG_2026-04-18.json
-+ diagdir=/home/cfontana/DIAGS/LIG_2026-04-18
-+ jq -r .radardir config/config_LIG_2026-04-18.json
-+ radardir=/home/cfontana/RADAR/
++ 1> config/config_CAG_2026-04-29.json
++ sed -e s/DOUT/20260429/
++ sed -e s/DEND/2026-05-04/
++ cp config/cmems_DOMAIN.dat config/cmems_CAG_2026-04-29.dat
++ cp config/variables_mit_DOMAIN.dat config/variables_mit_CAG_2026-04-29.dat
++ jq -r .diagdir config/config_CAG_2026-04-29.json
++ diagdir=/scratch/cfontana/DIAGS/CAG_2026-04-29
++ jq -r .radardir config/config_CAG_2026-04-29.json
++ radardir=/scratch/cfontana/RADAR/
 + [ 0 -eq 0 -a 0 -eq 1 ]
 + [ 1 -eq 1 ]
 + cd datasets/CMEMS
-+ python get_data_sat.py -c LIG_2026-04-18 -v thetao
-INFO - 2026-04-28T09:47:11Z - Selected dataset version: "202311"
-INFO - 2026-04-28T09:47:11Z - Selected dataset part: "default"
++ python get_data_sat.py -c CAG_2026-04-29 -v thetao
+INFO - 2026-05-05T07:49:11Z - Selected dataset version: "202311"
+INFO - 2026-05-05T07:49:11Z - Selected dataset part: "default"
 ----------------------------------
-=> Config file LIG_2026-04-18 loaded
+=> Config file CAG_2026-04-29 loaded
 ----------------------------------
 
 Downloading CMEMS products : SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b
 => Variable [np.str_('adjusted_sea_surface_temperature')] 
 
-  0%|                                                                                          | 0/102 [00:00<?, ?it/s]  1%|▊                                                                                 | 1/102 [00:01<01:52,  1.11s/it]  7%|█████▋                                                                            | 7/102 [00:02<00:36,  2.63it/s]  9%|███████▏                                                                          | 9/102 [00:03<00:27,  3.34it/s] 11%|████████▋                                                                        | 11/102 [00:03<00:21,  4.31it/s] 13%|██████████▎                                                                      | 13/102 [00:03<00:19,  4.46it/s] 15%|███████████▉                                                                     | 15/102 [00:03<00:16,  5.35it/s] 19%|███████████████                                                                  | 19/102 [00:04<00:11,  7.36it/s] 21%|████████████████▋                                                                | 21/102 [00:04<00:12,  6.41it/s] 26%|█████████████████████▍                                                           | 27/102 [00:05<00:09,  8.14it/s] 30%|████████████████████████▌                                                        | 31/102 [00:05<00:07,  9.60it/s] 32%|██████████████████████████▏                                                      | 33/102 [00:05<00:08,  8.03it/s] 36%|█████████████████████████████▍                                                   | 37/102 [00:06<00:06, 10.01it/s] 38%|██████████████████████████████▉                                                  | 39/102 [00:06<00:07,  8.04it/s] 44%|███████████████████████████████████▋                                             | 45/102 [00:07<00:06,  9.01it/s] 48%|██████████████████████████████████████▉                                          | 49/102 [00:07<00:05, 10.08it/s] 50%|████████████████████████████████████████▌                                        | 51/102 [00:07<00:06,  7.86it/s] 54%|███████████████████████████████████████████▋                                     | 55/102 [00:08<00:05,  9.36it/s] 56%|█████████████████████████████████████████████▎                                   | 57/102 [00:08<00:05,  7.53it/s] 62%|██████████████████████████████████████████████████                               | 63/102 [00:09<00:04,  8.28it/s] 68%|██████████████████████████████████████████████████████▊                          | 69/102 [00:09<00:03,  8.81it/s] 74%|███████████████████████████████████████████████████████████▌                     | 75/102 [00:10<00:03,  8.56it/s] 77%|██████████████████████████████████████████████████████████████▋                  | 79/102 [00:10<00:02,  9.64it/s] 79%|████████████████████████████████████████████████████████████████▎                | 81/102 [00:11<00:02,  7.74it/s] 85%|█████████████████████████████████████████████████████████████████████            | 87/102 [00:12<00:02,  7.39it/s] 91%|█████████████████████████████████████████████████████████████████████████▊       | 93/102 [00:12<00:01,  7.91it/s] 97%|██████████████████████████████████████████████████████████████████████████████▌  | 99/102 [00:13<00:00,  8.89it/s]100%|████████████████████████████████████████████████████████████████████████████████| 102/102 [00:13<00:00,  7.55it/s]
+  0%|                                                                                          | 0/170 [00:00<?, ?it/s]  1%|▍                                                                                 | 1/170 [00:00<01:41,  1.66it/s]  3%|██▍                                                                               | 5/170 [00:00<00:19,  8.45it/s]  8%|██████▏                                                                          | 13/170 [00:00<00:07, 19.97it/s] 10%|████████                                                                         | 17/170 [00:01<00:06, 23.22it/s] 15%|███████████▉                                                                     | 25/170 [00:01<00:04, 34.42it/s] 22%|█████████████████▋                                                               | 37/170 [00:01<00:02, 49.04it/s] 26%|█████████████████████▍                                                           | 45/170 [00:01<00:02, 47.91it/s] 34%|███████████████████████████▏                                                     | 57/170 [00:01<00:01, 57.50it/s] 39%|███████████████████████████████▉                                                 | 67/170 [00:01<00:01, 65.53it/s] 44%|███████████████████████████████████▋                                             | 75/170 [00:01<00:01, 55.37it/s] 48%|███████████████████████████████████████                                          | 82/170 [00:02<00:01, 46.12it/s] 52%|█████████████████████████████████████████▉                                       | 88/170 [00:02<00:02, 39.87it/s] 55%|████████████████████████████████████████████▎                                    | 93/170 [00:02<00:01, 40.32it/s] 58%|██████████████████████████████████████████████▋                                  | 98/170 [00:02<00:01, 39.18it/s] 63%|██████████████████████████████████████████████████▎                             | 107/170 [00:02<00:01, 45.96it/s] 69%|███████████████████████████████████████████████████████                         | 117/170 [00:02<00:00, 55.19it/s] 72%|█████████████████████████████████████████████████████████▉                      | 123/170 [00:03<00:00, 51.60it/s] 77%|█████████████████████████████████████████████████████████████▋                  | 131/170 [00:03<00:00, 52.66it/s] 81%|████████████████████████████████████████████████████████████████▍               | 137/170 [00:03<00:00, 54.17it/s] 84%|███████████████████████████████████████████████████████████████████▎            | 143/170 [00:03<00:00, 53.38it/s] 88%|██████████████████████████████████████████████████████████████████████          | 149/170 [00:03<00:00, 54.06it/s] 91%|████████████████████████████████████████████████████████████████████████▉       | 155/170 [00:03<00:00, 47.75it/s] 96%|████████████████████████████████████████████████████████████████████████████▋   | 163/170 [00:03<00:00, 55.29it/s]100%|████████████████████████████████████████████████████████████████████████████████| 170/170 [00:03<00:00, 44.19it/s]
 
-[FILE SAVED ] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b.nc
-+ python interp_cmems.py -c LIG_2026-04-18 -v thetao
+[FILE SAVED ] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b.nc
++ python interp_cmems.py -c CAG_2026-04-29 -v thetao
 ----------------------------------
-=> Config file LIG_2026-04-18 loaded
+=> Config file CAG_2026-04-29 loaded
 ----------------------------------
 
 
-[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260418.nc
+[FILE SAVED] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260429.nc
 
 
-[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260419.nc
+[FILE SAVED] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260430.nc
 
 
-[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260420.nc
+[FILE SAVED] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260501.nc
 
 
-[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260421.nc
+[FILE SAVED] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260502.nc
 
 
-[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260422.nc
+[FILE SAVED] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260503.nc
 
 
-[FILE SAVED] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260423.nc
+[FILE SAVED] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260504.nc
 
 + cd ../../plot
-+ python plot_CMEMS_pickle_data_vs_sat.py -c LIG_2026-04-18 -v thetao -s CMEMS
++ python plot_CMEMS_pickle_data_vs_sat.py -c CAG_2026-04-29 -v thetao -s CMEMS
 ----------------------------------
-=> Config file LIG_2026-04-18 loaded
+=> Config file CAG_2026-04-29 loaded
 ----------------------------------
 
 Processing
-739724 17.144793669507465 16.966627 16.688524 0.8596249995965308
-739725 17.602581106612288 17.176207 17.010235 0.9782158915216599
-739726 17.59024225535315 17.326385 16.990953 0.6047196211908474
-739727 17.55761233254966 17.530006 17.0719 0.7719140255573523
-739728 17.84709470748698 17.154488 17.313478 0.6659113723439624
-739729 17.548770558481706 16.936037 16.763956 0.7530219842291963
-[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/2026041800_thetao.jpg
-[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/2026041900_thetao.jpg
-[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/2026042000_thetao.jpg
-[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/2026042100_thetao.jpg
-[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/2026042200_thetao.jpg
-[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/2026042300_thetao.jpg
+739735 18.22785021109981 18.170721 17.772501338129807 0.8851526641388945
+739736 18.681193728238174 18.132788 17.857720875898224 0.3760061198696202
+739737 18.512732719706932 18.711338 18.384000765499326 0.8842213796314774
+739738 18.589284684762923 18.453444 17.87469140589856 0.8808953635335595
+739739 18.61106207506475 18.617146 17.71842972113479 0.8156721878533892
+739740 18.65537208840251 18.208729 18.074697626102715 0.6811680968535888
+[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026042900_thetao.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026043000_thetao.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050100_thetao.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050200_thetao.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050300_thetao.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050400_thetao.jpg
 + [ 0 -eq 2 ]
-+ python plot_sat_CMEMS_timeseries.py -c LIG_2026-04-18 -v thetao -s CMEMS
++ python plot_sat_CMEMS_timeseries.py -c CAG_2026-04-29 -v thetao -s CMEMS
 ----------------------------------
-=> Config file LIG_2026-04-18 loaded
+=> Config file CAG_2026-04-29 loaded
 ----------------------------------
 
-[SAVED FIG] /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/time_series.jpg
-+ rm -f '/home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/PLOT/*.pkl'
-+ rm -f /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260418.nc /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260419.nc /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260420.nc /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260421.nc /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260422.nc /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/thetao/ITP_NC/thetao_20260423.nc
+[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/time_series.jpg
++ rm -f '/scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/*.pkl'
++ [ 1 -eq 1 ]
++ rm -f /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260429.nc /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260430.nc /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260501.nc /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260502.nc /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260503.nc /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260504.nc
 + date
-Tue Apr 28 09:56:55 UTC 2026
+Tue May  5 09:58:20 CEST 2026
 + cd ..
 + [ 0 -eq 1 ]
-+ cat config/config_LIG.json
++ cat config/config_CAG.json
++ sed -e s/DINI/2026-04-29/g
 + sed -e s/FREQ/daily/
-+ 1> config/config_LIG_2026-04-18.json
-+ sed -e s/DINI/2026-04-18/g
-+ sed -e s/DOUT/20260418/
-+ sed -e s/DEND/2026-04-23/
++ 1> config/config_CAG_2026-04-29.json
++ sed -e s/DOUT/20260429/
++ sed -e s/DEND/2026-05-04/
 + [ 0 -eq 1 ]
 + [ 0 -eq 0 ]
-+ dirname /home/cfontana/DIAGS/LIG_2026-04-18
-+ touch /home/cfontana/DIAGS/no_error/2026-04-18
-+ rm -f /home/cfontana/DIAGS/LIG_2026-04-18/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b.nc
-+ [ 0 -eq 1 ]
-+ [ 0 -eq 1 ]
-+ date
-+ echo Tue Apr 28 09:56:55 UTC 2026
-+ 1> /home/cfontana/DIAGS/LIG_2026-04-18/active
++ dirname /scratch/cfontana/DIAGS/CAG_2026-04-29
++ touch /scratch/cfontana/DIAGS/no_error/2026-04-29
 + [ 1 -eq 1 ]
-+ scp -r /home/cfontana/DIAGS/LIG_2026-04-18/active yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
-+ tail -1
-+ dirname /home/cfontana/DIAGS/LIG_2026-04-18
-+ sort
-+ ls /home/cfontana/DIAGS/no_error
-+ last=2026-04-18
-+ echo 'Last no error is 2026-04-18'
-Last no error is 2026-04-18
-+ echo 2026-04-18
-+ 1> /home/cfontana/no_error
-+ scp /home/cfontana/no_error yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
++ rm -f /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b.nc
++ [ 0 -eq 1 ]
++ [ 1 -eq 1 ]
++ source /home/cfontana/venv/c/bin/activate
++ 1> /dev/null
++ deactivate nondestructive
++ [ -n /home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin ]
++ PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ [ -n '' ]
++ hash -r
++ 2> /dev/null
++ [ -n '(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' ]
++ PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ unset _OLD_VIRTUAL_PS1
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive '=' nondestructive ]
++ [ '' '=' cygwin ]
++ [ '' '=' msys ]
++ VIRTUAL_ENV=/home/cfontana/venv/c
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/cfontana/venv/c/bin:/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ [ -n '' ]
++ [ -z '' ]
++ _OLD_VIRTUAL_PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ PS1='(c) (c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ VIRTUAL_ENV_PROMPT='(c) '
++ export VIRTUAL_ENV_PROMPT
++ hash -r
++ 2> /dev/null
++ static=/scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29
++ mkdir /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29
+mkdir: cannot create directory ‘/scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29’: File exists
++ dir=/scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC
++ i=1
++ ls /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026042900_thetao.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/thetao_1.jpg
++ let i=1+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026043000_thetao.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/thetao_2.jpg
++ let i=2+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050100_thetao.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/thetao_3.jpg
++ let i=3+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050200_thetao.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/thetao_4.jpg
++ let i=4+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050300_thetao.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/thetao_5.jpg
++ let i=5+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050400_thetao.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/thetao_6.jpg
++ let i=6+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/time_series_thetao.jpg
++ dir=/scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC
++ i=1
++ ls /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/2026042912_chl.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/chl_1.jpg
++ let i=1+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/2026043012_chl.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/chl_2.jpg
++ let i=2+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/2026050112_chl.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/chl_3.jpg
++ let i=3+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/2026050212_chl.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/chl_4.jpg
++ let i=4+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/2026050312_chl.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/chl_5.jpg
++ let i=5+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/2026050412_chl.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/chl_6.jpg
++ let i=6+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/time_series_chl.jpg
++ dir=/scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR/
++ i=1
++ ls /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260429_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260430_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260501_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260502_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260503_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260504_00.jpg
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260429_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/radar_1.jpg
++ let i=1+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260430_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/radar_2.jpg
++ let i=2+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260501_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/radar_3.jpg
++ let i=3+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260502_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/radar_4.jpg
++ let i=4+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260503_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/radar_5.jpg
++ let i=5+1
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260504_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/radar_6.jpg
++ let i=6+1
++ dir=/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO/
++ ls -d '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//bio*/'
+ls: cannot access '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//bio*/': No such file or directory
++ i=1
++ 1> /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/list.txt
++ ls -d '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//*/'
+ls: cannot access '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//*/': No such file or directory
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//map.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29
+cp: cannot stat '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//map.jpg': No such file or directory
++ scp -r /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29 yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/DIAGS
++ date
++ echo Tue May 5 09:58:25 CEST 2026
++ 1> /scratch/cfontana/DIAGS/CAG_2026-04-29/active
++ [ 1 -eq 1 ]
++ scp -r /scratch/cfontana/DIAGS/CAG_2026-04-29/active yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
++ [ -eq 1 -a -eq 1 ]
+./test.slurm[279]: [: 1: unknown operator

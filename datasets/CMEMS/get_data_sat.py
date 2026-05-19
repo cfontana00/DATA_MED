@@ -76,6 +76,10 @@ print('=> Variable',cvar,'\n')
 os.system('rm -f '+datadir+'/'+ds_id+'.nc' )
 
 
+print('------------------------------')
+print('DATE =>>>',date_ini,date_end)
+print('------------------------------')
+
 copernicusmarine.subset(
         dataset_id = ds_id,
         minimum_longitude = lon.min()-1,

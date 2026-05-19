@@ -4,7 +4,7 @@
 "date_ini":"2026-04-28",
 "date_end":"2026-05-03",
 "outdir":"https://mer-staging.exact-lab.it/output/SAR",
-"diagdir":"/home/cfontana/DIAGS",
+"diagdir":"/scratch/cfontana/DIAGS",
 "freq":"hourly",
 "maskfile":"/home/cfontana/meshmasks/sar.nc",
 "ftype":"zarr",
@@ -53,7 +53,7 @@
 "gsigma":"40",
 
 "_____":"RADAR",
-"radardir":"/home/cfontana/RADAR/",
+"radardir":"/scratch/cfontana/RADAR/",
 "radarcmems":["TirLig"],
 "radareuro":["EUHFR_NRTcurrent_HFR-TirLig-Total_v3","EUHFR_NRTcurrent_HFR-ARPAS-Total_v3","EUHFR_NRTcurrent_HFR-LaMMA-Total_v3","EUHFR_NRTcurrent_HFR-GoS-Total_v3","EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3","EUHFR_NRTcurrent_HFR-Granitola-Total_v3","EUHFR_NRTcurrent_HFR-NAdr-Total_v3",
 "EUHFR_NRTcurrent_HFR-GoM-Total_v3"],
@@ -78,7 +78,7 @@
 "fig_sx":"12",                         
 "fig_sy":"12",                        
 "fig_fmt":"jpg",                     
-"fig_res":"100",                  
+"fig_res":"150",                  
 "tight":"True",                  
 
 "fig_tck_size":"8",
@@ -95,7 +95,7 @@
 "cb_fraction_sat":"0.045",
 "cb_pad_sat":"0.08",
 "cb_tck_size_sat":"15",
-"cb_lbl_size_sat":"12",
+"cb_lbl_size_sat":"10",
 
 "with_currents":"False",
 "with_whales":"True",

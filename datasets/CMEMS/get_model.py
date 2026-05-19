@@ -67,7 +67,7 @@ for jd in range(jdini,jdend+1):
   if var == 'thetao':
     data = np.array(cvar[(jd-jdini)*24,:,:]).squeeze().flatten()
   elif var == 'chl':
-    data = np.array(cvar[(jd-jdini),3,:,:]).squeeze().flatten()
+    data = np.array(cvar[(jd-jdini),2,:,:]).squeeze().flatten()
 
   idata = griddata((LON,LAT),data.T,(LON_MOD,LAT_MOD),method='nearest')
   full_data.append(idata)

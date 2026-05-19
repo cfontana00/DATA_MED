@@ -247,30 +247,32 @@ for jd in range(jdini,jdend+1):
    if var == 'thetao':
 
      var2d = get_var_2D(jd,jdini,fname,var,hour,1) # !!!!
+
      var2d = np.array(var2d)
      percentile = 99
 
      # Get upper grid if HR
      if up != 'CMEMS':
        fup = fname.replace(config[0:3],up)
-       up2d = get_regional_2D(jd,jdini,fup,var,hour,1) # !!!!
+       up2d = get_regional_2D(jd,jdini,fup,var,hour,0) # !!!!
        up2d = np.array(up2d)
 
 
    elif var == 'chl':
 
-     var2d = get_integre_2D(jd,jdini,fname,var,levels,hour)
+     #var2d = get_integre_2D(jd,jdini,fname,var,levels,hour)
+     var2d = get_var_2D(jd,jdini,fname,var,hour,1) # !!!!
+
      var2d = np.array(var2d)
      percentile = 99
 
      # Get upper grid if HR
      if up != 'CMEMS':
        fup = fname.replace(config[0:3],up)
-       up2d = get_regional_2D(jd,jdini,fup,var,hour,3) # !!!!
+       up2d = get_regional_2D(jd,jdini,fup,var,hour,0) # !!!!
        up2d = np.array(up2d)
    
         
-
 
    # Get upper grid
    if up == 'CMEMS':

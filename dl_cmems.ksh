@@ -34,7 +34,7 @@ for domain in LIG ION NAD SAD SAR TYR SIC ;do
 
   # Loop on variables
   for var in thetao chl;do
-    mkdir -p ~/DIAGS/$config/CMEMS/$var
+    mkdir -p /scratch/cfontana/DIAGS/$config/CMEMS/$var
     python datasets/CMEMS/get_model.py ${domain}_$dini $var
   done
 

@@ -5,9 +5,13 @@ dnow=`date -d "today" +%Y-%m-%d`
 
 switch=0
 
+
+# RUN FULL VALIDATION
+# -------------------
+
 # Loop on days
 #for i in {3..6}; do
-for i in 4 5; do
+for i in 0 7; do
 
    dini=`date -d "today -$i days" +%Y-%m-%d`
 
@@ -18,6 +22,7 @@ for i in 4 5; do
      count=`ps -u cfontana | grep op.slurm | wc -l`
 
      if [ $count -lt 2 ];then
+
       ./op.slurm $dini > /home/cfontana/log/log_${dnow}_$dini 2>&1 &
       echo "Run "$dini" launched"
    
@@ -36,6 +41,26 @@ for i in 4 5; do
    done
 
 date
-  
+
+
 done
 
+
+# RUN ARGO VALIDATION
+# -------------------
+  
+for i in {1..6}; do
+
+  dini=`date -d "today -$i days" +%Y-%m-%d`
+
+  # Count number of runningn process
+  count=`ps -u cfontana | grep argo.slurm | wc -l`
+
+  if [ $count -lt 2 ];then
+
+    ./argo.slurm $dini > /home/cfontana/log/argo_${dnow}_$dini 2>&1 &
+    echo "Run "$dini" launched"
+
+  fi
+
+done

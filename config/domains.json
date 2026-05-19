@@ -106,7 +106,7 @@
       }
     },
     "FOL": {
-      "parent": "TYR",
+      "parent": "LIG",
       "display": {
         "layout": "horizontal",
         "cb_fraction": 0.045

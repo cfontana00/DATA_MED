@@ -1,0 +1,1288 @@
+PROCESSING CAG
+_______________ 
+Mon May 11 13:31:56 CEST 2026
++ cat config/config_CAG.json
++ sed -e s/FREQ/hourly/
++ sed -e s/DINI/2026-04-29/g
++ 1> config/config_CAG_2026-04-29.json
++ sed -e s/DOUT/20260429/
++ sed -e s/DEND/2026-05-04/
++ cp config/cmems_DOMAIN.dat config/cmems_CAG_2026-04-29.dat
++ cp config/variables_mit_DOMAIN.dat config/variables_mit_CAG_2026-04-29.dat
++ jq -r .diagdir config/config_CAG_2026-04-29.json
++ diagdir=/scratch/cfontana/DIAGS/CAG_2026-04-29
++ jq -r .radardir config/config_CAG_2026-04-29.json
++ radardir=/scratch/cfontana/RADAR/
++ [ 0 -eq 0 -a 0 -eq 1 ]
++ [ 0 -eq 1 ]
++ [ 0 -eq 1 ]
++ cat config/config_CAG.json
++ sed -e s/DINI/2026-04-29/g
++ sed -e s/DOUT/20260429/
++ sed -e s/FREQ/daily/
++ sed -e s/DEND/2026-05-04/
++ 1> config/config_CAG_2026-04-29.json
++ [ 0 -eq 1 ]
++ [ 0 -eq 0 ]
++ dirname /scratch/cfontana/DIAGS/CAG_2026-04-29
++ touch /scratch/cfontana/DIAGS/no_error/2026-04-29
++ [ 1 -eq 1 ]
++ rm -f '/scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/data/*.nc'
++ [ 1 -eq 1 ]
++ source /home/cfontana/venv/a/bin/activate
++ 1> /dev/null
++ deactivate nondestructive
++ [ -n /home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin ]
++ PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ [ -n '' ]
++ hash -r
++ 2> /dev/null
++ [ -n '(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' ]
++ PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ unset _OLD_VIRTUAL_PS1
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive '=' nondestructive ]
++ [ '' '=' cygwin ]
++ [ '' '=' msys ]
++ VIRTUAL_ENV=/home/cfontana/venv/a
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/cfontana/venv/a/bin:/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ [ -n '' ]
++ [ -z '' ]
++ _OLD_VIRTUAL_PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ PS1='(a) (c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ VIRTUAL_ENV_PROMPT='(a) '
++ export VIRTUAL_ENV_PROMPT
++ hash -r
++ 2> /dev/null
++ sed -i s/daily/hourly/ config/config_CAG_2026-04-29.json
++ cd datasets/ARGO
++ python get_argo.py -c CAG_2026-04-29
+----------------------------------
+=> Config file CAG_2026-04-29 loaded
+----------------------------------
+
+[np.float64(9.0057296291345), np.float64(9.2338546292075), np.float64(39.042188434509505), np.float64(39.228646767902504), 0, 500, '2026-04-29', '2026-05-04']
+Traceback (most recent call last):
+  File "/home/cfontana/DATA_MED/datasets/ARGO/get_argo.py", line 73, in <module>
+    f = f.region(box).load()
+        ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/fetchers.py", line 886, in load
+    self._data = self._to_xarray(**kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/fetchers.py", line 673, in _to_xarray
+    xds = self.fetcher.to_xarray(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/data_fetchers/erddap_data.py", line 583, in to_xarray
+    results = self.fs.open_dataset(URI[0])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 349, in open_dataset
+    target, _ = load_in_memory(
+                ^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 261, in load_in_memory
+    data = self.download_url(url, **dwn_opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 169, in download_url
+    data, n = make_request(
+              ^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 124, in make_request
+    raise e
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 121, in make_request
+    data = ffs.cat_file(url, **cat_opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/asyn.py", line 118, in wrapper
+    return sync(self.loop, func, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/asyn.py", line 103, in sync
+    raise return_result
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/asyn.py", line 56, in _runner
+    result[0] = await coro
+                ^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/implementations/http.py", line 247, in _cat_file
+    self._raise_not_found_for_status(r, url)
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/implementations/http.py", line 229, in _raise_not_found_for_status
+    raise FileNotFoundError(url)
+FileNotFoundError: https://erddap.ifremer.fr/erddap/tabledap/ArgoFloats.nc?config_mission_number,cycle_number,data_mode,direction,latitude,longitude,platform_number,position_qc,pres,pres_adjusted,pres_adjusted_error,pres_adjusted_qc,pres_qc,psal,psal_adjusted,psal_adjusted_error,psal_adjusted_qc,psal_qc,temp,temp_adjusted,temp_adjusted_error,temp_adjusted_qc,temp_qc,time,time_qc,vertical_sampling_scheme&longitude>=9.0057296291345&longitude<=9.2338546292075&latitude>=39.042188434509505&latitude<=39.228646767902504&pres>=0&pres<=500&time>=1777420800.0&time<=1777852800.0&latitude!=NaN&longitude!=NaN&distinct()&orderBy("time,pres")
++ [ 1 -eq 0 ]
++ cd ../../
++ sed -i s/phy/bgc/ config/config_CAG_2026-04-29.json
++ cd datasets/ARGO
++ python get_argo.py -c CAG_2026-04-29
+----------------------------------
+=> Config file CAG_2026-04-29 loaded
+----------------------------------
+
+[np.float64(9.0057296291345), np.float64(9.2338546292075), np.float64(39.042188434509505), np.float64(39.228646767902504), 0, 500, '2026-04-29', '2026-05-04']
+Traceback (most recent call last):
+  File "/home/cfontana/DATA_MED/datasets/ARGO/get_argo.py", line 73, in <module>
+    f = f.region(box).load()
+        ^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/fetchers.py", line 68, in wrapper
+    return AccessPoint(*args)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/fetchers.py", line 648, in region
+    self.fetcher = self.Fetchers["region"](box=box, **self.fetcher_options)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/data_fetchers/erddap_data.py", line 184, in __init__
+    params = self._bgc_vlist_avail
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/data_fetchers/erddap_data.py", line 305, in _bgc_vlist_avail
+    params = self.indexfs.read_params()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/index/implementations/pandas/index.py", line 281, in read_params
+    raise DataNotFound(
+argopy.errors.DataNotFound: 'No data found in the index corresponding to your search criteria. Search definition: x=9.01/9.23;y=39.04/39.23;t=2026-04-29/2026-05-04'
++ [ 1 -eq 0 ]
++ cd ../../
++ [ 1 -eq 1 ]
++ source /home/cfontana/venv/c/bin/activate
++ 1> /dev/null
++ deactivate nondestructive
++ [ -n /home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin ]
++ PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ [ -n '' ]
++ hash -r
++ 2> /dev/null
++ [ -n '(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' ]
++ PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ unset _OLD_VIRTUAL_PS1
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive '=' nondestructive ]
++ [ '' '=' cygwin ]
++ [ '' '=' msys ]
++ VIRTUAL_ENV=/home/cfontana/venv/c
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/cfontana/venv/c/bin:/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ [ -n '' ]
++ [ -z '' ]
++ _OLD_VIRTUAL_PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ PS1='(c) (c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ VIRTUAL_ENV_PROMPT='(c) '
++ export VIRTUAL_ENV_PROMPT
++ hash -r
++ 2> /dev/null
++ static=/scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29
++ mkdir /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29
++ dir=/scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC
++ i=1
++ ls /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/
+ls: cannot access '/scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/': No such file or directory
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/time_series_thetao.jpg
+cp: cannot stat '/scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/time_series.jpg': No such file or directory
++ dir=/scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC
++ i=1
++ ls /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/
+ls: cannot access '/scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/': No such file or directory
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/time_series_chl.jpg
+cp: cannot stat '/scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/time_series.jpg': No such file or directory
++ dir=/scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR/
++ i=1
++ ls '/scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//*.jpg'
+ls: cannot access '/scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//*.jpg': No such file or directory
++ dir=/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO/
++ ls -d '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//bio*/'
+ls: cannot access '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//bio*/': No such file or directory
++ i=1
++ 1> /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/list.txt
++ ls -d '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//*/'
+ls: cannot access '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//*/': No such file or directory
++ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//map.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29
+cp: cannot stat '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//map.jpg': No such file or directory
++ scp -r /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29 yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/DIAGS
++ echo 'PROCESSING SAR'
+PROCESSING SAR
++ echo '_______________ '
+_______________ 
++ date
+Mon May 11 13:32:09 CEST 2026
++ config=SAR_2026-04-29
++ awk '{print tolower($0)}'
++ echo SAR
++ lower=sar
++ set -x
++ cat config/config_SAR.json
++ sed -e s/DINI/2026-04-29/g
++ sed -e s/FREQ/hourly/
++ sed -e s/DOUT/20260429/
++ 1> config/config_SAR_2026-04-29.json
++ sed -e s/DEND/2026-05-04/
++ cp config/cmems_DOMAIN.dat config/cmems_SAR_2026-04-29.dat
++ cp config/variables_mit_DOMAIN.dat config/variables_mit_SAR_2026-04-29.dat
++ jq -r .diagdir config/config_SAR_2026-04-29.json
++ diagdir=/scratch/cfontana/DIAGS/SAR_2026-04-29
++ jq -r .radardir config/config_SAR_2026-04-29.json
++ radardir=/scratch/cfontana/RADAR/
++ [ 0 -eq 0 -a 0 -eq 1 ]
++ [ 0 -eq 1 ]
++ [ 0 -eq 1 ]
++ cat config/config_SAR.json
++ sed -e s/DOUT/20260429/
++ sed -e s/DINI/2026-04-29/g
++ sed -e s/FREQ/daily/
++ 1> config/config_SAR_2026-04-29.json
++ sed -e s/DEND/2026-05-04/
++ [ 0 -eq 1 ]
++ [ 0 -eq 0 ]
++ dirname /scratch/cfontana/DIAGS/SAR_2026-04-29
++ touch /scratch/cfontana/DIAGS/no_error/2026-04-29
++ [ 1 -eq 1 ]
++ rm -f '/scratch/cfontana/DIAGS/SAR_2026-04-29/CMEMS/data/*.nc'
++ [ 1 -eq 1 ]
++ source /home/cfontana/venv/a/bin/activate
++ 1> /dev/null
++ deactivate nondestructive
++ [ -n /home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin ]
++ PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ [ -n '' ]
++ hash -r
++ 2> /dev/null
++ [ -n '(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' ]
++ PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ unset _OLD_VIRTUAL_PS1
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive '=' nondestructive ]
++ [ '' '=' cygwin ]
++ [ '' '=' msys ]
++ VIRTUAL_ENV=/home/cfontana/venv/a
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/cfontana/venv/a/bin:/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ [ -n '' ]
++ [ -z '' ]
++ _OLD_VIRTUAL_PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ PS1='(a) (c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ VIRTUAL_ENV_PROMPT='(a) '
++ export VIRTUAL_ENV_PROMPT
++ hash -r
++ 2> /dev/null
++ sed -i s/daily/hourly/ config/config_SAR_2026-04-29.json
++ cd datasets/ARGO
++ python get_argo.py -c SAR_2026-04-29
+----------------------------------
+=> Config file SAR_2026-04-29 loaded
+----------------------------------
+
+[np.float64(5.898437963143127), np.float64(11.518229629809793), np.float64(37.627604765543865), np.float64(41.7890630988772), 0, 500, '2026-04-29', '2026-05-04']
+[SAVED] /scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/argo.nc
++ [ 0 -eq 0 ]
++ echo 'ARGO FOUND'
+ARGO FOUND
++ python compare_argo.py -c SAR_2026-04-29
+/home/cfontana/DATA_MED/datasets/ARGO/compare_argo.py:186: SyntaxWarning: invalid escape sequence '\ '
+  print('/!\ NaN detected in depth data\n')
+----------------------------------
+=> Config file SAR_2026-04-29 loaded
+----------------------------------
+
+13 profiles found
+
+Processing
+
+Float 3902691 cycle 61
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 5907204 cycle 31
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 6990685 cycle 60
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 7902283 cycle 58
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 7902326 cycle 30
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 4903924 cycle 43
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 6903820 cycle 322
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 4903782 cycle 210
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 4903679 cycle 176
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 4903847 cycle 124
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 2903928 cycle 116
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 6990684 cycle 63
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 2904024 cycle 66
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+-------------
+Total of 2648 found
+-------------
+
+Plot trajectories ...
+Error in plotting for float 2903928
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/2903928/map.jpg'
+Error in plotting for float 2904024
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/2904024/map.jpg'
+Error in plotting for float 3902691
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/3902691/map.jpg'
+Error in plotting for float 4903679
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/4903679/map.jpg'
+Error in plotting for float 4903782
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/4903782/map.jpg'
+Error in plotting for float 4903847
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/4903847/map.jpg'
+Error in plotting for float 4903924
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/4903924/map.jpg'
+Error in plotting for float 5907204
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/5907204/map.jpg'
+Error in plotting for float 6903820
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/6903820/map.jpg'
+Error in plotting for float 6990684
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/6990684/map.jpg'
+Error in plotting for float 6990685
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/6990685/map.jpg'
+Error in plotting for float 7902283
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/7902283/map.jpg'
+Error in plotting for float 7902326
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/7902326/map.jpg'
+[SAVED FIG] /scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/map.jpg
+N =  0
+[SAVED FIG] /scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/error_Salinity.jpg
+Data for Salinity
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+N =  0
+[SAVED FIG] /scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
++ cd ../../
++ sed -i s/phy/bgc/ config/config_SAR_2026-04-29.json
++ cd datasets/ARGO
++ python get_argo.py -c SAR_2026-04-29
+----------------------------------
+=> Config file SAR_2026-04-29 loaded
+----------------------------------
+
+[np.float64(5.898437963143127), np.float64(11.518229629809793), np.float64(37.627604765543865), np.float64(41.7890630988772), 0, 500, '2026-04-29', '2026-05-04']
+[SAVED] /scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/bioargo.nc
++ [ 0 -eq 0 ]
++ echo 'BIOARGO FOUND'
+BIOARGO FOUND
++ python compare_argo.py -c SAR_2026-04-29
+/home/cfontana/DATA_MED/datasets/ARGO/compare_argo.py:186: SyntaxWarning: invalid escape sequence '\ '
+  print('/!\ NaN detected in depth data\n')
+----------------------------------
+=> Config file SAR_2026-04-29 loaded
+----------------------------------
+
+10 profiles found
+
+Processing
+
+Float 3902691 cycle 61
+-----
+Interpolation done for [ 598 ] data in 1.82 sec500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 5907204 cycle 31
+-----
+Interpolation done for [ 180 ] data in 1.23 sec500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 6990685 cycle 60
+-----
+Interpolation done for [ 914 ] data in 1.25 sec500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 7902326 cycle 30
+-----
+Interpolation done for [ 180 ] data in 1.22 sec500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 4903782 cycle 210
+-----
+Interpolation done for [ 502 ] data in 1.01 sec500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 4903679 cycle 176
+-----
+Interpolation done for [ 92 ] data in 1.23 sec500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 4903847 cycle 124
+-----
+Interpolation done for [ 929 ] data in 1.23 sec500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 2903928 cycle 116
+-----
+Interpolation done for [ 502 ] data in 1.21 sec500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 6990684 cycle 63
+-----
+Interpolation done for [ 908 ] data in 1.18 sec500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 2904024 cycle 66
+-----
+Interpolation done for [ 709 ] data in 1.17 sec500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr/depth/c/0' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SAR/20260429-MER-MITgcmBFM-SAR-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+-------------
+Total of 11028 found
+-------------
+
+Plot trajectories ...
+Error in plotting for float 2903928
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/bio2903928/map.jpg'
+Error in plotting for float 2904024
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/bio2904024/map.jpg'
+Error in plotting for float 3902691
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/bio3902691/map.jpg'
+Error in plotting for float 4903679
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/bio4903679/map.jpg'
+Error in plotting for float 4903782
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/bio4903782/map.jpg'
+Error in plotting for float 4903847
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/bio4903847/map.jpg'
+Error in plotting for float 5907204
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/bio5907204/map.jpg'
+Error in plotting for float 6990684
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/bio6990684/map.jpg'
+Error in plotting for float 6990685
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/bio6990685/map.jpg'
+Error in plotting for float 7902326
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/bio7902326/map.jpg'
+[SAVED FIG] /scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/mapbio.jpg
+N =  0
+[SAVED FIG] /scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/error_Salinity.jpg
+Data for Salinity
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+N =  0
+[SAVED FIG] /scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+N =  0
+[SAVED FIG] /scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
++ cd ../../
++ [ 1 -eq 1 ]
++ source /home/cfontana/venv/c/bin/activate
++ 1> /dev/null
++ deactivate nondestructive
++ [ -n /home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin ]
++ PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ [ -n '' ]
++ hash -r
++ 2> /dev/null
++ [ -n '(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' ]
++ PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ unset _OLD_VIRTUAL_PS1
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive '=' nondestructive ]
++ [ '' '=' cygwin ]
++ [ '' '=' msys ]
++ VIRTUAL_ENV=/home/cfontana/venv/c
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/cfontana/venv/c/bin:/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ [ -n '' ]
++ [ -z '' ]
++ _OLD_VIRTUAL_PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ PS1='(c) (c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ VIRTUAL_ENV_PROMPT='(c) '
++ export VIRTUAL_ENV_PROMPT
++ hash -r
++ 2> /dev/null
++ static=/scratch/cfontana/DIAGS/SAR_2026-04-29/static_SAR_2026-04-29
++ mkdir /scratch/cfontana/DIAGS/SAR_2026-04-29/static_SAR_2026-04-29
++ dir=/scratch/cfontana/DIAGS/SAR_2026-04-29/CMEMS/thetao/ITP_NC
++ i=1
++ ls /scratch/cfontana/DIAGS/SAR_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/
+ls: cannot access '/scratch/cfontana/DIAGS/SAR_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/': No such file or directory
++ cp /scratch/cfontana/DIAGS/SAR_2026-04-29/CMEMS/thetao/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/SAR_2026-04-29/static_SAR_2026-04-29/time_series_thetao.jpg
+cp: cannot stat '/scratch/cfontana/DIAGS/SAR_2026-04-29/CMEMS/thetao/ITP_NC/time_series.jpg': No such file or directory
++ dir=/scratch/cfontana/DIAGS/SAR_2026-04-29/CMEMS/chl/ITP_NC
++ i=1
++ ls /scratch/cfontana/DIAGS/SAR_2026-04-29/CMEMS/chl/ITP_NC/PLOT/
+ls: cannot access '/scratch/cfontana/DIAGS/SAR_2026-04-29/CMEMS/chl/ITP_NC/PLOT/': No such file or directory
++ cp /scratch/cfontana/DIAGS/SAR_2026-04-29/CMEMS/chl/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/SAR_2026-04-29/static_SAR_2026-04-29/time_series_chl.jpg
+cp: cannot stat '/scratch/cfontana/DIAGS/SAR_2026-04-29/CMEMS/chl/ITP_NC/time_series.jpg': No such file or directory
++ dir=/scratch/cfontana/DIAGS/SAR_2026-04-29/RADAR/
++ i=1
++ ls '/scratch/cfontana/DIAGS/SAR_2026-04-29/RADAR//*.jpg'
+ls: cannot access '/scratch/cfontana/DIAGS/SAR_2026-04-29/RADAR//*.jpg': No such file or directory
++ dir=/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO/
++ ls -d '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO//bio*/'
+ls: cannot access '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO//bio*/': No such file or directory
++ i=1
++ 1> /scratch/cfontana/DIAGS/SAR_2026-04-29/static_SAR_2026-04-29/list.txt
++ ls -d '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO//*/'
+ls: cannot access '/scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO//*/': No such file or directory
++ cp /scratch/cfontana/DIAGS/SAR_2026-04-29/ARGO//map.jpg /scratch/cfontana/DIAGS/SAR_2026-04-29/static_SAR_2026-04-29
++ scp -r /scratch/cfontana/DIAGS/SAR_2026-04-29/static_SAR_2026-04-29 yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/DIAGS
++ echo 'PROCESSING CON'
+PROCESSING CON
++ echo '_______________ '
+_______________ 
++ date
+Mon May 11 13:33:04 CEST 2026
++ config=CON_2026-04-29
++ echo CON
++ awk '{print tolower($0)}'
++ lower=con
++ set -x
++ cat config/config_CON.json
++ sed -e s/DINI/2026-04-29/g
++ sed -e s/FREQ/hourly/
++ sed -e s/DOUT/20260429/
++ 1> config/config_CON_2026-04-29.json
++ sed -e s/DEND/2026-05-04/
++ cp config/cmems_DOMAIN.dat config/cmems_CON_2026-04-29.dat
++ cp config/variables_mit_DOMAIN.dat config/variables_mit_CON_2026-04-29.dat
++ jq -r .diagdir config/config_CON_2026-04-29.json
++ diagdir=/scratch/cfontana/DIAGS/CON_2026-04-29
++ jq -r .radardir config/config_CON_2026-04-29.json
++ radardir=/scratch/cfontana/RADAR/
++ [ 0 -eq 0 -a 0 -eq 1 ]
++ [ 0 -eq 1 ]
++ [ 0 -eq 1 ]
++ cat config/config_CON.json
++ sed -e s/DINI/2026-04-29/g
++ sed -e s/DOUT/20260429/
++ sed -e s/FREQ/daily/
++ 1> config/config_CON_2026-04-29.json
++ sed -e s/DEND/2026-05-04/
++ [ 0 -eq 1 ]
++ [ 0 -eq 0 ]
++ dirname /scratch/cfontana/DIAGS/CON_2026-04-29
++ touch /scratch/cfontana/DIAGS/no_error/2026-04-29
++ [ 1 -eq 1 ]
++ rm -f '/scratch/cfontana/DIAGS/CON_2026-04-29/CMEMS/data/*.nc'
++ [ 1 -eq 1 ]
++ source /home/cfontana/venv/a/bin/activate
++ 1> /dev/null
++ deactivate nondestructive
++ [ -n /home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin ]
++ PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ [ -n '' ]
++ hash -r
++ 2> /dev/null
++ [ -n '(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' ]
++ PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ unset _OLD_VIRTUAL_PS1
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive '=' nondestructive ]
++ [ '' '=' cygwin ]
++ [ '' '=' msys ]
++ VIRTUAL_ENV=/home/cfontana/venv/a
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/cfontana/venv/a/bin:/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ [ -n '' ]
++ [ -z '' ]
++ _OLD_VIRTUAL_PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ PS1='(a) (c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ VIRTUAL_ENV_PROMPT='(a) '
++ export VIRTUAL_ENV_PROMPT
++ hash -r
++ 2> /dev/null
++ sed -i s/daily/hourly/ config/config_CON_2026-04-29.json
++ cd datasets/ARGO
++ python get_argo.py -c CON_2026-04-29
+----------------------------------
+=> Config file CON_2026-04-29 loaded
+----------------------------------
+
+[np.float64(13.4484381282475), np.float64(13.780729795020498), np.float64(43.4119804298245), np.float64(43.6921887632475), 0, 500, '2026-04-29', '2026-05-04']
+Traceback (most recent call last):
+  File "/home/cfontana/DATA_MED/datasets/ARGO/get_argo.py", line 73, in <module>
+    f = f.region(box).load()
+        ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/fetchers.py", line 886, in load
+    self._data = self._to_xarray(**kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/fetchers.py", line 673, in _to_xarray
+    xds = self.fetcher.to_xarray(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/data_fetchers/erddap_data.py", line 583, in to_xarray
+    results = self.fs.open_dataset(URI[0])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 349, in open_dataset
+    target, _ = load_in_memory(
+                ^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 261, in load_in_memory
+    data = self.download_url(url, **dwn_opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 169, in download_url
+    data, n = make_request(
+              ^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 124, in make_request
+    raise e
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 121, in make_request
+    data = ffs.cat_file(url, **cat_opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/asyn.py", line 118, in wrapper
+    return sync(self.loop, func, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/asyn.py", line 103, in sync
+    raise return_result
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/asyn.py", line 56, in _runner
+    result[0] = await coro
+                ^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/implementations/http.py", line 247, in _cat_file
+    self._raise_not_found_for_status(r, url)
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/implementations/http.py", line 229, in _raise_not_found_for_status
+    raise FileNotFoundError(url)
+FileNotFoundError: https://erddap.ifremer.fr/erddap/tabledap/ArgoFloats.nc?config_mission_number,cycle_number,data_mode,direction,latitude,longitude,platform_number,position_qc,pres,pres_adjusted,pres_adjusted_error,pres_adjusted_qc,pres_qc,psal,psal_adjusted,psal_adjusted_error,psal_adjusted_qc,psal_qc,temp,temp_adjusted,temp_adjusted_error,temp_adjusted_qc,temp_qc,time,time_qc,vertical_sampling_scheme&longitude>=13.4484381282475&longitude<=13.780729795020498&latitude>=43.4119804298245&latitude<=43.6921887632475&pres>=0&pres<=500&time>=1777420800.0&time<=1777852800.0&latitude!=NaN&longitude!=NaN&distinct()&orderBy("time,pres")
++ [ 1 -eq 0 ]
++ cd ../../
++ sed -i s/phy/bgc/ config/config_CON_2026-04-29.json
++ cd datasets/ARGO
++ python get_argo.py -c CON_2026-04-29
+----------------------------------
+=> Config file CON_2026-04-29 loaded
+----------------------------------
+
+[np.float64(13.4484381282475), np.float64(13.780729795020498), np.float64(43.4119804298245), np.float64(43.6921887632475), 0, 500, '2026-04-29', '2026-05-04']
+Traceback (most recent call last):
+  File "/home/cfontana/DATA_MED/datasets/ARGO/get_argo.py", line 73, in <module>
+    f = f.region(box).load()
+        ^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/fetchers.py", line 68, in wrapper
+    return AccessPoint(*args)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/fetchers.py", line 648, in region
+    self.fetcher = self.Fetchers["region"](box=box, **self.fetcher_options)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/data_fetchers/erddap_data.py", line 184, in __init__
+    params = self._bgc_vlist_avail
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/data_fetchers/erddap_data.py", line 305, in _bgc_vlist_avail
+    params = self.indexfs.read_params()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/index/implementations/pandas/index.py", line 281, in read_params
+    raise DataNotFound(
+argopy.errors.DataNotFound: 'No data found in the index corresponding to your search criteria. Search definition: x=13.45/13.78;y=43.41/43.69;t=2026-04-29/2026-05-04'
++ [ 1 -eq 0 ]
++ cd ../../
++ [ 1 -eq 1 ]
++ source /home/cfontana/venv/c/bin/activate
++ 1> /dev/null
++ deactivate nondestructive
++ [ -n /home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin ]
++ PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ [ -n '' ]
++ hash -r
++ 2> /dev/null
++ [ -n '(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' ]
++ PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ unset _OLD_VIRTUAL_PS1
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive '=' nondestructive ]
++ [ '' '=' cygwin ]
++ [ '' '=' msys ]
++ VIRTUAL_ENV=/home/cfontana/venv/c
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/cfontana/venv/c/bin:/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ [ -n '' ]
++ [ -z '' ]
++ _OLD_VIRTUAL_PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ PS1='(c) (c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ VIRTUAL_ENV_PROMPT='(c) '
++ export VIRTUAL_ENV_PROMPT
++ hash -r
++ 2> /dev/null
++ static=/scratch/cfontana/DIAGS/CON_2026-04-29/static_CON_2026-04-29
++ mkdir /scratch/cfontana/DIAGS/CON_2026-04-29/static_CON_2026-04-29
++ dir=/scratch/cfontana/DIAGS/CON_2026-04-29/CMEMS/thetao/ITP_NC
++ i=1
++ ls /scratch/cfontana/DIAGS/CON_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/
+ls: cannot access '/scratch/cfontana/DIAGS/CON_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/': No such file or directory
++ cp /scratch/cfontana/DIAGS/CON_2026-04-29/CMEMS/thetao/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/CON_2026-04-29/static_CON_2026-04-29/time_series_thetao.jpg
+cp: cannot stat '/scratch/cfontana/DIAGS/CON_2026-04-29/CMEMS/thetao/ITP_NC/time_series.jpg': No such file or directory
++ dir=/scratch/cfontana/DIAGS/CON_2026-04-29/CMEMS/chl/ITP_NC
++ i=1
++ ls /scratch/cfontana/DIAGS/CON_2026-04-29/CMEMS/chl/ITP_NC/PLOT/
+ls: cannot access '/scratch/cfontana/DIAGS/CON_2026-04-29/CMEMS/chl/ITP_NC/PLOT/': No such file or directory
++ cp /scratch/cfontana/DIAGS/CON_2026-04-29/CMEMS/chl/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/CON_2026-04-29/static_CON_2026-04-29/time_series_chl.jpg
+cp: cannot stat '/scratch/cfontana/DIAGS/CON_2026-04-29/CMEMS/chl/ITP_NC/time_series.jpg': No such file or directory
++ dir=/scratch/cfontana/DIAGS/CON_2026-04-29/RADAR/
++ i=1
++ ls '/scratch/cfontana/DIAGS/CON_2026-04-29/RADAR//*.jpg'
+ls: cannot access '/scratch/cfontana/DIAGS/CON_2026-04-29/RADAR//*.jpg': No such file or directory
++ dir=/scratch/cfontana/DIAGS/CON_2026-04-29/ARGO/
++ ls -d '/scratch/cfontana/DIAGS/CON_2026-04-29/ARGO//bio*/'
+ls: cannot access '/scratch/cfontana/DIAGS/CON_2026-04-29/ARGO//bio*/': No such file or directory
++ i=1
++ 1> /scratch/cfontana/DIAGS/CON_2026-04-29/static_CON_2026-04-29/list.txt
++ ls -d '/scratch/cfontana/DIAGS/CON_2026-04-29/ARGO//*/'
+ls: cannot access '/scratch/cfontana/DIAGS/CON_2026-04-29/ARGO//*/': No such file or directory
++ cp /scratch/cfontana/DIAGS/CON_2026-04-29/ARGO//map.jpg /scratch/cfontana/DIAGS/CON_2026-04-29/static_CON_2026-04-29
+cp: cannot stat '/scratch/cfontana/DIAGS/CON_2026-04-29/ARGO//map.jpg': No such file or directory
++ scp -r /scratch/cfontana/DIAGS/CON_2026-04-29/static_CON_2026-04-29 yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/DIAGS
++ echo 'PROCESSING FOL'
+PROCESSING FOL
++ echo '_______________ '
+_______________ 
++ date
+Mon May 11 13:33:17 CEST 2026
++ config=FOL_2026-04-29
++ echo FOL
++ awk '{print tolower($0)}'
++ lower=fol
++ set -x
++ cat config/config_FOL.json
++ sed -e s/DINI/2026-04-29/g
++ sed -e s/FREQ/hourly/
++ sed -e s/DOUT/20260429/
++ 1> config/config_FOL_2026-04-29.json
++ sed -e s/DEND/2026-05-04/
++ cp config/cmems_DOMAIN.dat config/cmems_FOL_2026-04-29.dat
++ cp config/variables_mit_DOMAIN.dat config/variables_mit_FOL_2026-04-29.dat
++ jq -r .diagdir config/config_FOL_2026-04-29.json
++ diagdir=/scratch/cfontana/DIAGS/FOL_2026-04-29
++ jq -r .radardir config/config_FOL_2026-04-29.json
++ radardir=/scratch/cfontana/RADAR/
++ [ 0 -eq 0 -a 0 -eq 1 ]
++ [ 0 -eq 1 ]
++ [ 0 -eq 1 ]
++ sed -e s/DINI/2026-04-29/g
++ cat config/config_FOL.json
++ sed -e s/FREQ/daily/
++ sed -e s/DOUT/20260429/
++ 1> config/config_FOL_2026-04-29.json
++ sed -e s/DEND/2026-05-04/
++ [ 0 -eq 1 ]
++ [ 0 -eq 0 ]
++ dirname /scratch/cfontana/DIAGS/FOL_2026-04-29
++ touch /scratch/cfontana/DIAGS/no_error/2026-04-29
++ [ 1 -eq 1 ]
++ rm -f '/scratch/cfontana/DIAGS/FOL_2026-04-29/CMEMS/data/*.nc'
++ [ 1 -eq 1 ]
++ source /home/cfontana/venv/a/bin/activate
++ 1> /dev/null
++ deactivate nondestructive
++ [ -n /home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin ]
++ PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ [ -n '' ]
++ hash -r
++ 2> /dev/null
++ [ -n '(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' ]
++ PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ unset _OLD_VIRTUAL_PS1
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive '=' nondestructive ]
++ [ '' '=' cygwin ]
++ [ '' '=' msys ]
++ VIRTUAL_ENV=/home/cfontana/venv/a
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/cfontana/venv/a/bin:/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ [ -n '' ]
++ [ -z '' ]
++ _OLD_VIRTUAL_PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ PS1='(a) (c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ VIRTUAL_ENV_PROMPT='(a) '
++ export VIRTUAL_ENV_PROMPT
++ hash -r
++ 2> /dev/null
++ sed -i s/daily/hourly/ config/config_FOL_2026-04-29.json
++ cd datasets/ARGO
++ python get_argo.py -c FOL_2026-04-29
+----------------------------------
+=> Config file FOL_2026-04-29 loaded
+----------------------------------
+
+[np.float64(10.4276046674675), np.float64(10.7911463342505), np.float64(42.802605318775505), np.float64(42.95781365215851), 0, 500, '2026-04-29', '2026-05-04']
+Traceback (most recent call last):
+  File "/home/cfontana/DATA_MED/datasets/ARGO/get_argo.py", line 73, in <module>
+    f = f.region(box).load()
+        ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/fetchers.py", line 886, in load
+    self._data = self._to_xarray(**kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/fetchers.py", line 673, in _to_xarray
+    xds = self.fetcher.to_xarray(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/data_fetchers/erddap_data.py", line 583, in to_xarray
+    results = self.fs.open_dataset(URI[0])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 349, in open_dataset
+    target, _ = load_in_memory(
+                ^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 261, in load_in_memory
+    data = self.download_url(url, **dwn_opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 169, in download_url
+    data, n = make_request(
+              ^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 124, in make_request
+    raise e
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/implementations/http.py", line 121, in make_request
+    data = ffs.cat_file(url, **cat_opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/asyn.py", line 118, in wrapper
+    return sync(self.loop, func, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/asyn.py", line 103, in sync
+    raise return_result
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/asyn.py", line 56, in _runner
+    result[0] = await coro
+                ^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/implementations/http.py", line 247, in _cat_file
+    self._raise_not_found_for_status(r, url)
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/fsspec/implementations/http.py", line 229, in _raise_not_found_for_status
+    raise FileNotFoundError(url)
+FileNotFoundError: https://erddap.ifremer.fr/erddap/tabledap/ArgoFloats.nc?config_mission_number,cycle_number,data_mode,direction,latitude,longitude,platform_number,position_qc,pres,pres_adjusted,pres_adjusted_error,pres_adjusted_qc,pres_qc,psal,psal_adjusted,psal_adjusted_error,psal_adjusted_qc,psal_qc,temp,temp_adjusted,temp_adjusted_error,temp_adjusted_qc,temp_qc,time,time_qc,vertical_sampling_scheme&longitude>=10.4276046674675&longitude<=10.7911463342505&latitude>=42.802605318775505&latitude<=42.95781365215851&pres>=0&pres<=500&time>=1777420800.0&time<=1777852800.0&latitude!=NaN&longitude!=NaN&distinct()&orderBy("time,pres")
++ [ 1 -eq 0 ]
++ cd ../../
++ sed -i s/phy/bgc/ config/config_FOL_2026-04-29.json
++ cd datasets/ARGO
++ python get_argo.py -c FOL_2026-04-29
+----------------------------------
+=> Config file FOL_2026-04-29 loaded
+----------------------------------
+
+[np.float64(10.4276046674675), np.float64(10.7911463342505), np.float64(42.802605318775505), np.float64(42.95781365215851), 0, 500, '2026-04-29', '2026-05-04']
+Traceback (most recent call last):
+  File "/home/cfontana/DATA_MED/datasets/ARGO/get_argo.py", line 73, in <module>
+    f = f.region(box).load()
+        ^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/fetchers.py", line 68, in wrapper
+    return AccessPoint(*args)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/fetchers.py", line 648, in region
+    self.fetcher = self.Fetchers["region"](box=box, **self.fetcher_options)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/data_fetchers/erddap_data.py", line 184, in __init__
+    params = self._bgc_vlist_avail
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/data_fetchers/erddap_data.py", line 305, in _bgc_vlist_avail
+    params = self.indexfs.read_params()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cfontana/venv/a/lib/python3.12/site-packages/argopy/stores/index/implementations/pandas/index.py", line 281, in read_params
+    raise DataNotFound(
+argopy.errors.DataNotFound: 'No data found in the index corresponding to your search criteria. Search definition: x=10.43/10.79;y=42.80/42.96;t=2026-04-29/2026-05-04'
++ [ 1 -eq 0 ]
++ cd ../../
++ [ 1 -eq 1 ]
++ source /home/cfontana/venv/c/bin/activate
++ 1> /dev/null
++ deactivate nondestructive
++ [ -n /home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin ]
++ PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ [ -n '' ]
++ hash -r
++ 2> /dev/null
++ [ -n '(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' ]
++ PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ unset _OLD_VIRTUAL_PS1
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive '=' nondestructive ]
++ [ '' '=' cygwin ]
++ [ '' '=' msys ]
++ VIRTUAL_ENV=/home/cfontana/venv/c
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/cfontana/venv/c/bin:/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ [ -n '' ]
++ [ -z '' ]
++ _OLD_VIRTUAL_PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ PS1='(c) (c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ VIRTUAL_ENV_PROMPT='(c) '
++ export VIRTUAL_ENV_PROMPT
++ hash -r
++ 2> /dev/null
++ static=/scratch/cfontana/DIAGS/FOL_2026-04-29/static_FOL_2026-04-29
++ mkdir /scratch/cfontana/DIAGS/FOL_2026-04-29/static_FOL_2026-04-29
++ dir=/scratch/cfontana/DIAGS/FOL_2026-04-29/CMEMS/thetao/ITP_NC
++ i=1
++ ls /scratch/cfontana/DIAGS/FOL_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/
+ls: cannot access '/scratch/cfontana/DIAGS/FOL_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/': No such file or directory
++ cp /scratch/cfontana/DIAGS/FOL_2026-04-29/CMEMS/thetao/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/FOL_2026-04-29/static_FOL_2026-04-29/time_series_thetao.jpg
+cp: cannot stat '/scratch/cfontana/DIAGS/FOL_2026-04-29/CMEMS/thetao/ITP_NC/time_series.jpg': No such file or directory
++ dir=/scratch/cfontana/DIAGS/FOL_2026-04-29/CMEMS/chl/ITP_NC
++ i=1
++ ls /scratch/cfontana/DIAGS/FOL_2026-04-29/CMEMS/chl/ITP_NC/PLOT/
+ls: cannot access '/scratch/cfontana/DIAGS/FOL_2026-04-29/CMEMS/chl/ITP_NC/PLOT/': No such file or directory
++ cp /scratch/cfontana/DIAGS/FOL_2026-04-29/CMEMS/chl/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/FOL_2026-04-29/static_FOL_2026-04-29/time_series_chl.jpg
+cp: cannot stat '/scratch/cfontana/DIAGS/FOL_2026-04-29/CMEMS/chl/ITP_NC/time_series.jpg': No such file or directory
++ dir=/scratch/cfontana/DIAGS/FOL_2026-04-29/RADAR/
++ i=1
++ ls '/scratch/cfontana/DIAGS/FOL_2026-04-29/RADAR//*.jpg'
+ls: cannot access '/scratch/cfontana/DIAGS/FOL_2026-04-29/RADAR//*.jpg': No such file or directory
++ dir=/scratch/cfontana/DIAGS/FOL_2026-04-29/ARGO/
++ ls -d '/scratch/cfontana/DIAGS/FOL_2026-04-29/ARGO//bio*/'
+ls: cannot access '/scratch/cfontana/DIAGS/FOL_2026-04-29/ARGO//bio*/': No such file or directory
++ i=1
++ 1> /scratch/cfontana/DIAGS/FOL_2026-04-29/static_FOL_2026-04-29/list.txt
++ ls -d '/scratch/cfontana/DIAGS/FOL_2026-04-29/ARGO//*/'
+ls: cannot access '/scratch/cfontana/DIAGS/FOL_2026-04-29/ARGO//*/': No such file or directory
++ cp /scratch/cfontana/DIAGS/FOL_2026-04-29/ARGO//map.jpg /scratch/cfontana/DIAGS/FOL_2026-04-29/static_FOL_2026-04-29
+cp: cannot stat '/scratch/cfontana/DIAGS/FOL_2026-04-29/ARGO//map.jpg': No such file or directory
++ scp -r /scratch/cfontana/DIAGS/FOL_2026-04-29/static_FOL_2026-04-29 yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/DIAGS
++ echo 'PROCESSING SIC'
+PROCESSING SIC
++ echo '_______________ '
+_______________ 
++ date
+Mon May 11 13:33:30 CEST 2026
++ config=SIC_2026-04-29
++ echo SIC
++ awk '{print tolower($0)}'
++ lower=sic
++ set -x
++ cat config/config_SIC.json
++ sed -e s/DINI/2026-04-29/g
++ sed -e s/FREQ/hourly/
++ sed -e s/DOUT/20260429/
++ 1> config/config_SIC_2026-04-29.json
++ sed -e s/DEND/2026-05-04/
++ cp config/cmems_DOMAIN.dat config/cmems_SIC_2026-04-29.dat
++ cp config/variables_mit_DOMAIN.dat config/variables_mit_SIC_2026-04-29.dat
++ jq -r .diagdir config/config_SIC_2026-04-29.json
++ diagdir=/scratch/cfontana/DIAGS/SIC_2026-04-29
++ jq -r .radardir config/config_SIC_2026-04-29.json
++ radardir=/scratch/cfontana/RADAR/
++ [ 0 -eq 0 -a 0 -eq 1 ]
++ [ 0 -eq 1 ]
++ [ 0 -eq 1 ]
++ cat config/config_SIC.json
++ sed -e s/DOUT/20260429/
++ sed -e s/DINI/2026-04-29/g
++ sed -e s/FREQ/daily/
++ sed -e s/DEND/2026-05-04/
++ 1> config/config_SIC_2026-04-29.json
++ [ 0 -eq 1 ]
++ [ 0 -eq 0 ]
++ dirname /scratch/cfontana/DIAGS/SIC_2026-04-29
++ touch /scratch/cfontana/DIAGS/no_error/2026-04-29
++ [ 1 -eq 1 ]
++ rm -f '/scratch/cfontana/DIAGS/SIC_2026-04-29/CMEMS/data/*.nc'
++ [ 1 -eq 1 ]
++ source /home/cfontana/venv/a/bin/activate
++ 1> /dev/null
++ deactivate nondestructive
++ [ -n /home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin ]
++ PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ [ -n '' ]
++ hash -r
++ 2> /dev/null
++ [ -n '(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' ]
++ PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ unset _OLD_VIRTUAL_PS1
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive '=' nondestructive ]
++ [ '' '=' cygwin ]
++ [ '' '=' msys ]
++ VIRTUAL_ENV=/home/cfontana/venv/a
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/cfontana/venv/a/bin:/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ [ -n '' ]
++ [ -z '' ]
++ _OLD_VIRTUAL_PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ PS1='(a) (c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ VIRTUAL_ENV_PROMPT='(a) '
++ export VIRTUAL_ENV_PROMPT
++ hash -r
++ 2> /dev/null
++ sed -i s/daily/hourly/ config/config_SIC_2026-04-29.json
++ cd datasets/ARGO
++ python get_argo.py -c SIC_2026-04-29
+----------------------------------
+=> Config file SIC_2026-04-29 loaded
+----------------------------------
+
+[np.float64(11.440104777198666), np.float64(16.226563110532), np.float64(35.252604574305764), np.float64(38.99739624097243), 0, 500, '2026-04-29', '2026-05-04']
+[SAVED] /scratch/cfontana/DIAGS/SIC_2026-04-29/ARGO/argo.nc
++ [ 0 -eq 0 ]
++ echo 'ARGO FOUND'
+ARGO FOUND
++ python compare_argo.py -c SIC_2026-04-29
+/home/cfontana/DATA_MED/datasets/ARGO/compare_argo.py:186: SyntaxWarning: invalid escape sequence '\ '
+  print('/!\ NaN detected in depth data\n')
+----------------------------------
+=> Config file SIC_2026-04-29 loaded
+----------------------------------
+
+4 profiles found
+
+Processing
+
+Float 2904041 cycle 20
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SIC/20260429-MER-MITgcmBFM-SIC-fc-hourly-v01.zarr/latitude/c/2' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SIC/20260429-MER-MITgcmBFM-SIC-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 7901138 cycle 413
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SIC/20260429-MER-MITgcmBFM-SIC-fc-hourly-v01.zarr/latitude/c/2' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SIC/20260429-MER-MITgcmBFM-SIC-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 2904023 cycle 66
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SIC/20260429-MER-MITgcmBFM-SIC-fc-hourly-v01.zarr/latitude/c/2' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SIC/20260429-MER-MITgcmBFM-SIC-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+Float 6903296 cycle 345
+-----
+500, message='Internal Server Error', url='https://mer-staging.exact-lab.it/output/SIC/20260429-MER-MITgcmBFM-SIC-fc-hourly-v01.zarr/latitude/c/2' 
+
+=> in get_var_3D :
+Error processing file https://mer-staging.exact-lab.it/output/SIC/20260429-MER-MITgcmBFM-SIC-fc-hourly-v01.zarr
+File not found
+cannot access local variable 'arr' where it is not associated with a value
+/!\ NaN detected in depth data
+
+-------------
+Total of 544 found
+-------------
+
+Plot trajectories ...
+Error in plotting for float 2904023
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SIC_2026-04-29/ARGO/2904023/map.jpg'
+Error in plotting for float 2904041
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SIC_2026-04-29/ARGO/2904041/map.jpg'
+Error in plotting for float 6903296
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SIC_2026-04-29/ARGO/6903296/map.jpg'
+Error in plotting for float 7901138
+[Errno 2] No such file or directory: '/scratch/cfontana/DIAGS/SIC_2026-04-29/ARGO/7901138/map.jpg'
+[SAVED FIG] /scratch/cfontana/DIAGS/SIC_2026-04-29/ARGO/map.jpg
+N =  0
+[SAVED FIG] /scratch/cfontana/DIAGS/SIC_2026-04-29/ARGO/error_Salinity.jpg
+Data for Salinity
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
+N =  0
+[SAVED FIG] /scratch/cfontana/DIAGS/SIC_2026-04-29/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(nan), np.float64(nan), np.float64(nan)]
+
++ cd ../../
++ sed -i s/phy/bgc/ config/config_SIC_2026-04-29.json
++ cd datasets/ARGO
++ python get_argo.py -c SIC_2026-04-29

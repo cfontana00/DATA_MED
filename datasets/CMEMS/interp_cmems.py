@@ -92,7 +92,10 @@ for jd in range(jdini,jdend+1):
 #for jd in range(jdini,jdini+1):
 
   # Get CMEMS data
-  data = np.array(ds[cvar][i,:,:]).squeeze().flatten()
+  try :
+    data = np.array(ds[cvar][i,:,:]).squeeze().flatten() 
+  except :
+    exit(2)
 
   # => /!\ Ensure that same dates were used for downloads !!!
   data[np.where(data < -99) ] = np.nan

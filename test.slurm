@@ -25,11 +25,12 @@ dend=`date -d "$dini +5 days" +"%Y-%m-%d"`
 
 run_cmems_thetao=0
 run_cmems_chl=0
-run_argo=0
+run_argo=1
 dl_radar=0
 run_radar=0
 run_static=1
 run_op=1
+clean=0
 
 
 switch_radar=0
@@ -37,8 +38,8 @@ error=0
 
 # Loop on domain
 # --------------
-#for domain in CAG SAR CON FOL SIC GAE GOR TYR GOT GSN HGT NAD ION ISO SAR LAM LIG NAP PAN PES SAD ;do
-for domain in LIG;do
+#for domain in CAG SAR CON FOL SIC GAE GOR TYR GOT GSN HGT NAD ION ISO LAM LIG NAP PAN PES SAD ;do
+for domain in SAR ;do
 
 
    echo "PROCESSING "$domain
@@ -82,7 +83,8 @@ for domain in LIG;do
      python get_data_sat.py -c $config -v thetao
      python interp_cmems.py -c $config -v thetao
      cd ../../plot
-     python plot_CMEMS_pickle_data_vs_sat.py -c $config -v thetao -s CMEMS
+     #python plot_CMEMS_pickle_data_vs_sat.py -c $config -v thetao -s CMEMS
+     python test.py -c $config -v thetao -s CMEMS
      if [ $? -eq 2 ];then
 	error=1
      fi
@@ -91,8 +93,10 @@ for domain in LIG;do
      # Get sure to remove pickle files in case of error
      rm -f $diagdir/CMEMS/thetao/ITP_NC/PLOT/*.pkl
 
-     # Clean interpolated files
-     rm -f $diagdir/CMEMS/thetao/ITP_NC/*.nc
+     if [ $clean -eq 1 ];then  
+       # Clean interpolated files
+       rm -f $diagdir/CMEMS/thetao/ITP_NC/*.nc
+     fi
 
      date
      cd ..
@@ -101,8 +105,7 @@ for domain in LIG;do
    if [ $run_radar -eq 1 ];then  
      # Run radars diags
      cd datasets/HFRADAR
-     #python read_radar.py -c $config
-     python test.py -c $config
+     python read_radar.py -c $config
 
      date
      cd ../..
@@ -137,7 +140,9 @@ for domain in LIG;do
      rm -f $diagdir/CMEMS/chl/ITP_NC/PLOT/*.pkl
 
      # Clean interpolated files
-     rm -f $diagdir/CMEMS/chl/ITP_NC/*.nc
+     if [ $clean -eq 1 ];then  
+       rm -f $diagdir/CMEMS/chl/ITP_NC/*.nc
+     fi
 
      date
 
@@ -150,7 +155,9 @@ for domain in LIG;do
    fi
  
    # Clean CMEMS data files
-   rm -f $diagdir/CMEMS/data/*.nc
+   if [ $clean -eq 1 ];then  
+     rm -f $diagdir/CMEMS/data/*.nc
+   fi
 
    if [ $run_argo -eq 1 ];then
      # Run Argo diags
@@ -270,11 +277,12 @@ if [ $run_op -eq 1 ];then
   scp -r $diagdir/active yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
 
   # Indicate last no_error
-  last=$(ls `dirname $diagdir`/no_error | sort | tail -1)
-  echo "Last no error is "$last
-  echo $last > ~/no_error
-  scp ~/no_error yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
-
+  if [ $run_thetao -eq 1 -a $run_chl -eq 1 ];then
+    last=$(ls `dirname $diagdir`/no_error | sort | tail -1)
+    echo "Last no error is "$last
+    echo $last > ~/no_error
+    scp ~/no_error yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
+  fi
 
 fi
 

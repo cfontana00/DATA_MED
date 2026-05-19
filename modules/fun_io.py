@@ -96,11 +96,10 @@ def get_var_2D(jd,jdini,fname,var,hour,lev):
   from fun_gen import ibmin,ibmax,\
                       jbmin,jbmax,\
                       ftype,freq
-  import time
 
   if 1 ==1:
   #try :
-      
+
     ds = xr.open_dataset(fname,chunks={})
     
     if ftype == 'netcdf':  
@@ -118,13 +117,61 @@ def get_var_2D(jd,jdini,fname,var,hour,lev):
         rec = jd-jdini
         arr = ds[var].squeeze()
         arr = arr[rec,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
-      
+
     ds.close()
         
   #except Exception as e :
   #  file_error(e,search,inspect.currentframe().f_code.co_name)
 
   return arr
+
+
+
+# ----------------- #
+# Load 2D variables #
+# ----------------- #
+def get_var_sst(jd,jdini,fname,var,hour,thick):
+
+  from fun_gen import ibmin,ibmax,\
+                      jbmin,jbmax,\
+                      ftype,freq
+
+  if 1 ==1:
+  #try :
+
+    ds = xr.open_dataset(fname,chunks={})
+    
+    if ftype == 'netcdf':
+      
+      arr = ds[var][hour,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
+  
+    elif ftype == 'zarr':
+      if freq == 'hourly':
+        rec = (jd-jdini)*24+hour
+  
+        arr = ds[var].squeeze()
+        arr = arr[rec,0:5,jbmin:jbmax,ibmin:ibmax].squeeze()
+
+        mean = np.zeros(arr[0,:,:].shape)
+
+        for i in range(0,5):
+           mean += arr[i,:,:]*thick[i]
+
+        mean = mean/np.sum(thick)
+
+      elif freq == 'daily':
+        rec = jd-jdini
+        arr = ds[var].squeeze()
+        arr = arr[rec,int(lev),jbmin:jbmax,ibmin:ibmax].squeeze()
+
+    ds.close()
+
+  #except Exception as e :
+  #  file_error(e,search,inspect.currentframe().f_code.co_name)
+
+  return mean
+
+
 
 
 # -------------------- #
@@ -302,7 +349,6 @@ def get_var_3D(jd,jdini,fname,hours,var,called_by,**kargs):
   except:
     pass
 
-  print("IN GET VAR3D")
 
   try:
     ds = xr.open_dataset(fname,engine=ftype)
@@ -320,8 +366,6 @@ def get_var_3D(jd,jdini,fname,hours,var,called_by,**kargs):
   
       arr = ds[var][0,rec,idz,idy,idx]
       arr = arr.squeeze()
-
-
 
     except:
 

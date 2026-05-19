@@ -1,0 +1,113 @@
+PROCESSING LIG
+_______________ 
+Mon May 11 12:46:48 CEST 2026
++ cat config/config_LIG.json
++ sed -e s/DINI/2026-04-29/g
++ sed -e s/FREQ/hourly/
++ sed -e s/DOUT/20260429/
++ 1> config/config_LIG_2026-04-29.json
++ sed -e s/DEND/2026-05-04/
++ cp config/cmems_DOMAIN.dat config/cmems_LIG_2026-04-29.dat
++ cp config/variables_mit_DOMAIN.dat config/variables_mit_LIG_2026-04-29.dat
++ jq -r .diagdir config/config_LIG_2026-04-29.json
++ diagdir=/scratch/cfontana/DIAGS/LIG_2026-04-29
++ jq -r .radardir config/config_LIG_2026-04-29.json
++ radardir=/scratch/cfontana/RADAR/
++ [ 0 -eq 0 -a 0 -eq 1 ]
++ [ 0 -eq 1 ]
++ [ 0 -eq 1 ]
++ cat config/config_LIG.json
++ sed -e s/FREQ/daily/
++ 1> config/config_LIG_2026-04-29.json
++ sed -e s/DOUT/20260429/
++ sed -e s/DINI/2026-04-29/g
++ sed -e s/DEND/2026-05-04/
++ [ 0 -eq 1 ]
++ [ 0 -eq 0 ]
++ dirname /scratch/cfontana/DIAGS/LIG_2026-04-29
++ touch /scratch/cfontana/DIAGS/no_error/2026-04-29
++ [ 0 -eq 1 ]
++ [ 1 -eq 1 ]
++ source /home/cfontana/venv/a/bin/activate
++ 1> /dev/null
++ deactivate nondestructive
++ [ -n /home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin ]
++ PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ [ -n '' ]
++ hash -r
++ 2> /dev/null
++ [ -n '(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' ]
++ PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ unset _OLD_VIRTUAL_PS1
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive '=' nondestructive ]
++ [ '' '=' cygwin ]
++ [ '' '=' msys ]
++ VIRTUAL_ENV=/home/cfontana/venv/a
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/cfontana/venv/a/bin:/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ [ -n '' ]
++ [ -z '' ]
++ _OLD_VIRTUAL_PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ PS1='(a) (c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ VIRTUAL_ENV_PROMPT='(a) '
++ export VIRTUAL_ENV_PROMPT
++ hash -r
++ 2> /dev/null
++ sed -i s/daily/hourly/ config/config_LIG_2026-04-29.json
++ cd datasets/ARGO
++ python get_argo.py -c LIG_2026-04-29
+----------------------------------
+=> Config file LIG_2026-04-29 loaded
+----------------------------------
+
+[np.float64(7.315104667488157), np.float64(12.518229667488157), np.float64(41.585938417607466), np.float64(44.4973967509408), 0, 500, '2026-04-29', '2026-05-04']
+[SAVED] /scratch/cfontana/DIAGS/LIG_2026-04-29/ARGO/argo.nc
++ [ 0 -eq 0 ]
++ echo 'ARGO FOUND'
+ARGO FOUND
++ python compare_argo.py -c LIG_2026-04-29
+/home/cfontana/DATA_MED/datasets/ARGO/compare_argo.py:186: SyntaxWarning: invalid escape sequence '\ '
+  print('/!\ NaN detected in depth data\n')
+PROCESSING SAR
+_______________ 
+Tue May 19 12:29:05 CEST 2026
++ sed -e s/DINI/2026-05-11/g
++ cat config/config_SAR.json
++ sed -e s/DOUT/20260511/
++ sed -e s/FREQ/hourly/
++ 1> config/config_SAR_2026-05-11.json
++ sed -e s/DEND/2026-05-16/
++ cp config/cmems_DOMAIN.dat config/cmems_SAR_2026-05-11.dat
++ cp config/variables_mit_DOMAIN.dat config/variables_mit_SAR_2026-05-11.dat
++ jq -r .diagdir config/config_SAR_2026-05-11.json
++ diagdir=/scratch/cfontana/DIAGS/SAR_2026-05-11
++ jq -r .radardir config/config_SAR_2026-05-11.json
++ radardir=/scratch/cfontana/RADAR/
++ [ 0 -eq 0 -a 0 -eq 1 ]
++ [ 1 -eq 1 ]
++ cd datasets/CMEMS
++ python get_data_sat.py -c SAR_2026-05-11 -v thetao
+INFO - 2026-05-19T10:29:08Z - Selected dataset version: "202311"
+INFO - 2026-05-19T10:29:08Z - Selected dataset part: "default"
+----------------------------------
+=> Config file SAR_2026-05-11 loaded
+----------------------------------
+
+Downloading CMEMS products : SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b
+=> Variable [np.str_('adjusted_sea_surface_temperature')] 
+
+------------------------------
+DATE =>>> 2026-05-11 2026-05-16
+------------------------------
+  0%|                                                                                          | 0/170 [00:00<?, ?it/s]  1%|▍                                                                                 | 1/170 [00:00<02:21,  1.19it/s]  3%|██▍                                                                               | 5/170 [00:00<00:26,  6.33it/s]  4%|███▍                                                                              | 7/170 [00:01<00:19,  8.17it/s]  9%|███████▏                                                                         | 15/170 [00:01<00:09, 16.52it/s] 11%|█████████                                                                        | 19/170 [00:01<00:08, 18.47it/s] 15%|███████████▉                                                                     | 25/170 [00:01<00:05, 24.85it/s] 17%|█████████████▊                                                                   | 29/170 [00:01<00:05, 27.78it/s] 19%|███████████████▋                                                                 | 33/170 [00:02<00:07, 19.20it/s] 21%|█████████████████▏                                                               | 36/170 [00:02<00:07, 18.76it/s] 24%|███████████████████▌                                                             | 41/170 [00:02<00:05, 23.29it/s] 26%|█████████████████████▍                                                           | 45/170 [00:02<00:06, 19.79it/s] 30%|████████████████████████▎                                                        | 51/170 [00:02<00:05, 23.48it/s] 34%|███████████████████████████▏                                                     | 57/170 [00:03<00:04, 25.90it/s] 36%|█████████████████████████████                                                    | 61/170 [00:03<00:04, 26.46it/s] 38%|██████████████████████████████▉                                                  | 65/170 [00:03<00:03, 27.33it/s] 40%|████████████████████████████████▍                                                | 68/170 [00:03<00:04, 22.58it/s] 44%|███████████████████████████████████▋                                             | 75/170 [00:03<00:03, 30.39it/s] 46%|█████████████████████████████████████▋                                           | 79/170 [00:04<00:05, 17.87it/s] 50%|████████████████████████████████████████▌                                        | 85/170 [00:04<00:03, 22.73it/s] 52%|██████████████████████████████████████████▍                                      | 89/170 [00:04<00:03, 23.79it/s] 56%|█████████████████████████████████████████████▎                                   | 95/170 [00:04<00:03, 22.21it/s] 58%|███████████████████████████████████████████████▏                                 | 99/170 [00:04<00:02, 23.85it/s] 61%|████████████████████████████████████████████████▍                               | 103/170 [00:04<00:02, 26.50it/s] 63%|██████████████████████████████████████████████████▎                             | 107/170 [00:05<00:02, 26.55it/s] 65%|███████████████████████████████████████████████████▊                            | 110/170 [00:05<00:02, 27.14it/s] 66%|█████████████████████████████████████████████████████▏                          | 113/170 [00:05<00:02, 26.80it/s] 71%|████████████████████████████████████████████████████████▍                       | 120/170 [00:05<00:01, 36.36it/s] 73%|██████████████████████████████████████████████████████████▎                     | 124/170 [00:05<00:01, 33.16it/s] 75%|████████████████████████████████████████████████████████████▏                   | 128/170 [00:05<00:01, 28.01it/s] 78%|██████████████████████████████████████████████████████████████                  | 132/170 [00:06<00:02, 15.19it/s] 79%|███████████████████████████████████████████████████████████████▌                | 135/170 [00:06<00:02, 13.03it/s] 81%|████████████████████████████████████████████████████████████████▍               | 137/170 [00:06<00:02, 12.29it/s] 82%|█████████████████████████████████████████████████████████████████▍              | 139/170 [00:07<00:02, 12.02it/s] 85%|████████████████████████████████████████████████████████████████████▏           | 145/170 [00:07<00:01, 18.87it/s] 87%|█████████████████████████████████████████████████████████████████████▋          | 148/170 [00:07<00:01, 16.90it/s] 89%|███████████████████████████████████████████████████████████████████████         | 151/170 [00:07<00:01, 18.22it/s] 91%|████████████████████████████████████████████████████████████████████████▉       | 155/170 [00:07<00:00, 20.36it/s] 95%|███████████████████████████████████████████████████████████████████████████▊    | 161/170 [00:07<00:00, 25.63it/s] 96%|█████████████████████████████████████████████████████████████████████████████▏  | 164/170 [00:07<00:00, 26.22it/s] 99%|███████████████████████████████████████████████████████████████████████████████▌| 169/170 [00:08<00:00, 28.05it/s]100%|████████████████████████████████████████████████████████████████████████████████| 170/170 [00:08<00:00, 20.88it/s]
+
+[FILE SAVED ] /scratch/cfontana/DIAGS/SAR_2026-05-11/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b.nc
++ python interp_cmems.py -c SAR_2026-05-11 -v thetao
