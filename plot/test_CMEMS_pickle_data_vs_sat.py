@@ -260,7 +260,7 @@ for jd in range(jdini,jdend+1):
    if var == 'thetao':
 
      #var2d = get_var_2D(jd,jdini,fname,var,hour,1) # !!!!
-     var2d = get_var_2D_sst(jd,jdini,fname,var,hour,thickness) # !!!!
+     var2d = get_var_sst(jd,jdini,fname,var,hour,thickness) # !!!!
 
      var2d = np.array(var2d)
      percentile = 99

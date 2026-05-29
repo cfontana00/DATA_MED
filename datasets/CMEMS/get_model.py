@@ -38,6 +38,7 @@ extent = [lon.min(),lon.max(),lat.min(),lat.max()]
 
 get_cmems_model(config,extent,var)
 
+
 cdir = os.path.join(diagdir,config,'CMEMS',var)
 
 
@@ -67,7 +68,7 @@ for jd in range(jdini,jdend+1):
   if var == 'thetao':
     data = np.array(cvar[(jd-jdini)*24,:,:]).squeeze().flatten()
   elif var == 'chl':
-    data = np.array(cvar[(jd-jdini),2,:,:]).squeeze().flatten()
+    data = np.array(cvar[(jd-jdini),0,:,:]).squeeze().flatten()
 
   idata = griddata((LON,LAT),data.T,(LON_MOD,LAT_MOD),method='nearest')
   full_data.append(idata)

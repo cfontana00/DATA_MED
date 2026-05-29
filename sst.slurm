@@ -87,6 +87,7 @@ for domain in SAR SIC TYR NAD ION LIG SAD ;do
 
      cd ../../plot
      python test_CMEMS_pickle_data_vs_sat.py -c $config -v thetao -s CMEMS
+     exit
      python plot_sat_CMEMS_timeseries.py -c $config -v thetao -s CMEMS
 
      # Get sure to remove pickle files in case of error

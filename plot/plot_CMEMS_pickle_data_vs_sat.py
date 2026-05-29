@@ -261,7 +261,7 @@ for jd in range(jdini,jdend+1):
    elif var == 'chl':
 
      #var2d = get_integre_2D(jd,jdini,fname,var,levels,hour)
-     var2d = get_var_2D(jd,jdini,fname,var,hour,1) # !!!!
+     var2d = get_var_2D(jd,jdini,fname,var,hour,0) # !!!!
 
      var2d = np.array(var2d)
      percentile = 99

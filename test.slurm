@@ -24,8 +24,8 @@ dout=`echo $dini | sed s/-//g`
 dend=`date -d "$dini +5 days" +"%Y-%m-%d"`
 
 run_cmems_thetao=0
-run_cmems_chl=0
-run_argo=1
+run_cmems_chl=1
+run_argo=0
 dl_radar=0
 run_radar=0
 run_static=1

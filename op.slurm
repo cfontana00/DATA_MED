@@ -280,12 +280,13 @@ if [ $run_op -eq 1 ];then
 
   # Indicate last no_error
   if [ $run_cmems_thetao -eq 1 -a $run_cmems_chl -eq 1 ];then
-    last=$(ls `dirname $diagdir`/no_error | sort | tail -1)
+    #last=$(ls `dirname $diagdir`/no_error | sort | tail -1)
 
-    #$last=`date -d "$dini -7 days" +"%Y-%m-%d"`
+    #last=`date -d "$dini -7 days" +"%Y-%m-%d"`
+    last=`date -d "8 days ago" +"%Y-%m-%d"`
     echo "Last no error is "$last
     echo $last > ~/no_error
-    #scp ~/no_error yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
+    scp ~/no_error yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
   fi
 
 fi

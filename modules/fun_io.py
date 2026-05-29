@@ -127,14 +127,15 @@ def get_var_2D(jd,jdini,fname,var,hour,lev):
 
 
 
-# ----------------- #
-# Load 2D variables #
-# ----------------- #
+# --------------------- #
+# Load 2D variables SST #
+# --------------------- #
 def get_var_sst(jd,jdini,fname,var,hour,thick):
 
   from fun_gen import ibmin,ibmax,\
                       jbmin,jbmax,\
                       ftype,freq
+
 
   if 1 ==1:
   #try :
@@ -147,17 +148,24 @@ def get_var_sst(jd,jdini,fname,var,hour,thick):
   
     elif ftype == 'zarr':
       if freq == 'hourly':
+
         rec = (jd-jdini)*24+hour
   
         arr = ds[var].squeeze()
         arr = arr[rec,0:5,jbmin:jbmax,ibmin:ibmax].squeeze()
 
-        mean = np.zeros(arr[0,:,:].shape)
+        thick_3d = thick[:5, np.newaxis, np.newaxis]  # (5, 1, 1) to broadcast over lat/lon
 
-        for i in range(0,5):
-           mean += arr[i,:,:]*thick[i]
+        # Mask thickness where arr is NaN (contributes 0 to both numerator and denominator)
+        weighted = np.where(np.isnan(arr[:5,:,:]), 0, arr[:5,:,:] * thick_3d)
+        valid_thick = np.where(np.isnan(arr[:5,:,:]), 0, thick_3d)
 
-        mean = mean/np.sum(thick)
+        # Depth-averaged value weighted by layer thickness
+        mean = np.sum(weighted, axis=0) / np.sum(valid_thick, axis=0)
+
+        # Points where all layers are NaN remain NaN
+        mean = np.where(np.sum(valid_thick, axis=0) == 0, np.nan, mean)
+
 
       elif freq == 'daily':
         rec = jd-jdini
@@ -601,7 +609,7 @@ def get_cmems_model(config,extent,var):
 
   from fun_gen import date_ini, date_end, diagdir
 
-  usr = os.getenv('COPERNICUSMARINE_SERVICE_USERNAM')
+  usr = os.getenv('COPERNICUSMARINE_SERVICE_USERNAME')
   pswd = os.getenv('COPERNICUSMARINE_SERVICE_PASSWORD')
 
   pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
@@ -631,6 +639,19 @@ def get_cmems_model(config,extent,var):
         username = usr,
         password = pswd
     )
+
+  """
+  print(ds_id)
+  print(extent[0])
+  print(extent[1])
+  print(extent[2])
+  print(extent[3])
+  print(date_ini)
+  print(date_end)
+  print([cvar])
+  print(outdir)
+  """
+
 
   print('[FILE SAVED]',outdir+'/model_cmems.nc')
  
