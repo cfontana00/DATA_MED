@@ -135,7 +135,7 @@ def get_var_sst(jd,jdini,fname,var,hour,thick):
   from fun_gen import ibmin,ibmax,\
                       jbmin,jbmax,\
                       ftype,freq
-
+  nlev = 6
 
   if 1 ==1:
   #try :
@@ -152,13 +152,13 @@ def get_var_sst(jd,jdini,fname,var,hour,thick):
         rec = (jd-jdini)*24+hour
   
         arr = ds[var].squeeze()
-        arr = arr[rec,0:5,jbmin:jbmax,ibmin:ibmax].squeeze()
+        arr = arr[rec,0:nlev,jbmin:jbmax,ibmin:ibmax].squeeze()
 
-        thick_3d = thick[:5, np.newaxis, np.newaxis]  # (5, 1, 1) to broadcast over lat/lon
+        thick_3d = thick[:nlev, np.newaxis, np.newaxis]  # (5, 1, 1) to broadcast over lat/lon
 
         # Mask thickness where arr is NaN (contributes 0 to both numerator and denominator)
-        weighted = np.where(np.isnan(arr[:5,:,:]), 0, arr[:5,:,:] * thick_3d)
-        valid_thick = np.where(np.isnan(arr[:5,:,:]), 0, thick_3d)
+        weighted = np.where(np.isnan(arr[:nlev,:,:]), 0, arr[:nlev,:,:] * thick_3d)
+        valid_thick = np.where(np.isnan(arr[:nlev,:,:]), 0, thick_3d)
 
         # Depth-averaged value weighted by layer thickness
         mean = np.sum(weighted, axis=0) / np.sum(valid_thick, axis=0)

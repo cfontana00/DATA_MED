@@ -1,0 +1,238 @@
+Download for 2026-05-25
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:19:44Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:19:44Z - Selected dataset part: "default"
+----------------------------------
+=> Config file LIG_2026-05-25 loaded
+----------------------------------
+
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:19:51Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:19:51Z - Selected dataset part: "default"
+----------------------------------
+=> Config file LIG_2026-05-25 loaded
+----------------------------------
+
+  0%|          | 0/333 [00:00<?, ?it/s]  0%|          | 1/333 [00:01<06:32,  1.18s/it]  4%|▎         | 12/333 [00:01<00:25, 12.38it/s]  7%|▋         | 23/333 [00:01<00:19, 15.78it/s] 10%|▉         | 32/333 [00:01<00:12, 23.33it/s] 16%|█▌        | 52/333 [00:02<00:06, 41.44it/s] 21%|██        | 69/333 [00:02<00:07, 37.60it/s] 23%|██▎       | 76/333 [00:02<00:06, 41.23it/s] 27%|██▋       | 89/333 [00:02<00:05, 47.48it/s] 29%|██▉       | 96/333 [00:03<00:08, 29.42it/s] 38%|███▊      | 125/333 [00:03<00:04, 45.64it/s] 40%|████      | 134/333 [00:04<00:05, 37.86it/s] 44%|████▎     | 145/333 [00:04<00:05, 34.03it/s] 49%|████▊     | 162/333 [00:05<00:04, 38.33it/s] 54%|█████▍    | 180/333 [00:05<00:03, 42.50it/s] 57%|█████▋    | 191/333 [00:05<00:03, 37.65it/s] 61%|██████    | 202/333 [00:06<00:03, 34.79it/s] 63%|██████▎   | 211/333 [00:06<00:03, 32.21it/s] 68%|██████▊   | 228/333 [00:06<00:02, 38.86it/s] 72%|███████▏  | 241/333 [00:07<00:02, 38.69it/s] 75%|███████▌  | 250/333 [00:07<00:02, 38.84it/s] 80%|████████  | 267/333 [00:07<00:01, 42.68it/s] 83%|████████▎ | 276/333 [00:07<00:01, 41.80it/s] 87%|████████▋ | 291/333 [00:08<00:00, 47.22it/s] 95%|█████████▌| 317/333 [00:08<00:00, 61.51it/s]100%|██████████| 333/333 [00:08<00:00, 39.05it/s]
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-25/CMEMS/chl/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-25/CMEMS/chl/model_cmems.nc
+
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:20:06Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:20:06Z - Selected dataset part: "default"
+----------------------------------
+=> Config file ION_2026-05-25 loaded
+----------------------------------
+
+  0%|          | 0/23 [00:00<?, ?it/s]  4%|▍         | 1/23 [00:00<00:18,  1.20it/s] 13%|█▎        | 3/23 [00:00<00:05,  3.82it/s] 35%|███▍      | 8/23 [00:01<00:01,  9.13it/s] 91%|█████████▏| 21/23 [00:01<00:00, 28.21it/s]100%|██████████| 23/23 [00:01<00:00, 17.36it/s]
+[FILE SAVED] /scratch/cfontana/DIAGS/ION_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/ION_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:20:14Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:20:14Z - Selected dataset part: "default"
+----------------------------------
+=> Config file ION_2026-05-25 loaded
+----------------------------------
+
+  0%|          | 0/333 [00:00<?, ?it/s]  0%|          | 1/333 [00:01<07:25,  1.34s/it]  4%|▎         | 12/333 [00:01<00:42,  7.62it/s]  7%|▋         | 23/333 [00:02<00:22, 13.78it/s] 13%|█▎        | 43/333 [00:03<00:15, 18.46it/s] 17%|█▋        | 56/333 [00:03<00:12, 22.31it/s] 25%|██▍       | 82/333 [00:04<00:10, 24.28it/s] 28%|██▊       | 93/333 [00:04<00:09, 24.82it/s] 33%|███▎      | 110/333 [00:05<00:07, 30.20it/s] 36%|███▋      | 121/333 [00:05<00:05, 36.47it/s] 38%|███▊      | 127/333 [00:05<00:06, 31.77it/s] 40%|████      | 134/333 [00:06<00:07, 26.19it/s] 44%|████▎     | 145/333 [00:06<00:07, 26.53it/s] 49%|████▊     | 162/333 [00:06<00:05, 33.34it/s] 52%|█████▏    | 173/333 [00:07<00:04, 35.99it/s] 57%|█████▋    | 191/333 [00:07<00:03, 43.30it/s] 59%|█████▉    | 196/333 [00:07<00:03, 37.08it/s] 61%|██████    | 202/333 [00:07<00:04, 32.71it/s] 67%|██████▋   | 224/333 [00:08<00:02, 42.13it/s] 69%|██████▉   | 229/333 [00:08<00:02, 35.23it/s] 72%|███████▏  | 241/333 [00:08<00:02, 41.18it/s] 74%|███████▍  | 246/333 [00:08<00:02, 36.26it/s] 77%|███████▋  | 258/333 [00:09<00:01, 40.87it/s] 83%|████████▎ | 276/333 [00:09<00:01, 46.40it/s] 86%|████████▌ | 285/333 [00:09<00:01, 42.83it/s] 89%|████████▉ | 297/333 [00:09<00:00, 43.37it/s] 92%|█████████▏| 307/333 [00:10<00:00, 50.99it/s]100%|██████████| 333/333 [00:10<00:00, 32.86it/s]
+[FILE SAVED] /scratch/cfontana/DIAGS/ION_2026-05-25/CMEMS/chl/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/ION_2026-05-25/CMEMS/chl/model_cmems.nc
+
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:20:31Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:20:31Z - Selected dataset part: "default"
+----------------------------------
+=> Config file NAD_2026-05-25 loaded
+----------------------------------
+
+  0%|          | 0/19 [00:00<?, ?it/s]  5%|▌         | 1/19 [00:01<00:23,  1.29s/it] 79%|███████▉  | 15/19 [00:01<00:00, 14.41it/s]100%|██████████| 19/19 [00:01<00:00, 13.36it/s]
+[FILE SAVED] /scratch/cfontana/DIAGS/NAD_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/NAD_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:20:39Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:20:39Z - Selected dataset part: "default"
+----------------------------------
+=> Config file NAD_2026-05-25 loaded
+----------------------------------
+
+  0%|          | 0/333 [00:00<?, ?it/s]  0%|          | 1/333 [00:01<08:30,  1.54s/it]  6%|▌         | 19/333 [00:02<00:26, 11.65it/s]  7%|▋         | 23/333 [00:02<00:31,  9.86it/s] 10%|▉         | 32/333 [00:03<00:23, 12.77it/s] 16%|█▌        | 52/333 [00:03<00:15, 18.67it/s] 21%|██        | 69/333 [00:04<00:12, 21.97it/s] 25%|██▍       | 82/333 [00:04<00:11, 22.21it/s] 27%|██▋       | 89/333 [00:05<00:12, 19.25it/s] 33%|███▎      | 110/333 [00:05<00:08, 26.06it/s] 36%|███▋      | 121/333 [00:06<00:07, 27.31it/s] 40%|████      | 134/333 [00:06<00:06, 29.76it/s] 44%|████▎     | 145/333 [00:07<00:06, 29.62it/s] 49%|████▊     | 162/333 [00:07<00:04, 37.77it/s] 54%|█████▍    | 180/333 [00:07<00:03, 43.47it/s] 57%|█████▋    | 191/333 [00:07<00:03, 41.89it/s] 61%|██████    | 202/333 [00:08<00:03, 39.52it/s] 67%|██████▋   | 224/333 [00:08<00:02, 46.84it/s] 69%|██████▉   | 229/333 [00:08<00:02, 40.70it/s] 75%|███████▌  | 250/333 [00:09<00:01, 48.83it/s] 80%|████████  | 267/333 [00:09<00:01, 51.88it/s] 83%|████████▎ | 276/333 [00:09<00:01, 45.47it/s] 89%|████████▊ | 295/333 [00:10<00:00, 50.12it/s] 95%|█████████▌| 317/333 [00:10<00:00, 69.75it/s]100%|██████████| 333/333 [00:10<00:00, 32.73it/s]
+[FILE SAVED] /scratch/cfontana/DIAGS/NAD_2026-05-25/CMEMS/chl/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/NAD_2026-05-25/CMEMS/chl/model_cmems.nc
+
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:20:56Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:20:56Z - Selected dataset part: "default"
+----------------------------------
+=> Config file SAD_2026-05-25 loaded
+----------------------------------
+
+  0%|          | 0/25 [00:00<?, ?it/s]  4%|▍         | 1/25 [00:01<00:30,  1.26s/it] 92%|█████████▏| 23/25 [00:01<00:00, 23.09it/s]100%|██████████| 25/25 [00:01<00:00, 18.36it/s]
+[FILE SAVED] /scratch/cfontana/DIAGS/SAD_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/SAD_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:21:05Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:21:05Z - Selected dataset part: "default"
+----------------------------------
+=> Config file SAD_2026-05-25 loaded
+----------------------------------
+
+  0%|          | 0/333 [00:00<?, ?it/s]  0%|          | 1/333 [00:01<09:13,  1.67s/it]  6%|▌         | 19/333 [00:02<00:28, 11.13it/s]  7%|▋         | 23/333 [00:02<00:30, 10.15it/s] 13%|█▎        | 43/333 [00:03<00:15, 18.82it/s] 16%|█▌        | 52/333 [00:03<00:15, 18.27it/s] 22%|██▏       | 73/333 [00:04<00:09, 26.63it/s] 25%|██▍       | 82/333 [00:04<00:10, 24.87it/s] 28%|██▊       | 93/333 [00:04<00:08, 26.88it/s] 33%|███▎      | 110/333 [00:05<00:06, 34.93it/s] 38%|███▊      | 125/333 [00:05<00:05, 40.38it/s] 40%|████      | 134/333 [00:05<00:04, 39.95it/s] 44%|████▎     | 145/333 [00:05<00:04, 41.20it/s] 49%|████▊     | 162/333 [00:06<00:03, 47.03it/s] 54%|█████▍    | 180/333 [00:06<00:03, 48.97it/s] 59%|█████▊    | 195/333 [00:06<00:03, 45.91it/s] 61%|██████    | 202/333 [00:07<00:03, 40.63it/s] 67%|██████▋   | 224/333 [00:07<00:02, 52.38it/s] 69%|██████▉   | 230/333 [00:07<00:02, 42.61it/s] 75%|███████▌  | 250/333 [00:07<00:01, 52.56it/s] 80%|████████  | 267/333 [00:08<00:01, 52.53it/s] 83%|████████▎ | 276/333 [00:08<00:01, 45.78it/s] 89%|████████▊ | 295/333 [00:08<00:00, 47.88it/s] 97%|█████████▋| 323/333 [00:09<00:00, 72.34it/s]100%|██████████| 333/333 [00:09<00:00, 36.55it/s]
+[FILE SAVED] /scratch/cfontana/DIAGS/SAD_2026-05-25/CMEMS/chl/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/SAD_2026-05-25/CMEMS/chl/model_cmems.nc
+
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:21:21Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:21:21Z - Selected dataset part: "default"
+----------------------------------
+=> Config file SAR_2026-05-25 loaded
+----------------------------------
+
+  0%|          | 0/25 [00:00<?, ?it/s]  4%|▍         | 1/25 [00:01<00:30,  1.26s/it]100%|██████████| 25/25 [00:01<00:00, 18.55it/s]
+[FILE SAVED] /scratch/cfontana/DIAGS/SAR_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/SAR_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:21:29Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:21:29Z - Selected dataset part: "default"
+----------------------------------
+=> Config file SAR_2026-05-25 loaded
+----------------------------------
+
+  0%|          | 0/333 [00:00<?, ?it/s]  0%|          | 1/333 [00:01<07:34,  1.37s/it]  4%|▎         | 12/333 [00:01<00:34,  9.20it/s]  8%|▊         | 25/333 [00:02<00:19, 15.94it/s] 10%|█         | 34/333 [00:02<00:16, 18.11it/s] 16%|█▌        | 52/333 [00:02<00:10, 26.10it/s] 21%|██        | 69/333 [00:03<00:07, 33.39it/s] 25%|██▍       | 82/333 [00:03<00:06, 36.68it/s] 27%|██▋       | 89/333 [00:03<00:07, 32.81it/s] 33%|███▎      | 110/333 [00:04<00:04, 44.83it/s] 38%|███▊      | 125/333 [00:04<00:04, 46.92it/s] 40%|████      | 134/333 [00:04<00:04, 45.76it/s] 44%|████▎     | 145/333 [00:04<00:03, 50.66it/s] 49%|████▊     | 162/333 [00:05<00:03, 49.23it/s] 52%|█████▏    | 173/333 [00:05<00:03, 44.82it/s] 57%|█████▋    | 191/333 [00:05<00:02, 56.25it/s] 59%|█████▉    | 198/333 [00:05<00:02, 45.10it/s] 61%|██████▏   | 204/333 [00:06<00:03, 38.17it/s] 67%|██████▋   | 224/333 [00:06<00:02, 50.98it/s] 69%|██████▉   | 230/333 [00:06<00:02, 41.85it/s] 72%|███████▏  | 241/333 [00:06<00:02, 43.11it/s] 76%|███████▋  | 254/333 [00:07<00:01, 44.88it/s] 80%|████████  | 267/333 [00:07<00:01, 45.92it/s] 86%|████████▌ | 285/333 [00:07<00:00, 51.14it/s] 89%|████████▊ | 295/333 [00:07<00:00, 49.45it/s] 97%|█████████▋| 323/333 [00:08<00:00, 78.14it/s]100%|██████████| 333/333 [00:08<00:00, 41.12it/s]
+[FILE SAVED] /scratch/cfontana/DIAGS/SAR_2026-05-25/CMEMS/chl/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/SAR_2026-05-25/CMEMS/chl/model_cmems.nc
+
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:21:45Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:21:45Z - Selected dataset part: "default"
+----------------------------------
+=> Config file TYR_2026-05-25 loaded
+----------------------------------
+
+  0%|          | 0/23 [00:00<?, ?it/s]  4%|▍         | 1/23 [00:00<00:19,  1.12it/s] 22%|██▏       | 5/23 [00:01<00:04,  3.70it/s]100%|██████████| 23/23 [00:01<00:00, 14.41it/s]
+[FILE SAVED] /scratch/cfontana/DIAGS/TYR_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/TYR_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:21:53Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:21:53Z - Selected dataset part: "default"
+----------------------------------
+=> Config file TYR_2026-05-25 loaded
+----------------------------------
+
+  0%|          | 0/333 [00:00<?, ?it/s]  0%|          | 1/333 [00:01<06:31,  1.18s/it]  6%|▌         | 19/333 [00:01<00:18, 16.92it/s]  7%|▋         | 23/333 [00:01<00:19, 15.59it/s] 13%|█▎        | 43/333 [00:02<00:09, 29.80it/s] 16%|█▌        | 52/333 [00:02<00:09, 28.73it/s] 22%|██▏       | 73/333 [00:02<00:06, 37.92it/s] 27%|██▋       | 89/333 [00:03<00:05, 40.69it/s] 28%|██▊       | 94/333 [00:03<00:06, 35.02it/s] 36%|███▋      | 121/333 [00:03<00:04, 52.90it/s] 38%|███▊      | 127/333 [00:03<00:04, 44.19it/s] 42%|████▏     | 141/333 [00:04<00:03, 48.04it/s] 44%|████▍     | 147/333 [00:04<00:04, 41.70it/s] 52%|█████▏    | 173/333 [00:04<00:02, 54.87it/s] 54%|█████▍    | 180/333 [00:05<00:03, 44.82it/s] 59%|█████▊    | 195/333 [00:05<00:02, 46.73it/s] 61%|██████    | 202/333 [00:05<00:03, 40.27it/s] 67%|██████▋   | 224/333 [00:05<00:01, 54.76it/s] 69%|██████▉   | 230/333 [00:06<00:02, 42.40it/s] 75%|███████▌  | 250/333 [00:06<00:01, 54.69it/s] 77%|███████▋  | 256/333 [00:06<00:01, 51.03it/s] 80%|████████  | 267/333 [00:06<00:01, 45.30it/s] 83%|████████▎ | 276/333 [00:07<00:01, 45.21it/s] 87%|████████▋ | 291/333 [00:07<00:00, 59.60it/s] 92%|█████████▏| 305/333 [00:07<00:00, 73.61it/s] 95%|█████████▌| 317/333 [00:07<00:00, 72.44it/s]100%|██████████| 333/333 [00:07<00:00, 44.15it/s]
+[FILE SAVED] /scratch/cfontana/DIAGS/TYR_2026-05-25/CMEMS/chl/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/TYR_2026-05-25/CMEMS/chl/model_cmems.nc
+
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:22:07Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:22:07Z - Selected dataset part: "default"
+----------------------------------
+=> Config file SIC_2026-05-25 loaded
+----------------------------------
+
+  0%|          | 0/23 [00:00<?, ?it/s]  4%|▍         | 1/23 [00:01<00:28,  1.29s/it] 13%|█▎        | 3/23 [00:01<00:07,  2.54it/s] 74%|███████▍  | 17/23 [00:01<00:00, 16.26it/s]100%|██████████| 23/23 [00:01<00:00, 13.41it/s]
+[FILE SAVED] /scratch/cfontana/DIAGS/SIC_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/SIC_2026-05-25/CMEMS/thetao/model_cmems.nc
+
+/home/cfontana/DATA_MED/modules/fun_gen.py:101: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars=np.loadtxt(DIR+'config/variables_mit_'+config+'.dat',dtype=str)
+/home/cfontana/DATA_MED/modules/fun_io.py:615: UserWarning: Input line 1 contained no data and will not be counted towards `max_rows=50000`.  This differs from the behaviour in NumPy <=1.22 which counted lines rather than rows.  If desired, the previous behaviour can be achieved by using `itertools.islice`.
+Please see the 1.23 release notes for an example on how to do this.  If you wish to ignore this warning, use `warnings.filterwarnings`.  This warning is expected to be removed in the future and is given only once per `loadtxt` call.
+  pars = np.loadtxt('config/cmems_'+config+'.dat',dtype=str)
+INFO - 2026-06-03T08:22:15Z - Selected dataset version: "202511"
+INFO - 2026-06-03T08:22:15Z - Selected dataset part: "default"
+----------------------------------
+=> Config file SIC_2026-05-25 loaded
+----------------------------------
+
+  0%|          | 0/333 [00:00<?, ?it/s]  0%|          | 1/333 [00:01<06:24,  1.16s/it]  6%|▌         | 19/333 [00:01<00:19, 16.33it/s]  7%|▋         | 23/333 [00:01<00:20, 15.13it/s] 13%|█▎        | 43/333 [00:02<00:09, 29.32it/s] 16%|█▌        | 52/333 [00:02<00:09, 29.33it/s] 22%|██▏       | 73/333 [00:02<00:06, 39.58it/s] 27%|██▋       | 89/333 [00:03<00:05, 41.32it/s] 28%|██▊       | 94/333 [00:03<00:06, 35.77it/s] 36%|███▋      | 121/333 [00:03<00:04, 52.10it/s] 38%|███▊      | 127/333 [00:03<00:04, 49.45it/s] 40%|████      | 134/333 [00:03<00:04, 48.82it/s] 44%|████▎     | 145/333 [00:04<00:04, 43.83it/s] 49%|████▊     | 162/333 [00:04<00:03, 48.26it/s] 54%|█████▍    | 180/333 [00:04<00:02, 52.11it/s] 57%|█████▋    | 191/333 [00:05<00:02, 47.99it/s] 61%|██████    | 202/333 [00:05<00:02, 44.10it/s] 63%|██████▎   | 211/333 [00:05<00:02, 41.53it/s] 68%|██████▊   | 228/333 [00:05<00:02, 48.74it/s] 72%|███████▏  | 241/333 [00:06<00:01, 48.37it/s] 76%|███████▋  | 254/333 [00:06<00:01, 47.16it/s] 80%|████████  | 267/333 [00:06<00:01, 48.54it/s] 86%|████████▌ | 285/333 [00:07<00:00, 51.50it/s] 89%|████████▊ | 295/333 [00:07<00:00, 51.21it/s] 97%|█████████▋| 323/333 [00:07<00:00, 77.52it/s]100%|██████████| 333/333 [00:07<00:00, 44.48it/s]
+[FILE SAVED] /scratch/cfontana/DIAGS/SIC_2026-05-25/CMEMS/chl/model_cmems.nc
+
+[FILE SAVED] /scratch/cfontana/DIAGS/SIC_2026-05-25/CMEMS/chl/model_cmems.nc
+

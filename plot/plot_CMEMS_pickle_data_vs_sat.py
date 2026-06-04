@@ -94,11 +94,11 @@ config = args.config    # Configuration name
 var = args.variable     # Variable name
 sat = args.satellite    # Dataset dir
 
-
 # Load parameters
 # ---------------
 load_config(config)
 from fun_gen import *
+
 
 # Create diagnostic arborescence
 #null = create_arbo(config,var,'PLOT_SAT')
@@ -155,6 +155,19 @@ mask = np.array(mask[0,:,:].squeeze(),dtype=float)
 mask[np.where(mask==0)] = np.nan
 mask[np.where(mask==1)] = 0
 sy,sx = mask.shape
+
+# Compute layer thickness
+ds = xr.open_dataset(maskfile)
+depth = ds["depth"].values[:7]
+
+interfaces = np.concatenate([
+    [0.0],
+    (depth[:-1] + depth[1:]) / 2,
+])
+thickness = np.diff(interfaces)
+thickness = np.append(thickness, depth[6] - (depth[5] + depth[6]) / 2)
+
+
 
 
 # Load proj
@@ -246,7 +259,8 @@ for jd in range(jdini,jdend+1):
    # Get 2D variable
    if var == 'thetao':
 
-     var2d = get_var_2D(jd,jdini,fname,var,hour,1) # !!!!
+     #var2d = get_var_2D(jd,jdini,fname,var,hour,1) # !!!!
+     var2d = get_var_sst(jd,jdini,fname,var,hour,thickness) # !!!!
 
      var2d = np.array(var2d)
      percentile = 99
@@ -261,7 +275,7 @@ for jd in range(jdini,jdend+1):
    elif var == 'chl':
 
      #var2d = get_integre_2D(jd,jdini,fname,var,levels,hour)
-     var2d = get_var_2D(jd,jdini,fname,var,hour,0) # !!!!
+     var2d = get_var_2D(jd,jdini,fname,var,hour,1) # !!!!
 
      var2d = np.array(var2d)
      percentile = 99
@@ -463,7 +477,6 @@ for jd in range(jdini,jdend+1):
    idx_good = np.where( (~np.isnan(sat2d)) & (~np.isnan(var2d)) )
    idx_tot = np.where( ~np.isnan(var2d) )
 
-   
    sat2d = sat2d[idx_good]
   
    # Keep only corresponding data

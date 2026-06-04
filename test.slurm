@@ -23,13 +23,13 @@ dini=$1
 dout=`echo $dini | sed s/-//g`
 dend=`date -d "$dini +5 days" +"%Y-%m-%d"`
 
-run_cmems_thetao=0
-run_cmems_chl=1
+run_cmems_thetao=1
+run_cmems_chl=0
 run_argo=0
 dl_radar=0
 run_radar=0
 run_static=1
-run_op=1
+run_op=0
 clean=0
 
 
@@ -39,7 +39,7 @@ error=0
 # Loop on domain
 # --------------
 #for domain in CAG SAR CON FOL SIC GAE GOR TYR GOT GSN HGT NAD ION ISO LAM LIG NAP PAN PES SAD ;do
-for domain in SAR ;do
+for domain in LIG ;do
 
 
    echo "PROCESSING "$domain
@@ -80,15 +80,16 @@ for domain in SAR ;do
 
      # Run diags
      cd datasets/CMEMS
-     python get_data_sat.py -c $config -v thetao
-     python interp_cmems.py -c $config -v thetao
-     cd ../../plot
-     #python plot_CMEMS_pickle_data_vs_sat.py -c $config -v thetao -s CMEMS
-     python test.py -c $config -v thetao -s CMEMS
+     #python get_data_sat.py -c $config -v thetao
+     #python interp_cmems.py -c $config -v thetao
      if [ $? -eq 2 ];then
 	error=1
      fi
+
+     cd ../../plot
+     #python plot_CMEMS_pickle_data_vs_sat.py -c $config -v thetao -s CMEMS
      python plot_sat_CMEMS_timeseries.py -c $config -v thetao -s CMEMS
+       
 
      # Get sure to remove pickle files in case of error
      rm -f $diagdir/CMEMS/thetao/ITP_NC/PLOT/*.pkl
@@ -127,11 +128,11 @@ for domain in SAR ;do
 
      python get_data_sat.py -c $config -v chl
      python interp_cmems.py -c $config -v chl
-     cd ../../plot
-     python plot_CMEMS_pickle_data_vs_sat.py -c $config -v chl -s CMEMS
      if [ $? -eq 2 ];then
 	error=1
      fi
+     cd ../../plot
+     python plot_CMEMS_pickle_data_vs_sat.py -c $config -v chl -s CMEMS
 
      python plot_sat_CMEMS_timeseries.py -c $config -v chl -s CMEMS
      
@@ -151,6 +152,7 @@ for domain in SAR ;do
 
    # Indicate no CMEMS error for this run
    if [ $error -eq 0 ];then
+     echo "Touch no_error"
      touch `dirname $diagdir`/no_error/$dini
    fi
  
@@ -276,9 +278,14 @@ if [ $run_op -eq 1 ];then
 
   scp -r $diagdir/active yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
 
+  echo "Error => "$error 
+
   # Indicate last no_error
-  if [ $run_thetao -eq 1 -a $run_chl -eq 1 ];then
-    last=$(ls `dirname $diagdir`/no_error | sort | tail -1)
+  if [ $run_cmems_thetao -eq 1 -a $run_cmems_chl -eq 1 ];then
+    #last=$(ls `dirname $diagdir`/no_error | sort | tail -1)
+
+    #last=`date -d "$dini -7 days" +"%Y-%m-%d"`
+    last=`date -d "8 days ago" +"%Y-%m-%d"`
     echo "Last no error is "$last
     echo $last > ~/no_error
     scp ~/no_error yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/

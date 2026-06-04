@@ -109,7 +109,7 @@
       "parent": "LIG",
       "display": {
         "layout": "horizontal",
-        "cb_fraction": 0.045
+        "cb_fraction": 0.035
       }
     },
     "LAM": {

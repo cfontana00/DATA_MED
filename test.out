@@ -1,103 +1,431 @@
-PROCESSING CAG
+PROCESSING LIG
 _______________ 
-Tue May  5 09:49:08 CEST 2026
-+ cat config/config_CAG.json
-+ sed -e s/DINI/2026-04-29/g
+Thu Jun  4 10:00:08 CEST 2026
++ cat config/config_LIG.json
++ sed -e s/DOUT/20260527/
++ sed -e s/DINI/2026-05-27/g
 + sed -e s/FREQ/hourly/
-+ 1> config/config_CAG_2026-04-29.json
-+ sed -e s/DOUT/20260429/
-+ sed -e s/DEND/2026-05-04/
-+ cp config/cmems_DOMAIN.dat config/cmems_CAG_2026-04-29.dat
-+ cp config/variables_mit_DOMAIN.dat config/variables_mit_CAG_2026-04-29.dat
-+ jq -r .diagdir config/config_CAG_2026-04-29.json
-+ diagdir=/scratch/cfontana/DIAGS/CAG_2026-04-29
-+ jq -r .radardir config/config_CAG_2026-04-29.json
++ 1> config/config_LIG_2026-05-27.json
++ sed -e s/DEND/2026-06-01/
++ cp config/cmems_DOMAIN.dat config/cmems_LIG_2026-05-27.dat
++ cp config/variables_mit_DOMAIN.dat config/variables_mit_LIG_2026-05-27.dat
++ jq -r .diagdir config/config_LIG_2026-05-27.json
++ diagdir=/scratch/cfontana/DIAGS/LIG_2026-05-27
++ jq -r .radardir config/config_LIG_2026-05-27.json
 + radardir=/scratch/cfontana/RADAR/
 + [ 0 -eq 0 -a 0 -eq 1 ]
 + [ 1 -eq 1 ]
 + cd datasets/CMEMS
-+ python get_data_sat.py -c CAG_2026-04-29 -v thetao
-INFO - 2026-05-05T07:49:11Z - Selected dataset version: "202311"
-INFO - 2026-05-05T07:49:11Z - Selected dataset part: "default"
++ python get_data_sat.py -c LIG_2026-05-27 -v thetao
+INFO - 2026-06-04T08:00:11Z - Selected dataset version: "202311"
+INFO - 2026-06-04T08:00:11Z - Selected dataset part: "default"
 ----------------------------------
-=> Config file CAG_2026-04-29 loaded
+=> Config file LIG_2026-05-27 loaded
 ----------------------------------
 
 Downloading CMEMS products : SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b
 => Variable [np.str_('adjusted_sea_surface_temperature')] 
 
-  0%|                                                                                          | 0/170 [00:00<?, ?it/s]  1%|▍                                                                                 | 1/170 [00:00<01:41,  1.66it/s]  3%|██▍                                                                               | 5/170 [00:00<00:19,  8.45it/s]  8%|██████▏                                                                          | 13/170 [00:00<00:07, 19.97it/s] 10%|████████                                                                         | 17/170 [00:01<00:06, 23.22it/s] 15%|███████████▉                                                                     | 25/170 [00:01<00:04, 34.42it/s] 22%|█████████████████▋                                                               | 37/170 [00:01<00:02, 49.04it/s] 26%|█████████████████████▍                                                           | 45/170 [00:01<00:02, 47.91it/s] 34%|███████████████████████████▏                                                     | 57/170 [00:01<00:01, 57.50it/s] 39%|███████████████████████████████▉                                                 | 67/170 [00:01<00:01, 65.53it/s] 44%|███████████████████████████████████▋                                             | 75/170 [00:01<00:01, 55.37it/s] 48%|███████████████████████████████████████                                          | 82/170 [00:02<00:01, 46.12it/s] 52%|█████████████████████████████████████████▉                                       | 88/170 [00:02<00:02, 39.87it/s] 55%|████████████████████████████████████████████▎                                    | 93/170 [00:02<00:01, 40.32it/s] 58%|██████████████████████████████████████████████▋                                  | 98/170 [00:02<00:01, 39.18it/s] 63%|██████████████████████████████████████████████████▎                             | 107/170 [00:02<00:01, 45.96it/s] 69%|███████████████████████████████████████████████████████                         | 117/170 [00:02<00:00, 55.19it/s] 72%|█████████████████████████████████████████████████████████▉                      | 123/170 [00:03<00:00, 51.60it/s] 77%|█████████████████████████████████████████████████████████████▋                  | 131/170 [00:03<00:00, 52.66it/s] 81%|████████████████████████████████████████████████████████████████▍               | 137/170 [00:03<00:00, 54.17it/s] 84%|███████████████████████████████████████████████████████████████████▎            | 143/170 [00:03<00:00, 53.38it/s] 88%|██████████████████████████████████████████████████████████████████████          | 149/170 [00:03<00:00, 54.06it/s] 91%|████████████████████████████████████████████████████████████████████████▉       | 155/170 [00:03<00:00, 47.75it/s] 96%|████████████████████████████████████████████████████████████████████████████▋   | 163/170 [00:03<00:00, 55.29it/s]100%|████████████████████████████████████████████████████████████████████████████████| 170/170 [00:03<00:00, 44.19it/s]
+------------------------------
+DATE =>>> 2026-05-27 2026-06-01
+------------------------------
+  0%|                                                                                          | 0/102 [00:00<?, ?it/s]  1%|▊                                                                                 | 1/102 [00:00<01:39,  1.02it/s]  5%|████                                                                              | 5/102 [00:01<00:22,  4.39it/s] 11%|████████▋                                                                        | 11/102 [00:01<00:08, 10.84it/s] 15%|███████████▉                                                                     | 15/102 [00:01<00:06, 12.74it/s] 18%|██████████████▎                                                                  | 18/102 [00:02<00:07, 11.07it/s] 25%|███████████████████▊                                                             | 25/102 [00:02<00:04, 18.38it/s] 28%|███████████████████████                                                          | 29/102 [00:02<00:05, 14.17it/s] 34%|███████████████████████████▊                                                     | 35/102 [00:03<00:04, 14.38it/s] 38%|██████████████████████████████▉                                                  | 39/102 [00:03<00:04, 15.34it/s] 41%|█████████████████████████████████▎                                               | 42/102 [00:03<00:03, 16.53it/s] 46%|█████████████████████████████████████▎                                           | 47/102 [00:03<00:03, 15.60it/s] 54%|███████████████████████████████████████████▋                                     | 55/102 [00:03<00:01, 23.86it/s] 58%|██████████████████████████████████████████████▊                                  | 59/102 [00:03<00:01, 26.26it/s] 62%|██████████████████████████████████████████████████                               | 63/102 [00:04<00:01, 21.74it/s] 65%|████████████████████████████████████████████████████▍                            | 66/102 [00:04<00:02, 14.79it/s] 68%|██████████████████████████████████████████████████████▊                          | 69/102 [00:04<00:01, 16.55it/s] 72%|█████████████████████████████████████████████████████████▉                       | 73/102 [00:05<00:01, 15.42it/s] 75%|████████████████████████████████████████████████████████████▎                    | 76/102 [00:05<00:01, 16.02it/s] 77%|██████████████████████████████████████████████████████████████▋                  | 79/102 [00:05<00:01, 14.02it/s] 81%|█████████████████████████████████████████████████████████████████▉               | 83/102 [00:05<00:01, 12.75it/s] 87%|██████████████████████████████████████████████████████████████████████▋          | 89/102 [00:06<00:00, 18.66it/s] 91%|█████████████████████████████████████████████████████████████████████████▊       | 93/102 [00:06<00:00, 17.04it/s] 97%|██████████████████████████████████████████████████████████████████████████████▌  | 99/102 [00:06<00:00, 20.12it/s]100%|████████████████████████████████████████████████████████████████████████████████| 102/102 [00:06<00:00, 15.59it/s]
 
-[FILE SAVED ] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b.nc
-+ python interp_cmems.py -c CAG_2026-04-29 -v thetao
+[FILE SAVED ] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b.nc
++ python interp_cmems.py -c LIG_2026-05-27 -v thetao
 ----------------------------------
-=> Config file CAG_2026-04-29 loaded
+=> Config file LIG_2026-05-27 loaded
 ----------------------------------
 
 
-[FILE SAVED] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260429.nc
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/thetao_20260527.nc
 
 
-[FILE SAVED] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260430.nc
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/thetao_20260528.nc
 
 
-[FILE SAVED] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260501.nc
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/thetao_20260529.nc
 
 
-[FILE SAVED] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260502.nc
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/thetao_20260530.nc
 
 
-[FILE SAVED] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260503.nc
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/thetao_20260531.nc
 
 
-[FILE SAVED] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260504.nc
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/thetao_20260601.nc
 
++ [ 0 -eq 2 ]
 + cd ../../plot
-+ python plot_CMEMS_pickle_data_vs_sat.py -c CAG_2026-04-29 -v thetao -s CMEMS
++ python plot_CMEMS_pickle_data_vs_sat.py -c LIG_2026-05-27 -v thetao -s CMEMS
 ----------------------------------
-=> Config file CAG_2026-04-29 loaded
+=> Config file LIG_2026-05-27 loaded
 ----------------------------------
 
 Processing
-739735 18.22785021109981 18.170721 17.772501338129807 0.8851526641388945
-739736 18.681193728238174 18.132788 17.857720875898224 0.3760061198696202
-739737 18.512732719706932 18.711338 18.384000765499326 0.8842213796314774
-739738 18.589284684762923 18.453444 17.87469140589856 0.8808953635335595
-739739 18.61106207506475 18.617146 17.71842972113479 0.8156721878533892
-739740 18.65537208840251 18.208729 18.074697626102715 0.6811680968535888
-[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026042900_thetao.jpg
-[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026043000_thetao.jpg
-[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050100_thetao.jpg
-[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050200_thetao.jpg
-[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050300_thetao.jpg
-[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050400_thetao.jpg
-+ [ 0 -eq 2 ]
-+ python plot_sat_CMEMS_timeseries.py -c CAG_2026-04-29 -v thetao -s CMEMS
+739763 20.02306848597821 21.648098 21.384968 0.9746234018585405
+739764 20.43091906894808 21.833462 21.412052 0.5811699315393479
+739765 20.42055510212779 21.988718 21.567474 0.154738503548915
+739766 21.018105418835926 21.804121 22.008635 0.9290668887361085
+739767 21.34818390997624 22.389719 22.661873 0.6574288361043598
+739768 21.652229670364836 22.70827 22.324022 0.74681824197177
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/2026052700_thetao.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/2026052800_thetao.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/2026052900_thetao.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/2026053000_thetao.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/2026053100_thetao.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/2026060100_thetao.jpg
++ python plot_sat_CMEMS_timeseries.py -c LIG_2026-05-27 -v thetao -s CMEMS
 ----------------------------------
-=> Config file CAG_2026-04-29 loaded
+=> Config file LIG_2026-05-27 loaded
 ----------------------------------
 
-[SAVED FIG] /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/time_series.jpg
-+ rm -f '/scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/*.pkl'
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/time_series.jpg
++ rm -f '/scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/*.pkl'
 + [ 1 -eq 1 ]
-+ rm -f /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260429.nc /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260430.nc /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260501.nc /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260502.nc /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260503.nc /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/thetao_20260504.nc
++ rm -f /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/thetao_20260527.nc /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/thetao_20260528.nc /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/thetao_20260529.nc /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/thetao_20260530.nc /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/thetao_20260531.nc /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/thetao_20260601.nc
 + date
-Tue May  5 09:58:20 CEST 2026
+Thu Jun  4 10:10:58 CEST 2026
 + cd ..
-+ [ 0 -eq 1 ]
-+ cat config/config_CAG.json
-+ sed -e s/DINI/2026-04-29/g
-+ sed -e s/FREQ/daily/
-+ 1> config/config_CAG_2026-04-29.json
-+ sed -e s/DOUT/20260429/
-+ sed -e s/DEND/2026-05-04/
-+ [ 0 -eq 1 ]
-+ [ 0 -eq 0 ]
-+ dirname /scratch/cfontana/DIAGS/CAG_2026-04-29
-+ touch /scratch/cfontana/DIAGS/no_error/2026-04-29
 + [ 1 -eq 1 ]
-+ rm -f /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b.nc
-+ [ 0 -eq 1 ]
++ cd datasets/HFRADAR
++ python read_radar.py -c LIG_2026-05-27
+----------------------------------
+=> Config file LIG_2026-05-27 loaded
+----------------------------------
+
+
+----------
+20260527 0
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-TirLig-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-ARPAS-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-GoS-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-Granitola-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-NAdr-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-GoM-Total_v3.nc'
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR/20260527_00.jpg
+
+----------
+20260528 0
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-TirLig-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-ARPAS-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-GoS-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-Granitola-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-NAdr-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-GoM-Total_v3.nc'
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR/20260528_00.jpg
+
+----------
+20260529 0
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-TirLig-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-ARPAS-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-GoS-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-Granitola-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-NAdr-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-GoM-Total_v3.nc'
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR/20260529_00.jpg
+
+----------
+20260530 0
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-TirLig-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-ARPAS-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-GoS-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-Granitola-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-NAdr-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-GoM-Total_v3.nc'
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR/20260530_00.jpg
+
+----------
+20260531 0
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-TirLig-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-ARPAS-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-GoS-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-Granitola-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-NAdr-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-GoM-Total_v3.nc'
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR/20260531_00.jpg
+
+----------
+20260601 0
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-TirLig-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-ARPAS-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-LaMMA-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-GoS-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-WesternItaly-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-Granitola-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-NAdr-Total_v3.nc'
+[Errno 2] No such file or directory: '/scratch/cfontana/RADAR//2026-05-27/EUHFR_NRTcurrent_HFR-GoM-Total_v3.nc'
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR/20260601_00.jpg
++ date
+Thu Jun  4 10:23:54 CEST 2026
++ cd ../..
++ sed -e s/DINI/2026-05-27/g
++ cat config/config_LIG.json
++ sed -e s/FREQ/daily/
++ 1> config/config_LIG_2026-05-27.json
++ sed -e s/DEND/2026-06-01/
++ sed -e s/DOUT/20260527/
++ [ 1 -eq 1 ]
++ cd datasets/CMEMS
++ python get_data_sat.py -c LIG_2026-05-27 -v chl
+INFO - 2026-06-04T08:23:57Z - Selected dataset version: "202211"
+INFO - 2026-06-04T08:23:57Z - Selected dataset part: "default"
+----------------------------------
+=> Config file LIG_2026-05-27 loaded
+----------------------------------
+
+Downloading CMEMS products : cmems_obs-oc_med_bgc-plankton_nrt_l3-multi-1km_P1D
+=> Variable ['CHL', 'KD490'] 
+
+------------------------------
+DATE =>>> 2026-05-27 2026-06-01
+------------------------------
+  0%|                                                                                           | 0/78 [00:00<?, ?it/s]  1%|█                                                                                  | 1/78 [00:00<00:49,  1.54it/s]  6%|█████▎                                                                             | 5/78 [00:00<00:10,  6.68it/s] 19%|███████████████▊                                                                  | 15/78 [00:01<00:03, 16.11it/s] 27%|██████████████████████                                                            | 21/78 [00:01<00:02, 21.42it/s] 31%|█████████████████████████▏                                                        | 24/78 [00:01<00:02, 19.36it/s] 37%|██████████████████████████████▍                                                   | 29/78 [00:01<00:02, 20.03it/s] 50%|█████████████████████████████████████████                                         | 39/78 [00:02<00:01, 24.37it/s] 58%|███████████████████████████████████████████████▎                                  | 45/78 [00:02<00:01, 24.57it/s] 65%|█████████████████████████████████████████████████████▌                            | 51/78 [00:02<00:01, 25.34it/s] 73%|███████████████████████████████████████████████████████████▉                      | 57/78 [00:02<00:00, 26.25it/s] 81%|██████████████████████████████████████████████████████████████████▏               | 63/78 [00:03<00:00, 27.05it/s] 88%|████████████████████████████████████████████████████████████████████████▌         | 69/78 [00:03<00:00, 30.46it/s] 96%|██████████████████████████████████████████████████████████████████████████████▊   | 75/78 [00:03<00:00, 35.54it/s]100%|██████████████████████████████████████████████████████████████████████████████████| 78/78 [00:03<00:00, 23.91it/s]
+
+[FILE SAVED ] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/data/cmems_obs-oc_med_bgc-plankton_nrt_l3-multi-1km_P1D.nc
++ python interp_cmems.py -c LIG_2026-05-27 -v chl
+----------------------------------
+=> Config file LIG_2026-05-27 loaded
+----------------------------------
+
+
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/chl_20260527.nc
+
+
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/chl_20260528.nc
+
+
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/chl_20260529.nc
+
+
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/chl_20260530.nc
+
+
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/chl_20260531.nc
+
+
+[FILE SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/chl_20260601.nc
+
++ [ 0 -eq 2 ]
++ cd ../../plot
++ python plot_CMEMS_pickle_data_vs_sat.py -c LIG_2026-05-27 -v chl -s CMEMS
+----------------------------------
+=> Config file LIG_2026-05-27 loaded
+----------------------------------
+
+Processing
+739763 0.11703632675952513 0.061990917 0.0577729 0.9563833667405822
+739764 0.12155137188524703 0.05742829 0.056021623 0.8637888016319522
+739765 0.11505591817237808 0.053286463 0.049851283 0.5330893151675365
+739766 0.1213915985528239 0.068751365 0.053160217 0.9564414663038672
+739767 0.11809761996338666 0.060894877 0.05205698 0.8762640689706371
+739768 0.12701836628103366 0.06863981 0.059146892 0.36207647839180407
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/2026052712_chl.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/2026052812_chl.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/2026052912_chl.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/2026053012_chl.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/2026053112_chl.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/2026060112_chl.jpg
++ python plot_sat_CMEMS_timeseries.py -c LIG_2026-05-27 -v chl -s CMEMS
+----------------------------------
+=> Config file LIG_2026-05-27 loaded
+----------------------------------
+
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/time_series.jpg
++ rm -f '/scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/*.pkl'
++ [ 1 -eq 1 ]
++ rm -f /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/chl_20260527.nc /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/chl_20260528.nc /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/chl_20260529.nc /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/chl_20260530.nc /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/chl_20260531.nc /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/chl_20260601.nc
++ date
+Thu Jun  4 10:31:01 CEST 2026
++ cd ..
++ [ 0 -eq 0 ]
++ echo 'Touch no_error'
+Touch no_error
++ dirname /scratch/cfontana/DIAGS/LIG_2026-05-27
++ touch /scratch/cfontana/DIAGS/no_error/2026-05-27
++ [ 1 -eq 1 ]
++ rm -f /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/data/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012_b.nc /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/data/cmems_obs-oc_med_bgc-plankton_nrt_l3-multi-1km_P1D.nc
++ [ 1 -eq 1 ]
++ source /home/cfontana/venv/a/bin/activate
++ 1> /dev/null
++ deactivate nondestructive
++ [ -n /home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin ]
++ PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ [ -n '' ]
++ hash -r
++ 2> /dev/null
++ [ -n '(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' ]
++ PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ unset _OLD_VIRTUAL_PS1
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive '=' nondestructive ]
++ [ '' '=' cygwin ]
++ [ '' '=' msys ]
++ VIRTUAL_ENV=/home/cfontana/venv/a
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/cfontana/venv/a/bin:/home/cfontana/venv/c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH
++ [ -n '' ]
++ [ -z '' ]
++ _OLD_VIRTUAL_PS1='(c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ PS1='(a) (c) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
++ export PS1
++ VIRTUAL_ENV_PROMPT='(a) '
++ export VIRTUAL_ENV_PROMPT
++ hash -r
++ 2> /dev/null
++ sed -i s/daily/hourly/ config/config_LIG_2026-05-27.json
++ cd datasets/ARGO
++ python get_argo.py -c LIG_2026-05-27
+----------------------------------
+=> Config file LIG_2026-05-27 loaded
+----------------------------------
+
+[np.float64(7.315104667488157), np.float64(12.518229667488157), np.float64(41.585938417607466), np.float64(44.4973967509408), 0, 500, '2026-05-27', '2026-06-01']
+[SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/argo.nc
++ [ 0 -eq 0 ]
++ echo 'ARGO FOUND'
+ARGO FOUND
++ python compare_argo.py -c LIG_2026-05-27
+/home/cfontana/DATA_MED/datasets/ARGO/compare_argo.py:186: SyntaxWarning: invalid escape sequence '\ '
+  print('/!\ NaN detected in depth data\n')
+----------------------------------
+=> Config file LIG_2026-05-27 loaded
+----------------------------------
+
+7 profiles found
+
+Processing
+
+Float 6903820 cycle 327
+-----
+Interpolation done for [ 88 ] data in 4.31 secInterpolation done for [ 88 ] data in 1.47 sec[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/6903820/profile_327.jpg
+
+Float 5907147 cycle 291
+-----
+Interpolation done for [ 317 ] data in 3.11 secInterpolation done for [ 317 ] data in 1.38 sec[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/5907147/profile_291.jpg
+
+Float 5907147 cycle 292
+-----
+Interpolation done for [ 317 ] data in 2.95 secInterpolation done for [ 317 ] data in 1.38 sec[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/5907147/profile_292.jpg
+
+Float 5907147 cycle 293
+-----
+Interpolation done for [ 316 ] data in 3.07 secInterpolation done for [ 316 ] data in 1.57 sec[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/5907147/profile_293.jpg
+
+Float 5907147 cycle 295
+-----
+Interpolation done for [ 317 ] data in 4.14 secInterpolation done for [ 317 ] data in 1.7 sec[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/5907147/profile_295.jpg
+
+Float 5907147 cycle 294
+-----
+Interpolation done for [ 317 ] data in 4.96 secInterpolation done for [ 317 ] data in 1.81 sec[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/5907147/profile_294.jpg
+
+Float 4903679 cycle 181
+-----
+Interpolation done for [ 88 ] data in 2.31 secInterpolation done for [ 88 ] data in 1.34 sec[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/4903679/profile_181.jpg
+
+-------------
+Total of 3520 found
+-------------
+
+Plot trajectories ...
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/4903679/map.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/5907147/map.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/6903820/map.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/map.jpg
+N =  1753
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/error_Salinity.jpg
+Data for Salinity
+[np.float64(0.0917886068724481), np.float64(0.10527769523334533), np.float64(0.06740219829524889)]
+
+N =  1753
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(0.09890971012198839), np.float64(0.809591249704268), np.float64(0.5952863771438222)]
+
++ cd ../../
++ sed -i s/phy/bgc/ config/config_LIG_2026-05-27.json
++ cd datasets/ARGO
++ python get_argo.py -c LIG_2026-05-27
+----------------------------------
+=> Config file LIG_2026-05-27 loaded
+----------------------------------
+
+[np.float64(7.315104667488157), np.float64(12.518229667488157), np.float64(41.585938417607466), np.float64(44.4973967509408), 0, 500, '2026-05-27', '2026-06-01']
+[SAVED] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/bioargo.nc
++ [ 0 -eq 0 ]
++ echo 'BIOARGO FOUND'
+BIOARGO FOUND
++ python compare_argo.py -c LIG_2026-05-27
+/home/cfontana/DATA_MED/datasets/ARGO/compare_argo.py:186: SyntaxWarning: invalid escape sequence '\ '
+  print('/!\ NaN detected in depth data\n')
+----------------------------------
+=> Config file LIG_2026-05-27 loaded
+----------------------------------
+
+5 profiles found
+
+Processing
+
+Float 5907147 cycle 291
+-----
+Interpolation done for [ 937 ] data in 0.53 secInterpolation done for [ 937 ] data in 1.25 secInterpolation done for [ 937 ] data in 1.49 sec[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/bio5907147/profile_291.jpg
+
+Float 5907147 cycle 292
+-----
+Interpolation done for [ 918 ] data in 0.41 secInterpolation done for [ 918 ] data in 1.23 secInterpolation done for [ 918 ] data in 1.32 sec[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/bio5907147/profile_292.jpg
+
+Float 5907147 cycle 293
+-----
+Interpolation done for [ 900 ] data in 0.45 secInterpolation done for [ 900 ] data in 1.35 secInterpolation done for [ 900 ] data in 1.63 sec[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/bio5907147/profile_293.jpg
+
+Float 5907147 cycle 295
+-----
+Interpolation done for [ 917 ] data in 0.54 secInterpolation done for [ 917 ] data in 1.48 secInterpolation done for [ 917 ] data in 1.69 sec[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/bio5907147/profile_295.jpg
+
+Float 5907147 cycle 294
+-----
+Interpolation done for [ 945 ] data in 0.47 secInterpolation done for [ 945 ] data in 1.42 secInterpolation done for [ 945 ] data in 1.59 sec[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/bio5907147/profile_294.jpg
+
+-------------
+Total of 13851 found
+-------------
+
+Plot trajectories ...
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/bio5907147/map.jpg
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/mapbio.jpg
+N =  3009
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/error_Salinity.jpg
+Data for Salinity
+[np.float64(0.2787335103981873), np.float64(0.1414326145064825), np.float64(0.1343723269530752)]
+
+N =  4600
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(0.07472465939230657), np.float64(0.11553018191967203), np.float64(0.09637926812961013)]
+
+N =  4600
+[SAVED FIG] /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/error_Temperature.jpg
+Data for Temperature
+[np.float64(0.10670959995697148), np.float64(0.9469902504189274), np.float64(0.5388998139216302)]
+
++ cd ../../
 + [ 1 -eq 1 ]
 + source /home/cfontana/venv/c/bin/activate
 + 1> /dev/null
@@ -132,70 +460,107 @@ Tue May  5 09:58:20 CEST 2026
 + export VIRTUAL_ENV_PROMPT
 + hash -r
 + 2> /dev/null
-+ static=/scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29
-+ mkdir /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29
-mkdir: cannot create directory ‘/scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29’: File exists
-+ dir=/scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC
++ static=/scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27
++ mkdir /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27
+mkdir: cannot create directory ‘/scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27’: File exists
++ dir=/scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC
 + i=1
-+ ls /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026042900_thetao.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/thetao_1.jpg
++ ls /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/2026052700_thetao.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/thetao_1.jpg
 + let i=1+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026043000_thetao.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/thetao_2.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/2026052800_thetao.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/thetao_2.jpg
 + let i=2+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050100_thetao.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/thetao_3.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/2026052900_thetao.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/thetao_3.jpg
 + let i=3+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050200_thetao.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/thetao_4.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/2026053000_thetao.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/thetao_4.jpg
 + let i=4+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050300_thetao.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/thetao_5.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/2026053100_thetao.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/thetao_5.jpg
 + let i=5+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/PLOT/2026050400_thetao.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/thetao_6.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/PLOT/2026060100_thetao.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/thetao_6.jpg
 + let i=6+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/thetao/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/time_series_thetao.jpg
-+ dir=/scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/thetao/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/time_series_thetao.jpg
++ dir=/scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC
 + i=1
-+ ls /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/2026042912_chl.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/chl_1.jpg
++ ls /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/2026052712_chl.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/chl_1.jpg
 + let i=1+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/2026043012_chl.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/chl_2.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/2026052812_chl.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/chl_2.jpg
 + let i=2+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/2026050112_chl.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/chl_3.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/2026052912_chl.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/chl_3.jpg
 + let i=3+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/2026050212_chl.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/chl_4.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/2026053012_chl.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/chl_4.jpg
 + let i=4+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/2026050312_chl.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/chl_5.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/2026053112_chl.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/chl_5.jpg
 + let i=5+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/PLOT/2026050412_chl.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/chl_6.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/PLOT/2026060112_chl.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/chl_6.jpg
 + let i=6+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/CMEMS/chl/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/time_series_chl.jpg
-+ dir=/scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR/
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/CMEMS/chl/ITP_NC/time_series.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/time_series_chl.jpg
++ dir=/scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR/
 + i=1
-+ ls /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260429_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260430_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260501_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260502_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260503_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260504_00.jpg
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260429_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/radar_1.jpg
++ ls /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR//20260527_00.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR//20260528_00.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR//20260529_00.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR//20260530_00.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR//20260531_00.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR//20260601_00.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR//20260527_00.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/radar_1.jpg
 + let i=1+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260430_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/radar_2.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR//20260528_00.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/radar_2.jpg
 + let i=2+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260501_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/radar_3.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR//20260529_00.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/radar_3.jpg
 + let i=3+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260502_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/radar_4.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR//20260530_00.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/radar_4.jpg
 + let i=4+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260503_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/radar_5.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR//20260531_00.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/radar_5.jpg
 + let i=5+1
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/RADAR//20260504_00.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/radar_6.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/RADAR//20260601_00.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/radar_6.jpg
 + let i=6+1
-+ dir=/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO/
-+ ls -d '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//bio*/'
-ls: cannot access '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//bio*/': No such file or directory
++ dir=/scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO/
++ ls -d /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//bio5907147/
++ basename /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//bio5907147/
++ file=bio5907147
++ sed s/bio//
++ echo bio5907147
++ num=5907147
++ mv /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//bio5907147/map.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//bio5907147/profile_291.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//bio5907147/profile_292.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//bio5907147/profile_293.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//bio5907147/profile_294.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//bio5907147/profile_295.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//5907147
 + i=1
-+ 1> /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29/list.txt
-+ ls -d '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//*/'
-ls: cannot access '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//*/': No such file or directory
-+ cp /scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//map.jpg /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29
-cp: cannot stat '/scratch/cfontana/DIAGS/CAG_2026-04-29/ARGO//map.jpg': No such file or directory
-+ scp -r /scratch/cfontana/DIAGS/CAG_2026-04-29/static_CAG_2026-04-29 yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/DIAGS
++ 1> /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/list.txt
++ ls -d /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//4903679/ /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//5907147/ /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//6903820/ /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//bio5907147/
++ ls /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//4903679//profile_181.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//4903679//profile_181.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/argo_1.jpg
++ echo argo_1.jpg
++ let i=1+1
++ ls /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//5907147//profile_291.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//5907147//profile_292.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//5907147//profile_293.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//5907147//profile_294.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//5907147//profile_295.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//5907147//profile_291.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/argo_2.jpg
++ echo argo_2.jpg
++ let i=2+1
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//5907147//profile_292.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/argo_3.jpg
++ echo argo_3.jpg
++ let i=3+1
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//5907147//profile_293.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/argo_4.jpg
++ echo argo_4.jpg
++ let i=4+1
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//5907147//profile_294.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/argo_5.jpg
++ echo argo_5.jpg
++ let i=5+1
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//5907147//profile_295.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/argo_6.jpg
++ echo argo_6.jpg
++ let i=6+1
++ ls /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//6903820//profile_327.jpg
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//6903820//profile_327.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27/argo_7.jpg
++ echo argo_7.jpg
++ let i=7+1
++ ls '/scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//bio5907147//profile*'
+ls: cannot access '/scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//bio5907147//profile*': No such file or directory
++ cp /scratch/cfontana/DIAGS/LIG_2026-05-27/ARGO//map.jpg /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27
++ scp -r /scratch/cfontana/DIAGS/LIG_2026-05-27/static_LIG_2026-05-27 yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/DIAGS
 + date
-+ echo Tue May 5 09:58:25 CEST 2026
-+ 1> /scratch/cfontana/DIAGS/CAG_2026-04-29/active
++ echo Thu Jun 4 10:32:40 CEST 2026
++ 1> /scratch/cfontana/DIAGS/LIG_2026-05-27/active
 + [ 1 -eq 1 ]
-+ scp -r /scratch/cfontana/DIAGS/CAG_2026-04-29/active yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
-+ [ -eq 1 -a -eq 1 ]
-./test.slurm[279]: [: 1: unknown operator
++ scp -r /scratch/cfontana/DIAGS/LIG_2026-05-27/active yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
++ echo 'Error => 0'
+Error => 0
++ [ 1 -eq 1 -a 1 -eq 1 ]
++ date -d '8 days ago' +%Y-%m-%d
++ last=2026-05-27
++ echo 'Last no error is 2026-05-27'
+Last no error is 2026-05-27
++ echo 2026-05-27
++ 1> /home/cfontana/no_error
++ scp /home/cfontana/no_error yulpa175555@webhost03.yulpa.io:/datas/yulpa175555/sites/merval.eg2.fr/htdocs/
