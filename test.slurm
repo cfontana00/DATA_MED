@@ -28,9 +28,9 @@ run_cmems_chl=0
 run_argo=0
 dl_radar=0
 run_radar=0
-run_static=1
+run_static=0
 run_op=0
-clean=0
+clean=1
 
 
 switch_radar=0
@@ -39,7 +39,7 @@ error=0
 # Loop on domain
 # --------------
 #for domain in CAG SAR CON FOL SIC GAE GOR TYR GOT GSN HGT NAD ION ISO LAM LIG NAP PAN PES SAD ;do
-for domain in LIG ;do
+for domain in SIC ;do
 
 
    echo "PROCESSING "$domain
@@ -80,16 +80,16 @@ for domain in LIG ;do
 
      # Run diags
      cd datasets/CMEMS
-     #python get_data_sat.py -c $config -v thetao
-     #python interp_cmems.py -c $config -v thetao
+     python get_data_sat.py -c $config -v thetao
+     python interp_cmems.py -c $config -v thetao
      if [ $? -eq 2 ];then
 	error=1
      fi
 
      cd ../../plot
-     #python plot_CMEMS_pickle_data_vs_sat.py -c $config -v thetao -s CMEMS
+     python plot_CMEMS_rmse_data_vs_sat.py -c $config -v thetao -s CMEMS
+     exit
      python plot_sat_CMEMS_timeseries.py -c $config -v thetao -s CMEMS
-       
 
      # Get sure to remove pickle files in case of error
      rm -f $diagdir/CMEMS/thetao/ITP_NC/PLOT/*.pkl

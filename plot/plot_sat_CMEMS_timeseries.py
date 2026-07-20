@@ -109,10 +109,10 @@ for i in range(0,data.shape[0]):
 
 plt.plot(data[:,0],data[:,1],marker='o',linestyle='-',color='b',label='MER')
 
-plt.plot(data[:,0],data[:,2],marker='s',linestyle=':',color='k',label='Data')
+plt.plot(data[:,0],data[:,2],marker='s',linestyle='--',color='k',label='Data')
 
 if up == 'CMEMS':
-  plt.plot(data[:,0],data[:,3],marker='^',linestyle='--',color='r',label='CMEMS')
+    plt.plot(data[:,0],data[:,3],marker='^',linestyle=':',color='r',label='CMEMS')
 
 
 for d in data:

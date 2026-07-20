@@ -1,8 +1,12 @@
 #!/bin/ksh
 #dini=`date +%Y-%m-%d` !!!!!!!!!!!!!!!!!!
 
-	
-dini=`date -d "$dini -0 days" +"%Y-%m-%d"`
+
+#for i in {1..8};do
+
+
+
+dini=`date -d "-0 days" +"%Y-%m-%d"`
 dout=`echo $dini | sed s/-//g`
 dend=`date -d "$dini +5 days" +"%Y-%m-%d"`
 
@@ -43,4 +47,4 @@ for domain in LIG ION NAD SAD SAR TYR SIC ;do
 done
  
 
-
+#done
